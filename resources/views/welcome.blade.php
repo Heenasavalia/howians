@@ -26,7 +26,7 @@
                                 <h4>I’m an EMPLOYER</h4>
                                 <p>Signed in companies are able to post new<br> job offers, searching for candidate...</p>
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-plus-circle"></i> &nbsp;REGISTER AS COMPANY</a></li>
+                                    <li><a href="{{url('/user/login')}}"><i class="fa fa-plus-circle"></i> &nbsp;REGISTER AS USER</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                             <div class="jp_regis_right_img_overlay"></div>
                             <div class="jp_regis_right_side_box">
                                 <img src="{{asset('landing_page/img/regis_icon2.png')}}" alt="icon">
-                                <h4>I’m an CANDIDATE</h4>
+                                <h4>COMPANY</h4>
                                 <p>Signed in companies are able to post new<br> job offers, searching for candidate...</p>
                                 <ul>
                                     <li><a href="#"><i class="fa fa-plus-circle"></i> &nbsp;REGISTER AS COMPANY</a></li>
