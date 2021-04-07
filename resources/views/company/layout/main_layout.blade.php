@@ -19,6 +19,7 @@
 @include('company.layout.sidebar')
 @yield('content')
 @include('company.layout.footer')
+@stack('scripts')
 </div>
  </body>
 </html>
