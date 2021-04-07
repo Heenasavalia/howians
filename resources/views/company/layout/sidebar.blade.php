@@ -1,6 +1,3 @@
-  <!--**********************************
-            Sidebar start
-***********************************-->
 
 <div class="deznav">
             <div class="deznav-scroll">

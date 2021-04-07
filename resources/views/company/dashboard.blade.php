@@ -1,11 +1,7 @@
 @extends('company.layout.main_layout')
 @section('content')
-<!--**********************************
-            Content body start
-        ***********************************-->
+
         <div class="content-body">
-            <!-- row -->
-                        <!-- row -->
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-xl-3 col-xxl-6 col-sm-6">
@@ -87,7 +83,7 @@
 								<div class="card d-flex flex-xl-column flex-sm-column flex-md-row flex-column">
 									<div class="card-body  text-center border-bottom profile-bx">
 										<div class="profile-image mb-4">
-											<img  src="{{asset('images/avatar/1.jpg')}}" class="rounded-circle" alt="">
+											<img  src="{{asset('/company/images/avatar/1.jpg')}}" class="rounded-circle" alt="">
 										</div>
 										<h4 class="fs-22 text-black mb-1">Oda Dink</h4>
 										<p class="mb-4">Programmer</p>
@@ -405,7 +401,4 @@
             </div>
 			
         </div>
-        <!--**********************************
-            Content body end
-        ***********************************-->
-        @endsection
+@endsection

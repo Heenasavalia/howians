@@ -1,13 +1,7 @@
 
 
-    <!--**********************************
-        Main wrapper start
-    ***********************************-->
-    <div id="main-wrapper">
+   
 
-        <!--**********************************
-            Nav header start
-        ***********************************-->
         <div class="nav-header">
             <a href="index.html" class="brand-logo">
                             <img class="logo-abbr" src="{{asset('/company/images/logo.png')}}" alt="">
@@ -22,13 +16,6 @@
                 </div>
             </div>
         </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
-
-        <!--**********************************
-            Header start
-        ***********************************-->
         
         <div class="chatbox">
             <div class="chatbox-close"></div>
@@ -267,7 +254,7 @@
                             <div class="card-body msg_card_body dz-scroll" id="DZ_W_Contacts_Body3">
                                 <div class="d-flex justify-content-start mb-4">
                                     <div class="img_cont_msg">
-                                        <img  src="company/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
+                                        <img  src="{{asset('/company/images/avatar/1.jpg')}}" class="rounded-circle user_img_msg" alt=""/>
                                     </div>
                                     <div class="msg_cotainer">
                                         Hi, how are you samim?
@@ -525,13 +512,6 @@
                 </div>
             </div>
         </div>
-        <!--**********************************
-            Chat box End
-        ***********************************-->
-        
-        <!--**********************************
-            Header start
-        ***********************************-->
         <div class="header">
             <div class="header-content">
                 <nav class="navbar navbar-expand">

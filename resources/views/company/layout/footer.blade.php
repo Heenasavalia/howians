@@ -1,20 +1,8 @@
-<div class="footer">
-    <div class="copyright">
-        <p>Copyright © Designed &amp; Developed by <a href="http://dexignzone.com/" target="_blank">DexignZone</a> 2021</p>
-    </div>
-</div>		
-        <!--**********************************
-            Footer end
-        ***********************************-->
-
-		<!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-        <!--**********************************
-           Support ticket button end
-        ***********************************-->
-
+    <div class="footer">
+        <div class="copyright">
+            <p>Copyright © Designed &amp; Developed by <a href="http://dexignzone.com/" target="_blank">DexignZone</a> 2021</p>
+        </div>
+    </div>		
 
 </div>
 <script src="{{asset('/company/plugins/vendor/global/global.min.js')}}" type="text/javascript"></script>
