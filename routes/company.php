@@ -10,3 +10,4 @@ Route::get('/home', function () {
     return view('company.home');
 })->name('home');
 
+Route::get('/dashboard', 'CompanyDashboardController@index');
