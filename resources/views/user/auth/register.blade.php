@@ -50,7 +50,78 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
+                            <label for="mobile" class="col-md-4 control-label">Contact Number</label>
 
+                            <div class="col-md-6">
+                                <input id="mobile" type="number" class="form-control" name="mobile" value="{{ old('mobile') }}">
+
+                                @if ($errors->has('mobile'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('mobile') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
+                                    <label class="business_label">Country</label>
+                                    <select id="country" data-placement="Select Country *" name="country"  class="form-control js-example-basic-single" required="required">
+
+                                    </select>
+                                    @if ($errors->has('country'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('country') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
+                                    <label class="business_label">State</label>
+                                    <select id="state" name="state"  class="form-control js-example-basic-single" required="required">
+                                        <option  selected="selected">Select State *</option>
+                                    </select>
+                                    @if ($errors->has('state'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('state') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+                                    <label class="business_label">City</label>
+                                    <select id="city" name="city"  class="form-control js-example-basic-single" required="required">
+                                        <option  selected="selected">Select City *</option>
+                                    </select>
+                                    @if ($errors->has('city'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('city') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <label class="control-label">Gender</label>
+                                    <select class="form-control" name="gender">
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <label class="control-label">Designation</label>
+                                    <select class="form-control" name="gender">
+                                            <option value="fresher">Fresher</option>
+                                            <option value="experience">Experience</option>
+                                    </select>
+                            </div>
+                        </div>
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
@@ -64,7 +135,6 @@
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                             <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
 
