@@ -67,7 +67,7 @@ class RegisterController extends Controller
         return Company::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
-            'mobile' => $data['mobile'],
+            //'mobile' => $data['mobile'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
