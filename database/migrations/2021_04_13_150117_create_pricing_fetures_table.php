@@ -15,8 +15,6 @@ class CreatePricingFeturesTable extends Migration
     {
         Schema::create('pricing_fetures', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('pricing_plan_id');
-            $table->foreign('pricing_plan_id')->references('id')->on('company_plans');
             $table->text('name');
             $table->timestamps();
         });

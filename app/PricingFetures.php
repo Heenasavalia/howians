@@ -8,7 +8,7 @@ class PricingFetures extends Model
 {
     protected $table = 'pricing_fetures';
     protected $fillable = [
-         'pricing_plan_id','name'
+         'name'
     ];
 
     public function plans()

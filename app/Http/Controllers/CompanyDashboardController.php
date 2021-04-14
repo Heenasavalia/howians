@@ -22,7 +22,8 @@ class CompanyDashboardController extends Controller
 
     public function PlanSelection(){
 
-        $Company_plans = PricingPlans::where('type','company')->where('status','Active')->get();
+        $Company_plans = PricingPlans::with('fetures')
+        where('type','company')->where('status','Active')->get();
         return view('company.plan_selection',['company_plans' => $Company_plans]);
 
     }
