@@ -9,27 +9,17 @@
                             <div class="col-xl-12 col-lg-6">
                                 <div class="card  flex-lg-column flex-md-row ">
                                     <div class="card-body card-body  text-center border-bottom profile-bx">
-                                        <h4 class="fs-22 text-black mb-1">$5 / Day</h4>
-                                        <p class="mb-0">Basic Plan</p>
+                                        <h4 class="fs-22 text-black mb-1">${{$plans->price}} / Day</h4>
+                                        <p class="mb-0">{{$plans->name}}</p>
                                     </div>
                                     <div class="card-body  border-left">
+                                        @foreach($plans->fetures as $feture)
+                                            <div class="mb-3 text-center">
+                                                <span class="text-black">{{$feture->name}}</span>
+                                            </div>
+                                        @endforeach
                                         <div class="mb-3 text-center">
-                                            <span class="text-black">3 Jobs Posting</span>
-                                        </div>
-                                        <div class="mb-3 text-center">
-                                            <span class="text-black">4 Featured jobs</span>
-                                        </div>
-                                        <div class="mb-3 text-center">
-                                            <span class="text-black">2 Renew Jobs</span>
-                                        </div>
-                                        <div class="mb-3 text-center">
-                                            <span class="text-black">64 Days Visibility</span>
-                                        </div>
-                                        <div class="mb-3 text-center">
-                                            <span class="text-black">Email Alert</span>
-                                        </div>
-                                        <div class="mb-3 text-center">
-                                            <button type="button" class="btn btn-rounded btn-primary">Primary</button>
+                                            <button type="button" class="btn btn-rounded btn-primary">{{($plan_setting->is_select_plan == 1 && $plan_setting->pricing_plan_id == $plans->id) ? "Selected" : "Select"}}</button>
                                         </div>
                                         
                                     </div>
