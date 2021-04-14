@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\PricingPlans;
+use App\PricingFetures;
+use App\PricingPalnFeture;
 
 class CompanyDashboardController extends Controller
 {
@@ -15,6 +18,13 @@ class CompanyDashboardController extends Controller
     {
         // dd('hello');
         return view('company.dashboard');
+    }
+
+    public function PlanSelection(){
+
+        $Company_plans = PricingPlans::where('type','company')->where('status','Active')->get();
+        return view('company.plan_selection',['company_plans' => $Company_plans]);
+
     }
 
     /**

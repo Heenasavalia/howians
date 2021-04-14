@@ -11,3 +11,4 @@ Route::get('/home', function () {
 })->name('home');
 
 Route::get('/dashboard', 'CompanyDashboardController@index');
+Route::get('/plan-selection', 'CompanyDashboardController@PlanSelection');

@@ -7,8 +7,8 @@
 							<span class="nav-text">Dashboard</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="index.html">Dashboard</a></li>
-							<li><a href="search-job.html">Search Job</a></li>
+							<li><a href="{{url('/company/dashboard')}}">Dashboard</a></li>
+							<li><a href="{{url('/company/plan-selection')}}">Plan selection</a></li>
 							<li><a href="application.html">Application</a></li>
 							<li><a href="profile.html">Profile</a></li>
 							<li><a href="companies.html">Companies</a></li>
