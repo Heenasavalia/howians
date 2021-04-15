@@ -8,6 +8,10 @@ use App\PricingPalnFeture;
 use App\PricingFetures;
 use App\CompanySetting;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
+use DB;
+use Illuminate\Support\Facades\Redirect;
+
 
 
 class CompanyDashboardController extends Controller
@@ -24,12 +28,34 @@ class CompanyDashboardController extends Controller
     }
 
     public function PlanSelection(){
+        $today = \Carbon\Carbon::now()->toDateTimeString();
+
+        // dd($today_date);
         $auth_company =  Auth::user();
         $setting_plan = CompanySetting::select('company_id','is_select_plan','pricing_plan_id','start_time','end_time')->where('company_id',$auth_company->id)->first();
-        // dd($auth_company);
         $Company_plans = PricingPlans::with('fetures')->where('type','company')->where('status','Active')->get();
-        return view('company.plan_selection',['company_plans' => $Company_plans,'plan_setting'=> $setting_plan]);
 
+        if(Carbon::parse($setting_plan->end_time)->gt(Carbon::now())){
+            $setting_plan->status = 'Active';
+        }else{
+            $setting_plan->status = 'Inactive';
+        }
+        return view('company.plan_selection',['company_plans' => $Company_plans,'setting_plan'=> $setting_plan]);
+
+    }
+
+    public function PlanUpdate($plan_id){
+        $today = \Carbon\Carbon::now()->toDateTimeString();
+        $tomorrow = Carbon::yesterday()->toDateTimeString();
+        $today_date = $date_formate = \Carbon\Carbon::parse($today)->format('Y-m-d H:i:s'); //
+        $auth_company =  Auth::user();
+        $setting_plan = CompanySetting::where('company_id',$auth_company->id)->update(['is_select_plan'=> 1,
+            'pricing_plan_id' => $plan_id,
+            'start_time'=> $today,
+            'end_time'=>$tomorrow
+        ]);
+
+        return Redirect()->back()->with(['message' => 'The Message']);
     }
 
     /**

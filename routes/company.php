@@ -12,3 +12,4 @@ Route::get('/home', function () {
 
 Route::get('/dashboard', 'CompanyDashboardController@index');
 Route::get('/plan-selection', 'CompanyDashboardController@PlanSelection');
+Route::get('/plan-update/{plan_id}', 'CompanyDashboardController@PlanUpdate');

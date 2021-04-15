@@ -19,7 +19,11 @@
                                             </div>
                                         @endforeach
                                         <div class="mb-3 text-center">
-                                            <button type="button" class="btn btn-rounded btn-primary">{{($plan_setting->is_select_plan == 1 && $plan_setting->pricing_plan_id == $plans->id) ? "Selected" : "Select"}}</button>
+                                            @if($setting_plan->status == 'Active') 
+                                                <a type="button" class="btn btn-rounded btn-primary {{$setting_plan->status}}" href="{{url('/company/plan-update/' . $plans->id)}}">{{($setting_plan->is_select_plan == 1 && $setting_plan->pricing_plan_id == $plans->id) ? "Selected" : "Select"}}</a>
+                                            @else
+                                                <a type="button" class="btn btn-rounded btn-primary {{$setting_plan->status}}" href="{{url('/company/plan-update/' . $plans->id)}}">{{($setting_plan->is_select_plan == 1 && $setting_plan->pricing_plan_id == $plans->id) ? "Reactivate" : "Select"}}</a>
+                                            @endif
                                         </div>
                                         
                                     </div>
@@ -33,4 +37,5 @@
 		</div>
 @endsection
 @push('scripts')
+
 @endpush
