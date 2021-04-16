@@ -37,7 +37,7 @@
                                 <h4>COMPANY</h4>
                                 <p>Signed in companies are able to post new<br> job offers, searching for candidate...</p>
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-plus-circle"></i> &nbsp;REGISTER AS COMPANY</a></li>
+                                    <li><a href="{{url('company/register')}}"><i class="fa fa-plus-circle"></i> &nbsp;REGISTER AS COMPANY</a></li>
                                 </ul>
                             </div>
                             <div class="jp_regis_center_tag_wrapper">
