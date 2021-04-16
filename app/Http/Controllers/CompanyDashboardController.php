@@ -48,7 +48,7 @@ class CompanyDashboardController extends Controller
 
     public function PlanUpdate($plan_id){
         $today = \Carbon\Carbon::now()->toDateTimeString();
-        $tomorrow = Carbon::yesterday()->toDateTimeString();
+        $tomorrow = Carbon::tomorrow()->toDateTimeString();
         $today_date = $date_formate = \Carbon\Carbon::parse($today)->format('Y-m-d H:i:s'); //
         $auth_company =  Auth::user();
         $setting_plan = CompanySetting::where('company_id',$auth_company->id)->update(['is_select_plan'=> 1,
