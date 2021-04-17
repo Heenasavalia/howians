@@ -16,6 +16,15 @@
 						</ul>
                     </li>
 
+
+                    <li>
+                        <a href="{{ url('company/show_all_job') }}" class="ai-icon" aria-expanded="false">
+							<i class="flaticon-381-settings-2"></i>
+							<span class="nav-text">Show Job</span>
+						</a>
+					</li>
+
+
                     <li>
                         <a href="{{ url('company/change_password') }}" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-settings-2"></i>
@@ -36,7 +45,7 @@
 
 
 
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <!-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-television"></i>
 							<span class="nav-text">Apps</span>
 						</a>
@@ -160,7 +169,10 @@
                             </li>
                             <li><a href="page-lock-screen.html">Lock Screen</a></li>
                         </ul>
-                    </li>
+                    </li> -->
+
+
+
                 </ul>
 				
 				<div class="copyright">
