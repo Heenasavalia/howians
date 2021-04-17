@@ -265,7 +265,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
+$(document).ready(function(){
     var current_fs, next_fs, previous_fs; //fieldsets
     var opacity;
     var current = 1;
@@ -338,6 +338,28 @@
     return false;
     })
 
+    var url = "{{ url('/') }}";
+    $.ajax({
+        type: "GET",
+        url: url + "/api/countries",
+        success: function (res) {
+            if (res) {
+                $("#country").empty();
+                $.each(res, function (key, value) {
+                    if (value == country) {
+                        $("#country").append('<option selected value="' + value + '">' + value + '</option>');
+                    } else {
+                        $("#country").append('<option value="' + value + '">' + value + '</option>');
+                    }
+                });
+
+            } else {
+                $("#country").empty();
+            }
+        }
+    });
+
 });
 </script>
+
 @endpush
