@@ -15,6 +15,27 @@
 							<li><a href="statistics.html">Statistics</a></li>
 						</ul>
                     </li>
+
+                    <li>
+                        <a href="{{ url('company/change_password') }}" class="ai-icon" aria-expanded="false">
+							<i class="flaticon-381-settings-2"></i>
+							<span class="nav-text">Change Password</span>
+						</a>
+					</li>
+                    <li>
+                        <a href="{{ url('/company/logout') }}"
+                            onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                            <i class="flaticon-381-settings-2"></i>Logout
+                        </a>
+
+                        <form id="logout-form" action="{{ url('/company/logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
+
+
+
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-television"></i>
 							<span class="nav-text">Apps</span>

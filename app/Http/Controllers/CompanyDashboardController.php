@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Support\Facades\Redirect;
+use App\Company;
+use Hash;
 
 
 
@@ -123,4 +125,24 @@ class CompanyDashboardController extends Controller
     {
         //
     }
+
+    public function update_password(){
+        //dd('adt se mjbur');
+        return view('company.change_password');
+    }
+    public function changePassword(Request $request) {
+        $this->validate($request, [
+            'current_password' => 'required',
+            'new_password' => 'required',
+            'new_confirm_password' => 'same:new_password',
+        ]);
+        //dd($request);
+        $company = Company::find(Auth::id());
+        if (!Hash::check($request->current_password, $company->password)) {
+           return redirect()->back()->with('error', 'Current password does not match!');
+        }
+        $company->password = Hash::make($request->new_password);
+        $company->save();
+        return redirect('company/dashboard')->with('Success', 'Great, Your password has been changed successfully :)');
+   }
 }
