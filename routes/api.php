@@ -16,4 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/countries','ApiController@countries');
+Route::post('/states','ApiController@states');
+Route::post('/cities','ApiController@cities');
+Route::post('checkemail','ApiController@checkemail');
+Route::post('checkmobile','ApiController@checkmobile');
 

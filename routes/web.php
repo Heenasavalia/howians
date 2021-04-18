@@ -57,3 +57,5 @@ Route::group(['prefix' => 'company'], function () {
   Route::get('/password/reset/{token}', 'CompanyAuth\ResetPasswordController@showResetForm');
 });
 Route::any('education','EducationController@addeducations');
+Route::get('/get_all_educations','EducationController@getEducations');
+// Route::get('/displayallplan', 'UserController@DiaplayPlans');
