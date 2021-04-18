@@ -10,4 +10,14 @@ class PricingPalnFeture extends Model
     protected $fillable = [
          'pricing_plan_id','pricing_feture_id'
     ];
+
+    // public function pricing_plans()
+    // {
+    //     return $this->belongsTo('App\PricingPlans');
+    // }
+
+    // public function pricing_features()
+    // {
+    //     return $this->belongsTo('App\PricingFetures');
+    // }
 }

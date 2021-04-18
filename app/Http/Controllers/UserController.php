@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Education;
+use App\PricingPalnFeture;
 use Illuminate\Http\Request;
+// use Carbon\Carbon;
+// use DB;
 
-class EducationController extends Controller
+class UserController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -83,20 +85,10 @@ class EducationController extends Controller
        //
     }
 
-    public function addeducations()
+    public function DiaplayPlans()
     {
-        $data = ['B.Com','Bsc','Bca','Ba','BE','BscIT'];
-        foreach($data as $d){
-            $file_data = [
-                'field' => $d
-            ];
-            $education = Education::create($file_data);
-        }
-    }
-    
-    public function getEducations()
-    {
-        $education = Education::pluck("field", "id")->all();
-        return response()->json($education);
+        // $plans = PricingPalnFeture::all();
+        $plans = PricingPalnFeture::where('id',1)->get();
+        dd($plans);
     }
 }

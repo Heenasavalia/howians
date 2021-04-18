@@ -10,3 +10,4 @@ Route::get('/home', function () {
     return view('user.home');
 })->name('home');
 
+Route::get('/planselect', 'UserController@PlanSelection');
