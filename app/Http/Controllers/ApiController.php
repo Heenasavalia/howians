@@ -14,12 +14,14 @@ class ApiController extends Controller
     }
 
     public function states(Request $request) {
-        // dd($request->all());
         $country = $request->all()['country'];
         $country_id = DB::table("countries")->where('name', $country)->pluck("id");
         $states = DB::table("states")
-                ->where("country_id", $country_id)
-                ->pluck("name", "id");
+                ->where("country_id", $country_id);
+        if (isset($request->all()['register']) && $request->all()['register'] == true) {
+            $states = $states->where('status', 'Active');
+        }
+        $states = $states->pluck("name", "id");
         return response()->json($states);
     }
 

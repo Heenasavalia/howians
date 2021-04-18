@@ -22,3 +22,6 @@ Route::post('/cities','ApiController@cities');
 Route::post('checkemail','ApiController@checkemail');
 Route::post('checkmobile','ApiController@checkmobile');
 
+Route::get('/countries', 'ApiController@countries');
+Route::post('/states', 'ApiController@states');
+Route::post('/cities', 'ApiController@cities');

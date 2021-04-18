@@ -230,7 +230,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
+$(document).ready(function(){
     var current_fs, next_fs, previous_fs; //fieldsets
 
     var url = "{{ url('/') }}";
@@ -473,4 +473,5 @@
     }, 'Mobile Number You Entered is Already Exists');
 });
 </script>
+
 @endpush
