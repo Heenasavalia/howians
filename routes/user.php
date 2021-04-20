@@ -12,3 +12,4 @@ Route::get('/home', function () {
 
 Route::get('/planselect', 'UserController@PlanSelection');
 Route::get('/displayallplan', 'UserController@DiaplayPlans');
+Route::post('/select_plan', 'UserController@selectPlans');
