@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\PricingPalnFeture;
 use Illuminate\Http\Request;
-// use Carbon\Carbon;
-// use DB;
+use App\PricingPalnFeture;
+use App\PricingFetures;
+use App\PricingPlans;
+use DB;
 
 class UserController extends Controller
 {
@@ -87,8 +88,13 @@ class UserController extends Controller
 
     public function DiaplayPlans()
     {
-        // $plans = PricingPalnFeture::all();
-        $plans = PricingPalnFeture::where('id',1)->get();
-        dd($plans);
+        $studen_plans = PricingPlans::join('pricing_paln_fetures', 'pricing_plans.id', '=', 'pricing_paln_fetures.pricing_plan_id')
+             ->join('pricing_fetures', 'pricing_paln_fetures.pricing_feture_id', '=', 'pricing_fetures.id')
+             ->select('pricing_plans.id as price_id','pricing_plans.name as plan_name','pricing_plans.price','pricing_plans.type','pricing_plans.status','pricing_fetures.id as feature_id','pricing_fetures.name','pricing_paln_fetures.id as price_feature_id','pricing_paln_fetures.pricing_plan_id','pricing_paln_fetures.pricing_feture_id')
+             ->where('type', 'student')
+             ->where('status', 'Active')
+            //  ->groupBy('pricing_plans.id')
+             ->get();
+        dd($studen_plans);
     }
 }

@@ -11,14 +11,14 @@ class PricingPlans extends Model
          'name','price' ,'type','status',
     ];
 
-    
-    // public function fetures(){
-    // 	$this->hasMany()
-    // }
-
     public function fetures()
     {
         return $this->belongsToMany('App\PricingFetures','pricing_paln_fetures','pricing_plan_id','pricing_feture_id');
     }
+
+    // public function plans_feature()
+    // {
+    //     return $this->belongsToMany('App\PricingPalnFeture');
+    // }
 
 }
