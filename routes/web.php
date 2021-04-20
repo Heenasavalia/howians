@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'user'], function () {
   Route::get('/login', 'UserAuth\LoginController@showLoginForm')->name('login');
-  Route::post('/login', 'UserAuth\login@login');
+  Route::post('/login', 'UserAuth\LoginController@login');
   Route::post('/logout', 'UserAuth\LoginController@logout')->name('logout');
 
   Route::get('/register', 'UserAuth\RegisterController@showRegistrationForm')->name('register');
@@ -58,4 +58,3 @@ Route::group(['prefix' => 'company'], function () {
 });
 Route::any('education','EducationController@addeducations');
 Route::get('/get_all_educations','EducationController@getEducations');
-// Route::get('/displayallplan', 'UserController@DiaplayPlans');
