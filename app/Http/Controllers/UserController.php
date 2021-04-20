@@ -88,13 +88,8 @@ class UserController extends Controller
 
     public function DiaplayPlans()
     {
-        $studen_plans = PricingPlans::join('pricing_paln_fetures', 'pricing_plans.id', '=', 'pricing_paln_fetures.pricing_plan_id')
-             ->join('pricing_fetures', 'pricing_paln_fetures.pricing_feture_id', '=', 'pricing_fetures.id')
-             ->select('pricing_plans.id as price_id','pricing_plans.name as plan_name','pricing_plans.price','pricing_plans.type','pricing_plans.status','pricing_fetures.id as feature_id','pricing_fetures.name','pricing_paln_fetures.id as price_feature_id','pricing_paln_fetures.pricing_plan_id','pricing_paln_fetures.pricing_feture_id')
-             ->where('type', 'student')
-             ->where('status', 'Active')
-            //  ->groupBy('pricing_plans.id')
-             ->get();
-        dd($studen_plans);
+        $plans = PricingPlans::with('fetures')->where('type','student')->where('status','Active')->get();
+             return view('user.plans',['plans'=>$plans]);
+        // dd($studen_plans);
     }
 }
