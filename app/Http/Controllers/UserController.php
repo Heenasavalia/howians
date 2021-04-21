@@ -7,6 +7,9 @@ use App\PricingPalnFeture;
 use App\PricingFetures;
 use App\PricingPlans;
 use DB;
+use Illuminate\Support\Facades\Auth;
+use App\UserSettings;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -88,13 +91,59 @@ class UserController extends Controller
 
     public function DiaplayPlans()
     {
-        $studen_plans = PricingPlans::join('pricing_paln_fetures', 'pricing_plans.id', '=', 'pricing_paln_fetures.pricing_plan_id')
-             ->join('pricing_fetures', 'pricing_paln_fetures.pricing_feture_id', '=', 'pricing_fetures.id')
-             ->select('pricing_plans.id as price_id','pricing_plans.name as plan_name','pricing_plans.price','pricing_plans.type','pricing_plans.status','pricing_fetures.id as feature_id','pricing_fetures.name','pricing_paln_fetures.id as price_feature_id','pricing_paln_fetures.pricing_plan_id','pricing_paln_fetures.pricing_feture_id')
-             ->where('type', 'student')
-             ->where('status', 'Active')
-            //  ->groupBy('pricing_plans.id')
-             ->get();
-        dd($studen_plans);
+        $plans = PricingPlans::with('fetures')->where('type','student')->where('status','Active')->get();
+        // dd($plans);
+             return view('user.plans',['plans'=>$plans]);
+        // dd($studen_plans);
+    }
+
+    public function selectPlans(Request $request)
+    {
+        $user = Auth::user();
+        $data = $request->all();
+        $start_date = $data['start_time'];
+        $end_date = $data['end_time'];
+        $start_date = date('d-m-Y', strtotime($start_date));
+        $end_date = date('d-m-Y', strtotime($end_date));
+        $plan = $data['id'];
+
+        $mytime = date('H:i:s');
+
+        $start_date = date('d-m-Y', strtotime($start_date))." ".$mytime;
+        $end_date = date('d-m-Y', strtotime($end_date))." ".$mytime;
+        $user_data = [
+            'user_id' => $user->id,
+            'plan_id' => $plan,
+            'is_select_plan' => 1,
+            'start_time' => $start_date,
+            'end_time' => $end_date
+        ];
+
+        $start_date = \Carbon\Carbon::parse($start_date)->format('Y-m-d H:i:s');
+        $end_date = \Carbon\Carbon::parse($end_date)->format('Y-m-d H:i:s');
+        $user_setting = UserSettings::where('user_id',$user->id)->first();
+        if(empty($user_setting)){
+            UserSettings::create([
+                        'user_id' => $user->id,
+                        'plan_id' => $plan,
+                        'is_select_plan' => 1,
+                        'start_time' => $start_date,
+                        'end_time' => $end_date
+                    ]);
+        }else{
+            $user_setting->update(['is_select_plan'=> 1,
+                'plan_id' => $plan,
+                'start_time'=> $start_date,
+                'end_time'=>$end_date
+            ]);
+        }
+    }
+
+    public function profile()
+    {
+        $user = Auth::user();
+        $user_setting = UserSettings::where('user_id',$user->id)->first();
+        // dd($user_setting);
+        return view('user.profile',['user_setting'=>$user_setting]);
     }
 }

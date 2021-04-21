@@ -16,9 +16,4 @@ class PricingPlans extends Model
         return $this->belongsToMany('App\PricingFetures','pricing_paln_fetures','pricing_plan_id','pricing_feture_id');
     }
 
-    // public function plans_feature()
-    // {
-    //     return $this->belongsToMany('App\PricingPalnFeture');
-    // }
-
 }
