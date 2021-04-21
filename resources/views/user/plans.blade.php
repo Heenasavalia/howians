@@ -24,13 +24,13 @@
                         {{ Form:: open(array('url' => "/user/select_plan",'method'=>'post', 'id' => 'plans')) }}
                         <input type="hidden" name="id" value="{{$plan->id}}">
                             <div class="input-group date">
-                                <input type="text" class="form-control start_date" id="start_date" name="start_time">
+                                <input type="text" class="form-control start_date" id="start_date" name="start_time" autocomplete="off">
                                 <div class="input-group-addon">
                                     <span class="glyphicon glyphicon-th"></span>
                                 </div>
                             </div>
                             <div class="input-group date">
-                                <input type="text" class="form-control end_date" id="end_date" name="end_time">
+                                <input type="text" class="form-control end_date" id="end_date" name="end_time" autocomplete="off">
                                 <div class="input-group-addon">
                                     <span class="glyphicon glyphicon-th"></span>
                                 </div>
@@ -51,8 +51,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
 <script type="text/javascript">
  $(document).ready(function() {
-    $('.start_date').datepicker();
-    $('.end_date').datepicker();
+    $('.start_date').datepicker({autoclose: true,});
+    $('.end_date').datepicker({autoclose: true,});
 });
 </script>
 @endpush('scripts')
