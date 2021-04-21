@@ -19,10 +19,10 @@
                                             </div>
                                         @endforeach
                                         <div class="mb-3 text-center">
-                                            @if($setting_plan->status == 'Active') 
-                                                <a type="button" class="btn btn-rounded btn-primary {{$setting_plan->status}}" href="{{url('/company/plan-update/' . $plans->id)}}">{{($setting_plan->is_select_plan == 1 && $setting_plan->pricing_plan_id == $plans->id) ? "Selected" : "Select"}}</a>
+                                            @if($company->plan_status == 'Active') 
+                                                <a type="button" class="btn btn-rounded btn-primary {{$company->plan_status}}" href="{{url('/company/plan-update/' . $plans->id)}}">{{($company->is_select_plan == 1 && $company->pricing_plan_id == $plans->id) ? "Selected" : "Select"}}</a>
                                             @else
-                                                <a type="button" class="btn btn-rounded btn-primary {{$setting_plan->status}}" href="{{url('/company/plan-update/' . $plans->id)}}">{{($setting_plan->is_select_plan == 1 && $setting_plan->pricing_plan_id == $plans->id) ? "Reactivate" : "Select"}}</a>
+                                                <a type="button" class="btn btn-rounded btn-primary {{$company->plan_status}}" href="{{url('/company/plan-update/' . $plans->id)}}">{{($company->is_select_plan == 1 && $company->pricing_plan_id == $plans->id) ? "Reactivate" : "Select"}}</a>
                                             @endif
                                         </div>
                                         

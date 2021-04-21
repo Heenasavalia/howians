@@ -34,15 +34,15 @@ class CompanyDashboardController extends Controller
 
         // dd($today_date);
         $auth_company =  Auth::user();
-        $setting_plan = CompanySetting::select('company_id','is_select_plan','pricing_plan_id','start_time','end_time')->where('company_id',$auth_company->id)->first();
+        // $setting_plan = CompanySetting::select('company_id','is_select_plan','pricing_plan_id','start_time','end_time')->where('company_id',$auth_company->id)->first();
         $Company_plans = PricingPlans::with('fetures')->where('type','company')->where('status','Active')->get();
 
-        if(Carbon::parse($setting_plan->end_time)->gt(Carbon::now())){
-            $setting_plan->status = 'Active';
+        if(Carbon::parse($auth_company->end_time)->gt(Carbon::now())){
+            $auth_company->plan_status = 'Active';
         }else{
-            $setting_plan->status = 'Inactive';
+            $auth_company->plan_status = 'Inactive';
         }
-        return view('company.plan_selection',['company_plans' => $Company_plans,'setting_plan'=> $setting_plan]);
+        return view('company.plan_selection',['company_plans' => $Company_plans,'company'=> $auth_company]);
 
     }
 
@@ -51,7 +51,7 @@ class CompanyDashboardController extends Controller
         $tomorrow = Carbon::tomorrow()->toDateTimeString();
         $today_date = $date_formate = \Carbon\Carbon::parse($today)->format('Y-m-d H:i:s'); //
         $auth_company =  Auth::user();
-        $setting_plan = CompanySetting::where('company_id',$auth_company->id)->update(['is_select_plan'=> 1,
+        $setting_plan = $auth_company->update(['is_select_plan'=> 1,
             'pricing_plan_id' => $plan_id,
             'start_time'=> $today,
             'end_time'=>$tomorrow
