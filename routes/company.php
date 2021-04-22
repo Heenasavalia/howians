@@ -1,4 +1,5 @@
 <?php
+use App\Http\Middleware\CheckCompanyPlan;
 
 Route::get('/home', function () {
     $users[] = Auth::user();
@@ -10,9 +11,20 @@ Route::get('/home', function () {
     return view('company.home');
 })->name('home');
 
+// Route::middleware([CheckCompanyPlan::class])->group(function () {
+//     Route::get('/', function () {
+//         //
+//     });
+
+    // Route::get('/profile', function () {
+    //     //
+    // })->withoutMiddleware([EnsureTokenIsValid::class]);
+// });
+
 Route::get('/dashboard', 'CompanyDashboardController@index');
 Route::get('/plan-selection', 'CompanyDashboardController@PlanSelection');
 Route::get('/plan-update/{plan_id}', 'CompanyDashboardController@PlanUpdate');
 
 Route::get('change_password','CompanyDashboardController@update_password');
 Route::post('change-password','CompanyDashboardController@changePassword');
+Route::resource('job-requirement','CompanyJobRequirmentController');

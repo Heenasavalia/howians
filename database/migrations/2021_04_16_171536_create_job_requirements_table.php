@@ -31,7 +31,7 @@ class CreateJobRequirementsTable extends Migration
             $table->string('start_time')->nullable();
             $table->string('end_time')->nullable();
             $table->string('work_experience')->nullable();
-            $table->enum('job_type',['part_time','fulltime','freelacer'])->nullable();
+            $table->enum('job_type',['part_time','full_time','freelacer'])->nullable();
             $table->enum('work_type',['online','offline'])->nullable();
             $table->longText('discription')->nullable();
             $table->longText('address')->nullable();
