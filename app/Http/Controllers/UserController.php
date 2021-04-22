@@ -10,6 +10,8 @@ use DB;
 use Illuminate\Support\Facades\Auth;
 use App\UserSettings;
 use Carbon\Carbon;
+use App\User;
+use App\Education;
 
 class UserController extends Controller
 {
@@ -63,7 +65,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        dd($id);
     }
 
     /**
@@ -75,7 +77,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd($request->all(), $id);
     }
 
     /**
@@ -139,11 +141,13 @@ class UserController extends Controller
         }
     }
 
-    public function profile()
+    public function profile($id)
     {
-        $user = Auth::user();
+        $user = User::find($id);
+        $education = Education::all();
+        $country = DB::table('countries')->get();
         $user_setting = UserSettings::where('user_id',$user->id)->first();
         // dd($user_setting);
-        return view('user.profile',['user_setting'=>$user_setting]);
+        return view('user.profile',['user'=>$user,'education' => $education, 'country' => $country]);
     }
 }

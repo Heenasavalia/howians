@@ -6,59 +6,67 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <div class="container">
     <div class="row">
+   
         <h1>profile update</h1>
-        {{ Form:: open(array('url'=>['user/user/'.Auth::user()->id ],'method'=>'PUT', 'id' => 'profile_update_frm','files' => true, 'class' => 'profile_update_frm')) }}
+        {{ Form:: open(array('url'=>['user/profile/'.Auth::user()->id ],'method'=>'PUT', 'id' => 'profile_update_frm','files' => true, 'class' => 'profile_update_frm')) }}
             {{ csrf_field() }}
                 <div class="form-card">
-                    <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
-                        <label for="first_name" class="col-md-4 control-label">First Name</label>
-                        <div class="col-md-6">
-                            <input id="first_name" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" autofocus>
-
-                            @if ($errors->has('first_name'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('first_name') }}</strong>
-                                </span>
-                            @endif
+                    <div class="col-md-6">
+                        <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
+                            <label for="first_name" class="col-md-4 control-label">First Name</label>
+                            <div class="col-md-6">
+                                <input id="first_name" type="text" class="form-control" name="first_name" value="{{ $user->first_name}}" autofocus>
+                                @if ($errors->has('first_name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('first_name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
-                        <label for="last_name" class="col-md-4 control-label">Last Name</label>
+                    <div class="col-md-6">
+                        <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
+                            <label for="last_name" class="col-md-4 control-label">Last Name</label>
 
-                        <div class="col-md-6">
-                            <input id="last_name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" autofocus>
+                            <div class="col-md-6">
+                                <input id="last_name" type="text" class="form-control" name="last_name" value="{{ $user->last_name}}" autofocus>
 
-                            @if ($errors->has('last_name'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('last_name') }}</strong>
-                                </span>
-                            @endif
+                                @if ($errors->has('last_name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('last_name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                    <div class="col-md-6">
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                        <div class="col-md-6">
-                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ $user->email}}">
 
-                            @if ($errors->has('email'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                            @endif
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
-                        <label for="mobile" class="col-md-4 control-label">Contact Number</label>
+                    <div class="col-md-6">
+                        <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
+                            <label for="mobile" class="col-md-4 control-label">Contact Number</label>
 
-                        <div class="col-md-6">
-                            <input id="mobile" type="text" class="form-control" name="mobile" value="{{ old('mobile') }}">
+                            <div class="col-md-6">
+                                <input id="mobile" type="text" class="form-control" name="mobile" value="{{ $user->mobile}}">
 
-                            @if ($errors->has('mobile'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('mobile') }}</strong>
-                                </span>
-                            @endif
+                                @if ($errors->has('mobile'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('mobile') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div> 
@@ -67,8 +75,11 @@
                     <div class="col-md-6">
                             <label class="control-label">Gender</label>
                                 <select class="form-control" name="gender" id="gender">
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
+                                @if($user->gender == "male")
+                                    <option value="male">Male</option>
+                                @else
+                                    <option value="female">Female</option>
+                                @endif
                                 </select>
                         </div>
                 </div>
@@ -77,7 +88,9 @@
                         <div class="form-group{{ $errors->has('education_id') ? ' has-error' : '' }}">
                             <label class="business_label" for ="education_id">Education</label>
                             <select id="education_id" name="education_id"  class="form-control" required="required">
-
+                                @foreach($education as $edu)
+                                        <option value="{{ $edu->id }}" {{ $edu->id == $user->education_id ? 'selected' : '' }}>{{ $edu->field }}</option>
+                                @endforeach
                             </select>
                             @if ($errors->has('education_id'))
                             <span class="help-block">
@@ -91,8 +104,11 @@
                     <div class="col-md-6">
                         <label class="control-label">Designation</label>
                             <select class="form-control" name="designation" id="designation">
-                                    <option value="fresher">Fresher</option>
-                                    <option value="experience">Experience</option>
+                            @if($user->designation == "fresher")
+                                <option value="fresher">Fresher</option>
+                            @else
+                                <option value="experience">Experience</option>
+                            @endif
                             </select>
                     </div>
                 </div>
@@ -100,18 +116,10 @@
                     <div class="col-md-6">
                         <label class="control-label">Years Of Experience</label>
                             <select class="form-control" name="years">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
+                                <?php $i = 0; ?>
+                                @for ($i = 1; $i <= 12; $i++)
+                                    <option value="{{ $i }}" {{ $edu->id == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                @endfor
                             </select>
                     </div>
                 </div>
@@ -120,11 +128,13 @@
                     <label class="control-label">Country</label>
                         <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }} country">
                             <select id="country" name="country"  class="form-control js-example-basic-single" required="required">
-                                <option  selected="selected">Select state</option>
+                            @foreach($country as $con)
+                                <option value="{{ $con->id }}" {{ $con->name == $user->country ? 'selected' : '' }}>{{ $con->name }}</option>
+                            @endforeach
                             </select>
                             @if ($errors->has('country'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('country') }}</strong>
+                                <strong>{{ $errors->first(' ') }}</strong>
                             </span>
                             @endif
                         </div>
@@ -160,40 +170,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <label for="password" class="col-md-4 control-label">Password</label>
-                    <div class="col-md-6">
-                        <input id="password" type="password" class="form-control" name="password">
-                        @if ($errors->has('password'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </span>
-                        @endif
-                    </div>
-                </div>
-                <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                    <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-                    <div class="col-md-6">
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
-                        @if ($errors->has('password_confirmation'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('password_confirmation') }}</strong>
-                            </span>
-                        @endif
-                    </div>
-                </div>
+                <div class="col-md-6">
                 <div class="form-group {{ $errors->has('profile_image') ? ' has-error' : '' }}">
-                    <label class="col-md-4 control-label">Profile  Image</label>
-                    <div class="col-md-6">
-                        <img src="{{asset('profile_img/')}}" onerror="this.src='';" alt="Profile Image" width="60px">
+                    <label class="control-label">Profile  Image</label>
+                        <img src="{{asset('user/profile_img/'.$user->profile_image)}}" onerror="this.src='';" alt="Profile Image" width="60px">
                         {{ Form:: file('image', array("class" => "form-control", 'id' => 'profile' , 'placeholder' => 'choose Image for Profile')) }}
                         <small class="text-danger">{{ $errors->first('profile_image') }}</small>
                     </div>
                 </div>
+                <div class="col-md-6">
                 <div class="form-group {{ $errors->has('resume') ? ' has-error' : '' }}">
-                    <label class="col-md-4 control-label">Resume Upload</label>
-                    <div class="col-md-6">
-                        <img src="{{asset('resume/')}}" onerror="this.src='';" alt="Resume" width="60px">
+                        <label class="col-md-4 control-label">Resume Upload</label>
+                        <img src="{{asset('user/resume/'.$user->profile_image)}}" onerror="this.src='';" alt="Resume" width="60px">
                         {{ Form:: file('file', array("class" => "form-control", 'id' => 'resume' , 'placeholder' => 'Upload resume')) }}
                         <small class="text-danger">{{ $errors->first('resume') }}</small>
                     </div>
@@ -204,7 +192,57 @@
 </div>
 @endsection
 @push('scripts')
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 <script type="text/javascript">
- 
+var url = "{{ url('/') }}";
+    $("select#country").change(function(){
+        var country = $( "#country option:selected" ).text();
+        $.ajax({
+            type: "POST",
+            url: url + "/api/states",
+            data: {"country":country},
+            success: function (res) {
+                if (res) {
+                    $("#state").empty();
+                    $.each(res, function (key1, value1) {
+                        // if (value1 == st) {
+                        //     $("#state").append('<option selected value="' + value1 + '">' + value1 + '</option>');
+                        // } else {
+                            $("#state").append('<option value="' + value1 + '">' + value1 + '</option>');
+                        // }
+                    });
+                } else {
+                    $("#state").empty();
+                }
+            }
+        });
+    });
+    $("select#state").change(function(){
+        var state = $( "#state option:selected" ).text();
+        $.ajax({
+            type: "POST",
+            data: {"state":state},
+            url: url + "/api/cities",
+            success: function (res) {
+                if (res) {
+                    $("#city").empty();
+                    $.each(res, function (key2, value2) {
+                        // if (value2 == cty) {
+                        //     $("#city").append('<option selected value="' + value2 + '">' + value2 + '</option>');
+                        // } else {
+                            $("#city").append('<option value="' + value2 + '">' + value2 + '</option>');
+                        // }
+
+                    });
+                } else {
+                    $("#city").empty();
+                }
+            }
+        });
+    });
+
 </script>
 @endpush('scripts')

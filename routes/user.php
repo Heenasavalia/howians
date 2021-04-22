@@ -13,5 +13,5 @@ Route::get('/home', function () {
 Route::get('/planselect', 'UserController@PlanSelection');
 Route::get('/displayallplan', 'UserController@DiaplayPlans');
 Route::post('/select_plan', 'UserController@selectPlans');
-Route::any('/profile', 'UserController@profile');
-Route::resource('/user', 'UserController');
+Route::any('/profile/{id}', 'UserController@profile');
+Route::resource('/profile', 'UserController');
