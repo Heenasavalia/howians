@@ -16,6 +16,7 @@ class AddFieldToJobRequirementsTable extends Migration
         Schema::table('job_requirements', function (Blueprint $table) {
             $table->enum('work_experiance_type',['fresher','experienced'])->after('work_experience')->nullable();
             $table->enum('gender',['male','female','other','all'])->after('other_salary_detail');
+            
         });
     }
 

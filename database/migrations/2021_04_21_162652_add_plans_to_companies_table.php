@@ -31,6 +31,7 @@ class AddPlansToCompaniesTable extends Migration
     {
         Schema::table('companies', function (Blueprint $table) {
             //
+            // 
         });
     }
 }

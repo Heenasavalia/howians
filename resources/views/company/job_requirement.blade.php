@@ -1,5 +1,6 @@
 @extends('company.layout.main_layout')
 @section('content')
+
 <link href="{{asset('/company/plugins/vendor/jquery-smartwizard/dist/css/smart_wizard.min.css')}}" rel="stylesheet" type="text/css"/>
 <link href="{{asset('/company/css/style.css')}}" rel="stylesheet" type="text/css"/>
 

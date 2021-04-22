@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Redirect;
 use App\Company;
 use Hash;
 
-
-
 class CompanyDashboardController extends Controller
 {
     /**
