@@ -9,7 +9,7 @@
                 <h1>{{Auth::user()->firstname}}</h1>
                 <div class="panel-body">
                     <a href="{{url('user/displayallplan')}}">Display Plans</a>
-                    <a href="{{url('user/profile/'.Auth::user()->id)}}">update profile</a>
+                    <a href="{{url('user/display-profile/'.Auth::user()->id)}}">update profile</a>
                 </div>
             </div>
         </div>
