@@ -8,6 +8,7 @@ Route::get('/home', function () {
     //dd($users);
 
     return view('user.home');
+    // return view('user.landing');
 })->name('home');
 
 Route::get('/planselect', 'UserController@PlanSelection');
