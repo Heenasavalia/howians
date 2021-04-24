@@ -1,6 +1,4 @@
-@extends('user.layout.user_layout')
 
-@section('content')
 
 <!-- Banner start -->
 <div class="banner" id="banner">
@@ -477,5 +475,3 @@
         </div>
     </div>
 </div>
-
-@endsection
