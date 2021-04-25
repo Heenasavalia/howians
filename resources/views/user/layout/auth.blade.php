@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,14 +13,22 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('user/css/user_registration.css') }}">
 
     <!-- Scripts -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
     <script>
         window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
+                                'csrfToken' => csrf_token(),
+                            ]); ?>
     </script>
 </head>
+
 <body>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
@@ -49,28 +58,27 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/user/login') }}">Login</a></li>
-                        <li><a href="{{ url('/user/register') }}">Register</a></li>
+                    <li><a href="{{ url('/user/login') }}">Login</a></li>
+                    <li><a href="{{ url('/user/register') }}">Register</a></li>
                     @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
 
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ url('/user/logout') }}"
-                                        onclick="event.preventDefault();
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ url('/user/logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
+                                    Logout
+                                </a>
 
-                                    <form id="logout-form" action="{{ url('/user/logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
+                                <form id="logout-form" action="{{ url('/user/logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
                     @endif
                 </ul>
             </div>
@@ -78,9 +86,10 @@
     </nav>
 
     @yield('content')
-    
+
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     @stack('scripts')
 </body>
+
 </html>

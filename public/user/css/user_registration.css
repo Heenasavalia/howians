@@ -1,16 +1,17 @@
 #heading {
     text-transform: uppercase;
-    color: #673AB7;
-    font-weight: normal;
+    color: #2525b5;
+    font-weight: bold;
+    font-size: 22px;
 }
 
-#msform {
+.commen-form {
     text-align: center;
     position: relative;
     padding: 20px;
 }
 
-#msform fieldset {
+.commen-form fieldset {
     background: white;
     border: 0 none;
     border-radius: 0.5rem;
@@ -24,12 +25,12 @@
     text-align: left;
 }
 
-#msform fieldset:not(:first-of-type) {
+.commen-form fieldset:not(:first-of-type) {
     display: none;
 }
 
-#msform input,
-#msform textarea {
+.commen-form input,
+.commen-form textarea {
     padding: 0 15px;
     border: 1px solid #ccc;
     border-radius: 0px;
@@ -43,8 +44,8 @@
     letter-spacing: 0;
 }
 
-#msform .has-error input,
-#msform .has-error textarea {
+.commen-form .has-error input,
+.commen-form .has-error textarea {
     border-color: #ff0000;
 }
 
@@ -52,33 +53,33 @@ select.form-control {
     border-radius: 0;
 }
 
-#msform input:focus,
-#msform textarea:focus {
+.commen-form input:focus,
+.commen-form textarea:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #673AB7;
+    border: 1px solid #2525b5;
     outline-width: 0;
 }
 
-#msform .action-button {
-    width: 100px;
-    background: #673AB7;
+.commen-form .action-button {
+    background: #2525b5;
     font-weight: bold;
     color: white;
     border: 0 none;
     border-radius: 0px;
     cursor: pointer;
-    padding: 10px 5px;
+    padding: 10px 20px;
     margin: 10px 0px 10px 5px;
+    width: auto;
 }
 
-#msform .action-button:hover,
-#msform .action-button:focus {
+.commen-form .action-button:hover,
+.commen-form .action-button:focus {
     background-color: #311B92;
 }
 
-#msform .action-button-previous {
+.commen-form .action-button-previous {
     width: 100px;
     background: #616161;
     font-weight: bold;
@@ -90,8 +91,8 @@ select.form-control {
     margin: 10px 5px 10px 0px;
 }
 
-#msform .action-button-previous:hover,
-#msform .action-button-previous:focus {
+.commen-form .action-button-previous:hover,
+.commen-form .action-button-previous:focus {
     background-color: #000000;
 }
 
@@ -103,14 +104,14 @@ select.form-control {
 
 .fs-title {
     font-size: 25px;
-    color: #673AB7;
+    color: #2525b5;
     margin-bottom: 10px;
     text-align: center;
     font-weight: bold;
 }
 
 .purple-text {
-    color: #673AB7;
+    color: #2525b5;
     font-weight: normal;
 }
 
@@ -139,7 +140,7 @@ select.form-control {
 }
 
 #progressbar .active {
-    color: #673AB7;
+    color: #2525b5;
 }
 
 #progressbar li {
@@ -198,7 +199,7 @@ select.form-control {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #673AB7;
+    background: #2525b5;
 }
 
 .progress {
@@ -206,7 +207,7 @@ select.form-control {
 }
 
 .progress-bar {
-    background-color: #673AB7;
+    background-color: #2525b5;
 }
 
 .fit-image {
@@ -237,11 +238,67 @@ body .form-box {
     font-size: 14px;
 }
 
+.checkbox label {
+    position: relative;
+}
+
+.checkbox label input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.checkbox label input[type="checkbox"]+span {
+    position: relative;
+    padding-left: 25px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.checkbox label input[type="checkbox"]+span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-family: FontAwesome;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    line-height: 18px;
+    color: #2525b5;
+    cursor: pointer;
+}
+
+.checkbox label input[type="checkbox"]:checked+span::before {
+    content: "\f00c";
+}
+
+.form-group a.btn.btn-link {
+    display: table;
+    margin: 0 auto;
+    padding: 0;
+    text-decoration: underline;
+    color: #2525b5;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group a.btn.btn-link:hover {
+    color: #000;
+}
+
 @media screen and (max-width: 767px) {
     #heading {
         font-size: 18px;
     }
-    #msform {
+    .commen-form {
         padding: 15px;
     }
     .fs-title {
