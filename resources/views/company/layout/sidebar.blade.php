@@ -1,27 +1,37 @@
+<nav class="pcoded-navbar" navbar-theme="themelight1" active-item-theme="theme1" sub-item-theme="theme2" active-item-style="style0" pcoded-navbar-position="fixed">
+    <div class="pcoded-inner-navbar main-menu">
+        <ul class="pcoded-item pcoded-left-item">
+            <div class="pcoded-navigatio-lavel">Site Main Page</div>
+            <li class="active">
+                <a href="{{ url('/') }}">
+                    <span class="pcoded-micon"><i class="fa fa-tachometer"></i></span>
+                    <span class="pcoded-mtext">Home Page</span>
+                </a>
+            </li>
+        </ul>
+        <div class="pcoded-navigatio-lavel">Menus</div>
+        <ul class="pcoded-item pcoded-left-item">
+            <li class="active">
+                <a href="{{ url('company/dashboard') }}">
+                    <span class="pcoded-micon"><i class="fa fa-tachometer"></i></span>
+                    <span class="pcoded-mtext">Dashboard</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="{{ url('company/plan-selection') }}">
+                    <span class="pcoded-micon"><i class="fa fa-handshake-o"></i></span>
+                    <span class="pcoded-mtext">Plan Selection</span>
+                </a>
+            </li>
 
-<div class="deznav">
-            <div class="deznav-scroll">
-				<ul class="metismenu" id="menu">
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-networking"></i>
-							<span class="nav-text">Dashboard</span>
-						</a>
-                        <ul aria-expanded="false">
-							<li><a href="{{url('/company/dashboard')}}">Dashboard</a></li>
-							<li><a href="{{url('/company/plan-selection')}}">Plan selection</a></li>
-							<li><a href="{{url('/company/job-requirement')}}">Job requirement</a></li>
-							<li><a href="profile.html">Profile</a></li>
-							<li><a href="companies.html">Companies</a></li>
-							<li><a href="statistics.html">Statistics</a></li>
-						</ul>
+            <li class="">
+                <a href="{{ url('company/job-requirement') }}">
+                    <span class="pcoded-micon"><i class="fa fa-product-hunt"></i></span>
+                    <span class="pcoded-mtext">Job Requirement</span>
+                </a>
+            </li>
 
-                </ul>
-				
-				<div class="copyright">
-					<p><strong>Jobie Dashboard</strong> © All Rights Reserved</p>
-					<p>Made with <span class="heart"></span> by DexignZone</p>
-				</div>
-			</div>
-        </div>        <!--**********************************
-            Sidebar end
-        ***********************************-->
+            
+        </ul>
+    </div>
+</nav>

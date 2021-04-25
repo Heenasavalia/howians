@@ -1,11 +1,38 @@
 @extends('company.layout.main_layout')
 @section('content')
+<!-- <link href="{{ asset('plugins/jquery-smartwizard/dist/css/smart_wizard.min.css') }}" rel='stylesheet' /> -->
 
-<link href="{{asset('/company/plugins/vendor/jquery-smartwizard/dist/css/smart_wizard.min.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{asset('/company/css/style.css')}}" rel="stylesheet" type="text/css"/>
+<!-- <link href="{{asset('/company/plugins/vendor/jquery-smartwizard/dist/css/smart_wizard.min.css')}}" rel="stylesheet" type="text/css"/> -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
 
-<div class="content-body">
-			<div class="container-fluid">
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+
+                <div class="page-header">
+                    <div class="row align-items-end">
+                        <div class="col-lg-8">
+                            <div class="page-header-title">
+                                <div class="d-inline">
+                                    <h4>Dashboard</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="page-header-breadcrumb">
+                                <ul class="breadcrumb-title">
+                                    <li class="breadcrumb-item">
+                                        <a href="{{ url('client/home') }}">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="JavaScript:Void(0);">Dashboard</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 				<div class="row">
                     <div class="col-xl-12 col-xxl-12">
                         <div class="card">
@@ -13,24 +40,7 @@
                                 <h4 class="card-title">Form step</h4>
                             </div>
                             <div class="card-body">
-								<div id="smartwizard" class="form-wizard order-create">
-									<ul class="nav nav-wizard">
-										<li><a class="nav-link" href="#wizard_Service"> 
-											<span>1</span> 
-										</a></li>
-										<li><a class="nav-link" href="#wizard_Time">
-											<span>2</span>
-										</a></li>
-										<li><a class="nav-link" href="#wizard_Details">
-											<span>3</span>
-										</a></li>
-										<li><a class="nav-link" href="#wizard_Payment">
-											<span>4</span>
-										</a></li>
-									</ul>
-									<div class="tab-content">
-										<div id="wizard_Service" class="tab-pane" role="tabpanel">
-											<div class="row">
+                            	<div class="row">
 												<div class="col-lg-12 mb-12">
 													<div class="form-group">
 														<label class="text-label">Job title</label>
@@ -95,8 +105,6 @@
 												</div>
 												
 											</div>
-										</div>
-										<div id="wizard_Time" class="tab-pane" role="tabpanel">
 											<div class="row">
 												<div class="col-lg-12 mb-2">
 													<div class="form-group">
@@ -112,8 +120,6 @@
 												</div>
 												
 											</div>
-										</div>
-										<div id="wizard_Details" class="tab-pane" role="tabpanel">
 											<div class="row">
 														<label class="text-label">job timing</label>
 												
@@ -193,8 +199,6 @@
 													</div>
 												</div>
 											</div>
-										</div>
-										<div id="wizard_Payment" class="tab-pane" role="tabpanel">
 											<div class="row emial-setup">
 												<div class="col-lg-12 col-sm-12 col-6">
 													<div class="form-row">
@@ -207,29 +211,49 @@
 			                                                <input type="text" class="form-control" placeholder="1234 Main St">
 			                                            </div>
 			                                            <div class="form-group col-md-4">
-			                                                <label>country</label>
-			                                                <input type="email" class="form-control" placeholder="Email">
+			                                                <label>Country</label>
+			                                                <select class="form-control default-select" id="country" name="country">
+			                                                <option value="">-- Country --</option>
+			                                                <!-- <option>12 pass</option>
+			                                                <option>Greduate</option>
+			                                                <option>Post greduate</option>
+			                                                <option>5</option> -->
+			                                            </select>
+			                                                <!-- <input type="" class="form-control" placeholder="Email"> -->
 			                                            </div>
 			                                            <div class="form-group col-md-4">
-			                                                <label>state</label>
-			                                                <input type="password" class="form-control" placeholder="Password">
+			                                                <label>State</label>
+			                                                <select class="form-control default-select" id="state" name="state">
+			                                                <option value="">-- State --</option>
+			                                               <!--  <option>12 pass</option>
+			                                                <option>Greduate</option>
+			                                                <option>Post greduate</option>
+			                                                <option>5</option> -->
+			                                            </select>
+			                                                <!-- <input type="password" class="form-control" placeholder="Password"> -->
 			                                            </div>
 			                                            <div class="form-group col-md-4">
 			                                                <label>City</label>
-			                                                <input type="text" class="form-control">
+			                                                <select class="form-control default-select" id="city" name="city">
+			                                                <option value="">-- City --</option>
+			                                                <!-- <option>12 pass</option>
+			                                                <option>Greduate</option>
+			                                                <option>Post greduate</option>
+			                                                <option>5</option> -->
+			                                            </select>
+			                                                <!-- <input type="text" class="form-control"> -->
 			                                            </div>
 			                                        </div>
 			                                        <div class="form-row">
 														<div class="form-group mb-0">
 			                                        	 	<label>Is work from home available? : </label>
-				                                            <label class="radio-inline mr-3"><input type="radio" name="optradio">Y	es</label>
+				                                            <label class="radio-inline mr-3"><input type="radio" name="optradio">Yes</label>
 				                                            <label class="radio-inline mr-3"><input type="radio" name="optradio">No</label>
-				                                            <label class="radio-inline mr-3"><input type="radio" name="optradio"> Option 3</label>
+				                                            
 				                                        </div>
 				                                    </div>
 												</div>
 											</div>
-
 											<div class="row">
 												<div class="col-12">
 													<div class="skip-email text-center">
@@ -238,19 +262,215 @@
 													</div>
 												</div>
 											</div>
-										</div>
-									</div>
-								</div>
+								
                             </div>
                         </div>
                     </div>
                 </div>
-		</div>
-	</div>
+			</div>
+        </div>
+    </div>
+</div>
 @endsection
 @push('scripts')
-<script src="{{asset('/company/plugins/vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js')}}" type="text/javascript"></script>
-<script src="{{asset('/company/plugins/vendor/jquery-validation/jquery.validate.min.js')}}" type="text/javascript"></script>
+<!-- <link href="{{ asset('plugins/jquery-smartwizard/dist/js/jquery.smartWizard.js') }}" rel='stylesheet' /> -->
+
+<!-- <script src="{{asset('/company/plugins/vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js')}}" type="text/javascript"></script> -->
+<!-- <script src="{{asset('/company/plugins/vendor/jquery-validation/jquery.validate.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('/company/js/plugins-init/jquery.validate-init.js')}}" type="text/javascript"></script>
-				
+ -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+
+	 <script type="text/javascript">
+        
+        // console.log(other_cat_array);
+        $(document).ready(function(){
+
+        	var url = "{{url('/')}}";
+
+            $('#country').select2({
+                width: '100%'
+            });
+            // $('#state').select2({
+            //     width: '100%'
+            // });
+            // $('#city').select2({
+            //     width: '100%'
+            // });
+            // $('#category_id').select2({
+            //     width: '100%'
+            // });
+            // var s2 = "";
+            // $('#other_category_id').select2({
+            //     width: '100%',
+            //     tags: ["cooking facilities Appliances", "for services rendered", "Electronics", "Automotive"],
+            // });
+            // $('#other_category_id').val(other_cat_array);
+
+            $.ajax({
+                type: "GET",
+                url: url + "/api/countries",
+                success: function (res) {
+                    if (res) {
+                        $("#country").empty();
+                        $.each(res, function (key, value) {
+                           $("#country").append('<option value="' + value + '">' + value + '</option>');
+                        });
+                        // var country = $('#country  :selected').val();
+                        // if (country) {
+                        //     var data = {
+                        //         "country": $('#country  :selected').val(),
+                        //     };
+                        //     $.ajax({
+                        //         type: "POST",
+                        //         data: data,
+                        //         url: url + "/api/states",
+                        //         success: function (res) {
+                        //             if (res) {
+                        //                 $("#state").empty();
+                        //                 $.each(res, function (key, value) {
+                        //                     if (value == current_client_business_state) {
+                        //                         $("#state").append('<option selected value="' + value + '">' + value + '</option>');
+                        //                     } else {
+                        //                         $("#state").append('<option value="' + value + '">' + value + '</option>');
+                        //                     }
+
+                        //                 });
+
+                        //                 var stat = $('#state  :selected').val();
+                        //                 if (stat) {
+                        //                     var data = {
+                        //                         "state": $('#state  :selected').val(),
+                        //                     };
+                        //                     $.ajax({
+                        //                         data: data,
+                        //                         type: "POST",
+                        //                         url: url + "/api/cities",
+                        //                         success: function (res) {
+                        //                             if (res) {
+                        //                                 $("#city").empty();
+                        //                                 $("#city").append('<option>Select</option>');
+                        //                                 $.each(res, function (key, value) {
+                        //                                     if (value == current_client_business_city) {
+                        //                                         $("#city").append('<option selected value="' + value + '">' + value + '</option>');
+                        //                                     } else {
+                        //                                         $("#city").append('<option value="' + value + '">' + value + '</option>');
+                        //                                     }
+
+                        //                                 });
+
+                        //                             } else {
+                        //                                 $("#city").empty();
+                        //                             }
+                        //                         }
+                        //                     });
+                        //                 } else {
+                        //                     $("#city").empty();
+                        //                 }
+
+                        //             } else {
+                        //                 $("#state").empty();
+                        //             }
+                        //         }
+                        //     });
+                        // } else {
+                        //     $("#state").empty();
+                        //     $("#city").empty();
+                        // }
+                    } else {
+                        $("#country").empty();
+                    }
+                }
+            });
+            // // get state
+            // $('#country').change(function(){
+            //     var countryID  = $(this).val();
+            //     var data = {
+            //         "country" : $('#country  :selected').val(),
+            //     };
+            //     if(countryID){
+            //         $.ajax({
+            //             data:data,
+            //             type:"POST",
+            //             url: url+"/api/states",
+            //             success:function(res){
+            //                 if(res){
+            //                     $("#state").empty();
+            //                     $("#state").append('<option>Select</option>');
+            //                     $.each(res,function(key,value){
+            //                         //console.log(value);
+            //                         $("#state").append('<option value="'+value+'">'+value+'</option>');
+            //                     });
+
+            //                 }else{
+            //                     $("#state").empty();
+            //                 }
+            //             }
+            //         });
+            //     }else{
+            //         $("#state").empty();
+            //         $("#city").empty();
+            //     }
+            // });
+            // $('#state').change(function(){
+            //     var stateID = $(this).val();
+            //     var data = {
+            //         "state" : $('#state  :selected').val(),
+            //     };
+            //     if(stateID){
+            //         $.ajax({
+            //             data:data,
+            //             type:"POST",
+            //             url: url+"/api/cities",
+            //             success:function(res){
+            //                 if(res){
+            //                     $("#city").empty();
+            //                     $("#city").append('<option>Select</option>');
+            //                     $.each(res,function(key,value){
+            //                         $("#city").append('<option value="'+value+'">'+value+'</option>');
+            //                     });
+
+            //                 }else{
+            //                     $("#city").empty();
+            //                 }
+            //             }
+            //         });
+            //     }else{
+            //         $("#city").empty();
+            //     }
+            // });
+
+            // // console.log(other_category);
+            // $.ajax({
+            //     type: "GET",
+            //     url: url + "/api/categories",
+            //     success: function (res) {
+            //         if (res) {
+            //             $("#category_id").empty();
+            //             $("#other_category_id").empty();
+            //             $.each(res, function (key, value) {
+            //                 if (key == current_category) {
+            //                     $("#category_id").append('<option value="' + key + '" selected>' + value + '</option>');
+            //                 }
+            //                 else {
+            //                     $("#category_id").append('<option value="' + key + '">' + value + '</option>');
+            //                 }
+            //                 // if()
+            //                 // $("#category_id").append('<option value="' + key + '">' + value + '</option>');
+            //                 $("#other_category_id").append('<option value="' + key + '">' + value + '</option>');
+            //             });
+            //         } else {
+            //             $("#category_id").empty();
+            //             $("#other_category_id").empty();
+            //         }
+            //     }
+            // });
+
+            // other_cat_array.forEach(function(e){
+            //     if(!s2.find('option:contains(' + e + ')').length)
+            //         s2.append($('<option>').text(e));
+            // });
+        });
+    </script>
+
 @endpush

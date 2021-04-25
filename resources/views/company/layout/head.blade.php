@@ -1,3 +1,5 @@
+<head>
+  
    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -6,33 +8,43 @@
 	<meta name="description" content="Some description for the page"/>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/images/favicon.png')}}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
 	
 	
 	
 	 
-	<link href="{{asset('/company/plugins/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet" type="text/css"/>
-	<link href="{{asset('/company/plugins/jqvmap/css/jqvmap.min.css" rel="stylesheet')}}" type="text/css"/>
-	<link href="{{asset('/company/plugins/chartist/css/chartist.min.css')}}" rel="stylesheet" rel="stylesheet" type="text/css"/>
-	<link href="{{asset('/company/plugins/cdn.lineicons.com/2.0/LineIcons.css')}}" rel="stylesheet" type="text/css"/>
-	<link href="{{asset('/company/plugins/owl-carousel/owl.carousel.css')}}" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/bootstrap/css/bootstrap.min.css')}}">
+
+    <link rel="stylesheet" href="{{ asset('company/assets/pages/chart/radial/css/radial.css')}}" type="text/css" media="all">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/icon/feather/css/feather.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/icon/font-awesome/css/font-awesome.min.css')}}">
+ <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/pages/advance-elements/css/bootstrap-datetimepicker.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/bootstrap-daterangepicker/css/daterangepicker.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/datedropper/css/datedropper.min.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/spectrum/css/spectrum.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/jquery-minicolors/css/jquery.minicolors.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/pages/data-table/css/buttons.dataTables.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/switchery/css/switchery.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/jquery.steps/css/jquery.steps.css')}}">
 
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/jquery.mCustomScrollbar.css')}}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
 
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet" type="text/css"/>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css"/>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet" type="text/css"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" type="text/css"/>
-<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet" type="text/css"/>
-<link href="{{asset('/company/icons/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{asset('/company/icons/font-awesome-old/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{asset('/company/icons/material-design-iconic-font/css/materialdesignicons.min.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{asset('/company/icons/themify-icons/css/themify-icons.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{asset('/company/icons/line-awesome/css/line-awesome.min.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{asset('/company/icons/avasta/css/style.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{asset('/company/icons/flaticon/flaticon.css')}}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/custom.css')}}">
 
-<link href="{{asset('/company/plugins/animate/animate.min.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{asset('/company/plugins/vendor/aos/css/aos.min.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{asset('/company/plugins/vendor/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{asset('/company/plugins/vendor/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" type="text/css"/>
-<link href="{{asset('/company/css/style.css')}}" rel="stylesheet" type="text/css"/>
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/bootstrap-datetimepicker.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/daterangepicker.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/datedropper.min.css')}}" />
+
+
+    <link rel="stylesheet" href="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.css" />
+
+    <link rel="stylesheet" href="{{asset('css/mobiscroll.jquery.min.css')}}">
+</head>

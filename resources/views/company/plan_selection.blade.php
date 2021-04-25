@@ -1,7 +1,31 @@
 @extends('company.layout.main_layout')
 @section('content')
-<div class="content-body">
-			<div class="container-fluid">
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+
+                <div class="page-header">
+                    <div class="row align-items-end">
+                        <div class="col-lg-8">
+                            <div class="page-header-title">
+                                <div class="d-inline">
+                                    <h4>Dashboard</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="page-header-breadcrumb">
+                                <ul class="breadcrumb-title">
+                                    <li class="breadcrumb-item">
+                                        <a href="{{ url('client/home') }}">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="JavaScript:Void(0);">Dashboard</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 				<div class="row">
                     @foreach($company_plans as $plans)
 					<div class="col-xl-3 col-xxl-4 col-lg-12">
@@ -34,7 +58,9 @@
                     @endforeach
 				</div>
 			</div>
-		</div>
+        </div>
+    </div>
+</div>
 @endsection
 @push('scripts')
 @endpush
