@@ -1,15 +1,12 @@
 @extends('user.layout.auth')
 @section('content')
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="{{ asset('user/css/user_registration.css') }}">
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-11 col-sm-9 col-md-9 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
             <div class="card px-0 pt-4 pb-0 mt-3 mb-3 form-box">
                 <h2 id="heading">Sign Up Your User Account</h2>
                 <p>Fill all form field to go to next step</p>
-                <form class="form-horizontal" id="msform" role="form" method="POST" action="{{ url('/user/register') }}">
+                <form class="form-horizontal commen-form" id="msform" role="form" method="POST" action="{{ url('/user/register') }}">
                     {{ csrf_field() }}
                     <!-- progressbar -->
                     <ul id="progressbar">
@@ -190,10 +187,6 @@
 </div>
 @endsection
 @push('scripts')
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         var current_fs, next_fs, previous_fs; //fieldsets
