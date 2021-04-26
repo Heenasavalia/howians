@@ -45,23 +45,15 @@ img {
     position: relative;
 }
 
-.jp_regis_right_side_box h4 {
-    color: #ffffff;
-}
-
 .jp_regis_left_side_box p,
 .jp_regis_right_side_box p {
     padding-top: 50px;
 }
 
-.jp_regis_right_side_box p {
-    color: #ffffffa3;
-}
-
 .jp_regis_left_side_box h4:before,
 .jp_regis_right_side_box h4:before {
     content: '';
-    border: 1px solid #2525b5;
+    border: 1px solid #4285f4;
     width: 8px;
     position: absolute;
     bottom: -15px;
@@ -73,18 +65,13 @@ img {
 .jp_regis_left_side_box h4:after,
 .jp_regis_right_side_box h4:after {
     content: '';
-    border: 1px solid #2525b5;
+    border: 1px solid #4285f4;
     width: 30px;
     position: absolute;
     bottom: -15px;
     left: 0;
     right: 0;
     margin: 0px auto;
-}
-
-.jp_regis_right_side_box h4:before,
-.jp_regis_right_side_box h4:after {
-    border-color: #fff;
 }
 
 .jp_regis_right_side_box ul,
@@ -109,7 +96,7 @@ img {
     line-height: 50px;
     color: #ffffff;
     font-weight: bold;
-    background: #2525b5;
+    background: #4285f4;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -126,13 +113,13 @@ img {
 }
 
 .jp_regis_right_side_box li a {
-    color: #2525b5;
+    color: #4285f4;
     background: #fff;
 }
 
 .jp_regis_right_side_box li a:hover {
     color: #fff;
-    background: #2525b5;
+    background: #4285f4;
 }
 
 .jp_regis_right_img_overlay {
@@ -141,7 +128,7 @@ img {
     left: 0%;
     right: 0%;
     bottom: 0%;
-    background: rgba(0, 0, 0, 0.9);
+    background: #ddd;
 }
 
 .jp_regis_right_side_box {
@@ -152,7 +139,7 @@ img {
 .jp_regis_center_tag_wrapper {
     width: 70px;
     height: 70px;
-    background: #2525b5;
+    background: #4285f4;
     position: absolute;
     left: -34px;
     top: 50%;
