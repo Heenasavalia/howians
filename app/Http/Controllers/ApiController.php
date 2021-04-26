@@ -58,4 +58,13 @@ class ApiController extends Controller
         }
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->get('query');
+        $data = [];
+        if ($search != NULL) {
+            
+        }
+    }
+
 }

@@ -17,9 +17,9 @@
                                 <div class="inline-search-area ml-auto mr-auto isa-3">
                                     <div class="search-boxs">
                                         <div class="search-col">
-                                            <input type="text" name="search" class="form-control has-icon b-radius" placeholder="Job title or Keywords">
+                                            <input type="text" id="main_search" name="search" class="form-control has-icon b-radius" placeholder="Job title or Keywords">
                                         </div>
-                                        <div class="search-col">
+                                        <!-- <div class="search-col">
                                             <select class="selectpicker search-fields" name="location">
                                                 <option>Location</option>
                                                 <option>New York</option>
@@ -27,7 +27,7 @@
                                                 <option>Canada</option>
                                                 <option>London</option>
                                             </select>
-                                        </div>
+                                        </div> -->
                                         <div class="find">
                                             <button class="btn button-theme btn-search btn-block b-radius">
                                                 <i class="fa fa-search"></i><strong>Find Job</strong>
@@ -479,3 +479,34 @@
 </div>
 
 @endsection
+@push('scripts')
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script>
+console.log("{{url('api/search')}}");
+$("#main_search").keyup(function(){
+    $("#main_search").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: "{{url('api/search')}}",
+                data: {
+                        query: request.term,
+                        
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
+                dataType: "json",
+                type: "POST",
+                success: function (data) {
+                    var resp = $.map(data, function (b) {
+                        console.log(b);
+                        // return b.business_name;
+                    });
+                    response(resp);
+                }
+            });
+        },
+        minLength: 2
+    });
+});
+</script>
+@endpush('scripts')
