@@ -1,6 +1,6 @@
 #heading {
     text-transform: uppercase;
-    color: #2525b5;
+    color: #4285f4;
     font-weight: bold;
     font-size: 22px;
 }
@@ -58,12 +58,12 @@ select.form-control {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #2525b5;
+    border: 1px solid #4285f4;
     outline-width: 0;
 }
 
 .commen-form .action-button {
-    background: #2525b5;
+    background: #4285f4;
     font-weight: bold;
     color: white;
     border: 0 none;
@@ -76,7 +76,7 @@ select.form-control {
 
 .commen-form .action-button:hover,
 .commen-form .action-button:focus {
-    background-color: #311B92;
+    background-color: #186df9;
 }
 
 .commen-form .action-button-previous {
@@ -104,14 +104,14 @@ select.form-control {
 
 .fs-title {
     font-size: 25px;
-    color: #2525b5;
+    color: #4285f4;
     margin-bottom: 10px;
     text-align: center;
     font-weight: bold;
 }
 
 .purple-text {
-    color: #2525b5;
+    color: #4285f4;
     font-weight: normal;
 }
 
@@ -140,7 +140,7 @@ select.form-control {
 }
 
 #progressbar .active {
-    color: #2525b5;
+    color: #4285f4;
 }
 
 #progressbar li {
@@ -199,7 +199,7 @@ select.form-control {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #2525b5;
+    background: #4285f4;
 }
 
 .progress {
@@ -207,7 +207,7 @@ select.form-control {
 }
 
 .progress-bar {
-    background-color: #2525b5;
+    background-color: #4285f4;
 }
 
 .fit-image {
@@ -272,7 +272,7 @@ body .form-box {
     height: 20px;
     border: 1px solid #ccc;
     line-height: 18px;
-    color: #2525b5;
+    color: #4285f4;
     cursor: pointer;
 }
 
@@ -285,7 +285,7 @@ body .form-box {
     margin: 0 auto;
     padding: 0;
     text-decoration: underline;
-    color: #2525b5;
+    color: #4285f4;
     font-weight: 600;
     font-size: 14px;
 }
