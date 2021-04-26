@@ -77,15 +77,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request->all());
-        $this->validate($request, [
-            'first_name' => 'required|string',
-            'last_name' => 'required|string',
-            'email' => 'required|email|max:255|unique:users,email,'. $id,
-            'mobile' => 'required|digits:10',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'file' => 'required|mimes:pdf,xlx,csv|max:2048',
-        ]);
+        // dump($request->all());
+        // $this->validate($request, [
+        //     'first_name' => 'required|string',
+        //     'last_name' => 'required|string',
+        //     'email' => 'required|email|max:255|unique:users,email,'. $id,
+        //     'mobile' => 'required|digits:10',
+        //     'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        //     'file' => 'required|mimes:pdf,xlx,csv|max:2048',
+        // ]);
         // dd($this->validate()); 
         $user = User::find($id);
         $data = $request->all();
@@ -106,23 +106,20 @@ class UserController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $fileName = time() . rand(11111, 99999) . '.' . $image->getClientOriginalExtension();
-            $image->move("user/profile_img", $fileName);
-            // dump($image);
-            // $user_data['image'] = Helpers::upload_image($image, "profile_img");
+            $image->move("user/profile_img/", $fileName);
+            $user_data['profile_image'] = $fileName;
         } else {
             $user_data['profile_image'] = $user->profile_image;
         }
         if ($request->hasFile('file')) {
             $image = $request->file('file');
             $fileName = time() . rand(11111, 99999) . '.' . $image->getClientOriginalExtension();
-            $image->move("user/resume", $fileName);
-            // dump($image);
-            // $user_data['file'] = Helpers::upload_image($image, "resume");
+            $image->move("user/resume/", $fileName);
+            $user_data['file'] = $fileName;
         } else {
             $user_data['file'] = $user->resume;
         }
-        // dd();
-
+        
         $update = $user->update($user_date);
         if ($update) {
             return redirect('user/home')->with('success', 'Great, Your Profile has been updated successfully :)');

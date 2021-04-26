@@ -114,17 +114,32 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Blog
+                            Settings
                         </a>
                         <ul class="dropdown-menu dm-2" aria-labelledby="navbarDropdownMenuLink7">
-                            <li><a class="dropdown-item" href="blog-columns-2.html">Blog 2 Columns</a></li>
-                            <li><a class="dropdown-item" href="blog-columns-3.html">Blog 3 Columns</a></li>
-                            <li><a class="dropdown-item" href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                            <li><a class="dropdown-item" href="blog-details.html">Blog Details</a></li>
+                            <li><a class="dropdown-item" href="blog-columns-2.html">Change Password</a></li>
+                            <li><a class="dropdown-item" href="blog-columns-3.html">Upload Resume</a></li>
+                            <li><a class="dropdown-item" href="blog-right-sidebar.html">Profile edit</a></li>
+                            <li><a class="dropdown-item" href="blog-details.html"></a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
+                @if(Auth::user()->id != null && Auth::user()->id != 0)
+                    <li class="nav-item ni-2">
+                        <a class="nav-link" href="#">
+                            {{Auth::user()->first_name}} {{Auth::user()->last_name}}
+                        </a>
+                    </li>
+                    <li class="nav-item ni-2">
+                        <a class="nav-link deffold" href="#">
+                            /
+                        </a>
+                    </li>
+                    <li class="nav-item ni-2">
+                        <a href="{{ url('/user/logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> Logout </a>
+                    </li>
+                @else
                     <li class="nav-item ni-2">
                         <a class="nav-link" href="login.html">
                             Login
@@ -140,6 +155,7 @@
                             Register
                         </a>
                     </li>
+                @endif
                     <li class="nav-item">
                         <a href="#" class="nav-link link-color"><i class="flaticon-plus"></i> Post a Jobs</a>
                     </li>
