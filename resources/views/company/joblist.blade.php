@@ -38,6 +38,7 @@
                                             <th>ID</th>
                                             <th>Job name</th>
                                             <th>Created date</th>
+                                            <th>View Candidate</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -113,6 +114,9 @@
                             return today;
                         }
                     },
+                    {
+                        data: 'title', name: 'title'
+                    }
                 ],
             });
         });
