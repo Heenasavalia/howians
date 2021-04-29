@@ -10,7 +10,7 @@
                             <div class="col-lg-8">
                                 <div class="page-header-title">
                                     <div class="d-inline">
-                                        <h4>All Job Details</h4>
+                                        <h4>Job Post Details</h4>
                                     </div>
                                 </div>
                             </div>
@@ -32,13 +32,12 @@
                         <div class="card">
                             <div class="card-block">
                                 <div class="table-responsive dt-responsive">
-                                    <table id="job_list" class="table table-striped table-bordered nowrap">
+                                    <table id="job_post_list" class="table table-striped table-bordered nowrap">
                                         <thead>
                                         <tr>
                                             <th>ID</th>
                                             <th>Job name</th>
                                             <th>Created date</th>
-                                            <th>Total Candidate</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -66,31 +65,35 @@
     <script src="{{ asset('company/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}" type="text/javascript"></script>
     {{--Date:29-06-2019--}}
 
+
     <script type="text/javascript">
         var url = "{{ url('/') }}";
-        $(document).ready(function () {
+        $(function () {
 
-            var table = $('#job_list').DataTable({
+            var table = $('#job_post_list').DataTable({
                 "lengthMenu": [[10, 25, 50,100, -1], [10, 25, 50,100, "All"]],
                 "processing": true,
                 "serverSide": true,
-                order: [ [0, 'desc'] ],
+                order: [[0, 'desc']],
                 "ajax": {
-                    "url": url + '/company/getjoblist',
+                    "url": url + '/company/getjobuserlist',
                     "method": "POST",
+                    data:{
+                        company_id: '{{Auth::user()->id}}'
+                    },
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                 },
                 columns: [
                     { data: 'id', name: 'id' },
-                    { data: 'name', name: 'name' },
+                    { data: 'title', name: 'title' },
                     {
                         "mData": "created_at",
                         "mRender": function (data, type, row) {
                             var today = new Date(row.created_at);
-                            const monthNames = ["January", "February", "March", "April", "May", "June",
-                                "July", "August", "September", "October", "November", "December"
+                            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                                "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"
                             ];
                             var dd = today.getDate();
                             var yyyy = today.getFullYear();
@@ -102,8 +105,7 @@
                             var Meridien = "";
                             if (hh < 12) {
                                 Meridien = "AM";
-                            }
-                            else
+                            } else
                                 Meridien = "PM";
 
                             hh %= 12;
@@ -111,20 +113,9 @@
                             return today;
                         }
                     },
-                    {
-                        "mData": "Name",
-                        "mRender": function (data, type, row) {
-
-
-                            var url1 = '{{ url('company/view_user',"id") }}';
-                            url1 = url1.replace('id', row.id);
-
-                            return "<a title=\"View\" href='" + url1 + "' class='m-r-15 btn btn-success'>" +
-                                "<i class=\"fa fa-eye\"></i> View Candidate</a>";
-                        }
-                    },
                 ],
             });
         });
     </script>
+
 @endpush('scripts')
