@@ -31,7 +31,25 @@
                 </a>
             </li>
 
-            
+            <li class="">
+                <a href="{{ url('company/job-list') }}">
+                    <span class="pcoded-micon"><i class="fa fa-list-ol"></i></span>
+                    <span class="pcoded-mtext">Job List</span>
+                </a>
+            </li>
+
+
+            <li class="">
+                <a href="{{ url('/company/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <span class="pcoded-micon"><i class="fa fa-sign-out"></i></span>
+                    <span class="pcoded-mtext">Logout</span>
+                </a>
+                <form id="logout-form" action="{{ url('/company/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
+
+
         </ul>
     </div>
 </nav>
