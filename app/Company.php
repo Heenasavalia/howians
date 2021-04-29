@@ -19,7 +19,7 @@ class Company extends Authenticatable
          'first_name','last_name' ,'mobile','email', 'password',
          'company_name',
          'gst_number','location', 'latitude', 'longitude','city', 'state', 'country', 'pincode',
-         'total_experience', 'years_of_establishment', 'status', 'created_at', 
+         'total_experience', 'years_of_establishment', 'status', 'created_at',
          'is_online', 'is_branch_available', 'branch_name', 'branch_place','user_target', 'no_of_employees',
          'nearby_famous_landmark', 'targeted_age_group','pricing_plan_id' , 'is_select_plan' ,'start_time','end_time',
     ];
@@ -42,5 +42,10 @@ class Company extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new CompanyResetPassword($token));
+    }
+
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d H:i:s');
     }
 }

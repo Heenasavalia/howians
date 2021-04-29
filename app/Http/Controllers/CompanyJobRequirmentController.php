@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\JobCategory;
+use App\JobRequirement;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class CompanyJobRequirmentController extends Controller
 {
@@ -81,4 +84,21 @@ class CompanyJobRequirmentController extends Controller
     {
         //
     }
+
+    public function JobList(){
+        return view('company.joblist');
+    }
+
+    public function getjoblist(Request $request){
+        $all_job = JobCategory::all();
+        return Datatables::of($all_job)->make(true);
+//        return Datatables::of(JobRequirement::with('company')->where('company_id', $id)->get())->make(true);
+    }
+
+    public function view_user($id){
+        dump("right");
+        dd($id);
+        return view('company.joblist');
+    }
+
 }
