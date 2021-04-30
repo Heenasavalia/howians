@@ -7,6 +7,10 @@
 <script type="text/javascript" src="{{ asset('company/bower_components/bootstrap/js/bootstrap.min.js')}}"></script>
 
 <script type="text/javascript" src="{{ asset('company/bower_components/jquery-slimscroll/js/jquery.slimscroll.js')}}"></script>
+<script type="text/javascript" src="{{ asset('company/bower_components/jquery.steps/js/jquery.steps.js')}}"></script>
+<script type="text/javascript" src="{{ asset('company/bower_components/jquery-validation/js/jquery.validate.js')}}"></script>
+<script type="text/javascript" src="{{ asset('company/assets/pages/forms-wizard-validation/form-wizard.js')}}"></script>
+
 
 <script type="text/javascript" src="{{ asset('company/bower_components/modernizr/js/modernizr.js')}}"></script>
 <script type="text/javascript" src="{{ asset('company/bower_components/modernizr/js/css-scrollbars.js')}}"></script>
@@ -25,7 +29,7 @@
 <script src="{{ asset('company/assets/pages/widget/amchart/pie.js')}}" type="text/javascript"></script>
 <script src="{{ asset('company/assets/pages/widget/amchart/light.js')}}" type="text/javascript"></script>
 
-<script type="text/javascript" src="{{ asset('company/assets/pages/advance-elements/swithces.js')}}"></script>
+<!--<script type="text/javascript" src="{{ asset('company/assets/pages/advance-elements/swithces.js')}}"></script>-->
 
 
 <script type="text/javascript" src="{{ asset('company/bower_components/select2/js/select2.full.min.js')}}"></script>
@@ -44,3 +48,6 @@
 
 {{-- mobile dsate scroller--}}
 <script src="{{asset('js/mobiscroll.jquery.min.js')}}"></script>
+<!--<script src="{{asset('js/rocket-loader.min.js')}}"></script>-->
+        <!--<script src="../../../../ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="d363c1b2fe8bc4c41a60d5ce-|49" defer=""></script></body>-->
+

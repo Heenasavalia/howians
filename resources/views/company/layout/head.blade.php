@@ -29,14 +29,13 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}">
       <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/switchery/css/switchery.min.css')}}">
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/custom.css')}}">
+
     <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/jquery.steps/css/jquery.steps.css')}}">
 
-
-    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/jquery.mCustomScrollbar.css')}}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/custom.css')}}">
 
 
     <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/bootstrap-datetimepicker.css')}}">
@@ -47,4 +46,5 @@
     <link rel="stylesheet" href="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.css" />
 
     <link rel="stylesheet" href="{{asset('css/mobiscroll.jquery.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/style.css')}}">
 </head>

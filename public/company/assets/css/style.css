@@ -13813,7 +13813,7 @@ body.menu-bottom #collapse-menu {
 }
 
 .border-checkbox-section .border-checkbox {
-    display: none
+    display: none !important;
 }
 
 .border-checkbox-section .border-checkbox:disabled~.border-checkbox-label {

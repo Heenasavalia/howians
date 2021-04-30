@@ -14,7 +14,8 @@ class AddExperinceYearToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('plan_select')->after('');
+            $table->string('plan_select');
+//                    ->after('');
         });
     }
 
