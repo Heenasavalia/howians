@@ -16,3 +16,5 @@ Route::get('/displayallplan', 'UserController@DiaplayPlans');
 Route::post('/select_plan', 'UserController@selectPlans');
 Route::any('/display-profile/{id}', 'UserController@profile');
 Route::resource('/profile', 'UserController');
+
+Route::post('/user-search','UserController@userSearch');
