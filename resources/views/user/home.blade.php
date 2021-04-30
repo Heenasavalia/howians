@@ -5,6 +5,10 @@
 .inline-search-area .search-col {
     width: 28%;
 }
+.ui-widget {
+    background: #fff;
+    width: 200px;
+}
 </style>
 <!-- Banner start -->
 <div class="banner" id="banner">
@@ -19,7 +23,7 @@
                                 <h3 class="b-text">Find the Job That Fits Your Life</h3>
                                 <p class="p-text">We offer 12505 jobs vacation right now</p>
                                 <div class="inline-search-area ml-auto mr-auto isa-3">
-                                {{ Form:: open(array('url' => ['/user-search'],'method'=>'post', 'id' => 'category-search-form', 'class' => 'category-search-form')) }}
+                                {{ Form:: open(array('url' => ['user/user-search'],'method'=>'post', 'id' => 'user-search-form', 'class' => 'user-search-form')) }}
                                 {{ csrf_field() }}
                                     <div class="search-boxs">
                                         <div class="search-col">
@@ -33,6 +37,9 @@
                                         </div>
                                         <div class="search-col">
                                             <input type="text" id="location_search" name="location" class="form-control has-icon b-radius" placeholder="Location">
+                                            <div class="ui-widget">
+                                            <div id="log" style="height: auto; overflow: auto;" class="ui-widget-content"></div>
+                                            </div>
                                         </div>
                                         <div class="find">
                                             <button class="btn button-theme btn-search btn-block b-radius">

@@ -198,4 +198,14 @@ class UserController extends Controller
         // dd($user_setting);
         return view('user.profile',['user'=>$user,'education' => $education, 'country' => $country]);
     }
+
+    public function userSearch(Request $request)
+    {
+        $data = $request->all();
+        $keywords = $data['keyword'];
+        $category = $data['category'];
+        $location = $data['location'];
+
+        
+    }
 }
