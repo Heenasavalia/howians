@@ -1,7 +1,11 @@
 @extends('user.layout.user_layout')
 
 @section('content')
-
+<style>
+.inline-search-area .search-col {
+    width: 28%;
+}
+</style>
 <!-- Banner start -->
 <div class="banner" id="banner">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -15,26 +19,30 @@
                                 <h3 class="b-text">Find the Job That Fits Your Life</h3>
                                 <p class="p-text">We offer 12505 jobs vacation right now</p>
                                 <div class="inline-search-area ml-auto mr-auto isa-3">
+                                {{ Form:: open(array('url' => ['/user-search'],'method'=>'post', 'id' => 'category-search-form', 'class' => 'category-search-form')) }}
+                                {{ csrf_field() }}
                                     <div class="search-boxs">
                                         <div class="search-col">
-                                            <input type="text" id="main_search" name="search" class="form-control has-icon b-radius" placeholder="Job title or Keywords">
+                                            <input type="text" id="keyword_search" name="keyword" class="form-control has-icon b-radius" placeholder="Job title or Keywords">
                                         </div>
-                                        <!-- <div class="search-col">
-                                            <select class="selectpicker search-fields" name="location">
-                                                <option>Location</option>
-                                                <option>New York</option>
-                                                <option>Australian</option>
-                                                <option>Canada</option>
-                                                <option>London</option>
-                                            </select>
-                                        </div> -->
+                                        <div class="search-col">
+                                            <input type="text" id="category_search" name="category" class="form-control has-icon b-radius" placeholder="Category">
+                                            <div class="ui-widget">
+                                            <div id="log" style="height: auto; overflow: auto;" class="ui-widget-content"></div>
+                                            </div>
+                                        </div>
+                                        <div class="search-col">
+                                            <input type="text" id="location_search" name="location" class="form-control has-icon b-radius" placeholder="Location">
+                                        </div>
                                         <div class="find">
                                             <button class="btn button-theme btn-search btn-block b-radius">
                                                 <i class="fa fa-search"></i><strong>Find Job</strong>
                                             </button>
                                         </div>
                                     </div>
+                                {{ Form:: close() }}
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -483,29 +491,76 @@
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script>
-console.log("{{url('api/search')}}");
-$("#main_search").keyup(function(){
-    $("#main_search").autocomplete({
+$("#category_search").keyup(function(){
+    $("#category_search").autocomplete({
         source: function (request, response) {
+            appendTo: "#category_search",
             $.ajax({
-                url: "{{url('api/search')}}",
+                url: "{{url('api/search-categories')}}",
                 data: {
                         query: request.term,
-                        
                         _token: $('meta[name="csrf-token"]').attr('content')
                     },
                 dataType: "json",
                 type: "POST",
                 success: function (data) {
-                    var resp = $.map(data, function (b) {
-                        console.log(b);
-                        // return b.business_name;
-                    });
+                    var resp = "";
+                    if(data != null){
+                        resp = $.map(data, function (b) {
+                            return b.name;
+                        });
+                    }
                     response(resp);
                 }
             });
         },
-        minLength: 2
+        minLength: 2,
+        select: function( event, ui ) {
+            log( ui.item ?
+            "Selected: " + ui.item.label :
+            "Nothing selected, input was " + this.value);
+        },
+        open: function() {
+            $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+        },
+        close: function() {
+            $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+        }
+    });
+});
+$("#location_search").keyup(function(){
+    $("#location_search").autocomplete({
+        source: function (request, response) {
+            appendTo: "#category_search",
+            $.ajax({
+                url: "{{url('api/search-location')}}",
+                data: {
+                        query: request.term,
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
+                dataType: "json",
+                type: "POST",
+                success: function (data) {
+                    var resp = "";
+                    resp = $.map(data, function (b) {
+                        return b;
+                    });
+                    response(resp);
+                }
+            })
+        },
+        minLength: 2,
+        select: function( event, ui ) {
+            log( ui.item ?
+            "Selected: " + ui.item.label :
+            "Nothing selected, input was " + this.value);
+        },
+        open: function() {
+            $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+        },
+        close: function() {
+            $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+        }
     });
 });
 </script>
