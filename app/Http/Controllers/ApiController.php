@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use App\User;
+use App\Category;
 
 class ApiController extends Controller
 {
@@ -56,6 +57,44 @@ class ApiController extends Controller
         } else {
             return response()->json(true);
         }
+    }
+
+    public function categories(Request $request)
+    {
+        // dd($request->all());
+        $cat = $request['query'];
+        $get = Category::where('name','LIKE',$cat.'%')->get();
+        return response()->json($get);
+    }
+
+    public function LocationFind(Request $request)
+    {
+        $all_data = [];
+        $data = [];
+        $location = $request['query'];
+        $get_c = DB::table("countries")->where('name','LIKE',$location.'%')->pluck('name')->toArray();
+        if($get_c != null){
+        array_push($all_data, $get_c);
+        }
+        $get_s = DB::table("states")->where('name','LIKE',$location.'%')->pluck('name')->toArray();
+        if($get_s != null){
+        array_push($all_data, $get_s);
+        }
+        $get_ci = DB::table("cities")->where('name','LIKE',$location.'%')->pluck('name')->toArray();
+        if($get_ci != null){
+        array_push($all_data, $get_ci);
+        }
+
+
+        foreach($all_data as $data){
+            foreach($data as $d){
+                // dump($d);
+                array_push($data, $d);
+            }
+        }
+    //    dd($data);
+
+        return response()->json($data);
     }
 
     public function search(Request $request)
