@@ -25,6 +25,31 @@ $(function() {
     // Select picket
     $('.selectpicker').selectpicker();
 
+    $(window).scroll(function() {
+        var sticky = $('.main-header'),
+            scroll = $(window).scrollTop();
+
+        if (scroll >= 100) sticky.addClass('header-shrink');
+        else sticky.removeClass('header-shrink');
+    });
+
+    $('.reviews_box').owlCarousel({
+        loop: true,
+        margin: 0,
+        center: true,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
+    })
 
 
 });
