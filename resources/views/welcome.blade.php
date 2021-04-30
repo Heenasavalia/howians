@@ -3,10 +3,9 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>
-        register page
-    </title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" href="{{ url('/images/favicon.png') }}" type="image/png" />
+    <title>Register | Howains</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="stylesheet" href="{{asset('landing_page/css/bootstrap.min.css')}}">
     <link rel='stylesheet' type='text/css' media='screen' href="{{asset('landing_page/css/regi.css')}}">
     <script src="{{asset('landing_page/js/jquery.min.js')}}"></script>

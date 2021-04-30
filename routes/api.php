@@ -22,8 +22,7 @@ Route::post('/cities','ApiController@cities');
 Route::post('checkemail','ApiController@checkemail');
 Route::post('checkmobile','ApiController@checkmobile');
 
-Route::get('/countries', 'ApiController@countries');
-Route::post('/states', 'ApiController@states');
-Route::post('/cities', 'ApiController@cities');
-
 Route::post('/search', 'ApiController@search');
+
+Route::post('/search-categories', 'ApiController@categories');
+Route::post('/search-location', 'ApiController@LocationFind');

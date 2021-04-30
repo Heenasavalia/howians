@@ -16,7 +16,10 @@ Route::get('/', function () {
     // return view('landing');
 });
 
-Route::group(['prefix' => 'user'], function () {
+
+  Route::any('home', 'FrontendController@home');
+
+  Route::group(['prefix' => 'user'], function () {
   Route::get('/login', 'UserAuth\LoginController@showLoginForm')->name('login');
   Route::post('/login', 'UserAuth\LoginController@login');
   Route::post('/logout', 'UserAuth\LoginController@logout')->name('logout');
