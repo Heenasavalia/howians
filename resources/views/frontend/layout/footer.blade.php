@@ -16,7 +16,7 @@
                     <p class="copy">© 2020 <a href="{{url('/home')}}">Howains.</a> All Rights Reserved.</p>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-5 col-sm-12">
                 <div class="footer-item clearfix">
                     <h4>Newsletter</h4>
                     <div class="Subscribe-box">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-3 col-sm-12">
                 <div class="footer-item footer-menu">
                     <h4>Employers</h4>
                     <ul class="links">

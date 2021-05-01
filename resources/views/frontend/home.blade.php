@@ -176,13 +176,9 @@
 <!-- Job section strat -->
 <section class="job-section content-area-box">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="main-title-2">
-                    <h2>Recent Jobs</h2>
-                    <a href="#" class="float-right">Browse All Jobs &nbsp; <i class="fa fa-long-arrow-right"></i></a>
-                </div>
-            </div>
+        <div class="main-title-2">
+            <h2>Recent Jobs</h2>
+            <a href="#" class="float-right">Browse All Jobs &nbsp; <i class="fa fa-long-arrow-right"></i></a>
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -290,7 +286,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="job-item media mb-0">
+                <div class="job-item media">
                     <a class="icon" href="#">
                         <div class="company-logo">
                             <img src="{{asset('front_end/images/recent_logo5.png')}}" alt="logo">
@@ -316,7 +312,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="job-item media mb-0">
+                <div class="job-item media">
                     <a class="icon" href="#">
                         <div class="company-logo">
                             <img src="{{asset('front_end/images/recent_logo6.png')}}" alt="logo">
@@ -402,46 +398,44 @@
             <h2>Reviews & Ratings</h2>
         </div>
         <div class="slick-slider-area">
-            <div class="row">
-                <div class="reviews_box owl-carousel owl-theme">
-                    <div class="reviews_inner">
-                        <div class="content-box text-center">
-                            <i class="fa fa-quote-left"></i>
-                            <p>The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                        </div>
-                        <div class="reviews_content text-center">
-                            <div class="reviews_img">
-                                <img src="{{asset('front_end/images/photo_img01.jpg')}}" alt="" class="img-fluid">
-                            </div>
-                            <h2>Cristen R. Ridenhour</h2>
-                            <p>Ui/UX designer</p>
-                        </div>
+            <div class="reviews_box owl-carousel owl-theme">
+                <div class="reviews_inner">
+                    <div class="content-box text-center">
+                        <i class="fa fa-quote-left"></i>
+                        <p>The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                     </div>
-                    <div class="reviews_inner">
-                        <div class="content-box text-center">
-                            <i class="fa fa-quote-left"></i>
-                            <p>The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <div class="reviews_content text-center">
+                        <div class="reviews_img">
+                            <img src="{{asset('front_end/images/photo_img01.jpg')}}" alt="" class="img-fluid">
                         </div>
-                        <div class="reviews_content text-center">
-                            <div class="reviews_img">
-                                <img src="{{asset('front_end/images/photo_img02.jpg')}}" alt="" class="img-fluid">
-                            </div>
-                            <h2>William L. Dearman</h2>
-                            <p>Marketing Manager</p>
-                        </div>
+                        <h2>Cristen R. Ridenhour</h2>
+                        <p>Ui/UX designer</p>
                     </div>
-                    <div class="reviews_inner">
-                        <div class="content-box text-center">
-                            <i class="fa fa-quote-left"></i>
-                            <p>The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+                <div class="reviews_inner">
+                    <div class="content-box text-center">
+                        <i class="fa fa-quote-left"></i>
+                        <p>The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                    <div class="reviews_content text-center">
+                        <div class="reviews_img">
+                            <img src="{{asset('front_end/images/photo_img02.jpg')}}" alt="" class="img-fluid">
                         </div>
-                        <div class="reviews_content text-center">
-                            <div class="reviews_img">
-                                <img src="{{asset('front_end/images/photo_img03.jpg')}}" alt="" class="img-fluid">
-                            </div>
-                            <h2>Randolph M. Belli</h2>
-                            <p>Accoutant</p>
+                        <h2>William L. Dearman</h2>
+                        <p>Marketing Manager</p>
+                    </div>
+                </div>
+                <div class="reviews_inner">
+                    <div class="content-box text-center">
+                        <i class="fa fa-quote-left"></i>
+                        <p>The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                    <div class="reviews_content text-center">
+                        <div class="reviews_img">
+                            <img src="{{asset('front_end/images/photo_img03.jpg')}}" alt="" class="img-fluid">
                         </div>
+                        <h2>Randolph M. Belli</h2>
+                        <p>Accoutant</p>
                     </div>
                 </div>
             </div>
