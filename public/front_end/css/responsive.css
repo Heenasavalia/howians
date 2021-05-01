@@ -1,0 +1,283 @@
+@media screen and (min-width: 1025px) and (max-width: 1299px) {}
+
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+    .main-header .logo {
+        padding: 15px 0;
+    }
+    .main-header .logo img {
+        max-width: 150px;
+    }
+    .header-ml {
+        margin-left: 10%;
+    }
+    .banner h3 {
+        font-size: 35px;
+    }
+    .content-area-box,
+    footer.footer {
+        padding: 60px 0;
+    }
+    .about_section .about-tile {
+        font-size: 32px;
+    }
+    .about_section p {
+        font-size: 20px;
+        line-height: 150%;
+    }
+    .how_works .how_inner {
+        padding: 40px;
+    }
+}
+
+@media screen and (min-width: 992px) {}
+
+@media screen and (max-width: 991px) {
+    .main-header .logo {
+        padding: 10px 0;
+    }
+    .main-header .logo img,
+    .header-shrink.main-header .logo img {
+        max-width: 100px;
+    }
+    .main-header .navbar button.navbar-toggler {
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        border: none;
+        background-color: #4285f4;
+        border-radius: 0;
+        color: #fff;
+    }
+    .banner h3 {
+        font-size: 25px;
+    }
+    .inline-search-area .search-col .form-control,
+    .inline-search-area button.btn-search {
+        height: 45px;
+        font-size: 14px;
+    }
+    .inline-search-area.isa-3 .bootstrap-select button {
+        padding: 12px 25px 12px 15px;
+        font-size: 14px;
+    }
+    .content-area-box,
+    footer.footer {
+        padding: 40px 0;
+    }
+    .main-title h2,
+    .main-title-2 h2 {
+        font-size: 24px;
+    }
+    .main-title h2::before {
+        height: 3px;
+    }
+    .about_section .about-tile {
+        font-size: 24px;
+    }
+    .about_section p {
+        font-size: 16px;
+        line-height: 150%;
+    }
+    .main-title {
+        margin-bottom: 35px;
+    }
+    .how_works .how_inner {
+        padding: 15px;
+    }
+    .how_works .how_inner h3 {
+        font-size: 18px;
+    }
+    body p {
+        font-size: 14px;
+        line-height: 160%;
+    }
+    .reviews_inner {
+        margin: 15px 15px 80px;
+        padding: 20px 20px 40px;
+    }
+    .reviews_box .center .reviews_inner {
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: 15px;
+    }
+    .reviews_inner .content-box i.fa {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+    .reviews_content .reviews_img {
+        width: 70px;
+        height: 70px;
+    }
+    .reviews_inner .reviews_content {
+        top: calc(100% - 35px);
+    }
+    .footer_logo img {
+        max-width: 150px;
+    }
+    ul.social-list li:not(:last-child) {
+        margin-right: 15px;
+    }
+    ul.social-list li a {
+        color: #8388a4;
+        font-size: 20px;
+    }
+    .footer-item.footer-menu {
+        padding-left: 0;
+    }
+    .footer-menu .links li:not(:last-child) {
+        margin-bottom: 15px;
+    }
+    .footer-menu .links li a {
+        font-size: 16px;
+    }
+    .main-header .navbar .navbar-collapse {
+        background-color: #fff;
+    }
+    .header-ml,
+    .main-header .navbar-expand-lg .navbar-nav.header-ml li {
+        margin: 0;
+    }
+    .main-header .navbar-expand-lg .navbar-nav.header-ml li {
+        border-bottom: 1px solid #ddd;
+    }
+    .main-header .navbar-expand-lg .navbar-nav.header-ml .nav-link,
+    .main-header .navbar-expand-lg .navbar-nav.ml-auto .nav-link {
+        padding: 10px 14px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #000;
+        letter-spacing: 0;
+    }
+    .main-header .navbar-expand-lg .navbar-nav.header-ml .nav-link:hover::before,
+    .main-header .navbar-expand-lg .navbar-nav.header-ml .active>.nav-link::before {
+        width: 0;
+    }
+    .main-header .navbar-expand-lg .navbar-nav.header-ml .nav-link:hover,
+    .main-header .navbar-expand-lg .navbar-nav.header-ml .active>.nav-link {
+        background-color: #4285f4;
+        color: #fff;
+    }
+    .navbar-expand-lg .navbar-nav.ml-auto {
+        align-items: center;
+    }
+    .navbar-expand-lg .navbar-nav.ml-auto li {
+        width: 100%;
+        margin: 0 !important;
+    }
+    .inline-search-area .search-col i {
+        top: 15px;
+        font-size: 16px;
+    }
+    .inline-search-area .search-col i.fa-map-marker {
+        font-size: 20px;
+        top: 12px;
+    }
+    .main-header .navbar-expand-lg .navbar-nav.ml-auto .nav-link {
+        color: #fff;
+    }
+    .main-header .navbar-expand-lg .navbar-nav.ml-auto .nav-link.deffold {
+        color: #000;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .banner h3 {
+        font-size: 18px;
+        margin-bottom: 3px;
+    }
+    .banner p {
+        margin: 0 0 10px;
+        font-size: 14px;
+        letter-spacing: 0;
+    }
+    #banner .banner-img {
+        height: 350px;
+    }
+    .isa-3 {
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        border-radius: 0;
+    }
+    .inline-search-area .search-col {
+        width: 100%;
+        margin: 0 0 10px;
+    }
+    .find {
+        width: 100%;
+        float: left;
+    }
+    .content-area-box,
+    footer.footer {
+        padding: 30px 0;
+    }
+    .main-title h2,
+    .main-title-2 h2 {
+        font-size: 20px;
+        padding-bottom: 15px;
+    }
+    .main-title {
+        margin-bottom: 25px;
+    }
+    .main-title-2 {
+        margin-bottom: 10px;
+    }
+    .job-item {
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+    }
+    .job-item:hover::before {
+        opacity: 0;
+    }
+    .about_section .about-tile {
+        font-size: 20px;
+        text-align: center;
+    }
+    .about_section p {
+        font-size: 14px;
+        text-align: center;
+    }
+    .about_section a.btn.button-theme {
+        display: table;
+        margin: 0 auto;
+    }
+    .job-item a.icon {
+        margin: 0 0 15px;
+        width: 100%;
+    }
+    .job-item .media-box {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .job-item ul {
+        margin: 0;
+        text-align: center;
+    }
+    .job-item ul li {
+        float: none;
+        margin-right: 10px;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    .div-center {
+        margin-bottom: 10px;
+    }
+    .slick-slider-area .col-md-4:not(:last-child) {
+        margin-bottom: 15px;
+    }
+    .footer-inner .col-sm-12:not(:last-child) .footer-item {
+        margin-bottom: 20px;
+    }
+    .categorie-box-2 h5 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .popular-categories .col-lg-4.col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}

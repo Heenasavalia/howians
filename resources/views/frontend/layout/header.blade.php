@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/animate.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/main-style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/responsive.css') }}">
 
 
     <script src="{{asset('front_end/js/jquery-2.2.0.min.js')}}"></script>
