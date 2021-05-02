@@ -17,9 +17,8 @@ class CreateJobRequirementsTable extends Migration
             $table->increments('id');
             $table->integer('company_id');
             $table->foreign('company_id')->references('id')->on('company');
-            $table->integer('job_category_id');
-            $table->foreign('job_category_id')->references('id')->on('job_categories');
-            $table->string('education_id');
+            $table->text('job_category');
+            $table->text('education');
             $table->text('email');
             $table->boolean('is_display_email')->default(1);
             $table->text('title');
