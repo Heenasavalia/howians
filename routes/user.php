@@ -18,3 +18,5 @@ Route::any('/display-profile/{id}', 'UserController@profile');
 Route::resource('/profile', 'UserController');
 
 Route::post('/user-search','UserController@userSearch');
+Route::get('change-password','UserController@UpdatePassword');
+Route::put('change-password','UserController@changePassword');
