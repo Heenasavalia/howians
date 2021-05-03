@@ -20,3 +20,5 @@ Route::resource('/profile', 'UserController');
 Route::post('/user-search','UserController@userSearch');
 Route::get('change-password','UserController@UpdatePassword');
 Route::put('change-password','UserController@changePassword');
+
+Route::get('msg-send-mail/{id}','UserController@MailSendMessage');

@@ -14,6 +14,7 @@ use App\User;
 use App\Education;
 use App\JobRequirement;
 use Illuminate\Support\Facades\Hash;
+use App\Company;
 
 
 class UserController extends Controller
@@ -261,5 +262,37 @@ class UserController extends Controller
         // return response()->json($get_data);
         return view('user.job_list', ['data' => $get_data]);
         // dd($get_data);
+    }
+
+    public function MailSendMessage($id)
+    {
+        $user = Auth::user();
+        $user = User::with('education')->where('id',$user->id)->get();
+        // dd($user);
+        $com_data = Company::where('id',$id)->first();
+        // dd($com_data);
+        $fromEmail = $user->email;
+        $fromName = $user->first_name." ".$user->last_name;
+
+        $data = [
+            'user_name' => $fromName,
+            'email' => $fromEmail,
+            'contact' => $user->mobile,
+            'gender' => $user->gender,
+            'city' => $user->city,
+            'state' => $user->state,
+            'country' => $user->country,
+            'designation' => $user->designation,
+            'years' => $user->years,
+            'education' => $user->education->field
+
+        ];
+        $subject = $fromName. "Apply For A Job";
+        $to = $com_data->email;
+        \Mail::send('msgMailSend', $data, function($message) use ($fromEmail, $fromName, $subject, $to) {
+            $message->from($fromEmail, $fromName);
+            $message->to($to);
+            $message->subject($subject);
+        });
     }
 }
