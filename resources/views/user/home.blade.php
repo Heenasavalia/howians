@@ -1,33 +1,34 @@
+<!-- @include('user.layout.header') -->
 @extends('user.layout.user_layout')
 
 @section('content')
-<style>
-.inline-search-area .search-col {
-    width: 28%;
-}
-.ui-widget {
-    background: #fff;
-    width: 200px;
-}
-</style>
 <!-- Banner start -->
-<div class="banner" id="banner">
+
+<section class="banner" id="banner">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item item-bg active">
-                <img class="d-block w-100 h-100" src="img/banner/banner-3.jpg" alt="banner">
+                <div class="banner-img"><img class="d-block w-100 h-100" src="{{asset('front_end/images/banner.jpg')}}" alt="banner"></div>
                 <div class="carousel-caption banner-slider-inner d-flex h-100">
                     <div class="carousel-content container">
                         <div class="banner-inner mt-60">
                             <div class="text-center">
-                                <h3 class="b-text">Find the Job That Fits Your Life</h3>
-                                <p class="p-text">We offer 12505 jobs vacation right now</p>
+                                <h3 class="b-text">Find The Career You Deserve</h3>
+                                <p class="p-text">We Help You Get: New Job</p>
                                 <div class="inline-search-area ml-auto mr-auto isa-3">
                                 {{ Form:: open(array('url' => ['user/user-search'],'method'=>'post', 'id' => 'user-search-form', 'class' => 'user-search-form')) }}
                                 {{ csrf_field() }}
                                     <div class="search-boxs">
                                         <div class="search-col">
-                                            <input type="text" id="keyword_search" name="keyword" class="form-control has-icon b-radius" placeholder="Job title or Keywords">
+                                        <input type="text" id="keyword_search" name="keyword" class="form-control has-icon b-radius" placeholder="Job title or Keywords">
+                                            <i class="fa fa-briefcase"></i>
+                                        </div>
+                                        <div class="search-col">
+                                            <input type="text" id="location_search" name="location" class="form-control has-icon b-radius" placeholder="Location">
+                                            <div class="ui-widget">
+                                            <div id="log" style="height: auto; overflow: auto;" class="ui-widget-content"></div>
+                                            </div>
+                                            <i class="fa fa-map-marker"></i>
                                         </div>
                                         <div class="search-col">
                                             <input type="text" id="category_search" name="category" class="form-control has-icon b-radius" placeholder="Category">
@@ -35,21 +36,12 @@
                                             <div id="log" style="height: auto; overflow: auto;" class="ui-widget-content"></div>
                                             </div>
                                         </div>
-                                        <div class="search-col">
-                                            <input type="text" id="location_search" name="location" class="form-control has-icon b-radius" placeholder="Location">
-                                            <div class="ui-widget">
-                                            <div id="log" style="height: auto; overflow: auto;" class="ui-widget-content"></div>
-                                            </div>
-                                        </div>
                                         <div class="find">
-                                            <button class="btn button-theme btn-search btn-block b-radius">
-                                                <i class="fa fa-search"></i><strong>Find Job</strong>
-                                            </button>
+                                            <button class="btn btn-md button-theme btn-search btn-block b-radius">SEARCH</button>
                                         </div>
                                     </div>
                                 {{ Form:: close() }}
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
@@ -57,443 +49,410 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 <!-- banner end -->
 
 <!-- Popular categories strat -->
-<div class="popular-categories content-area-7 bg-grea">
+<section class="popular-categories content-area-box">
     <div class="container">
         <!-- Main title -->
         <div class="main-title text-center">
-            <h1>Popular Categories</h1>
+            <h2>Popular Categories</h2>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="media categorie-box-2">
                     <a class="icon" href="#">
-                        <i class="flaticon-money"></i>
+                        <i class="fa fa-code"></i>
                     </a>
                     <div class="media-body align-self-center">
-                        <h5>Accounting / Finance</h5>
-                        <span>(2143)</span>
+                        <h5>Web Developer</h5>
+                        <span>(656 Jobs)</span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="media categorie-box-2">
                     <a class="icon" href="#">
-                        <i class="flaticon-student"></i>
-                    </a>
-                    <div class="media-body align-self-center">
-                        <h5>Education Training</h5>
-                        <span>(2143)</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="media categorie-box-2">
-                    <a class="icon" href="#">
-                        <i class="flaticon-shout"></i>
+                        <i class="fa fa-bullhorn"></i>
                     </a>
                     <div class="media-body align-self-center">
                         <h5>Digital Marketing</h5>
-                        <span>(2143)</span>
+                        <span>(656 Jobs)</span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="media categorie-box-2">
                     <a class="icon" href="#">
-                        <i class="flaticon-tower"></i>
+                        <i class="fa fa-graduation-cap"></i>
                     </a>
                     <div class="media-body align-self-center">
-                        <h5>Telecommunication</h5>
-                        <span>(2143)</span>
+                        <h5>Education Training</h5>
+                        <span>(656 Jobs)</span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="media categorie-box-2">
                     <a class="icon" href="#">
-                        <i class="flaticon-team"></i>
+                        <i class="fa fa-line-chart"></i>
+                    </a>
+                    <div class="media-body align-self-center">
+                        <h5>Accounting / Finance</h5>
+                        <span>(656 Jobs)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="media categorie-box-2">
+                    <a class="icon" href="#">
+                        <i class="fa fa-user"></i>
                     </a>
                     <div class="media-body align-self-center">
                         <h5>Human Resource</h5>
-                        <span>(2143)</span>
+                        <span>(656 Jobs)</span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="media categorie-box-2">
                     <a class="icon" href="#">
-                        <i class="flaticon-sale"></i>
+                        <i class="fa fa-paint-brush"></i>
                     </a>
                     <div class="media-body align-self-center">
-                        <h5>Sales & Marketing</h5>
-                        <span>(2143)</span>
+                        <h5>Design & Graphics</h5>
+                        <span>(656 Jobs)</span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="media categorie-box-2">
                     <a class="icon" href="#">
-                        <i class="flaticon-pencil"></i>
+                        <i class="fa fa-pencil-square-o"></i>
                     </a>
                     <div class="media-body align-self-center">
-                        <h5>Writing & Translations</h5>
-                        <span>(2143)</span>
+                        <h5>Writing / Translations</h5>
+                        <span>(656 Jobs)</span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="media categorie-box-2">
                     <a class="icon" href="#">
-                        <i class="flaticon-doctor"></i>
+                        <i class="fa fa-heartbeat"></i>
                     </a>
                     <div class="media-body align-self-center">
                         <h5>Health Care</h5>
-                        <span>(2143)</span>
+                        <span>(656 Jobs)</span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="media categorie-box-2">
                     <a class="icon" href="#">
-                        <i class="flaticon-car"></i>
+                        <i class="fa fa-car"></i>
                     </a>
                     <div class="media-body align-self-center">
                         <h5>Automotive Jobs</h5>
-                        <span>(2143)</span>
+                        <span>(656 Jobs)</span>
                     </div>
                 </div>
             </div>
-
+            <div class="col-sm-12 text-center mt-4">
+                <a href="#" class="btn button-theme btn-lg">Browse all category</a>
+            </div>
         </div>
     </div>
-</div>
+</section>
 <!-- Popular categories end -->
 
-<!-- Counters strat -->
-<div class="counters">
+<!-- About US strat -->
+<div class="about_section content-area-box">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-6">
-                <div class="counter-box">
-                    <i class="flaticon-user"></i>
-                    <h1 class="counter">1967</h1>
-                    <p>Members</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6">
-                <div class="counter-box">
-                    <i class="flaticon-work"></i>
-                    <h1 class="counter">667</h1>
-                    <p>Jobs</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6">
-                <div class="counter-box">
-                    <i class="flaticon-portfolio"></i>
-                    <h1 class="counter">475</h1>
-                    <p>Resumes</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6">
-                <div class="counter-box">
-                    <i class="flaticon-branch"></i>
-                    <h1 class="counter">475</h1>
-                    <p>Companies</p>
-                </div>
+            <div class="col-md-6 col-sm-12">
+                <h2 class="about-tile">We Can Help With Your Online Resume Today...</h2>
+                <p class="mb-4">Huge community of designers, developers and creatives ready for your project. Bring to the table win-win survival strategies to ensure proactive domination going forward.</p>
+                <a href="#" class="btn button-theme btn-lg">Get Started</a>
             </div>
         </div>
     </div>
 </div>
-<!-- Counters end -->
+<!-- About US end -->
 
 <!-- Job section strat -->
-<div class="job-section content-area-5">
+<section class="job-section content-area-box">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="main-title-2">
-                    <h1>Recent Jobs</h1>
-                    <a href="#" class="float-right baj">Browse All Jobs</a>
-                </div>
-            </div>
+        <div class="main-title-2">
+            <h2>Recent Jobs</h2>
+            <a href="#" class="float-right">Browse All Jobs &nbsp; <i class="fa fa-long-arrow-right"></i></a>
         </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="job-item media">
                     <a class="icon" href="#">
                         <div class="company-logo">
-                            <img src="img/company-logo/logo-3.png" alt="logo">
+                            <img src="{{asset('front_end/images/recent_logo1.png')}}" alt="logo">
                         </div>
                     </a>
-                    <div class="media-body align-self-center">
-                        <h4><a href="#">Social Media Expert</a></h4>
-                        <div class="job-ad-item">
-                            <ul>
-                                <li><i class="flaticon-pin"></i> New York City</li>
-                                <li><i class="flaticon-clock"></i> Full Time</li>
-                                <li><i class="flaticon-discount"></i> $25,00 - $35,00</li>
-                            </ul>
+                    <div class="media-box align-self-center">
+                        <div class="div-left">
+                            <h4><a href="#">Web Developer</a></h4>
+                            <div class="job-ad-item">
+                                <ul>
+                                    <li><i class="fa fa-building-o"></i> Sahjanand</li>
+                                    <li><i class="fa fa-map-o"></i> Piplod, Surat</li>
+                                    <li><i class="fa fa-clock-o"></i> Full Time</li>
+                                    <li><i class="fa fa-calendar"></i> 5 days ago</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="div-center">
+                            <a href="#" class="heart-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                         <div class="div-right">
-                            <a href="#" class="apply-button">Apply Now</a>
+                            <a href="#" class="apply-button btn button-theme">Apply Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="job-item media">
                     <a class="icon" href="#">
                         <div class="company-logo">
-                            <img src="img/company-logo/logo-4.png" alt="logo">
+                            <img src="{{asset('front_end/images/recent_logo2.png')}}" alt="logo">
                         </div>
                     </a>
-                    <div class="media-body align-self-center">
-                        <h4><a href="#">Technical Database Engineer</a></h4>
-                        <div class="job-ad-item">
-                            <ul>
-                                <li><i class="flaticon-pin"></i> New York City</li>
-                                <li><i class="flaticon-clock"></i> Full Time</li>
-                                <li><i class="flaticon-discount"></i> $25,00 - $35,00</li>
-                            </ul>
+                    <div class="media-box align-self-center">
+                        <div class="div-left">
+                            <h4><a href="#">Graphics Designer</a></h4>
+                            <div class="job-ad-item">
+                                <ul>
+                                    <li><i class="fa fa-building-o"></i> Sahjanand</li>
+                                    <li><i class="fa fa-map-o"></i> Piplod, Surat</li>
+                                    <li><i class="fa fa-clock-o"></i> Full Time</li>
+                                    <li><i class="fa fa-calendar"></i> 5 days ago</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="div-center">
+                            <a href="#" class="heart-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                         <div class="div-right">
-                            <a href="#" class="apply-button">Apply Now</a>
+                            <a href="#" class="apply-button btn button-theme">Apply Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="job-item media">
                     <a class="icon" href="#">
                         <div class="company-logo">
-                            <img src="img/company-logo/logo-1.png" alt="logo">
+                            <img src="{{asset('front_end/images/recent_logo3.png')}}" alt="logo">
                         </div>
                     </a>
-                    <div class="media-body align-self-center">
-                        <h4><a href="#">Digital Marketing Executive</a></h4>
-                        <div class="job-ad-item">
-                            <ul>
-                                <li><i class="flaticon-pin"></i> New York City</li>
-                                <li><i class="flaticon-clock"></i> Full Time</li>
-                                <li><i class="flaticon-discount"></i> $25,00 - $35,00</li>
-                            </ul>
+                    <div class="media-box align-self-center">
+                        <div class="div-left">
+                            <h4><a href="#">.Net Developer</a></h4>
+                            <div class="job-ad-item">
+                                <ul>
+                                    <li><i class="fa fa-building-o"></i> Sahjanand</li>
+                                    <li><i class="fa fa-map-o"></i> Piplod, Surat</li>
+                                    <li><i class="fa fa-clock-o"></i> Full Time</li>
+                                    <li><i class="fa fa-calendar"></i> 5 days ago</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="div-center">
+                            <a href="#" class="heart-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                         <div class="div-right">
-                            <a href="#" class="apply-button">Apply Now</a>
+                            <a href="#" class="apply-button btn button-theme">Apply Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="job-item media">
                     <a class="icon" href="#">
                         <div class="company-logo">
-                            <img src="img/company-logo/logo-2.png" alt="logo">
+                            <img src="{{asset('front_end/images/recent_logo4.png')}}" alt="logo">
                         </div>
                     </a>
-                    <div class="media-body align-self-center">
-                        <h4><a href="#">Senior UI & UX Designer</a></h4>
-                        <div class="job-ad-item">
-                            <ul>
-                                <li><i class="flaticon-pin"></i> New York City</li>
-                                <li><i class="flaticon-clock"></i> Full Time</li>
-                                <li><i class="flaticon-discount"></i> $25,00 - $35,00</li>
-                            </ul>
+                    <div class="media-box align-self-center">
+                        <div class="div-left">
+                            <h4><a href="#">React and Native Developer</a></h4>
+                            <div class="job-ad-item">
+                                <ul>
+                                    <li><i class="fa fa-building-o"></i> Sahjanand</li>
+                                    <li><i class="fa fa-map-o"></i> Piplod, Surat</li>
+                                    <li><i class="fa fa-clock-o"></i> Full Time</li>
+                                    <li><i class="fa fa-calendar"></i> 5 days ago</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="div-center">
+                            <a href="#" class="heart-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                         <div class="div-right">
-                            <a href="#" class="apply-button">Apply Now</a>
+                            <a href="#" class="apply-button btn button-theme">Apply Now</a>
                         </div>
                     </div>
                 </div>
-                <div class="job-item media mb-0">
+                <div class="job-item media">
                     <a class="icon" href="#">
                         <div class="company-logo">
-                            <img src="img/company-logo/logo-5.png" alt="logo">
+                            <img src="{{asset('front_end/images/recent_logo5.png')}}" alt="logo">
                         </div>
                     </a>
-                    <div class="media-body align-self-center">
-                        <h4><a href="#">Web Designer</a></h4>
-                        <div class="job-ad-item">
-                            <ul>
-                                <li><i class="flaticon-work"></i> Hotel</li>
-                                <li><i class="flaticon-pin"></i> New York City</li>
-                                <li><i class="flaticon-clock"></i> Full Time</li>
-                                <li><i class="flaticon-discount"></i> $25,00 - $35,00</li>
-                            </ul>
+                    <div class="media-box align-self-center">
+                        <div class="div-left">
+                            <h4><a href="#">Accountant</a></h4>
+                            <div class="job-ad-item">
+                                <ul>
+                                    <li><i class="fa fa-building-o"></i> Sahjanand</li>
+                                    <li><i class="fa fa-map-o"></i> Piplod, Surat</li>
+                                    <li><i class="fa fa-clock-o"></i> Full Time</li>
+                                    <li><i class="fa fa-calendar"></i> 5 days ago</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="div-center">
+                            <a href="#" class="heart-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                         <div class="div-right">
-                            <a href="#" class="apply-button">Apply Now</a>
+                            <a href="#" class="apply-button btn button-theme">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="job-item media">
+                    <a class="icon" href="#">
+                        <div class="company-logo">
+                            <img src="{{asset('front_end/images/recent_logo6.png')}}" alt="logo">
+                        </div>
+                    </a>
+                    <div class="media-box align-self-center">
+                        <div class="div-left">
+                            <h4><a href="#">iOS developer</a></h4>
+                            <div class="job-ad-item">
+                                <ul>
+                                    <li><i class="fa fa-building-o"></i> Sahjanand</li>
+                                    <li><i class="fa fa-map-o"></i> Piplod, Surat</li>
+                                    <li><i class="fa fa-clock-o"></i> Full Time</li>
+                                    <li><i class="fa fa-calendar"></i> 5 days ago</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="div-center">
+                            <a href="#" class="heart-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="div-right">
+                            <a href="#" class="apply-button btn button-theme">Apply Now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 <!-- Job section end -->
 
-<!-- Testimonial start -->
-<div class="testimonial">
+<!-- How Work start -->
+<section class="how_works content-area-box">
     <div class="container">
-        <div class="main-title-3">
-            <h1>Kind Words From Happy Candidates</h1>
+        <div class="main-title">
+            <h2>How It Works?</h2>
         </div>
         <div class="slick-slider-area">
-            <div class="row slick-carousel" data-slick='{"slidesToShow": 2, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
-                <div class="slick-slide-item">
-                    <div class="testimonial-inner">
-                        <div class="content-box">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever</p>
-                        </div>
-                        <div class="media">
-                            <a href="#">
-                                <img src="img/avatar/avatar-2.jpg" alt="testimonial-avatar" class="img-fluid">
-                            </a>
-                            <div class="media-body align-self-center">
-                                <h5>
-                                    Eliane Perei
-                                </h5>
-                                <h6>Web Developer</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-slide-item">
-                    <div class="testimonial-inner">
-                        <div class="content-box">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever</p>
-                        </div>
-                        <div class="media">
-                            <a href="#">
-                                <img src="img/avatar/avatar-3.jpg" alt="testimonial-avatar" class="img-fluid">
-                            </a>
-                            <div class="media-body align-self-center">
-                                <h5>
-                                    Maria Blank
-                                </h5>
-                                <h6>Office Manager</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-slide-item">
-                    <div class="testimonial-inner">
-                        <div class="content-box">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever</p>
-                        </div>
-                        <div class="media">
-                            <a href="#">
-                                <img src="img/avatar/avatar-4.jpg" alt="testimonial-avatar" class="img-fluid">
-                            </a>
-                            <div class="media-body align-self-center">
-                                <h5>
-                                    Karen Paran
-                                </h5>
-                                <h6>Support Manager</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-slide-item">
-                    <div class="testimonial-inner">
-                        <div class="content-box">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever</p>
-                        </div>
-                        <div class="media">
-                            <a href="#">
-                                <img src="img/avatar/avatar-1.jpg" alt="testimonial-avatar" class="img-fluid">
-                            </a>
-                            <div class="media-body align-self-center">
-                                <h5>
-                                    John Pitarshon
-                                </h5>
-                                <h6>Creative Director</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Testimonial end -->
-
-<!-- Blog start -->
-<div class="blog content-area bg-grea">
-    <div class="container">
-        <!-- Main title -->
-        <div class="main-title">
-            <h1>Latest Blog</h1>
-        </div>
-        <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-3">
-                        <div class="blog-photo">
-                            <img src="img/blog/blog-3.jpg" alt="blog" class="img-fluid">
+                <div class="col-md-4">
+                    <div class="how_inner">
+                        <div class="media mb-3">
+                            <img src="{{asset('front_end/images/icon01.png')}}" alt="" class="img-fluid">
                         </div>
-                        <div class="detail">
-                            <h3>
-                                <a href="blog-details.html">Negotiate A Job Offer & Close The Deal</a>
-                            </h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
-                            <div class="footer">
-                                <div class="float-left">
-                                    <p class="date"><i class="flaticon-calendar"></i> 24 Sep, 2019</p>
-                                </div>
-                                <div class="float-right">
-                                    <a href="#">Read more..</a>
-                                </div>
-                            </div>
+                        <div class="content-box text-center">
+                            <h3><a href="#">Create Account</a></h3>
+                            <p>Create an account and access your saved settings on any device.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-3">
-                        <div class="blog-photo">
-                            <img src="img/blog/blog-2.jpg" alt="blog" class="img-fluid">
+                <div class="col-md-4">
+                    <div class="how_inner">
+                        <div class="media mb-3">
+                            <img src="{{asset('front_end/images/icon02.png')}}" alt="" class="img-fluid">
                         </div>
-                        <div class="detail">
-                            <h3>
-                                <a href="blog-details.html">How To Get Out Of Stress At Work</a>
-                            </h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
-                            <div class="footer">
-                                <div class="float-left">
-                                    <p class="date"><i class="flaticon-calendar"></i> 24 Sep, 2019</p>
-                                </div>
-                                <div class="float-right">
-                                    <a href="#">Read more..</a>
-                                </div>
-                            </div>
+                        <div class="content-box text-center">
+                            <h3><a href="#">Find Your Vacancy</a></h3>
+                            <p>Don't just find. Be found. Put your CV in front of great employers.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 none-992">
-                    <div class="blog-3">
-                        <div class="blog-photo">
-                            <img src="img/blog/blog-1.jpg" alt="blog" class="img-fluid">
+                <div class="col-md-4">
+                    <div class="how_inner">
+                        <div class="media mb-3">
+                            <img src="{{asset('front_end/images/icon03.png')}}" alt="" class="img-fluid">
                         </div>
-                        <div class="detail">
-                            <h3>
-                                <a href="blog-details.html">How You Can Give Someone A Second Chance</a>
-                            </h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
-                            <div class="footer">
-                                <div class="float-left">
-                                    <p class="date"><i class="flaticon-calendar"></i> 24 Sep, 2019</p>
-                                </div>
-                                <div class="float-right">
-                                    <a href="#">Read more..</a>
-                                </div>
-                            </div>
+                        <div class="content-box text-center">
+                            <h3><a href="#">Get A Job</a></h3>
+                            <p>Your next career move starts here. Choose Job from thousands of companies</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+<!-- How Work end -->
 
+<!-- Reviews start -->
+<section class="reviews_ratings content-area-box">
+    <div class="container">
+        <div class="main-title">
+            <h2>Reviews & Ratings</h2>
+        </div>
+        <div class="slick-slider-area">
+            <div class="reviews_box owl-carousel owl-theme">
+                <div class="reviews_inner">
+                    <div class="content-box text-center">
+                        <i class="fa fa-quote-left"></i>
+                        <p>The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                    <div class="reviews_content text-center">
+                        <div class="reviews_img">
+                            <img src="{{asset('front_end/images/photo_img01.jpg')}}" alt="" class="img-fluid">
+                        </div>
+                        <h2>Cristen R. Ridenhour</h2>
+                        <p>Ui/UX designer</p>
+                    </div>
+                </div>
+                <div class="reviews_inner">
+                    <div class="content-box text-center">
+                        <i class="fa fa-quote-left"></i>
+                        <p>The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                    <div class="reviews_content text-center">
+                        <div class="reviews_img">
+                            <img src="{{asset('front_end/images/photo_img02.jpg')}}" alt="" class="img-fluid">
+                        </div>
+                        <h2>William L. Dearman</h2>
+                        <p>Marketing Manager</p>
+                    </div>
+                </div>
+                <div class="reviews_inner">
+                    <div class="content-box text-center">
+                        <i class="fa fa-quote-left"></i>
+                        <p>The release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                    <div class="reviews_content text-center">
+                        <div class="reviews_img">
+                            <img src="{{asset('front_end/images/photo_img03.jpg')}}" alt="" class="img-fluid">
+                        </div>
+                        <h2>Randolph M. Belli</h2>
+                        <p>Accoutant</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Reviews end -->
 @endsection
+<!-- @include('user.layout.footer') -->
 @push('scripts')
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
