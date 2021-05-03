@@ -38,4 +38,9 @@ class User extends Authenticatable
     {
         $this->notify(new UserResetPassword($token));
     }
+
+    public function education()
+    {
+        return $this->belongsTo('App\Education');
+    }
 }
