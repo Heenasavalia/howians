@@ -5,6 +5,7 @@ namespace App;
 use App\Notifications\CompanyResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Carbon\Carbon;
 
 class Company extends Authenticatable
 {

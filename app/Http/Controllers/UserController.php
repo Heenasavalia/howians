@@ -238,7 +238,7 @@ class UserController extends Controller
 
         // dump(date('Y-m-d'));
 
-        $get_data = JobRequirement::where('title','LIKE', $keywords .'%')
+        $get_data = JobRequirement::with('company')->where('title','LIKE', $keywords .'%')
                                     ->where('location','LIKE', '%' . $location .'%')
                                     ->orWhere ('address','LIKE', '%' . $location .'%')
                                     // ->where('end_time', '=', date('Y-m-d'))
