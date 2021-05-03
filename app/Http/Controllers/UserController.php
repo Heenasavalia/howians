@@ -12,6 +12,9 @@ use App\UserSettings;
 use Carbon\Carbon;
 use App\User;
 use App\Education;
+use App\JobRequirement;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
@@ -199,13 +202,50 @@ class UserController extends Controller
         return view('user.profile',['user'=>$user,'education' => $education, 'country' => $country]);
     }
 
+    public function UpdatePassword(Request $request) {
+        return view('user.auth.passwords.change');
+    }
+
+    public function changePassword(Request $request) {
+        $this->validate($request, [
+            'current' => 'required',
+            'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required|min:6'
+        ]);
+        $user = User::find(Auth::id());
+
+        if (!Hash::check($request->current, $user->password)) {
+
+            return redirect()->back()->with('error', 'Current password does not match!');
+        }
+
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        return redirect('user/home')->with('success', 'Great, Your password has been changed successfully :)');
+    }
+
     public function userSearch(Request $request)
     {
         $data = $request->all();
         $keywords = $data['keyword'];
         $category = $data['category'];
         $location = $data['location'];
+        $current = \Carbon\Carbon::now();
+        $current = $current->format('Y-m-d');
 
-        
+        $get_data = JobRequirement::where('title','LIKE', $keywords .'%')
+                                    ->where('location','LIKE', '%' . $location .'%')
+                                    ->where( function($query) use ($location){
+                                        $query->orWhere ('address','LIKE', '%' . $location .'%')
+                                            ->orWhere('city','LIKE', $location .'%')
+                                            ->orWhere('state','LIKE', $location .'%')
+                                            ->orWhere('country','LIKE', $location .'%');
+                                    })
+                                    ->whereRaw('FIND_IN_SET("'.$category.'",job_category)')
+                                    ->whereDate('end_time','>=', $current)
+                                    ->get();
+        // return response()->json($get_data);
+        dd($get_data);
     }
 }

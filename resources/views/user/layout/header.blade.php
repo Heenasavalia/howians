@@ -139,6 +139,9 @@
                     <li class="nav-item ni-2">
                         <a href="{{ url('/user/logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> Logout </a>
                     </li>
+                    <form id="logout-form" action="{{ url('user/logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 @else
                     <li class="nav-item ni-2">
                         <a class="nav-link" href="login.html">
