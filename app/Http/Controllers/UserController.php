@@ -231,21 +231,35 @@ class UserController extends Controller
         $keywords = $data['keyword'];
         $category = $data['category'];
         $location = $data['location'];
-        $current = \Carbon\Carbon::now();
-        $current = $current->format('Y-m-d');
+        // $today = \Carbon\Carbon::now()->toDateTimeString();
+        // dump($today);
+        // $date = Carbon::parse($today)->format('d-m-Y');
+        // dump($date);
+
+        // dump(date('Y-m-d'));
 
         $get_data = JobRequirement::where('title','LIKE', $keywords .'%')
                                     ->where('location','LIKE', '%' . $location .'%')
-                                    ->where( function($query) use ($location){
-                                        $query->orWhere ('address','LIKE', '%' . $location .'%')
-                                            ->orWhere('city','LIKE', $location .'%')
-                                            ->orWhere('state','LIKE', $location .'%')
-                                            ->orWhere('country','LIKE', $location .'%');
-                                    })
-                                    ->whereRaw('FIND_IN_SET("'.$category.'",job_category)')
-                                    ->whereDate('end_time','>=', $current)
+                                    ->orWhere ('address','LIKE', '%' . $location .'%')
+                                    // ->where('end_time', '=', date('Y-m-d'))
+                                    // ->whereRaw('FIND_IN_SET("'.$category.'",job_category)')
+                                    ->where('job_category','LIKE','%'. $category .'%')
+                                    ->whereDay('end_time', '>=', date('d'))
+                                    ->whereMonth('end_time', '>=', date('m'))
+                                    ->whereYear('end_time', '>=', date('Y'))
+                                    // ->where( function($q){
+                                    //     $q->whereDay('end_time', '>=', date('d'));
+                                    //     $q->whereMonth('end_time', '=', date('m'));
+                                    //     $q->whereYear('end_time', '=', date('Y'));
+                                    // })
+                                    // ->where('end_time','=', $today)
+                                    // ->where(DB::raw("DATE(end_time) < '".$today."'"))
+                                    // ->whereDate('created_at', '>', $today)
+                                    // ->whereDate('end_time', '>', $date)
                                     ->get();
+                                    // ->toSql();
         // return response()->json($get_data);
-        dd($get_data);
+        return view('user.job_list', ['data' => $get_data]);
+        // dd($get_data);
     }
 }
