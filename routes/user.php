@@ -22,3 +22,11 @@ Route::get('change-password','UserController@UpdatePassword');
 Route::put('change-password','UserController@changePassword');
 
 Route::get('msg-send-mail/{id}','UserController@MailSendMessage');
+
+// review ratting form
+Route::any('review/{com}/{job}','UserController@ReviewForm');
+Route::post('submit-rating','UserController@AddReview');
+
+// apply for job
+
+
