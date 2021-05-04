@@ -15,6 +15,7 @@ use App\Education;
 use App\JobRequirement;
 use Illuminate\Support\Facades\Hash;
 use App\Company;
+use App\CandidateReview;
 
 
 class UserController extends Controller
@@ -295,4 +296,26 @@ class UserController extends Controller
             $message->subject($subject);
         });
     }
+
+    public function ReviewForm($companyid, $job_id)
+    {
+        // dd($id);
+        return view('user.company_review',['company_id' => $companyid, 'job_id' => $job_id]);
+    }
+    public function AddReview(Request $request)
+    {
+        $data = $request->all();
+        $rate = $data['rate'];
+        $user_id = $data['user_id'];
+        $company_id = $data['company_id'];
+        $job_id = $data['job_id'];
+        $description = $data['description'];
+        $review = CandidateReview::create($data);
+        if ($review) {
+            return redirect('user/home')->with('success', 'success!');
+        } else {
+            return redirect('user/home')->with('error', 'Error Accure.!!!');
+        }
+    }
+    
 }

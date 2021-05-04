@@ -16,8 +16,9 @@
                         <h3>{{$d->company->company_name}}</h3>
                         <p>{{$d->company->address}}</p>
                         <?php $com_id = $d->company->id; ?>
+                        
                         <a href="#"><button>Apply</button></a>
-                        <a href="#"><button>Review</button></a>
+                        <a href="{{url('user/review/'.$com_id.'/'.$d->id)}}"><button>Review</button></a>
                         <a href="#"><button>Profile View</button></a>
                         <a href="{{url('user/msg-send-mail/'.$com_id)}}"><button>Message / Mail</button></a>
                     </div>
