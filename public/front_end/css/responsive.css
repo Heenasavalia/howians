@@ -27,6 +27,15 @@
     .how_works .how_inner {
         padding: 40px;
     }
+    section.breadcrumb .banner-img {
+        height: 400px;
+    }
+    .about_content h2 {
+        font-size: 35px;
+    }
+    .news_details .news_title {
+        font-size: 26px;
+    }
 }
 
 @media screen and (min-width: 992px) {}
@@ -179,6 +188,40 @@
         color: #000;
         text-align: center;
     }
+    section.breadcrumb .banner-img {
+        height: 315px;
+    }
+    .inner-banner h2 {
+        font-size: 30px;
+    }
+    .inner-banner ul li,
+    .about_content h5,
+    .news_date span,
+    .news_details .our_recent_title {
+        font-size: 18px;
+    }
+    .inner-banner ul li a,
+    .inner-banner ul li:not(:last-child)::after,
+    .news_details .news_title {
+        font-size: 22px;
+    }
+    .about_content h2 {
+        font-size: 30px;
+    }
+    .about_news_box .news_img {
+        height: 230px;
+    }
+    .news_date {
+        padding: 10px 15px;
+        font-size: 25px;
+        line-height: 100%;
+    }
+    .about_news_box .news_details {
+        padding: 15px;
+    }
+    .job_vacancies_sec p {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -272,6 +315,42 @@
     }
     .categorie-box-2 h5 {
         font-size: 18px;
+    }
+    .about_content h2 {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .about_content h5,
+    .about_content p {
+        text-align: center;
+    }
+    .about_content a.btn {
+        display: table;
+        margin: 0 auto 30px;
+    }
+    .job_vacancies_sec .col-md-3 {
+        margin: 15px 0;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .job_vacancies_sec h2 {
+        padding-bottom: 40px;
+        font-size: 24px;
+    }
+    .job_vacancies_sec p {
+        letter-spacing: 0;
+    }
+    .our_recent_news_sec .col-md-6:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .inner-banner ul li a,
+    .inner-banner ul li:not(:last-child)::after,
+    .news_details .news_title {
+        font-size: 20px;
+    }
+    section.breadcrumb .banner-img {
+        height: 245px;
     }
 }
 

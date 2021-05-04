@@ -19,6 +19,8 @@ Route::get('/', function () {
 
   Route::any('home', 'FrontendController@home');
 
+  Route::any('about', 'FrontendController@about');
+
   Route::group(['prefix' => 'user'], function () {
   Route::get('/login', 'UserAuth\LoginController@showLoginForm')->name('login');
   Route::post('/login', 'UserAuth\LoginController@login');

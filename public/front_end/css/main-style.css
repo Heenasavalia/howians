@@ -140,7 +140,7 @@ li {
 }
 
 body p {
-    color: #333333;
+    color: #464646;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 300;
@@ -928,6 +928,169 @@ ul.social-list li a:hover,
 
 .footer-menu .links li a:hover {
     color: #fff;
+}
+
+section.breadcrumb {
+    padding: 0;
+    width: 100%;
+    display: block;
+    position: relative;
+    margin: 0;
+}
+
+section.breadcrumb .banner-img {
+    height: 615px;
+}
+
+section.breadcrumb .banner-img img {
+    object-fit: cover;
+}
+
+.breadcrumb .inner-banner {
+    position: absolute;
+    top: 55%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+.inner-banner h2 {
+    color: #fff;
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.inner-banner ul {
+    display: flex;
+    justify-content: center;
+}
+
+.inner-banner ul li {
+    margin: 0 8px;
+    position: relative;
+    font-size: 20px;
+}
+
+.inner-banner ul li:not(:last-child)::after {
+    content: "/";
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 25px;
+}
+
+.inner-banner ul li a {
+    font-size: 25px;
+    color: #fff;
+}
+
+.inner-banner ul li a:hover {
+    color: #4285f4;
+}
+
+.about_content h2 {
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    line-height: normal;
+}
+
+.about_content h5 {
+    color: #464646;
+    font-size: 22px;
+}
+
+.job_vacancies_sec {
+    background-color: #1a2b3a;
+}
+
+.job_vacancies_sec h2 {
+    text-align: center;
+    position: relative;
+    color: #fff;
+    padding-bottom: 45px;
+    font-weight: 600;
+}
+
+.job_vacancies_sec h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    width: 4px;
+    height: 30px;
+    margin: auto;
+}
+
+.job_vacancies_sec p {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.about_news_box {
+    background-color: #fff;
+    box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+}
+
+.about_news_box .news_img {
+    position: relative;
+    height: 390px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.about_news_box .news_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news_date {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #4285f4;
+    padding: 15px 25px;
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+    line-height: 100%;
+}
+
+.news_date span {
+    display: block;
+    font-size: 22px;
+}
+
+.about_news_box .news_details {
+    padding: 25px;
+}
+
+.news_details .our_recent_title {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.news_details .news_title {
+    font-size: 30px;
+}
+
+.news_details a {
+    color: #4285f4;
+    vertical-align: middle;
+}
+
+.news_details a:hover {
+    color: #000;
 }
 
 
