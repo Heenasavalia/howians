@@ -28,9 +28,10 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
+                    @if(Auth::user()->id != null && Auth::user()->id != 0)
                         <li class="nav-item ni-2">
                             <a class="nav-link btn btn-md button-theme" href="login.html">
-                                Login
+                                {{Auth::user()->first_name}} {{Auth::user()->last_name}}
                             </a>
                         </li>
                         <li class="nav-item ni-2">
@@ -38,6 +39,25 @@
                                 <i class="fa fa-bell-o" aria-hidden="true"></i>
                             </a>
                         </li>
+                        <li class="nav-item ni-2">
+                            <a class="nav-link deffold" href="#">
+                                /
+                            </a>
+                        </li>
+                        <li class="nav-item ni-2">
+                            <a href="{{ url('/user/logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> Logout </a>
+                        </li>
+                        <form id="logout-form" action="{{ url('user/logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    @else
+                        <li class="nav-item ni-2">
+                            <a class="nav-link btn btn-md button-theme" href="login.html">
+                                Login
+                            </a>
+                        </li>
+                    @endif
+                        
                     </ul>
                 </div>
             </nav>
