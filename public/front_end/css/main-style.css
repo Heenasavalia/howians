@@ -333,7 +333,7 @@ body .form-control {
 }
 
 .header-ml {
-    margin-left: 20%;
+    margin-left: 17%;
 }
 
 .main-header .navbar-expand-lg .navbar-nav.header-ml li {
@@ -398,8 +398,8 @@ body .form-control {
     align-items: center;
 }
 
-.navbar-expand-lg .navbar-nav.ml-auto li.nav-item:last-child {
-    margin-left: 15px;
+.navbar-expand-lg .navbar-nav.ml-auto li:not(:last-child) {
+    margin-right: 10px;
 }
 
 .banner .banner-slider-inner {
@@ -606,6 +606,9 @@ body .form-control {
     font-size: 40px;
     border-radius: 10px 0 0 10px;
     margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .categorie-box-2 .icon i {

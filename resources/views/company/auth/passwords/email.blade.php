@@ -1,57 +1,30 @@
 @extends('content.layout.auth')
-<!-- Main Content -->
+
 @section('content')
-    @include('content.layout.loader')
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-11 col-md-6 col-xl-3 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3 form-box">
+                <h2 id="heading">Reset Password</h2>
+                @if (session('status'))
+                <div class="alert alert-success">{{ session('status') }}</div>
+                @endif
+                <form class="form-horizontal commen-form" role="form" method="POST" action="{{ url('/company/password/email') }}">
+                    {{ csrf_field() }}
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <label for="email" class="control-label">E-Mail Address</label>
+                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                        @if ($errors->has('email'))
+                        <span class="help-block">{{ $errors->first('email') }}</span>
+                        @endif
+                    </div>
 
-    <section class="login-block">
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    <form class="md-float-material form-material" role="form" method="POST" action="{{ url('/content/password/email') }}">
-                        {{ csrf_field() }}
-                        <div class="text-center logotext">
-                            Adbiz Directory
-                        </div>
-
-                        <div class="auth-box card">
-                            <div class="card-block">
-                                <div class="row m-b-20">
-                                    <div class="col-md-12">
-                                        <h3 class="text-left">Recover your password</h3>
-                                    </div>
-                                </div>
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} form-primary">
-                                    <input id="email" type="email" class="form-control" placeholder="Your Email Address" name="email" value="{{ old('email') }}">
-                                    <span class="form-bar"></span>
-                                    @if ($errors->has('email'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Reset Password</button>
-                                    </div>
-                                </div>
-                                <p class="text-inverse text-right"><a href="{{ url('/content/login') }}"><b class="f-w-600">Back to Login.</b></a></p>
-
-                            </div>
-                        </div>
-                    </form>
-
-                </div>
-
+                    <div class="form-group">
+                        <button type="submit" class="btn action-button">Send Password Reset Link</button>
+                    </div>
+                </form>
             </div>
-
         </div>
-
-    </section>
-
+    </div>
+</div>
 @endsection
