@@ -239,16 +239,21 @@ class UserController extends Controller
         // dump($date);
 
         // dump(date('Y-m-d'));
-
+        $currentDate = date('Y-m-d');
+        // dd($currentDate);
         $get_data = JobRequirement::with('company')->where('title','LIKE', $keywords .'%')
-                                    ->where('location','LIKE', '%' . $location .'%')
-                                    ->orWhere ('address','LIKE', '%' . $location .'%')
+                                    // ->where('location','LIKE', '%' . $location .'%')
+                                    ->where( function($query) use ($location){
+                                        $query->where('location','LIKE', '%' . $location .'%')
+                                        ->orWhere('address','LIKE', '%' . $location .'%');
+                                    })
+                                    // ->orWhere ('address','LIKE', '%' . $location .'%')
                                     // ->where('end_time', '=', date('Y-m-d'))
                                     // ->whereRaw('FIND_IN_SET("'.$category.'",job_category)')
                                     ->where('job_category','LIKE','%'. $category .'%')
-                                    ->whereDay('end_time', '>=', date('d'))
-                                    ->whereMonth('end_time', '>=', date('m'))
-                                    ->whereYear('end_time', '>=', date('Y'))
+                                    // ->whereDay('end_time', '>=', date('d'))
+                                    // ->whereMonth('end_time', '>=', date('m'))
+                                    // ->whereYear('end_time', '>=', date('Y'))
                                     // ->where( function($q){
                                     //     $q->whereDay('end_time', '>=', date('d'));
                                     //     $q->whereMonth('end_time', '=', date('m'));
@@ -258,8 +263,12 @@ class UserController extends Controller
                                     // ->where(DB::raw("DATE(end_time) < '".$today."'"))
                                     // ->whereDate('created_at', '>', $today)
                                     // ->whereDate('end_time', '>', $date)
+                                    // ->where('end_time', '>', $currentDate)
+                                    // ->orWhere('end_time', $currentDate)
+                                    ->where('end_time', '>=', $currentDate)
                                     ->get();
                                     // ->toSql();
+        // dd($get_data);
         // return response()->json($get_data);
         return view('user.job_list', ['data' => $get_data]);
         // dd($get_data);
