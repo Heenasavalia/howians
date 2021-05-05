@@ -44,6 +44,10 @@
     letter-spacing: 0;
 }
 
+.commen-form input[type="file"] {
+    padding: 3px;
+}
+
 .commen-form .has-error input,
 .commen-form .has-error textarea {
     border-color: #ff0000;
@@ -51,6 +55,7 @@
 
 select.form-control {
     border-radius: 0;
+    box-shadow: none !important;
 }
 
 .commen-form input:focus,

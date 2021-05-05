@@ -10,13 +10,11 @@
     </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    {{--    <titile>Adbiz Super Admin | Log in</titile>--}}
+    <link rel="shortcut icon" href="{{ url('/images/favicon.png') }}" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    {{--    heena--}}
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="#">
     <meta name="keywords" content="Admin">
@@ -30,19 +28,9 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-    {{--    heena--}}
-
-    <link rel="icon" href="https://colorlib.com/polygon/adminty/files/assets/images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/bootstrap/css/bootstrap.min.css')}}">
-
-    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/icon/themify-icons/themify-icons.css')}}">
-
-    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/icon/icofont/css/icofont.css')}}">
-
-    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/style.css')}}">
-
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('user/css/user_registration.css') }}">
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
