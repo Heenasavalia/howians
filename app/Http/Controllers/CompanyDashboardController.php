@@ -24,7 +24,7 @@ class CompanyDashboardController extends Controller
     public function index()
     {
         // dd('hello');
-        return view('company.dashboard');
+        return view('company.home');
     }
 
     public function PlanSelection(){

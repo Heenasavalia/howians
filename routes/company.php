@@ -1,15 +1,15 @@
 <?php
 use App\Http\Middleware\CheckCompanyPlan;
 
-Route::get('/home', function () {
-    $users[] = Auth::user();
-    $users[] = Auth::guard()->user();
-    $users[] = Auth::guard('company')->user();
-
-    //dd($users);
-
-    return view('company.home');
-})->name('home');
+//Route::get('/home', function () {
+//    $users[] = Auth::user();
+//    $users[] = Auth::guard()->user();
+//    $users[] = Auth::guard('company')->user();
+//
+//    //dd($users);
+//
+//    return view('company.home');
+//})->name('home');
 
 // Route::middleware([CheckCompanyPlan::class])->group(function () {
 //     Route::get('/', function () {
@@ -21,7 +21,7 @@ Route::get('/home', function () {
     // })->withoutMiddleware([EnsureTokenIsValid::class]);
 // });
 
-Route::get('/dashboard', 'CompanyDashboardController@index');
+Route::get('/home', 'CompanyDashboardController@index');
 Route::get('/plan-selection', 'CompanyDashboardController@PlanSelection');
 Route::get('/plan-update/{plan_id}', 'CompanyDashboardController@PlanUpdate');
 
