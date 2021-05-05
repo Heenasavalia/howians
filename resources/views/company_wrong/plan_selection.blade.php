@@ -1,4 +1,4 @@
-@extends('company.layout.company_layout')
+@extends('company.layout.main_layout')
 @section('content')
 <div class="pcoded-content">
     <div class="pcoded-inner-content">
@@ -43,13 +43,13 @@
                                             </div>
                                         @endforeach
                                         <div class="mb-3 text-center">
-                                            @if($company->plan_status == 'Active')
+                                            @if($company->plan_status == 'Active') 
                                                 <a type="button" class="btn btn-rounded btn-primary {{$company->plan_status}}" href="{{url('/company/plan-update/' . $plans->id)}}">{{($company->is_select_plan == 1 && $company->pricing_plan_id == $plans->id) ? "Selected" : "Select"}}</a>
                                             @else
                                                 <a type="button" class="btn btn-rounded btn-primary {{$company->plan_status}}" href="{{url('/company/plan-update/' . $plans->id)}}">{{($company->is_select_plan == 1 && $company->pricing_plan_id == $plans->id) ? "Reactivate" : "Select"}}</a>
                                             @endif
                                         </div>
-
+                                        
                                     </div>
                                 </div>
                             </div>

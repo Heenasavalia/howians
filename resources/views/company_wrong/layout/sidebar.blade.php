@@ -12,7 +12,7 @@
         <div class="pcoded-navigatio-lavel">Menus</div>
         <ul class="pcoded-item pcoded-left-item">
             <li class="active">
-                <a href="{{ url('company/home') }}">
+                <a href="{{ url('company/dashboard') }}">
                     <span class="pcoded-micon"><i class="fa fa-tachometer"></i></span>
                     <span class="pcoded-mtext">Dashboard</span>
                 </a>
@@ -38,13 +38,6 @@
                 </a>
             </li>
 
-            <li class="">
-                <a href="{{ url('company/change_password') }}">
-                    <span class="pcoded-micon"><i class="fa fa-cog"></i></span>
-                    <span class="pcoded-mtext">Change Password</span>
-                </a>
-            </li>
-
 
 
             <li class="">
@@ -57,10 +50,7 @@
                 </form>
             </li>
 
+
         </ul>
     </div>
 </nav>
-
-@push('scripts')
-
-@endpush('scripts')

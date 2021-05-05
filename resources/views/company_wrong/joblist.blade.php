@@ -1,4 +1,4 @@
-@extends('company.layout.company_layout')
+@extends('company.layout.main_layout')
 @section('content')
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <div class="pcoded-content">

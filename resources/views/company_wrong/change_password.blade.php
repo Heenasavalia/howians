@@ -1,4 +1,4 @@
-@extends('company.layout.company_layout')
+@extends('company.layout.main_layout')
 @section('content')
 <div class="content-body">
 			<div class="container-fluid">
@@ -13,7 +13,7 @@
                             <div class="card-body">
                                 <div class="basic-form">
                                     <form method="POST" action="{{ url('company/change-password') }}">
-                                        @csrf
+                                        @csrf 
                                         @foreach ($errors->all() as $error)
                                             <p class="text-danger">{{ $error }}</p>
                                         @endforeach
@@ -26,7 +26,7 @@
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">New Password</label>
-                                            <div class="col-sm-9">
+                                            <div class="col-sm-9"> 
                                                 <input id="new_password" type="password" class="form-control" name="new_password" autocomplete="current-password" placeholder="Type new Password">
                                             </div>
                                         </div>
@@ -47,7 +47,7 @@
                         </div>
 					</div>
 
-
+                   
 				</div>
 			</div>
 		</div>
