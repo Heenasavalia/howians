@@ -30,7 +30,7 @@
                     <ul class="navbar-nav ml-auto">
                     @if(Auth::user()->id != null && Auth::user()->id != 0)
                         <li class="nav-item ni-2">
-                            <a class="nav-link btn btn-md button-theme" href="login.html">
+                            <a class="nav-link btn btn-md button-theme" href="{{url('user/display-profile/'.Auth::user()->id)}}">
                                 {{Auth::user()->first_name}} {{Auth::user()->last_name}}
                             </a>
                         </li>
