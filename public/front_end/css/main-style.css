@@ -1108,9 +1108,20 @@ section.breadcrumb .banner-img img {
     color: #000;
 }
 
-.sidebar-right {
+.candidate-listing-section .left-listing {
+    flex: 0 0 28%;
+    max-width: 28%;
+}
+
+.candidate-listing-section .right-listing {
+    flex: 0 0 72%;
+    max-width: 72%;
+}
+
+.sidebar-right,
+.jobs_box .candidate-item {
     background-color: #fff;
-    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
     padding: 15px;
 }
 
@@ -1184,8 +1195,166 @@ section.breadcrumb .banner-img img {
     border: 1px solid #e2e2e2;
 }
 
-.option-bar {
+.option-bar,
+.jobs_box {
     margin-bottom: 20px;
+}
+
+.sorting-options2 {
+    flex: 0 0 200px;
+    max-width: 200px;
+}
+
+.option-bar .sorting-options a {
+    margin-left: 15px;
+    font-size: 24px;
+}
+
+.option-bar .sorting-options a:hover {
+    color: #4285f4;
+}
+
+.jobs_box .candidate-item {
+    margin-bottom: 15px;
+}
+
+.candidate-item .candidate-listing {
+    flex: 0 0 75%;
+    max-width: 75%;
+    position: relative;
+    padding-right: 25px;
+}
+
+.candidate-item .candidate-listing::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 118px;
+    width: 1px;
+    background-color: #e6e9ed;
+}
+
+.candidate-item .div-right {
+    flex: 0 0 25%;
+    max-width: 25%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+}
+
+.candidate-item .div-right p {
+    color: #888888;
+    line-height: normal;
+}
+
+.candidate-item .div-right h3 {
+    font-size: 23px;
+}
+
+.candidate-listing .user-logo {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.candidate-listing .candidate_right {
+    flex: 0 0 80%;
+    max-width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.candidate-listing .candidate_right h4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 0 0 7px;
+}
+
+.candidate-listing .candidate_right h4 a {
+    font-size: 20px;
+}
+
+.candidate-listing .candidate_right h4 a:hover {
+    color: #4285f4;
+}
+
+.candidate-listing .candidate_right h4 .label {
+    background-color: #e7eeeb;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #06b312;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.candidate_right li {
+    color: #8b8b8b;
+    font-size: 14px;
+}
+
+.candidate_right li strong {
+    color: #000;
+}
+
+.candidate_right li .fa {
+    margin-right: 5px;
+    color: #000;
+}
+
+.candidate_label {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 15px;
+}
+
+.candidate_label ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.candidate_label ul li {
+    background-color: #e9edf2;
+    border-radius: 5px;
+    padding: 7px 10px;
+    color: #6c6c6c;
+    font-size: 14px;
+}
+
+.candidate_label ul li:not(:last-child) {
+    margin-right: 5px;
+}
+
+.candidate_label ul li strong {
+    color: #000;
+}
+
+.pagination-box nav ul.pagination {
+    justify-content: center;
+}
+
+ul.pagination li {
+    margin: 0 5px;
+}
+
+ul.pagination li a.page-link {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    font-size: 20px;
+    color: #353535;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+ul.pagination li a.page-link.active,
+ul.pagination li a.page-link:hover {
+    background-color: #4285f4;
+    color: #fff;
 }
 
 
