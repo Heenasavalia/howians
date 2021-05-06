@@ -37,4 +37,5 @@ Route::get('post-job-list','CompanyJobRequirmentController@JobUser');
 Route::any('getjobuserlist','CompanyJobRequirmentController@getjobuserlist');
 
 Route::get('profile','CompanyDashboardController@profile');
+Route::post('update_profile','CompanyDashboardController@update_profile');
 

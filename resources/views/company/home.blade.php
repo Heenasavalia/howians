@@ -21,12 +21,18 @@
                                 <div class="page-header-breadcrumb">
                                     <ul class="breadcrumb-title">
                                         <li class="breadcrumb-item">
-                                            <a href="{{ url('client/home') }}">Home</a>
+                                            <a href="{{ url('company/home') }}">Home</a>
                                         </li>
                                         <li class="breadcrumb-item"><a href="JavaScript:Void(0);">Dashboard</a></li>
                                     </ul>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            @include('company.layout.flash')
                         </div>
                     </div>
 
@@ -118,8 +124,6 @@
     <script type="text/javascript">
         var url = "{{ url('/') }}";
         $(document).ready(function() {
-// page is now ready, initialize the calendar...
-
 
             var d = new Date();
             var month = d.getMonth() + 1;
@@ -137,17 +141,6 @@
             });
         });
 
-        // $('#calendar').fullCalendar({
-        // defaultDate: output,
-        //         //defaultView: 'agendaWeek',
-        //         events : [
-        //         title:'aaaaa',
-        //         start: "2020-01-01",
-        //         end: "2022-01-01",
-
-        //         ],
-        //         });
-        // });
 
     </script>
 

@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Company;
 use App\PricingPlans;
-use App\PricingPalnFeture;
-use App\PricingFetures;
-use App\CompanySetting;
-use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use DB;
-use Illuminate\Support\Facades\Redirect;
-use App\Company;
 use Hash;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Helpers;
+
 
 class CompanyDashboardController extends Controller
 {
@@ -27,32 +25,34 @@ class CompanyDashboardController extends Controller
         return view('company.home');
     }
 
-    public function PlanSelection(){
+    public function PlanSelection()
+    {
         $today = \Carbon\Carbon::now()->toDateTimeString();
 
         // dd($today_date);
-        $auth_company =  Auth::user();
+        $auth_company = Auth::user();
         // $setting_plan = CompanySetting::select('company_id','is_select_plan','pricing_plan_id','start_time','end_time')->where('company_id',$auth_company->id)->first();
-        $Company_plans = PricingPlans::with('fetures')->where('type','company')->where('status','Active')->get();
+        $Company_plans = PricingPlans::with('fetures')->where('type', 'company')->where('status', 'Active')->get();
 
-        if(Carbon::parse($auth_company->end_time)->gt(Carbon::now())){
+        if (Carbon::parse($auth_company->end_time)->gt(Carbon::now())) {
             $auth_company->plan_status = 'Active';
-        }else{
+        } else {
             $auth_company->plan_status = 'Inactive';
         }
-        return view('company.plan_selection',['company_plans' => $Company_plans,'company'=> $auth_company]);
+        return view('company.plan_selection', ['company_plans' => $Company_plans, 'company' => $auth_company]);
 
     }
 
-    public function PlanUpdate($plan_id){
+    public function PlanUpdate($plan_id)
+    {
         $today = \Carbon\Carbon::now()->toDateTimeString();
         $tomorrow = Carbon::tomorrow()->toDateTimeString();
         $today_date = $date_formate = \Carbon\Carbon::parse($today)->format('Y-m-d H:i:s'); //
-        $auth_company =  Auth::user();
-        $setting_plan = $auth_company->update(['is_select_plan'=> 1,
+        $auth_company = Auth::user();
+        $setting_plan = $auth_company->update(['is_select_plan' => 1,
             'pricing_plan_id' => $plan_id,
-            'start_time'=> $today,
-            'end_time'=>$tomorrow
+            'start_time' => $today,
+            'end_time' => $tomorrow
         ]);
 
         return Redirect()->back()->with(['message' => 'The Message']);
@@ -71,7 +71,7 @@ class CompanyDashboardController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -82,7 +82,7 @@ class CompanyDashboardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -93,7 +93,7 @@ class CompanyDashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -104,8 +104,8 @@ class CompanyDashboardController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -116,7 +116,7 @@ class CompanyDashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -124,11 +124,14 @@ class CompanyDashboardController extends Controller
         //
     }
 
-    public function update_password(){
+    public function update_password()
+    {
         //dd('adt se mjbur');
         return view('company.change_password');
     }
-    public function changePassword(Request $request) {
+
+    public function changePassword(Request $request)
+    {
         $this->validate($request, [
             'current_password' => 'required',
             'new_password' => 'required',
@@ -137,20 +140,55 @@ class CompanyDashboardController extends Controller
         //dd($request);
         $company = Company::find(Auth::id());
         if (!Hash::check($request->current_password, $company->password)) {
-           return redirect()->back()->with('error', 'Current password does not match!');
+            return redirect()->back()->with('error', 'Current password does not match!');
         }
         $company->password = Hash::make($request->new_password);
         $company->save();
         return redirect('company/home')->with('Success', 'Great, Your password has been changed successfully :)');
-   }
+    }
 
-   public function registerData(Request $request){
+    public function registerData(Request $request)
+    {
         dd($request);
         dd("yes right");
-   }
+    }
 
 
-   public function profile(){
+    public function profile()
+    {
         return view('company.profile');
-   }
+    }
+
+    public function update_profile(Request $request)
+    {
+        $company = Auth::user();
+//        dd($company);
+        $this->validate($request, [
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'email' => 'required|string',
+            'mobile' => 'required',
+            'address' => 'required',
+            'country' => 'required',
+            'state' => 'required',
+            'city' => 'required',
+        ]);
+        $data = $request->all();
+//        dd($data);
+        if ($request->hasFile('profile_image')) {
+            $image = $request->file('profile_image');
+            $data['profile_image'] = Helpers::upload_image($image, "company_profile");
+        } else {
+            $data['profile_image'] = $company->profile_image;
+        }
+
+        $update = $company->update($data);
+        //dd($update);
+        if ($update) {
+            return redirect('company/home')->with('success', 'Your profile has been updated');
+        } else {
+            return redirect()->back()->with('error', 'Oops, Something went wrong.Your Profile has not been updated.');
+        }
+
+    }
 }
