@@ -141,6 +141,11 @@ class CompanyDashboardController extends Controller
         }
         $company->password = Hash::make($request->new_password);
         $company->save();
-        return redirect('company/dashboard')->with('Success', 'Great, Your password has been changed successfully :)');
+        return redirect('company/home')->with('Success', 'Great, Your password has been changed successfully :)');
+   }
+
+   public function registerData(Request $request){
+        dd($request);
+        dd("yes right");
    }
 }
