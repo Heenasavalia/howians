@@ -86,11 +86,9 @@
         </div>
     </nav>
 
-    @yield('content')
-
     <!-- Scripts -->
     <script src="/js/app.js"></script>
-    @stack('scripts')
+    <!-- @stack('scripts') -->
 </body>
 
 </html>
