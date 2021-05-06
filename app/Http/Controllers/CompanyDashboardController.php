@@ -148,4 +148,9 @@ class CompanyDashboardController extends Controller
         dd($request);
         dd("yes right");
    }
+
+
+   public function profile(){
+        return view('company.profile');
+   }
 }

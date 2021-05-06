@@ -39,11 +39,20 @@
             </li>
 
             <li class="">
+                <a href="{{ url('company/profile') }}">
+                    <span class="pcoded-micon"><i class="fa fa-building-o"></i></span>
+                    <span class="pcoded-mtext">Update profile</span>
+                </a>
+            </li>
+
+            <li class="">
                 <a href="{{ url('company/change_password') }}">
                     <span class="pcoded-micon"><i class="fa fa-cog"></i></span>
                     <span class="pcoded-mtext">Change Password</span>
                 </a>
             </li>
+
+
 
 
 
