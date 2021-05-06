@@ -33,9 +33,10 @@ Route::resource('job-requirement','CompanyJobRequirmentController');
 //Route::any('getjoblist','CompanyJobRequirmentController@getjoblist');
 //Route::get('view_user/{id}','CompanyJobRequirmentController@view_user');
 
-Route::get('post-job-list','CompanyJobRequirmentController@JobUser');
+Route::get('my-post-job-list','CompanyJobRequirmentController@JobUser');
 Route::any('getjobuserlist','CompanyJobRequirmentController@getjobuserlist');
 
 Route::get('profile','CompanyDashboardController@profile');
 Route::post('update_profile','CompanyDashboardController@update_profile');
 
+Route::any('show-user/{id}','CompanyJobRequirmentController@ShowUsers');

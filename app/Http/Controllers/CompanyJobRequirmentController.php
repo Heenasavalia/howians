@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\JobCategory;
 use App\JobRequirement;
+use App\ApplyCandidate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
 
 class CompanyJobRequirmentController extends Controller
@@ -37,7 +39,33 @@ class CompanyJobRequirmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'education' => 'required',
+            'email' => 'required',
+            'designation' => 'required',
+            'number_of_vacancy' => 'required',
+            'minimum_salary' => 'required',
+            'maximum_salary' => 'required',
+            'gender' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required',
+            'job_type' => 'required',
+            'address' => 'required',
+            'pincode' => 'required',
+        ]);
+        $data=$request->all();
+        $data['company_id'] = Auth::user()->id;
+
+        $job_create = JobRequirement::create($data);
+
+        if($job_create){
+            return response()->json('success');
+        }else {
+            return response()->json('error');
+        }
+
     }
 
     /**
@@ -109,6 +137,12 @@ class CompanyJobRequirmentController extends Controller
         $all_job = JobRequirement::where('company_id', $id)->get();
         return Datatables::of($all_job)->make(true);
 //        return Datatables::of(JobRequirement::with('company')->where('company_id', $id)->get())->make(true);
+    }
+
+    public function ShowUsers($id){
+        dump($id);
+        $get_user = ApplyCandidate::where('job_id',$id)->get();
+        dd($get_user);
     }
 
 }
