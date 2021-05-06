@@ -9,12 +9,12 @@
     <meta name="keywords" content="Adbiz Directory">
     <meta name="author" content="#">
     <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url('/images/favicon.png') }}" type="image/png" />
 
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="icon" href="https://colorlib.com/polygon/adminty/files/assets/images/favicon.ico" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
 
