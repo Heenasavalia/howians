@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/bootstrap-select.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/bootstrap-submenu.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/daterangepicker.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front_end/css/animate.min.css') }}">
@@ -20,7 +19,6 @@
 
     <script src="{{asset('front_end/js/jquery-2.2.0.min.js')}}"></script>
     <script src="{{asset('front_end/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('front_end/js/bootstrap-select.min.js')}}"></script>
     <script src="{{asset('front_end/js/bootstrap-submenu.js')}}"></script>
     <script src="{{asset('front_end/js/daterangepicker.min.js')}}"></script>
     <script src="{{asset('front_end/js/owl.carousel.min.js')}}"></script>
@@ -48,13 +46,13 @@
                             <a class="nav-link" href="{{url('/about')}}">ABOUT US</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">JOB</a>
+                            <a class="nav-link" href="{{url('/job')}}">JOB</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">PLAN</a>
+                            <a class="nav-link" href="{{url('/plan')}}">PLAN</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">CONTACT</a>
+                            <a class="nav-link" href="{{url('/contact')}}">CONTACT</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">

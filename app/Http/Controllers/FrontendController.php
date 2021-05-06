@@ -12,4 +12,8 @@ class FrontendController extends Controller
     {
         return view('frontend.about');
     }
+    public function job()
+    {
+        return view('frontend.job');
+    }
 }

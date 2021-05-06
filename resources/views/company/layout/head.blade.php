@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{{ asset('company/assets/pages/chart/radial/css/radial.css')}}" type="text/css" media="all">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/icon/feather/css/feather.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/icon/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     {{--link for icone--}}
     <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/icon/icofont/css/icofont.css')}}">

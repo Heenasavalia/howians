@@ -23,7 +23,7 @@
                                             <i class="fa fa-map-marker"></i>
                                         </div>
                                         <div class="search-col">
-                                            <select class="selectpicker search-fields" name="Choose Categories">
+                                            <select class="search-fields" name="Choose Categories">
                                                 <option>Choose Categories</option>
                                                 <option>Choose Categories1</option>
                                                 <option>Choose Categories2</option>
