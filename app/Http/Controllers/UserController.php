@@ -326,5 +326,10 @@ class UserController extends Controller
             return redirect('user/home')->with('error', 'Error Accure.!!!');
         }
     }
+
+    public function job()
+    {
+        return view('user.job_display');
+    }
     
 }

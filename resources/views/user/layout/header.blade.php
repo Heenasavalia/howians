@@ -18,7 +18,7 @@
                             <a class="nav-link" href="#">ABOUT US</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">JOB</a>
+                            <a class="nav-link" href="{{url('user/job')}}">JOB</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('user/displayallplan')}}">PLAN</a>

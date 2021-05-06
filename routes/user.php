@@ -23,6 +23,9 @@ Route::put('change-password','UserController@changePassword');
 
 Route::get('msg-send-mail/{id}','UserController@MailSendMessage');
 
+// job 
+Route::any('/job','UserController@job');
+
 // review ratting form
 Route::any('review/{com}/{job}','UserController@ReviewForm');
 Route::post('submit-rating','UserController@AddReview');
