@@ -489,10 +489,22 @@ body .form-control {
 }
 
 .search-fields {
-    min-height: 45px;
+    min-height: 44px;
     border-radius: 3px;
     box-shadow: none;
-    background: #fff;
+    background-color: #fff;
+    background-image: url(../images/sprite.png);
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    border: 1px solid #e2e2e2;
+    color: #495057;
+    padding: 0 30px 0 10px;
+    width: 100%;
+}
+
+.search-col .search-fields {
+    border: none;
+    min-height: 54px;
 }
 
 .inline-search-area.isa-3 .bootstrap-select button {
@@ -895,7 +907,7 @@ ul.social-list li a:hover,
     border-radius: 5px 0 0 5px;
     text-align: center;
     line-height: 40px;
-    font-size: 20px;
+    font-size: 18px;
     color: #fff;
     flex: 0 0 40px;
 }
@@ -1094,6 +1106,86 @@ section.breadcrumb .banner-img img {
 
 .news_details a:hover {
     color: #000;
+}
+
+.sidebar-right {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    padding: 15px;
+}
+
+.advanced-search h3 {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.advanced-search .show-more-options {
+    pointer-events: none;
+    display: block;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.advanced-search .show-more-options .fa {
+    display: none;
+}
+
+.advanced-search .collapse {
+    display: block;
+}
+
+.advanced-search .collapse .checkbox {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.advanced-search .collapse .checkbox input[type=checkbox] {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    opacity: 0;
+}
+
+.advanced-search .collapse .checkbox input[type=checkbox]+label {
+    margin: 0 0 0 5px;
+}
+
+.advanced-search .collapse .checkbox input[type=checkbox]+label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #e2e2e2;
+    font-family: 'FontAwesome';
+    text-align: center;
+    line-height: 23px;
+    font-size: 16px;
+    color: #4285f4;
+}
+
+.advanced-search .collapse .checkbox input[type=checkbox]:checked+label::before {
+    content: "\f00c";
+    border-color: #4285f4;
+}
+
+.sidebar-right .sider_box {
+    margin-bottom: 20px;
+}
+
+.advanced-search input:not([type="submit"]):not([type=checkbox]):not([type=radio]):not([type=file])[type="text"],
+.advanced-search select.search-fields {
+    min-height: 54px;
+    border: 1px solid #e2e2e2;
+}
+
+.option-bar {
+    margin-bottom: 20px;
 }
 
 

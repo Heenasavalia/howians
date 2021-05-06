@@ -22,9 +22,6 @@ $(function() {
         }
     });
 
-    // Select picket
-    $('.selectpicker').selectpicker();
-
     $(window).scroll(function() {
         var sticky = $('.main-header'),
             scroll = $(window).scrollTop();
