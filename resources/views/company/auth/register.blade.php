@@ -67,6 +67,9 @@
                             <div class="form-group">
                                 <button type="submit" class="action-button">Register</button>
                             </div>
+                            <div class="new-account mt-3">
+                                <p>Have an account?<a href="{{ url('/company/login') }}"> Sign in</a></p>
+                            </div>
                         </div>
                     </div>
                 </form>
