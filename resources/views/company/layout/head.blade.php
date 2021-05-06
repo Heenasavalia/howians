@@ -18,6 +18,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/bootstrap/css/bootstrap.min.css')}}">
 
     <link rel="stylesheet" href="{{ asset('company/assets/pages/chart/radial/css/radial.css')}}" type="text/css" media="all">
