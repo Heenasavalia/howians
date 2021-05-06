@@ -32,7 +32,7 @@
             </li>
 
             <li class="">
-                <a href="{{ url('company/post-job-list') }}">
+                <a href="{{ url('company/my-post-job-list') }}">
                     <span class="pcoded-micon"><i class="fa fa-list-ol"></i></span>
                     <span class="pcoded-mtext">Post Job List</span>
                 </a>

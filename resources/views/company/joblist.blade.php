@@ -36,8 +36,12 @@
                                         <thead>
                                         <tr>
                                             <th>ID</th>
+                                            <th>Title</th>
                                             <th>Job name</th>
+                                            <th>Number of vacancy</th>
+                                            <th>Work experiance type</th>
                                             <th>Created date</th>
+                                            <th>Total Candidate</th>
                                             <th>View Candidate</th>
                                         </tr>
                                         </thead>
@@ -89,6 +93,9 @@
                 columns: [
                     { data: 'id', name: 'id' },
                     { data: 'title', name: 'title' },
+                    { data: 'job_category', name: 'job_category' },
+                    { data: 'number_of_vacancy', name: 'number_of_vacancy' },
+                    { data: 'work_experiance_type', name: 'work_experiance_type' },
                     {
                         "mData": "created_at",
                         "mRender": function (data, type, row) {
@@ -114,9 +121,18 @@
                             return today;
                         }
                     },
+                    { data: 'id', name: 'id' },
                     {
-                        data: 'title', name: 'title'
-                    }
+                        "mData": "Name",
+                        "mRender": function (data, type, row) {
+
+                            var url1 = '{{ url("company/show-user", "id") }}';
+                            url1 = url1.replace('id', row.id);
+
+                            return "<a title=\"View\" href='" + url1 + "' class='m-r-15 btn-edit btn btn-info btn-round'>View Candidate</a>";
+
+                        }
+                    },
                 ],
             });
         });

@@ -45,7 +45,7 @@
                             <hr/>
                             <h5 class="cls_heading"><i class="fa fa-user"></i> Personal Info</h5>
                             <hr/>
-                            <input type="text" id="current_company_id" value="{{Auth::user()->id}}"/>
+                            <input type="hidden" id="current_company_id" value="{{Auth::user()->id}}"/>
 
                             <div class="row">
                                 <div class="col-lg-6 col-md-12 col-sm-12">
@@ -99,7 +99,7 @@
                                 <div class="col-lg-6 col-md-12 col-sm-12">
                                     <div class="{{ $errors->has('company_name') ? ' has-error' : '' }} row">
                                         <label class="col-sm-3 col-form-label">Company name <span
-                                                class="text-danger">*</span></label>
+                                                class="text-danger"></span></label>
                                         <div class="col-sm-9 form-group">
                                             <input readonly id="company_name" type="text" class="form-control"
                                                    name="company_name" value="{{ Auth::user()->company_name}}"
@@ -108,6 +108,21 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <div class="{{ $errors->has('gst_number') ? ' has-error' : '' }} row">
+                                        <label class="col-sm-3 col-form-label">Gst number <span
+                                                class="text-danger"></span></label>
+                                        <div class="col-sm-9 form-group">
+                                            <input readonly id="gst_number" type="text" class="form-control"
+                                                   name="gst_number" value="{{ Auth::user()->gst_number}}"
+                                                   placeholder="Gst number">
+                                            <div class="text-danger">{{ $errors->first('gst_number') }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
                                 <div class="col-lg-6 col-md-12 col-sm-12">
                                     <div class="{{ $errors->has('address') ? ' has-error' : '' }} row">
                                         <label class="col-sm-3 col-form-label">Address <span
@@ -120,8 +135,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
 
                             <input type="hidden" id="current_company_country" value="{{Auth::user()->country}}"/>
@@ -323,7 +336,19 @@
                     },
                     city: {
                         required: true
-                    }
+                    },
+                    website_url: {
+                        Checkurl: true,
+                    },
+                    instagram_url: {
+                        checkInsta: true
+                    },
+                    twitter_url: {
+                        checkTwitter: true,
+                    },
+                    facebook_url: {
+                        checkFacebook: true
+                    },
 
                 },
                 messages: {
@@ -361,6 +386,66 @@
                     return false;
                 }
             }, 'please Enter Only Alphabates');
+
+            $.validator.addMethod('Checkurl', function (website_url) {
+                var resulat = true;
+                if (website_url != "") {
+                    var str = website_url;
+                    var patt = new RegExp("^(http|https)?:\/\/[a-zA-Z0-9-\.]+\.[a-z]{2,4}");
+                    var res = patt.test(str);
+                    if (patt.test(str)) {
+                        resulat = true;
+                    } else {
+                        resulat = false;
+                    }
+                }
+                return resulat;
+            }, 'Sorry, please Enter URL in Proper Formate');
+            $.validator.addMethod('checkInsta', function (instagram_url) {
+                var resulat = true;
+                if (instagram_url != "") {
+                    var str = instagram_url;
+                    var patt = new RegExp("(?:(?:http|https):\\/\\/)(?:www.)?(?:instagram.com|instagr.am)\\/([A-Za-z0-9-_\\.]+)");
+                    var res = patt.test(str);
+                    if (patt.test(str)) {
+                        resulat = true;
+                    } else {
+                        resulat = false;
+                    }
+                }
+                return resulat;
+            }, 'Sorry, please Enter Instagram URL in Proper Formate');
+            $.validator.addMethod('checkTwitter', function (twitter_url) {
+                var resulat = true;
+                if (twitter_url != "") {
+                    var str = twitter_url;
+                    var patt = new RegExp("http(?:s)?:\\/\\/(?:www\\.)?twitter\\.com\\/([a-zA-Z0-9_]+)");
+                    var res = patt.test(str);
+                    if (patt.test(str)) {
+                        resulat = true;
+                    } else {
+                        resulat = false;
+                    }
+                }
+                return resulat;
+            }, 'Sorry, please Enter Twitter URL in Proper Formate');
+            $.validator.addMethod('checkFacebook', function (facebook_url) {
+                var resulat = true;
+                if (facebook_url != "") {
+                    var str = facebook_url;
+                    var patt = new RegExp("(?:(?:http|https):\/\/)(?:www.)?facebook.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[?\w\-]*\/)?(?:profile.php\?id=(?=\d.*))?([\w\-]*)?");
+                    var res = patt.test(str);
+                    if (patt.test(str)) {
+                        resulat = true;
+                    } else {
+                        resulat = false;
+                    }
+                }
+                return resulat;
+            }, 'Sorry, please Enter Facebook URL in Proper Formate');
+
+
+
         });
 
         var url = "{{ url('/') }}";
