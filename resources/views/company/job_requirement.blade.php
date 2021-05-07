@@ -89,7 +89,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group{{ $errors->has('minimum_salary') ? ' has-error' : '' }}">
                                         <label class="minimum_salary" for="name">Minimum Salary <span class="text-danger">*</span></label>
-                                        {{ Form:: text('title', '', array("class" => "form-control", 'placeholder' => 'Enter minimum salary', 'id' => 'minimum_salary')) }}
+                                        {{ Form:: text('minimum_salary', '', array("class" => "form-control", 'placeholder' => 'Enter minimum salary', 'id' => 'minimum_salary')) }}
                                         <small class="text-danger">{{ $errors->first('minimum_salary') }}</small>
                                     </div>
                                 </div>
@@ -382,6 +382,8 @@
 
     <script type="text/javascript" src="{{ asset('company/assets/js/jquery.datetimepicker.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('company/assets/js/jquery.datetimepicker.full.min.js')}}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+
 
     <script type="text/javascript">
 
@@ -402,6 +404,29 @@
                     //error.appendTo();
                 },
                 rules: {
+                    title: {
+                        required: true,
+                        alphabates: true,
+                    },
+                    job_category: {
+                        required: true,
+                        alphabates: true,
+                    },
+                    education: {
+                        required: true,
+                        alphabates: true,
+                    },
+                    designation: {
+                        required: true,
+                        alphabates: true,
+                    },
+                    discription : {
+                        required: true,
+                        maxLenght:true,
+                    },
+                    gender : {
+                        required: true,
+                    },
                     website_url: {
                         Checkurl: true,
                     },
@@ -414,10 +439,7 @@
                     facebook_url: {
                         checkFacebook: true
                     },
-                    discription : {
-                        required: true,
-                        maxLenght:true,
-                    },
+
                     pincode :{
                         required: true
                     },
@@ -429,7 +451,31 @@
 
                 },
                 messages: {
+                    title: {
+                        required: "Please enter job title",
+                    },
+                    job_category: {
+                        required: "Please enter job category",
+                    },
+                    education: {
+                        required: "Please enter education",
+                    },
+                    designation: {
+                        required: "Please enter designation",
+                    },
+                    discription : {
+                        required: "Please Enter discription",
+                    },
+                    gender : {
+                        required: true,
+                    },
                     website_url: "Sorry, please Enter URL in Proper Formate",
+                    email: {
+                        required: "Please enter valid Email",
+                    },
+                    pincode:{
+                        required: "Please enter pincode"
+                    }
                 },
                 submitHandler: function (form) {
                     form.submit();
