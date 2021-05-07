@@ -25,9 +25,9 @@
             </li>
 
             <li class="">
-                <a href="{{ url('company/job-requirement') }}">
-                    <span class="pcoded-micon"><i class="fa fa-product-hunt"></i></span>
-                    <span class="pcoded-mtext">Job Requirement</span>
+                <a href="{{ url('company/job-requirement/create') }}">
+                    <span class="pcoded-micon"><i class="fa fa-plus-square-o"></i></span>
+                    <span class="pcoded-mtext">Add Job Requirement</span>
                 </a>
             </li>
 
@@ -40,7 +40,7 @@
 
             <li class="">
                 <a href="{{ url('company/profile') }}">
-                    <span class="pcoded-micon"><i class="fa fa-building-o"></i></span>
+                    <span class="pcoded-micon"><i class="fa fa-pencil-square-o"></i></span>
                     <span class="pcoded-mtext">Update profile</span>
                 </a>
             </li>
