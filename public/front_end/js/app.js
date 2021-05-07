@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
 
     'use strict';
 
@@ -73,6 +73,20 @@ $(function() {
                 });
             }
         });
+    });
+
+    $('.sorting-options a').on('click', function() {
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+
+    $(".jobs_box").addClass('grid_view');
+
+    $('.sorting-options a.list_btn').on('click', function() {
+        $(".jobs_box").removeClass('grid_view');
+    });
+
+    $('.sorting-options a.grid_btn').on('click', function() {
+        $(".jobs_box").addClass('grid_view');
     });
 
 
