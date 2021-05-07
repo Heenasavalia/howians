@@ -1167,8 +1167,6 @@ section.breadcrumb .banner-img img {
     position: absolute;
     left: 0;
     top: 0;
-    bottom: 0;
-    margin: auto;
     width: 25px;
     height: 25px;
     border-radius: 5px;
@@ -1210,7 +1208,8 @@ section.breadcrumb .banner-img img {
     font-size: 24px;
 }
 
-.option-bar .sorting-options a:hover {
+.option-bar .sorting-options a:hover,
+.option-bar .sorting-options a.active {
     color: #4285f4;
 }
 
@@ -1219,10 +1218,10 @@ section.breadcrumb .banner-img img {
 }
 
 .candidate-item .candidate-listing {
-    flex: 0 0 75%;
-    max-width: 75%;
+    flex: 0 0 70%;
+    max-width: 70%;
     position: relative;
-    padding-right: 25px;
+    padding-right: 15px;
 }
 
 .candidate-item .candidate-listing::before {
@@ -1238,8 +1237,8 @@ section.breadcrumb .banner-img img {
 }
 
 .candidate-item .div-right {
-    flex: 0 0 25%;
-    max-width: 25%;
+    flex: 0 0 30%;
+    max-width: 30%;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
@@ -1250,6 +1249,7 @@ section.breadcrumb .banner-img img {
 .candidate-item .div-right p {
     color: #888888;
     line-height: normal;
+    margin-bottom: 10px;
 }
 
 .candidate-item .div-right h3 {
@@ -1259,6 +1259,7 @@ section.breadcrumb .banner-img img {
 .candidate-listing .user-logo {
     flex: 0 0 20%;
     max-width: 20%;
+    position: relative;
 }
 
 .candidate-listing .candidate_right {
@@ -1345,16 +1346,114 @@ ul.pagination li a.page-link {
     border: none;
     box-shadow: none;
     outline: none;
-    font-size: 20px;
+    font-size: 16px;
     color: #353535;
     background-color: transparent;
     border-radius: 5px;
+    padding: 8px 15px;
 }
 
 ul.pagination li a.page-link.active,
 ul.pagination li a.page-link:hover {
     background-color: #4285f4;
     color: #fff;
+}
+
+.wishlist-icon,
+.candidate_right .sub_title,
+.jobs_box.grid_view .candidate-item .candidate-listing::before,
+.grid_view .candidate-item .div-right p,
+.grid_view .candidate-item .div-right h3 {
+    display: none;
+}
+
+.jobs_box.grid_view {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1%;
+}
+
+.jobs_box.grid_view .candidate-item {
+    flex: 0 0 31.33%;
+    max-width: 31.33%;
+    margin: 0 1% 2%;
+    flex-wrap: wrap;
+}
+
+.jobs_box.grid_view .wishlist-icon,
+.jobs_box.grid_view .candidate_right .sub_title {
+    display: block;
+}
+
+.grid_view .candidate-item .candidate-listing {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 0 15px;
+    display: block !important;
+    text-align: center;
+}
+
+.grid_view .candidate-listing .user-logo,
+.grid_view .candidate-listing .candidate_right,
+.grid_view .candidate-item .div-right,
+.grid_view .candidate-item .div-right p,
+.grid_view .candidate-item .div-right h3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.user-logo .wishlist-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.grid_view .candidate-listing .user-logo {
+    margin-bottom: 10px;
+}
+
+.grid_view .candidate_right ul {
+    text-align: center;
+    width: 100%;
+}
+
+.grid_view .candidate-listing .candidate_right h4 a {
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+}
+
+.grid_view .candidate-listing .candidate_right h4 a:hover {
+    color: #4285f4;
+}
+
+.grid_view .candidate_right h4 .sub_title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.grid_view .candidate-listing .candidate_right h4 {
+    margin: 0 0 15px;
+}
+
+.grid_view .candidate_right ul strong {
+    margin: 0 10px;
+}
+
+.grid_view .candidate_label ul {
+    justify-content: center;
+}
+
+.grid_view .candidate_label ul li:first-child {
+    display: none;
+}
+
+.grid_view .candidate_label ul li {
+    padding: 0 10px;
+    background-color: transparent;
+    margin: 0 0 5px;
 }
 
 

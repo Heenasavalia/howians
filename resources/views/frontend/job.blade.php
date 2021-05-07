@@ -91,10 +91,10 @@
                 <!-- Option bar start -->
                 <div class="option-bar">
                     <div class="row">
-                        <div class="col-lg-6 col-md-7 col-sm-7 d-flex align-items-center">
+                        <div class="col-lg-6 col-md-7 d-flex align-items-center">
                             <p>Showing 1 to 7 of 13 entries</p>
                         </div>
-                        <div class="col-lg-6 col-md-5 col-sm-5 d-flex justify-content-end align-items-center">
+                        <div class="col-lg-6 col-md-5 d-flex justify-content-end align-items-center">
                             <div class="sorting-options2">
                                 <select class="search-fields" name="default-order">
                                     <option>Relevance</option>
@@ -104,8 +104,8 @@
                                 </select>
                             </div>
                             <div class="sorting-options">
-                                <a href="#" class="change-view-btn active-view-btn"><i class="fa fa-th-list"></i></a>
-                                <a href="#" class="change-view-btn"><i class="fa fa-th-large"></i></a>
+                                <a href="javascript:void(0);" class="change-view-btn active grid_btn"><i class="fa fa-th-large"></i></a>
+                                <a href="javascript:void(0);" class="change-view-btn list_btn"><i class="fa fa-th-list"></i></a>
                             </div>
                         </div>
                     </div>
@@ -115,10 +115,11 @@
                     <div class="candidate-item media">
                         <div class="candidate-listing d-flex flex-wrap">
                             <div class="user-logo">
+                                <div class="wishlist-icon"><i class="fa fa-heart-o"></i></div>
                                 <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo1.png')}}" alt="avatar"></a>
                             </div>
                             <div class="candidate_right">
-                                <h4><a href="#">Trion Technology</a> <span class="label">Full Time</span></h4>
+                                <h4><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
                                 <ul>
                                     <li><i class="fa fa-map-marker"></i> India <strong>Surat</strong> <i>30 min ago</i></li>
                                 </ul>
@@ -126,7 +127,7 @@
                             <div class="candidate_label">
                                 <ul>
                                     <li>Salary: <strong>$1,200 - $1,800</strong></li>
-                                    <li>Openings Position: <strong>12</strong></li>
+                                    <li>Position: <strong>12</strong></li>
                                     <li>Experience: <strong>2+ Year</strong></li>
                                 </ul>
                             </div>
@@ -140,10 +141,11 @@
                     <div class="candidate-item media">
                         <div class="candidate-listing d-flex flex-wrap">
                             <div class="user-logo">
+                                <div class="wishlist-icon"><i class="fa fa-heart-o"></i></div>
                                 <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo2.png')}}" alt="avatar"></a>
                             </div>
                             <div class="candidate_right">
-                                <h4><a href="#">Trion Technology</a> <span class="label">Full Time</span></h4>
+                            <h4><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
                                 <ul>
                                     <li><i class="fa fa-map-marker"></i> India <strong>Surat</strong> <i>30 min ago</i></li>
                                 </ul>
@@ -151,7 +153,7 @@
                             <div class="candidate_label">
                                 <ul>
                                     <li>Salary: <strong>$1,200 - $1,800</strong></li>
-                                    <li>Openings Position: <strong>12</strong></li>
+                                    <li>Position: <strong>12</strong></li>
                                     <li>Experience: <strong>2+ Year</strong></li>
                                 </ul>
                             </div>
@@ -165,10 +167,11 @@
                     <div class="candidate-item media">
                         <div class="candidate-listing d-flex flex-wrap">
                             <div class="user-logo">
+                                <div class="wishlist-icon"><i class="fa fa-heart-o"></i></div>
                                 <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo3.png')}}" alt="avatar"></a>
                             </div>
                             <div class="candidate_right">
-                                <h4><a href="#">Trion Technology</a> <span class="label">Full Time</span></h4>
+                                <h4><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
                                 <ul>
                                     <li><i class="fa fa-map-marker"></i> India <strong>Surat</strong> <i>30 min ago</i></li>
                                 </ul>
@@ -176,7 +179,7 @@
                             <div class="candidate_label">
                                 <ul>
                                     <li>Salary: <strong>$1,200 - $1,800</strong></li>
-                                    <li>Openings Position: <strong>12</strong></li>
+                                    <li>Position: <strong>12</strong></li>
                                     <li>Experience: <strong>2+ Year</strong></li>
                                 </ul>
                             </div>
@@ -190,10 +193,11 @@
                     <div class="candidate-item media">
                         <div class="candidate-listing d-flex flex-wrap">
                             <div class="user-logo">
+                                <div class="wishlist-icon"><i class="fa fa-heart-o"></i></div>
                                 <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo4.png')}}" alt="avatar"></a>
                             </div>
                             <div class="candidate_right">
-                                <h4><a href="#">Trion Technology</a> <span class="label">Full Time</span></h4>
+                                <h4><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
                                 <ul>
                                     <li><i class="fa fa-map-marker"></i> India <strong>Surat</strong> <i>30 min ago</i></li>
                                 </ul>
@@ -201,7 +205,7 @@
                             <div class="candidate_label">
                                 <ul>
                                     <li>Salary: <strong>$1,200 - $1,800</strong></li>
-                                    <li>Openings Position: <strong>12</strong></li>
+                                    <li>Position: <strong>12</strong></li>
                                     <li>Experience: <strong>2+ Year</strong></li>
                                 </ul>
                             </div>
@@ -215,10 +219,11 @@
                     <div class="candidate-item media">
                         <div class="candidate-listing d-flex flex-wrap">
                             <div class="user-logo">
+                                <div class="wishlist-icon"><i class="fa fa-heart-o"></i></div>
                                 <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo5.png')}}" alt="avatar"></a>
                             </div>
                             <div class="candidate_right">
-                                <h4><a href="#">Trion Technology</a> <span class="label">Full Time</span></h4>
+                                <h4><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
                                 <ul>
                                     <li><i class="fa fa-map-marker"></i> India <strong>Surat</strong> <i>30 min ago</i></li>
                                 </ul>
@@ -226,7 +231,7 @@
                             <div class="candidate_label">
                                 <ul>
                                     <li>Salary: <strong>$1,200 - $1,800</strong></li>
-                                    <li>Openings Position: <strong>12</strong></li>
+                                    <li>Position: <strong>12</strong></li>
                                     <li>Experience: <strong>2+ Year</strong></li>
                                 </ul>
                             </div>
