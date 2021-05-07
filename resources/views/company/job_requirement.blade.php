@@ -189,20 +189,25 @@
                             </div>
 
 
-
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group{{ $errors->has('work_experiance_type') ? ' has-error' : '' }}">
-                                        <label class="col-form-label" for="work_experiance_type">work_experiance_type</label>
-                                        <select id="work_experiance_type" name="work_experiance_type"  class="form-control" required="required">
-                                            <option  selected="selected" value="1">Fresher</option>
-                                            <option value="0">Experience</option>
-                                        </select>
-                                        @if ($errors->has('work_experiance_type'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('work_experiance_type') }}</strong>
-                                            </span>
-                                        @endif
+                                    <div class="form-group{{ $errors->has('work_experiance_type[]') ? ' has-error' : '' }}">
+                                        <label class="col-form-label" for="work_experiance_type">work_experiance_type <span class="text-danger">*</span></label>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                                <label class="work_experiance_type">
+                                                    <input name="work_experiance_type[]" type="radio" class="minimal" checked value="fresher">
+                                                    Fresher
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                                <label class="work_experiance_type">
+                                                    <input name="work_experiance_type[]" type="radio" class="minimal" value="experience">
+                                                    Experience
+                                                </label>
+                                            </div>
+                                            <small class="text-danger">{{ $errors->first('work_experiance_type[]') }}</small>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

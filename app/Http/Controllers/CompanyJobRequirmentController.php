@@ -60,6 +60,7 @@ class CompanyJobRequirmentController extends Controller
         $data['company_id'] = Auth::user()->id;
         $data['gender'] = implode(",", $data['gender']);
         $data['job_type'] = implode(",", $data['job_type']);
+        $data['work_experiance_type'] = implode(",", $data['work_experiance_type']);
 //        dd($data);
         $job_create = JobRequirement::create($data);
 

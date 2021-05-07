@@ -20,7 +20,7 @@
                         <!-- Messages Dropdown Menu -->
                         <div class="dropdown-toggle" data-toggle="dropdown">
                             <img src="{{ asset('images/male.png')}}" class="img-radius" alt="Company-Profile-Image">
-                            <span>{{ Auth::user()->name }}</span>
+                            <span>{{ Auth::user()->company_name }}</span>
                             <i class="feather icon-chevron-down"></i>
                         </div>
                         <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
