@@ -19,7 +19,7 @@
                         
                         <a href="#"><button>Apply</button></a>
                         <a href="{{url('user/review/'.$com_id.'/'.$d->id)}}"><button>Review</button></a>
-                        <a href="#"><button>Profile View</button></a>
+                        <a href="{{url('user/company-profile/'.$com_id)}}"><button>Profile View</button></a>
                         <a href="{{url('user/msg-send-mail/'.$com_id)}}"><button>Message / Mail</button></a>
                     </div>
                 </div>
@@ -30,6 +30,7 @@
     @endif
     </div>
 </div>
+
 @endsection
 @push('scripts')
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
