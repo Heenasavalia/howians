@@ -18,7 +18,7 @@ class CompanyJobRequirmentController extends Controller
      */
     public function index()
     {
-        return view('company.job_requirement');
+
     }
 
     /**
@@ -28,7 +28,7 @@ class CompanyJobRequirmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('company.job_requirement');
     }
 
     /**
@@ -39,31 +39,34 @@ class CompanyJobRequirmentController extends Controller
      */
     public function store(Request $request)
     {
+//        dd($request);
         $this->validate($request, [
-            'title' => 'required|string',
-            'description' => 'required|string',
-            'education' => 'required',
-            'email' => 'required',
-            'designation' => 'required',
-            'number_of_vacancy' => 'required',
-            'minimum_salary' => 'required',
-            'maximum_salary' => 'required',
-            'gender' => 'required',
-            'start_time' => 'required',
-            'end_time' => 'required',
-            'job_type' => 'required',
-            'address' => 'required',
-            'pincode' => 'required',
+//            'title' => 'required|string',
+//            'description' => 'required|string',
+//            'education' => 'required',
+//            'email' => 'required',
+//            'designation' => 'required',
+////            'number_of_vacancy' => 'required',
+////            'minimum_salary' => 'required',
+////            'maximum_salary' => 'required',
+//            'gender' => 'required',
+//            'start_time' => 'required',
+//            'end_time' => 'required',
+//            'job_type' => 'required',
+////            'address' => 'required',
+//            'pincode' => 'required',
         ]);
         $data=$request->all();
         $data['company_id'] = Auth::user()->id;
-
+        $data['gender'] = implode(",", $data['gender']);
+        $data['job_type'] = implode(",", $data['job_type']);
+//        dd($data);
         $job_create = JobRequirement::create($data);
 
         if($job_create){
-            return response()->json('success');
+            return redirect('company/home')->with('success','Job require created successfully');
         }else {
-            return response()->json('error');
+            return redirect()->back()->with('error','Something went wrong');
         }
 
     }
@@ -140,9 +143,10 @@ class CompanyJobRequirmentController extends Controller
     }
 
     public function ShowUsers($id){
-        dump($id);
+//        dump($id);
         $get_user = ApplyCandidate::where('job_id',$id)->get();
-        dd($get_user);
+//        dd($get_user);
+        return view('company.apply_user_details',['get_user'=>$get_user]);
     }
 
 }

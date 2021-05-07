@@ -19,7 +19,7 @@
                     <div class="dropdown-primary dropdown">
                         <!-- Messages Dropdown Menu -->
                         <div class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset('imges/male.png')}}" class="img-radius" alt="User-Profile-Image">
+                            <img src="{{ asset('images/male.png')}}" class="img-radius" alt="Company-Profile-Image">
                             <span>{{ Auth::user()->name }}</span>
                             <i class="feather icon-chevron-down"></i>
                         </div>
