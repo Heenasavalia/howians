@@ -230,46 +230,24 @@ class UserController extends Controller
     public function userSearch(Request $request)
     {
         $data = $request->all();
+        // dump($data);
         $keywords = $data['keyword'];
         $category = $data['category'];
         $location = $data['location'];
-        // $today = \Carbon\Carbon::now()->toDateTimeString();
-        // dump($today);
-        // $date = Carbon::parse($today)->format('d-m-Y');
-        // dump($date);
-
-        // dump(date('Y-m-d'));
+       
         $currentDate = date('Y-m-d');
-        // dd($currentDate);
-        $get_data = JobRequirement::with('company')->where('title','LIKE', $keywords .'%')
-                                    // ->where('location','LIKE', '%' . $location .'%')
+        
+        $get_data = JobRequirement::with('company')->where('title','LIKE','%'. $keywords .'%')
                                     ->where( function($query) use ($location){
                                         $query->where('location','LIKE', '%' . $location .'%')
                                         ->orWhere('address','LIKE', '%' . $location .'%');
                                     })
-                                    // ->orWhere ('address','LIKE', '%' . $location .'%')
-                                    // ->where('end_time', '=', date('Y-m-d'))
-                                    // ->whereRaw('FIND_IN_SET("'.$category.'",job_category)')
+                                    // ->where('location','LIKE', '%' . $location .'%')
                                     ->where('job_category','LIKE','%'. $category .'%')
-                                    // ->whereDay('end_time', '>=', date('d'))
-                                    // ->whereMonth('end_time', '>=', date('m'))
-                                    // ->whereYear('end_time', '>=', date('Y'))
-                                    // ->where( function($q){
-                                    //     $q->whereDay('end_time', '>=', date('d'));
-                                    //     $q->whereMonth('end_time', '=', date('m'));
-                                    //     $q->whereYear('end_time', '=', date('Y'));
-                                    // })
-                                    // ->where('end_time','=', $today)
-                                    // ->where(DB::raw("DATE(end_time) < '".$today."'"))
-                                    // ->whereDate('created_at', '>', $today)
-                                    // ->whereDate('end_time', '>', $date)
-                                    // ->where('end_time', '>', $currentDate)
-                                    // ->orWhere('end_time', $currentDate)
-                                    ->where('end_time', '>=', $currentDate)
+                                    ->where('end_time', '>', $currentDate)
+                                    ->orWhere('end_time', $currentDate)
                                     ->get();
-                                    // ->toSql();
         // dd($get_data);
-        // return response()->json($get_data);
         return view('user.job_list', ['data' => $get_data]);
         // dd($get_data);
     }
@@ -330,6 +308,12 @@ class UserController extends Controller
     public function job()
     {
         return view('user.job_display');
+    }
+
+    public function companyProfile($id)
+    {
+        $company = Company::find($id);
+        return view('user.company',['data' => $company]);
     }
     
 }

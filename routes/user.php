@@ -16,6 +16,7 @@ Route::get('/displayallplan', 'UserController@DiaplayPlans');
 Route::post('/select_plan', 'UserController@selectPlans');
 Route::any('/display-profile/{id}', 'UserController@profile');
 Route::resource('/profile', 'UserController');
+Route::get('/company-profile/{id}', 'UserController@companyProfile');
 
 Route::post('/user-search','UserController@userSearch');
 Route::get('change-password','UserController@UpdatePassword');
