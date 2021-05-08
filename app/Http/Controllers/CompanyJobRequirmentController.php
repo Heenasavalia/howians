@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\JobCategory;
 use App\JobRequirement;
 use App\ApplyCandidate;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
@@ -157,7 +158,12 @@ class CompanyJobRequirmentController extends Controller
 
     public function UserProfile($id){
         dump('wel-come user profile');
-        dd($id);
+        dump($id);
+        $user = User::where('id',$id)->first();
+        dump($user);
+        dd();
+        return view('company.user_profile',[ 'user' => $user]);
+
     }
 
 }
