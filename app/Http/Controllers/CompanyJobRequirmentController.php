@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\Response;
 
 class CompanyJobRequirmentController extends Controller
 {
@@ -157,13 +158,20 @@ class CompanyJobRequirmentController extends Controller
     }
 
     public function UserProfile($id){
-        dump('wel-come user profile');
-        dump($id);
-        $user = User::where('id',$id)->first();
-        dump($user);
-        dd();
-        return view('company.user_profile',[ 'user' => $user]);
+//        dump('wel-come user profile');
+//        dump($id);
+        $user = User::with('education')->where('id',$id)->first();
+//        dump($user->resume);
+//        dd();
+        return view('company.user_profile',[ 'id'=>$id ,'user' => $user]);
+    }
 
+    public function DownloadResume($resume){
+        $file= public_path(). "/user/resume/" . $resume;
+        $headers = array(
+            'Content-Type: application/pdf',
+        );
+        return Response::download($file, 'resume.pdf', $headers);
     }
 
 }

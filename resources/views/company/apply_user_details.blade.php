@@ -41,6 +41,8 @@
                                         @else
                                             @if($user->user->gender == 'male')
                                                 <img class="img-fluid img-radius user_profile" src="{{ asset('images/male.png') }}">
+                                            @elseif($user->user->gender == 'female')
+                                                <img class="img-fluid img-radius user_profile" src="{{ asset('images/fmale.png') }}">
                                             @else
                                                 <img class="img-fluid img-radius user_profile" src="{{ asset('images/fmale.png') }}">
                                             @endif
