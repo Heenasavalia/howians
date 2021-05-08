@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Company;
 use App\CandidateReview;
 use File;
+use App\ApplyCandidate;
 
 
 class UserController extends Controller
@@ -326,17 +327,34 @@ class UserController extends Controller
 
     public function applyJobForm(Request $request)
     {
+        // dd($request->all());
         $this->validate($request, array(
-            'file' => 'required|mimes:doc,docx,pdf'
+            'resume' => 'required|mimes:doc,docx,pdf'
         ));
 
-        if ($request->hasFile('file')) {
-            $extension = File::extension($request->file->getClientOriginalName());
-            if ($extension == "doc" || $extension == "docx" || $extension == "pdf") {
-                dump("good");
-            }
+        $data = $request->all();
+        $description = $data['description'];
+
+        if ($request->hasFile('resume')) {
+            $image = $request->file('resume');
+            $fileName = time() . rand(11111, 99999) . '.' . $image->getClientOriginalExtension();
+            $image->move("user/resume/", $fileName);
+            $data['resume'] = $fileName;
         }
-        dd();
+        
+        $add = ApplyCandidate::create([
+            'user_id' => $data['user_id'],
+            'company_id' => $data['company_id'],
+            'job_id' => $data['job_id'],
+            'description' => $description,
+            'resume' => $data['resume']
+        ]);
+        if ($add) {
+            return redirect('user/home')->with('success', 'success!');
+        } else {
+            return redirect('user/home')->with('error', 'Error Accure.!!!');
+        }
+
     }
     
 }

@@ -49,34 +49,29 @@ i.fa.fa-star {
 </div>
 @endsection
 @push('scripts')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script> -->
+
+<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $("#job_apply").validate({
-            errorElement: 'div',
-            errorClass: 'text-danger',
+            errorElement: 'span',
+            errorClass: 'help-block',
             highlight: function(element, errorClass, validClass) {
                 $(element).closest('.form-group').addClass("has-error");
             },
             unhighlight: function(element, errorClass, validClass) {
                 $(element).closest('.form-group').removeClass("has-error");
             },
-            errorPlacement: function(error, element) {
-                $(element).closest('.form-group').append(error);
-                console.log(error);
-                swal({title: "error",
-                    text: error,
-                    type: "error"},
-                );
-            },
             rules: {
                     description: {
                         required: true
                     },
-                    name: {
-                        resume: true,
-                        accept: 'docx|doc|pdf'
+                    resume: {
+                        required: true,
+                        accept: "application/pdf"
                     },
             },
             messages: {
