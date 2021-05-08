@@ -41,3 +41,6 @@ Route::post('update_profile','CompanyDashboardController@update_profile');
 
 Route::any('show-user/{id}','CompanyJobRequirmentController@ShowUsers');
 Route::any('user-profile/{id}','CompanyJobRequirmentController@UserProfile');
+
+
+Route::get('download-resume/{resume}','CompanyJobRequirmentController@DownloadResume');
