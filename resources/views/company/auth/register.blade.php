@@ -10,9 +10,7 @@
                     {{ Form:: open(array('url' => "/company/register", 'name'=>"com_registration",'method'=>'post', 'id' => 'company_reg','class'=>"form-horizontal commen-form")) }}
                     <meta id="token" name="token" content="{{ csrf_token() }}">
 
-
                     <div class="row">
-
                         <div class="col-md-6">
                             <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
                                 <label for="first_name" class="control-label">First Name</label>
@@ -91,7 +89,8 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <button type="submit" class="action-button" id="send">Register</button>
+                                {{ Form::submit('Register',array("class" => "action-button btn btn-primary", 'id' => 'send')) }}
+{{--                                <button type="submit" class="action-button" id="send">Register</button>--}}
                             </div>
                             <div class="new-account mt-3">
                                 <p>Have an account?<a href="{{ url('/company/login') }}"> Sign in</a></p>
@@ -108,42 +107,84 @@
 
 @push('scripts')
 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+
 
     <script type="text/javascript">
-        $(document).ready(function(){
-            console.log("right one");
+
+        var url = '{{ url("/") }}';
+
+        $(document).ready(function () {
             $("#company_reg").validate({
-                // Specify validation rules
+                errorElement: 'div',
+                errorClass: 'text-danger',
+                highlight: function (element, errorClass, validClass) {
+                    $(element).closest('.form-group').addClass("has-error");
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).closest('.form-group').removeClass("has-error");
+                },
+                errorPlacement: function (error, element) {
+                    $(element).closest('.form-group').append(error);
+                    //error.appendTo();
+                },
                 rules: {
-                    first_name: {required: true},
-                    last_name: "required",
+                    first_name: {
+                        required: true,
+                        alphabates: true,
+                    },
+                    last_name: {
+                        required: true,
+                        alphabates: true,
+                    },
+                    company_name: {
+                        required: true,
+                    },
                     email: {
                         required: true,
-                        email: true
+                        email: true,
+                        checkEmail: true,
                     },
-                    password: {
-                        required: true,
-                        minlength: 6
-                    }
+
                 },
                 messages: {
                     first_name: {
-                        required: "Please enter First name"
+                        required: "Please enter first name",
+                    },
+                    last_name: {
+                        required: "Please enter last name",
+                    },
+                    company_name: {
+                        required: "Please enter company name",
                     },
                     email: {
                         required: "Please enter valid Email",
                     },
-                    // mobile: {
-                    //     required: "Please enter Mobile Number",
-                    //     minlength: "Please Enter 10 Digits Mobile Number",
-                    //     maxlength: "Please Enter 10 Digits Mobile Number"
-                    // },
-                },
 
+                },
+                submitHandler: function (form) {
+                    form.submit();
+                }
             });
+
+
+            $.validator.addMethod('alphabates', function (name) {
+                var str = name;
+                var patt = new RegExp("^[a-zA-Z .]*$");
+                var res = patt.test(str);
+                if (patt.test(str)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }, 'please Enter Only Alphabates');
+
+
         });
+
     </script>
+
+
+
 
 @endpush
