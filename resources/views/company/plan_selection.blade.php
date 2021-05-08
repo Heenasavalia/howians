@@ -18,7 +18,7 @@
                             <div class="page-header-breadcrumb">
                                 <ul class="breadcrumb-title">
                                     <li class="breadcrumb-item">
-                                        <a href="{{ url('client/home') }}">Home</a>
+                                        <a href="{{ url('company/home') }}">Home</a>
                                     </li>
                                     <li class="breadcrumb-item"><a href="JavaScript:Void(0);">Dashboard</a></li>
                                 </ul>

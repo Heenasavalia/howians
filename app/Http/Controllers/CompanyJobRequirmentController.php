@@ -155,4 +155,9 @@ class CompanyJobRequirmentController extends Controller
         return view('company.apply_user_details', ['get_users' => $get_users]);
     }
 
+    public function UserProfile($id){
+        dump('wel-come user profile');
+        dd($id);
+    }
+
 }

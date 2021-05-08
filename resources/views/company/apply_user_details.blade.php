@@ -51,7 +51,10 @@
                                     </div>
                                     <p>{{ str_limit(strip_tags($user->description), $limit = 135, $end = '...') }}</p>
                                     <div>
-                                        <button type="button" class="btn btn-success waves-effect waves-light"><i class="icofont icofont-user m-r-5"></i>View candidate profile</button>
+                                        <a href="{{ url('company/user-profile/'. $user->user->id) }}" class="btn btn-success waves-effect waves-light" style="color:#FFFFFF;">
+                                            <i class="icofont icofont-user m-r-5"></i>
+                                            View candidate profile
+                                        </a>
                                     </div>
                                 </div>
                             </div>
