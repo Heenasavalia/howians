@@ -16,6 +16,7 @@ use App\JobRequirement;
 use Illuminate\Support\Facades\Hash;
 use App\Company;
 use App\CandidateReview;
+use File;
 
 
 class UserController extends Controller
@@ -314,6 +315,28 @@ class UserController extends Controller
     {
         $company = Company::find($id);
         return view('user.company',['data' => $company]);
+    }
+
+    public function applyJob($company_id, $job_id)
+    {
+        // dd($company_id);
+        $user = Auth::user()->id;
+        return view('user.job_apply_form',['user_id' => $user, 'company_id' => $company_id, 'job_id' => $job_id]);
+    }
+
+    public function applyJobForm(Request $request)
+    {
+        $this->validate($request, array(
+            'file' => 'required|mimes:doc,docx,pdf'
+        ));
+
+        if ($request->hasFile('file')) {
+            $extension = File::extension($request->file->getClientOriginalName());
+            if ($extension == "doc" || $extension == "docx" || $extension == "pdf") {
+                dump("good");
+            }
+        }
+        dd();
     }
     
 }

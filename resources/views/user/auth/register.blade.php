@@ -187,6 +187,8 @@
 </div>
 @endsection
 @push('scripts')
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         var current_fs, next_fs, previous_fs; //fieldsets

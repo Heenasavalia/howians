@@ -17,7 +17,7 @@
                         <p>{{$d->company->address}}</p>
                         <?php $com_id = $d->company->id; ?>
                         
-                        <a href="#"><button>Apply</button></a>
+                        <a href="{{url('user/apply-job/'.$com_id.'/'.$d->id)}}"><button>Apply</button></a>
                         <a href="{{url('user/review/'.$com_id.'/'.$d->id)}}"><button>Review</button></a>
                         <a href="{{url('user/company-profile/'.$com_id)}}"><button>Profile View</button></a>
                         <a href="{{url('user/msg-send-mail/'.$com_id)}}"><button>Message / Mail</button></a>
