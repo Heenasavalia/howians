@@ -137,17 +137,22 @@ class CompanyJobRequirmentController extends Controller
     }
 
     public function getjobuserlist(Request $request){
+//        dump($request);
         $id = $request->all()['company_id'];
+//        dump($id);
         $all_job = JobRequirement::where('company_id', $id)->get();
+//        $count_candidate = ApplyCandidate::where('job_id',2)->get();
+//        dd(count($count_candidate));
         return Datatables::of($all_job)->make(true);
 //        return Datatables::of(JobRequirement::with('company')->where('company_id', $id)->get())->make(true);
     }
 
     public function ShowUsers($id){
 //        dump($id);
-        $get_user = ApplyCandidate::where('job_id',$id)->get();
-//        dd($get_user);
-        return view('company.apply_user_details',['get_user'=>$get_user]);
+        $get_users = ApplyCandidate::with('user','job')->where('job_id',$id)->get();
+//        dd($get_users);
+//        dd($get_user->user->first_name);
+        return view('company.apply_user_details', ['get_users' => $get_users]);
     }
 
 }
