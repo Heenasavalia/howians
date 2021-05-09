@@ -59,4 +59,6 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/bootstrap-tagsinput/css/bootstrap-tagsinput.css')}}" />
 
+    <link rel="stylesheet" href="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.css" />
+
 </head>

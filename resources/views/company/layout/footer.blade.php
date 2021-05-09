@@ -28,3 +28,4 @@
 <script type="text/javascript" src="{{ asset('company/assets/pages/dashboard/crm-dashboard.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('company/assets/js/script.js')}}"></script>
 
+<script src="{{asset('company/assets/js/sweetalert.js')}}"></script>

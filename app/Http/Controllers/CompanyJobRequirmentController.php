@@ -117,7 +117,9 @@ class CompanyJobRequirmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $job = JobRequirement::find($id);
+        $job->delete();
+        return response()->json(true);
     }
 
 //    public function JobList(){
