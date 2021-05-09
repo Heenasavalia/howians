@@ -42,8 +42,9 @@
                                             <th>Work experiance type</th>
 {{--                                            <th>Created date</th>--}}
                                             <th>Created date</th>
-                                            <th>Total Candidate</th>
+{{--                                            <th>Total Candidate</th>--}}
                                             <th>View Candidate</th>
+                                            <th>Delete</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -123,7 +124,7 @@
                             return today;
                         }
                     },
-                    { data: 'id', name: 'id' },
+                    // { data: 'id', name: 'id' },
                     {
                         "mData": "Name",
                         "mRender": function (data, type, row) {
@@ -135,8 +136,48 @@
 
                         }
                     },
+                    {
+                        "mData": "Name",
+                        "mRender": function (data, type, row) {
+
+                            return "<a  title=\"Delete\" rel='" + row.id + "' href='javascript:void(0)' class='btndel btn-delete'>" +
+                            "<i class=\"icofont icofont-ui-delete\"></i></a>";
+                        }
+                    },
                 ],
             });
+
+
+            $('#job_post_list tbody').on('click', 'a.btndel', function () {
+                var id = $(this).attr("rel");
+                swal({
+                        title: "Are you sure!",
+                        type: "error",
+                        confirmButtonClass: "btn-danger",
+                        confirmButtonText: "Yes!",
+                        showCancelButton: true,
+                    },
+                    function() {
+                        $.ajax({
+                            url: url +'/company/job-requirement/'+id,
+                            type : "post",
+                            data: {_method: 'delete', _token: "{{ csrf_token() }}"},
+                            success: function (data) {
+                                if(data == true){
+                                    swal({title: "Success", text: "Job post has been deleted!", type: "success"},
+                                        function(){
+                                            table.clear().draw();
+                                        }
+                                    );
+
+                                }else{
+                                    swal("Error!", "Something went Wrong", "error");
+                                }
+                            }
+                        });
+                    });
+            });
+
         });
     </script>
 
