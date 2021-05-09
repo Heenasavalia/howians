@@ -63,6 +63,10 @@
                             </div>
                         </div>
                         <button type="button" class="next action-button">Next</button>
+
+                        <div class="new-account mt-3">
+                            <p>Have an account?<a href="{{ url('/user/login') }}"> Sign in</a></p>
+                        </div>
                         <!-- <input type="button" name="next" class="next action-button" value="Next" /> -->
                     </fieldset>
                     <fieldset id="fieldset2">
@@ -115,7 +119,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <input type="button" name="next" class="next action-button" value="Next" /> 
+                        <!-- <input type="button" name="next" class="next action-button" value="Next" />
                         <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> -->
                         <button type="button" class="previous action-button-previous">Previous </button>
                         <button type="button" class="next action-button">Next </button>
@@ -175,7 +179,7 @@
                             </div>
                         </div>
 
-                        <!-- <input type="button" name="next" class="next action-button" value="Submit" /> 
+                        <!-- <input type="button" name="next" class="next action-button" value="Submit" />
                             <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> -->
                         <button type="button" class="previous action-button-previous"> previous </button>
                         <button type="submit" class="next action-button"> Sign Up</button>

@@ -33,6 +33,9 @@
                     <div class="form-group">
                         <button type="submit" class="btn action-button">Login</button>
                         <a class="btn btn-link" href="{{ url('/user/password/reset') }}">Forgot Your Password?</a>
+                        <div class="new-account mt-3">
+                            <p>Don't have an account? <a href="{{ url('/user/register') }}">Sign up</a></p>
+                        </div>
                     </div>
                 </form>
             </div>
