@@ -117,7 +117,7 @@
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <th class="social-label b-none">Gender</th>
-                                                                                            <td class="social-user-name b-none text-muted">{{ ucfirst($user->geneder)}}</td>
+                                                                                            <td class="social-user-name b-none text-muted">{{ ucfirst($user->gender)}}</td>
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <th class="social-label b-none">Birth Date</th>
@@ -149,17 +149,19 @@
                                                                         <div id="contact-info" class="row">
                                                                             <div class="col-lg-6 col-md-12">
                                                                                 <table class="table table-responsive m-b-0">
-                                                                                    <tbody><tr>
-                                                                                        <th class="social-label b-none p-t-0">Mobile Number</th>
-                                                                                        <td class="social-user-name b-none p-t-0 text-muted">
-                                                                                            {{$user->mobile}}</td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <th class="social-label b-none">Email Address</th>
-                                                                                        <td class="social-user-name b-none text-muted">
-                                                                                            {{$user->email}}</td>
-                                                                                    </tr>
-                                                                                    </tbody></table>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th class="social-label b-none p-t-0">Mobile Number</th>
+                                                                                            <td class="social-user-name b-none p-t-0 text-muted">
+                                                                                                {{$user->mobile}}</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th class="social-label b-none">Email Address</th>
+                                                                                            <td class="social-user-name b-none text-muted">
+                                                                                                {{$user->email}}</td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
                                                                             </div>
                                                                         </div>
 
