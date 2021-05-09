@@ -21,4 +21,9 @@ class JobRequirement extends Model
         return $this->belongsTo('App\Company');
     }
 
+//    public function getCreatedAtAttribute($value)
+//    {
+//        return date("d F Y H:i", strtotime($value));
+//    }
+
 }

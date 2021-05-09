@@ -39,9 +39,16 @@
             </li>
 
             <li class="">
+                <a href="{{ url('company/watch_review') }}">
+                    <span class="pcoded-micon"><i class="fa fa-star-half-o"></i></span>
+                    <span class="pcoded-mtext">Review</span>
+                </a>
+            </li>
+
+            <li class="">
                 <a href="{{ url('company/profile') }}">
                     <span class="pcoded-micon"><i class="fa fa-pencil-square-o"></i></span>
-                    <span class="pcoded-mtext">Update profile</span>
+                    <span class="pcoded-mtext">Update company profile</span>
                 </a>
             </li>
 
@@ -51,10 +58,6 @@
                     <span class="pcoded-mtext">Change Password</span>
                 </a>
             </li>
-
-
-
-
 
             <li class="">
                 <a href="{{ url('/company/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

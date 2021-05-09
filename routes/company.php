@@ -44,3 +44,8 @@ Route::any('user-profile/{id}','CompanyJobRequirmentController@UserProfile');
 
 
 Route::get('download-resume/{resume}','CompanyJobRequirmentController@DownloadResume');
+
+Route::get('watch_review','CompanyDataController@WatchReview');
+Route::any('getallreview','CompanyDataController@GetAllReview');
+Route::any('review_details/{id}','CompanyDataController@ReviewDetails');
+

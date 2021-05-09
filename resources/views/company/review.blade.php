@@ -10,7 +10,7 @@
                             <div class="col-lg-8">
                                 <div class="page-header-title">
                                     <div class="d-inline">
-                                        <h4>Job Post Details</h4>
+                                        <h4>Review Details</h4>
                                     </div>
                                 </div>
                             </div>
@@ -21,7 +21,7 @@
                                             <a href="{{ url('company/dashboard') }}">Home</a>
                                         </li>
                                         <li class="breadcrumb-item">
-                                            <a href="#!">Job list</a>
+                                            <a href="#!">Review Details</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -32,18 +32,16 @@
                         <div class="card">
                             <div class="card-block">
                                 <div class="table-responsive dt-responsive">
-                                    <table id="job_post_list" class="table table-striped table-bordered nowrap">
+                                    <table id="review_list" class="table table-striped table-bordered nowrap">
                                         <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Title</th>
-                                            <th>Job name</th>
-                                            <th>Number of vacancy</th>
-                                            <th>Work experiance type</th>
-{{--                                            <th>Created date</th>--}}
+                                            <th>Candidate Name</th>
+                                            <th>Job Title</th>
+                                            <th>Total Rate</th>
+                                            <th>Description</th>
                                             <th>Created date</th>
-                                            <th>Total Candidate</th>
-                                            <th>View Candidate</th>
+                                            <th>View detail</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -76,13 +74,13 @@
         var url = "{{ url('/') }}";
         $(function () {
 
-            var table = $('#job_post_list').DataTable({
+            var table = $('#review_list').DataTable({
                 "lengthMenu": [[10, 25, 50,100, -1], [10, 25, 50,100, "All"]],
                 "processing": true,
                 "serverSide": true,
                 order: [[0, 'desc']],
                 "ajax": {
-                    "url": url + '/company/getjobuserlist',
+                    "url": url + '/company/getallreview',
                     "method": "POST",
                     data:{
                         company_id: '{{Auth::user()->id}}'
@@ -93,11 +91,29 @@
                 },
                 columns: [
                     { data: 'id', name: 'id' },
-                    { data: 'title', name: 'title' },
-                    { data: 'job_category', name: 'job_category' },
-                    { data: 'number_of_vacancy', name: 'number_of_vacancy' },
-                    { data: 'work_experiance_type', name: 'work_experiance_type' },
-                    // { data: 'created_at', name: 'created_at' },
+                    {
+                        "data": "user_id",
+                        "mRender": function (data, type, row) {
+                            //console.log(row);
+                            return row.user.first_name + " " + row.user.last_name;
+                        }
+                    },
+                    {
+                        "data": "job_id",
+                        "mRender": function (data, type, row) {
+                            return row.job.title;
+                        }
+                    },
+                    { data: 'rate', name: 'rate' },
+                    {
+                        "data": 'description',
+                        "name": 'description',
+                        render: function ( data, type, row ) {
+                            return data.length > 10 ?
+                                data.substr( 0, 35 ) +'…' :
+                                data;
+                        }
+                    },
                     {
                         "mData": "created_at",
                         "mRender": function (data, type, row) {
@@ -123,16 +139,14 @@
                             return today;
                         }
                     },
-                    { data: 'id', name: 'id' },
                     {
-                        "mData": "Name",
+                        "Data": "action",
                         "mRender": function (data, type, row) {
-
-                            var url1 = '{{ url("company/show-user", "id") }}';
-                            url1 = url1.replace('id', row.id);
-
-                            return "<a title=\"View\" href='" + url1 + "' class='m-r-15 btn-edit btn btn-info btn-round'>View Candidate</a>";
-
+                            var url='{{ url('company/review_details',"id") }}';
+                            url = url.replace('id',row.id);
+                            return '<a  title="View" href="' + url + '" class="m-r-10 btn-view">' +
+                                '<i class="icofont icofont-eye-alt"></i>' +
+                                '</a>';
                         }
                     },
                 ],
