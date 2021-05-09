@@ -275,6 +275,31 @@
         flex: 0 0 48%;
         max-width: 48%;
     }
+    .keywords_sec ul {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .keywords_sec ul li {
+        flex: 0 0 19%;
+        max-width: 19%;
+        margin-right: 5px;
+    }
+    .white_box h3 {
+        font-size: 22px;
+    }
+    .about-me ul li {
+        font-size: 14px;
+    }
+    .about-me ul li::before {
+        top: 2px;
+    }
+    .sidebar-right-2 h3.sidebar-title {
+        font-size: 20px;
+    }
+    .information_sec ul li {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -473,6 +498,53 @@
     .jobs_box.grid_view .candidate-item {
         margin-left: 0;
         margin-right: 0;
+    }
+    .candidate-section .white_box {
+        padding: 15px;
+    }
+    .candidate-section .main-item,
+    .candidate-listing-footer ul {
+        justify-content: center;
+    }
+    .candidate-section .main-item .company-logo {
+        flex: 0 0 90px;
+        max-width: 90px;
+        height: 90px;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .main-item .company-logo img {
+        max-width: 60px;
+    }
+    .main-item .description {
+        text-align: center;
+    }
+    .description h4.title,
+    .white_box h3 {
+        font-size: 20px;
+    }
+    .candidate-listing-footer ul li:not(:last-child) {
+        margin-right: 10px;
+    }
+    .candidate-listing-footer ul li {
+        font-size: 14px;
+    }
+    .about-me ul {
+        padding-left: 0;
+    }
+    .about-me ul li {
+        padding-left: 15px;
+    }
+    .job_map iframe {
+        height: 200px;
+    }
+    .sidebar-right-2 {
+        margin-top: 20px;
+    }
+    .keywords_sec ul li {
+        flex: 0 0 100px;
+        max-width: 100px;
+        font-size: 16px;
     }
 }
 
