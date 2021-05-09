@@ -119,7 +119,7 @@
                                 <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo1.png')}}" alt="avatar"></a>
                             </div>
                             <div class="candidate_right">
-                                <h4><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
+                                <h4 class="title"><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
                                 <ul>
                                     <li><i class="fa fa-map-marker"></i> India <strong>Surat</strong> <i>30 min ago</i></li>
                                 </ul>
@@ -145,7 +145,7 @@
                                 <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo2.png')}}" alt="avatar"></a>
                             </div>
                             <div class="candidate_right">
-                            <h4><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
+                                <h4 class="title"><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
                                 <ul>
                                     <li><i class="fa fa-map-marker"></i> India <strong>Surat</strong> <i>30 min ago</i></li>
                                 </ul>
@@ -197,7 +197,7 @@
                                 <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo4.png')}}" alt="avatar"></a>
                             </div>
                             <div class="candidate_right">
-                                <h4><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
+                                <h4 class="title"><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
                                 <ul>
                                     <li><i class="fa fa-map-marker"></i> India <strong>Surat</strong> <i>30 min ago</i></li>
                                 </ul>
@@ -223,7 +223,7 @@
                                 <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo5.png')}}" alt="avatar"></a>
                             </div>
                             <div class="candidate_right">
-                                <h4><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
+                                <h4 class="title"><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
                                 <ul>
                                     <li><i class="fa fa-map-marker"></i> India <strong>Surat</strong> <i>30 min ago</i></li>
                                 </ul>

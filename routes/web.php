@@ -20,6 +20,7 @@ Route::get('/', function () {
   Route::any('home', 'FrontendController@home');
   Route::any('about', 'FrontendController@about');
   Route::any('job', 'FrontendController@job');
+  Route::any('job-detail', 'FrontendController@job_detail');
 
   Route::group(['prefix' => 'user'], function () {
   Route::get('/login', 'UserAuth\LoginController@showLoginForm')->name('login');
