@@ -63,6 +63,7 @@ class CompanyJobRequirmentController extends Controller
         $data['gender'] = implode(",", $data['gender']);
         $data['job_type'] = implode(",", $data['job_type']);
         $data['work_experiance_type'] = implode(",", $data['work_experiance_type']);
+        $data['require_skill'] = implode(",", $data['require_skill']);
 //        dd($data);
         $job_create = JobRequirement::create($data);
 
