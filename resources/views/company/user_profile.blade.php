@@ -30,7 +30,7 @@
                                             <div class="col-md-12">
 
                                                 <div class="social-wallpaper">
-                                                    <img src="{{asset('company/assets/images/social/img1.jpg')}}" class="img-fluid width-100" alt="">
+                                                    <img src="{{asset('company/assets/images/social/cover.jpg')}}" class="img-fluid width-100" alt="">
                                                 </div>
 
                                             </div>
