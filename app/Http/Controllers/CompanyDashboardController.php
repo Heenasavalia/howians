@@ -10,6 +10,8 @@ use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Helpers;
+use App\JobRequirement;
+use App\ApplyCandidate;
 
 
 class CompanyDashboardController extends Controller
@@ -22,7 +24,11 @@ class CompanyDashboardController extends Controller
     public function index()
     {
         // dd('hello');
-        return view('company.home');
+        $company = Auth::user();
+        // dd($company);
+        $total_add_job = JobRequirement::where('company_id', $company->id)->count();
+        $all_candidate = ApplyCandidate::where('company_id', $company->id)->count();
+        return view('company.home',['total_add_job'=>$total_add_job, 'all_candidate'=>$all_candidate]);
     }
 
     public function PlanSelection()

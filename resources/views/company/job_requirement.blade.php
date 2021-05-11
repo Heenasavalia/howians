@@ -5,6 +5,12 @@
             top: 50%;
             position: relative;
         }
+        
+        .btn_css{
+            padding: 4px 12px;
+            height: 35px;
+        }
+    
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('company/assets/css/jquery.datetimepicker.min.css')}}">
@@ -120,6 +126,38 @@
                                 </div>
                             </div>
                             <br>
+
+
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-6 clone-rightside-btn-1 cloneya-wrap">
+                                    
+                                    <label class="require_skill" for="require_skill">Require Skills  <b>[ Note:- Enter eight(8) skill for job ]</b>
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="toclone-widget-right toclone cloneya row time_zone">
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-10 unit">
+                                            <div class="form-group {{ $errors->has('require_skill') ? ' has-error' : '' }}">
+                                                {{ Form:: text('require_skill[]', '', array("class" => "form-control", 'placeholder' => 'Enter require skill', 'id' => 'require_skill')) }}
+                                                <small class="text-danger">{{ $errors->first('require_skill') }}</small>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-primary clone-btn-right clone btn_css">
+                                            <i class="icofont icofont-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-default clone-btn-right delete m-l-5 btn_css">
+                                            <i class="icofont icofont-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group{{ $errors->has('number_of_vacancy') ? ' has-error' : '' }}">
+                                        <label for="number_of_vacancy">Number of vacancy <span class="text-danger">*</span></label>
+                                        <input id="number_of_vacancy" placeholder="Enter number of vacancy" name="number_of_vacancy" type="number_of_vacancy" class="form-control">
+                                        <small class="text-danger">{{ $errors->first('number_of_vacancy') }}</small>
+                                    </div>
+                                </div>
+
+                            </div>
 
 
 
@@ -274,6 +312,9 @@
                                         <small class="text-danger">{{ $errors->first('pincode') }}</small>
                                     </div>
                                 </div>
+
+
+                        
                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                     <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
                                         <label class="business_label">Country</label>
@@ -282,8 +323,8 @@
                                         </select>
                                         @if ($errors->has('country'))
                                             <span class="help-block">
-                                                        <strong>{{ $errors->first('country') }}</strong>
-                                                    </span>
+                                                <strong>{{ $errors->first('country') }}</strong>
+                                            </span>
                                         @endif
                                     </div>
                                 </div>
@@ -291,12 +332,12 @@
                                     <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
                                         <label class="business_label">State</label>
                                         <select id="state" name="state"  class="form-control js-example-basic-single">
-                                            {{--                                                    <option  selected="selected">Select State *</option>--}}
+                                            {{--<option  selected="selected">Select State *</option>--}}
                                         </select>
                                         @if ($errors->has('state'))
                                             <span class="help-block">
-                                                        <strong>{{ $errors->first('state') }}</strong>
-                                                    </span>
+                                                <strong>{{ $errors->first('state') }}</strong>
+                                            </span>
                                         @endif
                                     </div>
                                 </div>
@@ -304,12 +345,12 @@
                                     <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
                                         <label class="business_label">City</label>
                                         <select id="city" name="city"  class="form-control js-example-basic-single">
-                                            {{--                                                    <option  selected="selected">Select City *</option>--}}
+                                            {{--<option  selected="selected">Select City *</option>--}}
                                         </select>
                                         @if ($errors->has('city'))
                                             <span class="help-block">
-                                                        <strong>{{ $errors->first('city') }}</strong>
-                                                    </span>
+                                                <strong>{{ $errors->first('city') }}</strong>
+                                            </span>
                                         @endif
                                     </div>
                                 </div>
@@ -403,10 +444,15 @@
 @endsection
 
 @push('scripts')
+
+<script type="text/javascript" src="{{ asset('company/assets/pages/j-pro/js/jquery.maskedinput.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('company/assets/pages/j-pro/js/jquery-cloneya.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('company/assets/pages/j-pro/js/custom/cloned-form.js')}}"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
 
-    <script type="text/javascript" src="{{ asset('company/assets/js/jquery.datetimepicker.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('company/assets/js/jquery.datetimepicker.full.min.js')}}"></script>
+    <!-- <script type="text/javascript" src="{{ asset('company/assets/js/jquery.datetimepicker.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('company/assets/js/jquery.datetimepicker.full.min.js')}}"></script> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 
 
@@ -415,6 +461,83 @@
         var url = '{{ url("/") }}';
 
         $(document).ready(function () {
+
+            var url = "{{ url('/') }}";
+            $.ajax({
+                type: "GET",
+                url: url + "/api/countries",
+                success: function(res) {
+                    if (res) {
+                        $("#country").empty();
+                        $.each(res, function(key, value) {
+                            // if (value == cntry) {
+                            //     $("#country").append('<option selected value="' + value + '">' + value + '</option>');
+                            // } else {
+                            $("#country").append('<option value="' + value + '">' + value + '</option>');
+                            // }
+                        });
+
+                    } else {
+                        $("#country").empty();
+                    }
+                }
+            });
+            $("select#country").change(function() {
+            var country = $("#country option:selected").text();
+            $.ajax({
+                type: "POST",
+                url: url + "/api/states",
+                data: {
+                    "country": country
+                },
+                success: function(res) {
+                    if (res) {
+                        $("#state").empty();
+                        $.each(res, function(key1, value1) {
+                            // if (value1 == st) {
+                            //     $("#state").append('<option selected value="' + value1 + '">' + value1 + '</option>');
+                            // } else {
+                            $("#state").append('<option value="' + value1 + '">' + value1 + '</option>');
+                            // }
+                        });
+                    } else {
+                        $("#state").empty();
+                    }
+                    }
+                });
+            });
+            $("select#state").change(function() {
+                var state = $("#state option:selected").text();
+                $.ajax({
+                    type: "POST",
+                    data: {
+                        "state": state
+                    },
+                    url: url + "/api/cities",
+                    success: function(res) {
+                        if (res) {
+                            $("#city").empty();
+                            $.each(res, function(key2, value2) {
+                                // if (value2 == cty) {
+                                //     $("#city").append('<option selected value="' + value2 + '">' + value2 + '</option>');
+                                // } else {
+                                $("#city").append('<option value="' + value2 + '">' + value2 + '</option>');
+                                // }
+
+                            });
+                        } else {
+                            $("#city").empty();
+                        }
+                    }
+                });
+            });
+
+
+
+
+
+
+
             $("#job_add_frm").validate({
                 errorElement: 'div',
                 errorClass: 'text-danger',
@@ -473,7 +596,7 @@
                         email: true,
                         checkEmail: true,
                     },
-                    require_skill: {
+                    'require_skill[]': {
                         required: true,
                         alphabates: true,
                     }
@@ -505,7 +628,7 @@
                     pincode:{
                         required: "Please enter pincode"
                     },
-                    require_skill:{
+                    'require_skill[]':{
                         required: "Please enter require skill"
                     }
                 },
@@ -600,89 +723,9 @@
     </script>
 
 
-    {{--    <script type="text/javascript">--}}
-    {{--        $(document).ready(function () {--}}
-
-    {{--            var cntry = "";--}}
-    {{--            var st = "";--}}
-    {{--            var cty = "";--}}
-    {{--            var zip = "";--}}
-
-    {{--            $('#country').select2({--}}
-    {{--                width: '100%'--}}
-    {{--            });--}}
-    {{--            $('#state').select2({--}}
-    {{--                width: '100%'--}}
-    {{--            });--}}
-    {{--            $('#city').select2({--}}
-    {{--                width: '100%'--}}
-    {{--            });--}}
-    {{--            $.ajax({--}}
-    {{--                type: "GET",--}}
-    {{--                url: url + "/api/countries",--}}
-    {{--                success: function (res) {--}}
-    {{--                    if (res) {--}}
-    {{--                        $("#country").empty();--}}
-    {{--                        $.each(res, function (key, value) {--}}
-    {{--                            if (value == cntry) {--}}
-    {{--                                $("#country").append('<option selected value="' + value + '">' + value + '</option>');--}}
-    {{--                            } else {--}}
-    {{--                                $("#country").append('<option value="' + value + '">' + value + '</option>');--}}
-    {{--                            }--}}
-    {{--                        });--}}
-
-    {{--                    } else {--}}
-    {{--                        $("#country").empty();--}}
-    {{--                    }--}}
-    {{--                }--}}
-    {{--            });--}}
-    {{--            var data_state = {--}}
-    {{--                "country": cntry--}}
-    {{--            };--}}
-    {{--            $.ajax({--}}
-    {{--                type: "POST",--}}
-    {{--                url: url + "/api/states",--}}
-    {{--                data: data_state,--}}
-    {{--                success: function (res) {--}}
-    {{--                    if (res) {--}}
-    {{--                        $("#state").empty();--}}
-    {{--                        $.each(res, function (key1, value1) {--}}
-    {{--                            if (value1 == st) {--}}
-    {{--                                $("#state").append('<option selected value="' + value1 + '">' + value1 + '</option>');--}}
-    {{--                            } else {--}}
-    {{--                                $("#state").append('<option value="' + value1 + '">' + value1 + '</option>');--}}
-    {{--                            }--}}
-    {{--                        });--}}
-    {{--                    } else {--}}
-    {{--                        $("#state").empty();--}}
-    {{--                    }--}}
-    {{--                }--}}
-    {{--            });--}}
-    {{--            var data_city = {--}}
-    {{--                "state": st--}}
-    {{--            };--}}
-    {{--            $.ajax({--}}
-    {{--                type: "POST",--}}
-    {{--                data: data_city,--}}
-    {{--                url: url + "/api/cities",--}}
-    {{--                success: function (res) {--}}
-    {{--                    if (res) {--}}
-    {{--                        $("#city").empty();--}}
-    {{--                        $.each(res, function (key2, value2) {--}}
-    {{--                            if (value2 == cty) {--}}
-    {{--                                $("#city").append('<option selected value="' + value2 + '">' + value2 + '</option>');--}}
-    {{--                            } else {--}}
-    {{--                                $("#city").append('<option value="' + value2 + '">' + value2 + '</option>');--}}
-    {{--                            }--}}
-
-    {{--                        });--}}
-    {{--                    } else {--}}
-    {{--                        $("#city").empty();--}}
-    {{--                    }--}}
-    {{--                }--}}
-    {{--            });--}}
-    {{--        });--}}
-    {{--    </script>--}}
+    
+    
+    
 
 
 @endpush('scripts')

@@ -41,14 +41,14 @@
                         <div class="col-md-6 col-xl-3">
                             <div class="card widget-card-1">
                                 <div class="card-block-small">
-                                    <i class="fa fa-handshake-o bg-c-blue card1-icon"></i>
+                                    <i class="fa fa-plus-circle bg-c-blue card1-icon"></i>
                                     <span class="text-c-blue f-w-600">Job Posted</span>
-                                    <h4>5</h4>
+                                    <h4>{{ $total_add_job }}</h4>
                                     <div>
                                     <span class="f-left m-t-10 text-muted">
-                                        <i class="text-c-blue f-16 fa fa-handshake-o m-r-10">
+                                        <i class="text-c-blue f-16 fa fa-plus-circle m-r-10">
                                         </i>
-                                        <a href="{{ url('client/business') }}">
+                                        <a href="{{ url('company/my-post-job-list') }}">
                                             View Post Jobs
                                         </a>
                                     </span>
@@ -60,14 +60,14 @@
                             <div class="card widget-card-1">
                                 <div class="card-block-small">
                                     <i class="fa fa-tags bg-c-pink card1-icon"></i>
-                                    <span class="text-c-pink f-w-600">Active Candidate</span>
-                                    <h4>12</h4>
+                                    <span class="text-c-pink f-w-600">Applied Candidate</span>
+                                    <h4>{{ $all_candidate}}</h4>
                                     <div>
                                     <span class="f-left m-t-10 text-muted">
                                         <i class="text-c-pink f-16 fa fa-tags m-r-10"></i>
-                                        <a href="{{ url('client/offer') }}">
+                                        <!-- <a href="{{ url('company/offer') }}"> -->
                                             View Candidate
-                                        </a>
+                                        <!-- </a> -->
                                     </span>
                                     </div>
                                 </div>
