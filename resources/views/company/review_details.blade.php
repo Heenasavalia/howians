@@ -4,6 +4,12 @@
         .user-face {
             width: 80px !important;
         }
+        .grey_color {
+            color: #c9c9c9!important;
+        }
+        i.fa.fa-star {
+            color: #0a39e2;
+        }
     </style>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <div class="pcoded-content">
@@ -84,12 +90,56 @@
                                                                             {{ date('d M Y h:i a', strtotime($review_details->created_at)) }}
                                                                         </td>
                                                                     </tr>
+
+                                                                    <tr>
+
+                                                                    </tr>
                                                                     <tr>
                                                                         <th class="social-label b-none p-t-0">Total rate
                                                                         </th>
                                                                         <td class="social-user-name b-none p-t-0 text-muted">
-                                                                            {{ ucfirst($review_details->rate)}}
+                                                                            <!-- {{ ucfirst($review_details->rate)}} -->
+                                                                            <?php
+                                                                                $r = (int) $review_details->rate;
+                                                                                
+                                                                                for ($i = 1; $i <= $r; $i++) {
+                                                                                ?>
+                                                                                <i class="fa fa-star"></i>
+                                                                                <?php
+                                                                                }
+                                                                                if ($r == 4) {
+                                                                                ?>
+                                                                                <i class="fa fa-star grey_color"></i>
+                                                                                <?php } else if ($r == 3) { ?>
+                                                                                    <i class="fa fa-star grey_color"></i>
+                                                                                    <i class="fa fa-star grey_color"></i>
+                                                                                <?php } else if ($r == 2) { ?>
+                                                                                    <i class="fa fa-star grey_color"></i>
+                                                                                    <i class="fa fa-star grey_color"></i>
+                                                                                    <i class="fa fa-star grey_color"></i>
+                                                                                <?php } else if ($r == 1) { ?>
+                                                                                    <i class="fa fa-star grey_color"></i>
+                                                                                    <i class="fa fa-star grey_color"></i>
+                                                                                    <i class="fa fa-star grey_color"></i>
+                                                                                    <i class="fa fa-star grey_color"></i>
+                                                                                <?php } else if ($r == 0) { ?>
+                                                                                    <i class="fa fa-star grey_color"></i>
+                                                                                    <i class="fa fa-star grey_color"></i>
+                                                                                    <i class="fa fa-star grey_color"></i>
+                                                                                    <i class="fa fa-star grey_color"></i>
+                                                                                    <i class="fa fa-star grey_color"></i>
+                                                                                <?php }
+                                                                            ?>
+
+                                                                            <b>
+                                                                                <span class="m-l-10">
+                                                                                    {{ number_format($review_details->rate, 2) }}
+                                                                                    <span> / 5</span>
+                                                                                </span>
+                                                                            </b>
+
                                                                         </td>
+                                                                       
                                                                     </tr>
                                                                     <tr>
                                                                         <th class="social-label b-none">Description</th>

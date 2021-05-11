@@ -13,7 +13,7 @@
     
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset('company/assets/css/jquery.datetimepicker.min.css')}}">
+    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
     <div class="pcoded-content client_business_add">
@@ -460,7 +460,18 @@
 
         var url = '{{ url("/") }}';
 
+
         $(document).ready(function () {
+
+            $('#country').select2({
+                width: '100%'
+            });
+            $('#state').select2({
+                width: '100%'
+            });
+            $('#city').select2({
+                width: '100%'
+            });
 
             var url = "{{ url('/') }}";
             $.ajax({
