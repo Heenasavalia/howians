@@ -29,7 +29,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $recent_posted_job = JobRequirement::with('company')->orderBy('id','DESC')->limit(6)->get();
+        // dd($recent_posted_job);
+        return view('user.home',['recent_posted_job'=>$recent_posted_job]);
     }
 
     /**

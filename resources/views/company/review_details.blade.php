@@ -8,7 +8,7 @@
             color: #c9c9c9!important;
         }
         i.fa.fa-star {
-            color: #0a39e2;
+            color: #f2ce0e;
         }
     </style>
     <meta name="csrf-token" content="{{ csrf_token() }}">
