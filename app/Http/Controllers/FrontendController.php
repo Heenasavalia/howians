@@ -14,11 +14,11 @@ class FrontendController extends Controller
     }
     public function job()
     {
-        return view('frontend.job');
+        return view('user.job');
     }
     public function job_detail()
     {
-        return view('frontend.job_detail');
+        return view('user.job_detail');
     }
     public function contact()
     {
