@@ -129,13 +129,13 @@
 
 
                             <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-6 clone-rightside-btn-1 cloneya-wrap">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 clone-rightside-btn-1 cloneya-wrap">
                                     
                                     <label class="require_skill" for="require_skill">Require Skills  <b>[ Note:- Enter eight(8) skill for job ]</b>
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="toclone-widget-right toclone cloneya row time_zone">
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-10 unit">
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-8 unit">
                                             <div class="form-group {{ $errors->has('require_skill') ? ' has-error' : '' }}">
                                                 {{ Form:: text('require_skill[]', '', array("class" => "form-control", 'placeholder' => 'Enter require skill', 'id' => 'require_skill')) }}
                                                 <small class="text-danger">{{ $errors->first('require_skill') }}</small>
