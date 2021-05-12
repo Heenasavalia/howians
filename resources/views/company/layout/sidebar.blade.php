@@ -60,6 +60,13 @@
             </li>
 
             <li class="">
+                <a href="{{ url('company/photo_gallery') }}">
+                    <span class="pcoded-micon"><i class="fa fa-file-image-o"></i></span>
+                    <span class="pcoded-mtext">Photo Gallery</span>
+                </a>
+            </li>
+
+            <li class="">
                 <a href="{{ url('/company/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <span class="pcoded-micon"><i class="fa fa-sign-out"></i></span>
                     <span class="pcoded-mtext">Logout</span>
