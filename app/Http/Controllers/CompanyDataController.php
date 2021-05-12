@@ -10,6 +10,13 @@ use Yajra\DataTables\DataTables;
 class CompanyDataController extends Controller
 {
 
+    public function PhotoGallery(){
+        dd("yes");
+        return view('company.business.image_gallery', ['business_id' => $business_id]);
+    }
+
+
+
     public function WatchReview(){
         return view('company.review');
     }

@@ -49,3 +49,5 @@ Route::get('watch_review','CompanyDataController@WatchReview');
 Route::any('getallreview','CompanyDataController@GetAllReview');
 Route::any('review_details/{id}','CompanyDataController@ReviewDetails');
 
+
+Route::any('photo_gallery','CompanyDataController@PhotoGallery');
