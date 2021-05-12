@@ -190,162 +190,52 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <div class="job-item media">
-                    <a class="icon" href="#">
-                        <div class="company-logo">
-                            <img src="{{asset('front_end/images/recent_logo1.png')}}" alt="logo">
-                        </div>
-                    </a>
-                    <div class="media-box align-self-center">
-                        <div class="div-left">
-                            <h4><a href="#">Web Developer</a></h4>
-                            <div class="job-ad-item">
-                                <ul>
-                                    <li><i class="fa fa-building-o"></i> Sahjanand</li>
-                                    <li><i class="fa fa-map-o"></i> Piplod, Surat</li>
-                                    <li><i class="fa fa-clock-o"></i> Full Time</li>
-                                    <li><i class="fa fa-calendar"></i> 5 days ago</li>
-                                </ul>
+
+                @foreach ($recent_posted_job as $jobs)
+
+                    <div class="job-item media">
+                        <a class="icon" href="#">
+                            <div class="company-logo">
+
+                                @if($jobs->company->profile_image !== null)
+                                    <img src="{{ config('constants.company_profile') . $jobs->company->profile_image }}" alt="logo">
+                                @else
+                                    <img src="{{asset('front_end/images/recent_logo2.png')}}" alt="logo">
+                                @endif
+
+
+
+                                
+                            </div>
+                        </a>
+                        <div class="media-box align-self-center">
+                            <div class="div-left">
+                                <h4><a href="#">{{ $jobs->title }}</a></h4>
+                                <div class="job-ad-item">
+                                    <ul>
+                                        <li><i class="fa fa-building-o"></i> Sahjanand</li>
+                                        <li><i class="fa fa-map-o"></i> Piplod, {{ $jobs->city}}</li>
+                                        <li><i class="fa fa-clock-o"></i> Full Time</li>
+                                        <li><i class="fa fa-calendar"></i> 5 days ago</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="div-center">
+                                <a href="#" class="heart-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="div-right">
+                                <a href="#" class="apply-button btn button-theme">Apply Now</a>
                             </div>
                         </div>
-                        <div class="div-center">
-                            <a href="#" class="heart-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="div-right">
-                            <a href="#" class="apply-button btn button-theme">Apply Now</a>
-                        </div>
                     </div>
-                </div>
-                <div class="job-item media">
-                    <a class="icon" href="#">
-                        <div class="company-logo">
-                            <img src="{{asset('front_end/images/recent_logo2.png')}}" alt="logo">
-                        </div>
-                    </a>
-                    <div class="media-box align-self-center">
-                        <div class="div-left">
-                            <h4><a href="#">Graphics Designer</a></h4>
-                            <div class="job-ad-item">
-                                <ul>
-                                    <li><i class="fa fa-building-o"></i> Sahjanand</li>
-                                    <li><i class="fa fa-map-o"></i> Piplod, Surat</li>
-                                    <li><i class="fa fa-clock-o"></i> Full Time</li>
-                                    <li><i class="fa fa-calendar"></i> 5 days ago</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="div-center">
-                            <a href="#" class="heart-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="div-right">
-                            <a href="#" class="apply-button btn button-theme">Apply Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="job-item media">
-                    <a class="icon" href="#">
-                        <div class="company-logo">
-                            <img src="{{asset('front_end/images/recent_logo3.png')}}" alt="logo">
-                        </div>
-                    </a>
-                    <div class="media-box align-self-center">
-                        <div class="div-left">
-                            <h4><a href="#">.Net Developer</a></h4>
-                            <div class="job-ad-item">
-                                <ul>
-                                    <li><i class="fa fa-building-o"></i> Sahjanand</li>
-                                    <li><i class="fa fa-map-o"></i> Piplod, Surat</li>
-                                    <li><i class="fa fa-clock-o"></i> Full Time</li>
-                                    <li><i class="fa fa-calendar"></i> 5 days ago</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="div-center">
-                            <a href="#" class="heart-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="div-right">
-                            <a href="#" class="apply-button btn button-theme">Apply Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="job-item media">
-                    <a class="icon" href="#">
-                        <div class="company-logo">
-                            <img src="{{asset('front_end/images/recent_logo4.png')}}" alt="logo">
-                        </div>
-                    </a>
-                    <div class="media-box align-self-center">
-                        <div class="div-left">
-                            <h4><a href="#">React and Native Developer</a></h4>
-                            <div class="job-ad-item">
-                                <ul>
-                                    <li><i class="fa fa-building-o"></i> Sahjanand</li>
-                                    <li><i class="fa fa-map-o"></i> Piplod, Surat</li>
-                                    <li><i class="fa fa-clock-o"></i> Full Time</li>
-                                    <li><i class="fa fa-calendar"></i> 5 days ago</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="div-center">
-                            <a href="#" class="heart-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="div-right">
-                            <a href="#" class="apply-button btn button-theme">Apply Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="job-item media">
-                    <a class="icon" href="#">
-                        <div class="company-logo">
-                            <img src="{{asset('front_end/images/recent_logo5.png')}}" alt="logo">
-                        </div>
-                    </a>
-                    <div class="media-box align-self-center">
-                        <div class="div-left">
-                            <h4><a href="#">Accountant</a></h4>
-                            <div class="job-ad-item">
-                                <ul>
-                                    <li><i class="fa fa-building-o"></i> Sahjanand</li>
-                                    <li><i class="fa fa-map-o"></i> Piplod, Surat</li>
-                                    <li><i class="fa fa-clock-o"></i> Full Time</li>
-                                    <li><i class="fa fa-calendar"></i> 5 days ago</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="div-center">
-                            <a href="#" class="heart-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="div-right">
-                            <a href="#" class="apply-button btn button-theme">Apply Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="job-item media">
-                    <a class="icon" href="#">
-                        <div class="company-logo">
-                            <img src="{{asset('front_end/images/recent_logo6.png')}}" alt="logo">
-                        </div>
-                    </a>
-                    <div class="media-box align-self-center">
-                        <div class="div-left">
-                            <h4><a href="#">iOS developer</a></h4>
-                            <div class="job-ad-item">
-                                <ul>
-                                    <li><i class="fa fa-building-o"></i> Sahjanand</li>
-                                    <li><i class="fa fa-map-o"></i> Piplod, Surat</li>
-                                    <li><i class="fa fa-clock-o"></i> Full Time</li>
-                                    <li><i class="fa fa-calendar"></i> 5 days ago</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="div-center">
-                            <a href="#" class="heart-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="div-right">
-                            <a href="#" class="apply-button btn button-theme">Apply Now</a>
-                        </div>
-                    </div>
-                </div>
+
+                @endforeach
+
+
+                
+
+               
+
             </div>
         </div>
     </div>

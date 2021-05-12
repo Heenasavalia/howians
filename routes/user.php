@@ -1,15 +1,17 @@
 <?php
 
-Route::get('/home', function () {
-    $users[] = Auth::user();
-    $users[] = Auth::guard()->user();
-    $users[] = Auth::guard('user')->user();
+// Route::get('/home', function () {
+//     $users[] = Auth::user();
+//     $users[] = Auth::guard()->user();
+//     $users[] = Auth::guard('user')->user();
 
-    //dd($users);
+//     //dd($users);
 
-    return view('user.home');
-    // return view('user.landing');
-})->name('home');
+//     return view('user.home');
+//     // return view('user.landing');
+// })->name('home');
+
+Route::get('/home', 'UserController@index');
 
 Route::get('/planselect', 'UserController@PlanSelection');
 Route::get('/displayallplan', 'UserController@DiaplayPlans');
