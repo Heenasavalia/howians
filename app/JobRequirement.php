@@ -13,7 +13,7 @@ class JobRequirement extends Model
         'minimum_salary','maximum_salary','other_salary_detail','gender',
         'start_time','end_time','work_experience','work_experiance_type',
         'job_type','work_type','discription','address','location','latitude','longitude',
-        'pincode','city','state','country','require_skill'
+        'pincode','city','state','country','require_skill', 'slug', 'unique_id'
     ];
 
     public function company()

@@ -18,7 +18,7 @@ class FrontendController extends Controller
     }
     public function job_detail()
     {
-        return view('user.job_detail');
+        return view('user.job_detail_backup');
     }
     public function contact()
     {

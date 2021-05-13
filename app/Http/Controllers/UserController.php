@@ -22,6 +22,18 @@ use App\ApplyCandidate;
 
 class UserController extends Controller
 {
+
+
+    public function jobDetails(Request $request , $job_id){
+        // dump('job here',$job_id);
+        // dd();
+      
+        $job_details = JobRequirement::with('company')->where('unique_id',$job_id)->first();
+        return view('user.job_detail',['job_details'=>$job_details]);
+    }
+
+
+
      /**
      * Display a listing of the resource.
      *

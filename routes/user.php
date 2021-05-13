@@ -36,3 +36,6 @@ Route::post('submit-rating','UserController@AddReview');
 // apply for job
 Route::get('apply-job/{company}/{job}','UserController@applyJob');
 Route::post('submit-job-apply','UserController@applyJobForm');
+
+//heena
+Route::get('apply/{job_id}','UserController@jobDetails');
