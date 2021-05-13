@@ -3,7 +3,7 @@
 <section class="breadcrumb">
     <div class="banner-img"><img class="d-block w-100 h-100" src="{{asset('front_end/images/job_detail_banner.jpg')}}" alt="banner"></div>
     <div class="container inner-banner">
-        <h2>{{ $job_details->title }}</h2>
+        <h2>UI / UX Designer</h2>
     </div>
 </section>
 <!-- banner end -->
@@ -16,18 +16,10 @@
                 <!-- Main item start -->
                 <div class="main-item mb-4 white_box">
                     <div class="company-logo">
-
-                        @if($job_details->company->profile_image !== null)
-                            <img src="{{ config('constants.company_profile') . $job_details->company->profile_image }}" alt="logo">
-                        @else
-                            <img src="{{asset('front_end/images/job-detail-logo.png')}}" alt="avatar">
-                        @endif
-
-                        
-                    
+                        <img src="{{asset('front_end/images/job-detail-logo.png')}}" alt="avatar">
                     </div>
                     <div class="description">
-                        <h4 class="title"><a href="#">{{ $job_details->title }}</a> <span class="label">Full Time</span></h4>
+                        <h4 class="title"><a href="#">UI/UX Designer</a> <span class="label">Full Time</span></h4>
                         <div class="candidate-listing-footer">
                             <ul>
                                 <li>IT Company</li>
@@ -41,9 +33,7 @@
                 <!-- about me start -->
                 <div class="about-me mb-4 white_box">
                     <h3>Job Description</h3>
-                    <p>
-                        {{ $job_details->discription }}
-                    </p>
+                    <p>It is a long established fact that a reader will beff distracted by vbthe creadable content of a page when looking at its layout. The pointf of using Lorem Ipsum is that it has ahf mcore or-lgess normal distribution of letters, as opposed to using, Content here content here making it look like readable.</p>
                     <h3>Required Knowledge, Skills, and Abilities</h3>
                     <ul>
                         <li>System Software Development</li>

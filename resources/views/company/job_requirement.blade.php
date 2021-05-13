@@ -109,24 +109,7 @@
                             </div>
                             <br>
 
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group{{ $errors->has('require_skill') ? ' has-error' : '' }}">
-                                        <label class="require_skill" for="require_skill">Require Skills <span class="text-danger">*</span></label>
-                                        {{ Form:: text('require_skill', '', array("class" => "form-control", 'placeholder' => 'Enter require skill', 'id' => 'require_skill')) }}
-                                        <small class="text-danger">{{ $errors->first('require_skill') }}</small>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group{{ $errors->has('number_of_vacancy') ? ' has-error' : '' }}">
-                                        <label for="number_of_vacancy">Number of vacancy <span class="text-danger">*</span></label>
-                                        <input id="number_of_vacancy" placeholder="Enter number of vacancy" name="number_of_vacancy" type="number_of_vacancy" class="form-control">
-                                        <small class="text-danger">{{ $errors->first('number_of_vacancy') }}</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-
+                          
 
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12 clone-rightside-btn-1 cloneya-wrap">

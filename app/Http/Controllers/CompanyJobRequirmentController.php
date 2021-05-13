@@ -43,11 +43,11 @@ class CompanyJobRequirmentController extends Controller
     {
 //        dd($request);
         $this->validate($request, [
-//            'title' => 'required|string',
-//            'description' => 'required|string',
-//            'education' => 'required',
-//            'email' => 'required',
-//            'designation' => 'required',
+           'title' => 'required|string',
+           'description' => 'required|string',
+           'education' => 'required',
+           'email' => 'required',
+           'designation' => 'required',
 ////            'number_of_vacancy' => 'required',
 ////            'minimum_salary' => 'required',
 ////            'maximum_salary' => 'required',
@@ -57,8 +57,12 @@ class CompanyJobRequirmentController extends Controller
 //            'job_type' => 'required',
 ////            'address' => 'required',
 //            'pincode' => 'required',
+             'require_skill' => 'required',
         ]);
         $data=$request->all();
+        $unique_id = mt_rand(10000000, 99999999);
+        $data['unique_id'] = $unique_id;
+
         $data['company_id'] = Auth::user()->id;
         $data['gender'] = implode(",", $data['gender']);
         $data['job_type'] = implode(",", $data['job_type']);

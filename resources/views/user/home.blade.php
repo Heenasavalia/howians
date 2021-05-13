@@ -224,7 +224,7 @@
                                 <a href="#" class="heart-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                             </div>
                             <div class="div-right">
-                                <a href="#" class="apply-button btn button-theme">Apply Now</a>
+                                <a href="{{ url('user/apply'. '/' . $jobs->unique_id) }}" class="apply-button btn button-theme">View Details</a>
                             </div>
                         </div>
                     </div>
