@@ -10,7 +10,7 @@
                         <div class="col-lg-8">
                             <div class="page-header-title">
                                 <div class="d-inline">
-                                    <h4>Dashboard</h4>
+                                    <h4>Plan Select</h4>
                                 </div>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                             <div class="col-xl-12 col-lg-6">
                                 <div class="card  flex-lg-column flex-md-row ">
                                     <div class="card-body card-body  text-center border-bottom profile-bx">
-                                        <h4 class="fs-22 text-black mb-1">${{$plans->price}} / Day</h4>
+                                        <h4 class="fs-22 text-black mb-1"><i class="fa fa-inr" aria-hidden="true"></i> {{$plans->price}} / Day</h4>
                                         <p class="mb-0">{{$plans->name}}</p>
                                     </div>
                                     <div class="card-body  border-left">
