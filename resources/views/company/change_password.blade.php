@@ -15,7 +15,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>                                
 
                     <div class="row">
                         <div class="col-xl-12 col-xxl-12">
@@ -35,7 +35,7 @@
 
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label">Current password</label>
-                                                    <div class="col-sm-9">
+                                                    <div class="col-sm-6">
                                                         <input id="password" type="password" class="form-control"
                                                                name="current_password" autocomplete="current-password"
                                                                placeholder="Current Password">
@@ -43,7 +43,7 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label">New Password</label>
-                                                    <div class="col-sm-9">
+                                                    <div class="col-sm-6">
                                                         <input id="new_password" type="password" class="form-control"
                                                                name="new_password" autocomplete="current-password"
                                                                placeholder="Type new Password">
@@ -51,7 +51,7 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label">Confirm Password</label>
-                                                    <div class="col-sm-9">
+                                                    <div class="col-sm-6">
                                                         <input id="new_confirm_password" type="password" class="form-control"
                                                                name="new_confirm_password" autocomplete="current-password"
                                                                placeholder="Reype new Password">

@@ -169,12 +169,12 @@
                                             Other
                                         </label>
                                     </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                    <!-- <div class="col-lg-2 col-md-2 col-sm-2">
                                         <label class="geneder">
                                             <input name="gender[]" type="checkbox" class="minimal" value="All">
                                             All
                                         </label>
-                                    </div>
+                                    </div> -->
                                     <small class="text-danger">{{ $errors->first('gender[]') }}</small>
                                 </div>
                             </div>
@@ -183,7 +183,7 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group{{ $errors->has('start_time') ? ' has-error' : '' }}">
-                                        <label class="start_time">Job start and end date <span class="text-danger">*</span></label>
+                                        <label class="start_time">Post validity <span class="text-danger">*</span></label>
                                         {{--                                        <div class="col-sm-10 col-xl-10">--}}
                                         <div class="input-daterange input-group" id="datepicker">
                                             <input type="datetime-local" class="input-sm form-control" name="start_time" placeholder="start date"/>

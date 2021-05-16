@@ -28,7 +28,7 @@
                 </div>
 				<div class="row">
                     @foreach($company_plans as $plans)
-					<div class="col-xl-3 col-xxl-4 col-lg-12">
+					<div class="col-xl-4 col-xxl-4 col-lg-12">
                         <div class="row">
                             <div class="col-xl-12 col-lg-6">
                                 <div class="card  flex-lg-column flex-md-row ">

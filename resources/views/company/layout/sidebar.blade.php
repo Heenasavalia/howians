@@ -1,6 +1,6 @@
 <nav class="pcoded-navbar" navbar-theme="themelight1" active-item-theme="theme1" sub-item-theme="theme2" active-item-style="style0" pcoded-navbar-position="fixed">
     <div class="pcoded-inner-navbar main-menu">
-        <ul class="pcoded-item pcoded-left-item">
+        <!-- <ul class="pcoded-item pcoded-left-item">
             <div class="pcoded-navigatio-lavel">Site Main Page</div>
             <li class="active">
                 <a href="{{ url('/') }}">
@@ -8,7 +8,7 @@
                     <span class="pcoded-mtext">Home Page</span>
                 </a>
             </li>
-        </ul>
+        </ul> -->
         <div class="pcoded-navigatio-lavel">Menus</div>
         <ul class="pcoded-item pcoded-left-item">
             <li class="active">

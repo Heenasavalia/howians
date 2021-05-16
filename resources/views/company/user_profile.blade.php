@@ -240,7 +240,7 @@
                                                                                     <table class="table table-responsive m-b-0">
                                                                                         <tbody>
                                                                                         <tr>
-                                                                                            <h5 style="color: #FF0000;">Resume not uploaded.,</h5>
+                                                                                            <h5 style="color: #FF0000;">Resume not uploaded.</h5>
                                                                                             <br>
                                                                                             <p>You can contact this candidate using Mail or Contact number.</p>
                                                                                         </tr>
