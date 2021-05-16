@@ -22,10 +22,10 @@
                         <div class="jp_regis_left_side_box_wrapper">
                             <div class="jp_regis_left_side_box">
                                 <img src="{{asset('landing_page/img/regis_icon.png')}}" alt="icon">
-                                <h4>I’m an EMPLOYER</h4>
-                                <p>Signed in companies are able to post new<br> job offers, searching for candidate...</p>
+                                <h4>I’m Candidate</h4>
+                                <p>Easiest Way To Find Your Dream Job<br> job offers, searching for best Companies...</p>
                                 <ul>
-                                    <li><a href="{{url('/user/login')}}"><i class="fa fa-plus-circle"></i> &nbsp;REGISTER AS USER</a></li>
+                                    <li><a href="{{url('/user/login')}}"><i class="fa fa-plus-circle"></i> &nbsp;FIND A JOB</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -34,9 +34,9 @@
                             <div class="jp_regis_right_side_box">
                                 <img src="{{asset('landing_page/img/regis_icon2.png')}}" alt="icon">
                                 <h4>COMPANY</h4>
-                                <p>Signed in companies are able to post new<br> job offers, searching for candidate...</p>
+                                <p>Hire Skilled People, best of them<br> job offers, searching for candidate...</p>
                                 <ul>
-                                    <li><a href="{{url('company/register')}}"><i class="fa fa-plus-circle"></i> &nbsp;REGISTER AS COMPANY</a></li>
+                                    <li><a href="{{url('company/login')}}"><i class="fa fa-plus-circle"></i> &nbsp;POST A JOB</a></li>
                                 </ul>
                             </div>
                             <div class="jp_regis_center_tag_wrapper">
