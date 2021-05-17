@@ -1599,11 +1599,11 @@ ul.pagination li a.page-link:hover {
     color: #4285f4;
 }
 
-body.contact-section {
+body.inner-page-section {
     padding-top: 115px;
 }
 
-.contact-section header.main-header {
+.inner-page-section header.main-header {
     background-color: #1f2937;
 }
 
@@ -1704,6 +1704,33 @@ body.contact-section {
 
 .contact-sec .col-md-7 {
     padding-right: 100px;
+}
+
+.container.inner-banner.commen-banner {
+    text-align: left;
+}
+
+.commen-banner h2 {
+    color: #000;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.commen-banner p {
+    max-width: 400px;
+    font-size: 18px;
+    color: #919191;
+}
+
+ul.commen_ul li {
+    line-height: 180%;
+    position: relative;
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.main-card {
+    display: flex;
 }
 
 

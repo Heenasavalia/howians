@@ -22,6 +22,11 @@ Route::get('/', function () {
   Route::any('job', 'FrontendController@job');
   Route::any('job-detail', 'FrontendController@job_detail');
   Route::any('contact', 'FrontendController@contact');
+  Route::any('faq', 'FrontendController@faq');
+  Route::any('help', 'FrontendController@help');
+  Route::any('service', 'FrontendController@service');
+  Route::any('terms', 'FrontendController@terms');
+  Route::any('privacy', 'FrontendController@privacy');
 
   Route::group(['prefix' => 'user'], function () {
   Route::get('/login', 'UserAuth\LoginController@showLoginForm')->name('login');

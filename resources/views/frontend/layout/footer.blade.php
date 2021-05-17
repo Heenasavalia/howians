@@ -34,22 +34,22 @@
                     <h4>Employers</h4>
                     <ul class="links">
                         <li>
-                            <a href="#">Healthcare</a>
+                            <a href="{{url('/privacy')}}">Privacy Policy</a>
                         </li>
                         <li>
-                            <a href="#">IT Company</a>
+                            <a href="{{url('/terms')}}">Term and Conditions</a>
                         </li>
                         <li>
-                            <a href="#">Automobile Jobs</a>
+                            <a href="{{url('/faq')}}">FAQs</a>
                         </li>
                         <li>
-                            <a href="#">Company</a>
+                            <a href="{{url('/service')}}">Services</a>
                         </li>
                         <li>
-                            <a href="#">Logistics</a>
+                            <a href="{{url('/contact')}}">Contact us</a>
                         </li>
                         <li>
-                            <a href="#">Finance</a>
+                            <a href="{{url('/help')}}">Help</a>
                         </li>
                     </ul>
                 </div>
