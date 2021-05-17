@@ -163,9 +163,7 @@ class UserController extends Controller
     public function DiaplayPlans()
     {
         $plans = PricingPlans::with('fetures')->where('type','student')->where('status','Active')->get();
-        // dd($plans);
-             return view('user.plans',['plans'=>$plans]);
-        // dd($studen_plans);
+        return view('user.plans',['plans'=>$plans]);
     }
 
     public function selectPlans(Request $request)
@@ -246,25 +244,26 @@ class UserController extends Controller
     public function userSearch(Request $request)
     {
         $data = $request->all();
-        // dump($data);
+        // dd($data);
         $keywords = $data['keyword'];
         $category = $data['category'];
         $location = $data['location'];
        
         $currentDate = date('Y-m-d');
-        
-        $get_data = JobRequirement::with('company')->where('title','LIKE','%'. $keywords .'%')
-                                    ->where( function($query) use ($location){
-                                        $query->where('location','LIKE', '%' . $location .'%')
-                                        ->orWhere('address','LIKE', '%' . $location .'%');
-                                    })
-                                    // ->where('location','LIKE', '%' . $location .'%')
-                                    ->where('job_category','LIKE','%'. $category .'%')
-                                    ->where('end_time', '>', $currentDate)
-                                    ->orWhere('end_time', $currentDate)
-                                    ->get();
+
+        $get_data = JobRequirement::with('company')
+                    ->where('title','LIKE', $keywords .'%')
+                    ->where( function($query) use ($location){
+                        $query->where('location','LIKE', '%' . $location .'%')
+                        ->orWhere('address','LIKE', '%' . $location .'%');
+                    })
+                    ->where('job_category','LIKE','%'. $category .'%')
+                    ->where('end_time', '>=', $currentDate)
+                    ->paginate(10);
+                    // ->get();
         // dd($get_data);
-        return view('user.job_list', ['data' => $get_data]);
+        return view('user.job', ['data' => $get_data]);
+        // return view('user.job_list', ['data' => $get_data]);
         // dd($get_data);
     }
 

@@ -112,6 +112,8 @@
                 </div>
                 <!-- Candidate box start -->
                 <div class="jobs_box">
+                @if($data != null)
+                @foreach($data as $d)
                     <div class="candidate-item media">
                         <div class="candidate-listing d-flex flex-wrap">
                             <div class="user-logo">
@@ -119,133 +121,33 @@
                                 <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo1.png')}}" alt="avatar"></a>
                             </div>
                             <div class="candidate_right">
-                                <h4 class="title"><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
+                                <h4 class="title"><a href="#">{{$d->company->company_name}}</a> <span class="sub_title">{{$d->title}}</span> <span class="label">{{$d->job_type}}</span></h4>
                                 <ul>
-                                    <li><i class="fa fa-map-marker"></i> India <strong>Surat</strong> <i>30 min ago</i></li>
+                                    <li><i class="fa fa-map-marker"></i> {{$d->country}} <strong>{{$d->city}}</strong> <i>30 min ago</i></li>
                                 </ul>
                             </div>
                             <div class="candidate_label">
                                 <ul>
-                                    <li>Salary: <strong>$1,200 - $1,800</strong></li>
-                                    <li>Position: <strong>12</strong></li>
-                                    <li>Experience: <strong>2+ Year</strong></li>
+                                    <li>Salary: <strong>$ {{$d->minimum_salary}} - $ {{$d->maximum_salary}}</strong></li>
+                                    <li>Position: <strong>{{$d->number_of_vacancy}}</strong></li>
+                                    <li>Experience: <strong>{{$d->work_experience}}+ Year</strong></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="div-right">
                             <p>Openings Postition</p>
-                            <h3>Graphic Designer</h3>
-                            <a href="#" class="btn button-theme btn-lg apply-button">Apply Now!</a>
+                            <h3>{{$d->title}}</h3>
+                            <?php $com_id = $d->company->id; ?>
+                            <a href="{{url('user/apply-job/'.$com_id.'/'.$d->id)}}" class="btn button-theme btn-lg apply-button">Apply Now!</a>
                         </div>
                     </div>
-                    <div class="candidate-item media">
-                        <div class="candidate-listing d-flex flex-wrap">
-                            <div class="user-logo">
-                                <div class="wishlist-icon"><i class="fa fa-heart-o"></i></div>
-                                <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo2.png')}}" alt="avatar"></a>
-                            </div>
-                            <div class="candidate_right">
-                                <h4 class="title"><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
-                                <ul>
-                                    <li><i class="fa fa-map-marker"></i> India <strong>Surat</strong> <i>30 min ago</i></li>
-                                </ul>
-                            </div>
-                            <div class="candidate_label">
-                                <ul>
-                                    <li>Salary: <strong>$1,200 - $1,800</strong></li>
-                                    <li>Position: <strong>12</strong></li>
-                                    <li>Experience: <strong>2+ Year</strong></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="div-right">
-                            <p>Openings Postition</p>
-                            <h3>Graphic Designer</h3>
-                            <a href="#" class="btn button-theme btn-lg apply-button">Apply Now!</a>
-                        </div>
-                    </div>
-                    <div class="candidate-item media">
-                        <div class="candidate-listing d-flex flex-wrap">
-                            <div class="user-logo">
-                                <div class="wishlist-icon"><i class="fa fa-heart-o"></i></div>
-                                <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo3.png')}}" alt="avatar"></a>
-                            </div>
-                            <div class="candidate_right">
-                                <h4><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
-                                <ul>
-                                    <li><i class="fa fa-map-marker"></i> India <strong>Surat</strong> <i>30 min ago</i></li>
-                                </ul>
-                            </div>
-                            <div class="candidate_label">
-                                <ul>
-                                    <li>Salary: <strong>$1,200 - $1,800</strong></li>
-                                    <li>Position: <strong>12</strong></li>
-                                    <li>Experience: <strong>2+ Year</strong></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="div-right">
-                            <p>Openings Postition</p>
-                            <h3>Graphic Designer</h3>
-                            <a href="#" class="btn button-theme btn-lg apply-button">Apply Now!</a>
-                        </div>
-                    </div>
-                    <div class="candidate-item media">
-                        <div class="candidate-listing d-flex flex-wrap">
-                            <div class="user-logo">
-                                <div class="wishlist-icon"><i class="fa fa-heart-o"></i></div>
-                                <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo4.png')}}" alt="avatar"></a>
-                            </div>
-                            <div class="candidate_right">
-                                <h4 class="title"><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
-                                <ul>
-                                    <li><i class="fa fa-map-marker"></i> India <strong>Surat</strong> <i>30 min ago</i></li>
-                                </ul>
-                            </div>
-                            <div class="candidate_label">
-                                <ul>
-                                    <li>Salary: <strong>$1,200 - $1,800</strong></li>
-                                    <li>Position: <strong>12</strong></li>
-                                    <li>Experience: <strong>2+ Year</strong></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="div-right">
-                            <p>Openings Postition</p>
-                            <h3>Graphic Designer</h3>
-                            <a href="#" class="btn button-theme btn-lg apply-button">Apply Now!</a>
-                        </div>
-                    </div>
-                    <div class="candidate-item media">
-                        <div class="candidate-listing d-flex flex-wrap">
-                            <div class="user-logo">
-                                <div class="wishlist-icon"><i class="fa fa-heart-o"></i></div>
-                                <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo5.png')}}" alt="avatar"></a>
-                            </div>
-                            <div class="candidate_right">
-                                <h4 class="title"><a href="#">Trion Technology</a> <span class="sub_title">Graphic Designer</span> <span class="label">Full Time</span></h4>
-                                <ul>
-                                    <li><i class="fa fa-map-marker"></i> India <strong>Surat</strong> <i>30 min ago</i></li>
-                                </ul>
-                            </div>
-                            <div class="candidate_label">
-                                <ul>
-                                    <li>Salary: <strong>$1,200 - $1,800</strong></li>
-                                    <li>Position: <strong>12</strong></li>
-                                    <li>Experience: <strong>2+ Year</strong></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="div-right">
-                            <p>Openings Postition</p>
-                            <h3>Graphic Designer</h3>
-                            <a href="#" class="btn button-theme btn-lg apply-button">Apply Now!</a>
-                        </div>
-                    </div>
+                @endforeach
+                @else
+                @endif
                 </div>
                 <!-- Page navigation start -->
                 <div class="pagination-box">
-                    <nav aria-label="Page navigation">
+                    <!-- <nav aria-label="Page navigation">
                         <ul class="pagination">
                             <li class="page-item">
                                 <a class="page-link" href="#">Prev</a>
@@ -257,7 +159,8 @@
                                 <a class="page-link" href="#">Next</a>
                             </li>
                         </ul>
-                    </nav>
+                    </nav> -->
+                    {{ $data->links() }}
                 </div>
             </div>
         </div>
