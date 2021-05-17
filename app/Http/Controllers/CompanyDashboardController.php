@@ -183,10 +183,11 @@ class CompanyDashboardController extends Controller
 //        dd($data);
         if ($request->hasFile('profile_image')) {
             $image = $request->file('profile_image');
-            $data['profile_image'] = Helpers::upload_image($image, "company_profile");
+            $data['profile_image'] = Helpers::upload_image($image, 'company_profile');
         } else {
             $data['profile_image'] = $company->profile_image;
         }
+        // dd($data);
 
         $update = $company->update($data);
         //dd($update);

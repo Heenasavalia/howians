@@ -617,7 +617,7 @@
                     },
                     website_url: "Sorry, please Enter URL in Proper Formate",
                     email: {
-                        required: "Please enter valid Email",
+                        required: "Please enter Email",
                     },
                     pincode:{
                         required: "Please enter pincode"
