@@ -20,7 +20,7 @@
                         <!-- Messages Dropdown Menu -->
                         <div class="dropdown-toggle" data-toggle="dropdown">
                             @if( Auth::user()->profile_image != null)
-                                <img src="{{ config('constants.profile_img') . Auth::user()->profile_image }}" class="img-radius" alt="Company-Profile-Image">
+                                <img src="{{ config('constants.company_profile') . Auth::user()->profile_image }}" class="img-radius" alt="Company-Profile-Image">
                             @else
                                 <img src="{{ asset('images/male.png')}}" class="img-radius" alt="Company-Profile-Image">
                             @endif
