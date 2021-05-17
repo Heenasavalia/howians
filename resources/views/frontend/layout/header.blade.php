@@ -46,10 +46,10 @@
                             <a class="nav-link" href="{{url('/about')}}">ABOUT US</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/job')}}">JOB</a>
+                            <a class="nav-link" href="{{url('user/job')}}">JOB</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/plan')}}">PLAN</a>
+                            <a class="nav-link" href="{{url('user/displayallplan')}}">PLAN</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/contact')}}">CONTACT</a>
@@ -57,7 +57,7 @@
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item ni-2">
-                            <a class="nav-link btn btn-md button-theme" href="login.html">
+                            <a class="nav-link btn btn-md button-theme" href="{{url('user/login')}}">
                                 Login
                             </a>
                         </li>

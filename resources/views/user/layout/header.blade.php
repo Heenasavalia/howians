@@ -15,7 +15,7 @@
                             <a class="nav-link" href="{{url('/home')}}">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">ABOUT US</a>
+                            <a class="nav-link" href="{{url('/about')}}">ABOUT US</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('user/job')}}">JOB</a>
@@ -24,7 +24,7 @@
                             <a class="nav-link" href="{{url('user/displayallplan')}}">PLAN</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">CONTACT</a>
+                            <a class="nav-link" href="{{url('/contact')}}">CONTACT</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">

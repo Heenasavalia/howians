@@ -37,7 +37,7 @@
     .candidate-item .div-right h3 {
         font-size: 18px;
     }
-    body.contact-section {
+    body.inner-page-section {
         padding-top: 82px;
     }
 }
@@ -102,7 +102,8 @@
     .how_works .how_inner h3 {
         font-size: 18px;
     }
-    body p {
+    body p,
+    ul.commen_ul li {
         font-size: 14px;
         line-height: 160%;
     }
@@ -198,7 +199,9 @@
         height: 315px;
     }
     .inner-banner h2 {
-        font-size: 30px;
+        font-size: 23px;
+        letter-spacing: 0;
+        margin-bottom: 5px;
     }
     .inner-banner ul li,
     .about_content h5,
@@ -304,7 +307,7 @@
     .form-sec .form-control {
         font-size: 16px;
     }
-    body.contact-section {
+    body.inner-page-section {
         padding-top: 55px;
     }
     .contact-title h2 {
@@ -336,6 +339,14 @@
 }
 
 @media screen and (max-width: 767px) {
+    body h1,
+    body h2,
+    body h3,
+    body h4,
+    body h5,
+    body h6 {
+        font-size: 22px;
+    }
     .banner h3 {
         font-size: 18px;
         margin-bottom: 3px;
@@ -462,7 +473,7 @@
         font-size: 20px;
     }
     section.breadcrumb .banner-img {
-        height: 200px;
+        height: 180px;
     }
     .candidate-listing-section .left-listing,
     .candidate-listing-section .right-listing {
@@ -595,6 +606,10 @@
     .info-main::before,
     .info-section::before {
         display: none;
+    }
+    .commen-banner p {
+        max-width: 210px;
+        font-size: 13px;
     }
 }
 

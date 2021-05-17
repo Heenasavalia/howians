@@ -54,6 +54,6 @@
 
 <script>
     $(document).ready(function() {
-        $("body").addClass('contact-section');
+        $("body").addClass('inner-page-section');
     });
 </script>
