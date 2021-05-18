@@ -957,7 +957,13 @@ section.breadcrumb .banner-img {
     height: 615px;
 }
 
-section.breadcrumb .banner-img img {
+section.breadcrumb .banner-img img,
+.profile_img img,
+.portfolio_sec ul li img {
+    -webkit-object-fit: cover;
+    -moz-object-fit: cover;
+    -ms-object-fit: cover;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -1771,6 +1777,212 @@ ul.commen_ul li {
 
 .main-card .card p.card-text {
     text-align: center;
+}
+
+.profile_img {
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.profile_data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile_data h2 span {
+    display: block;
+    color: #4285f4;
+    font-weight: 400;
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+.profile_data p,
+.bookmart_link a {
+    font-size: 18px;
+    color: #989898;
+}
+
+.profile_data p .fa,
+.bookmart_link a .fa {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+.bookmart_link a:hover {
+    color: #4285f4;
+}
+
+.rank_div h3 {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #989898;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.rank_div p {
+    color: #484848;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: normal;
+}
+
+.rank_div .fa {
+    font-size: 30px;
+    font-weight: normal;
+    margin-left: 5px;
+    color: #4285f4;
+}
+
+.profile_link li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.profile_link li a {
+    color: #989898;
+    font-size: 20px;
+}
+
+.profile_link li a:hover {
+    color: #4285f4;
+}
+
+.info_sec {
+    position: relative;
+}
+
+.info_sec .info_title {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    color: #b8b8b8;
+    font-weight: 600;
+    background-color: #fff;
+    display: inline-block;
+    padding-right: 10px;
+    margin-bottom: 25px;
+}
+
+.info_sec .info_title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    background-color: #e8ecf3;
+    height: 1px;
+    z-index: -1;
+    width: 100%;
+}
+
+.info_sec .work_detail {
+    margin-bottom: 25px;
+}
+
+.work_detail h3 {
+    font-size: 22px;
+    color: #415674;
+    line-height: normal;
+    margin-bottom: 5px;
+}
+
+.work_detail p {
+    margin: 0;
+}
+
+.work_detail p.blue_color {
+    color: #4285f4;
+}
+
+.skill_detail ul li {
+    margin-bottom: 15px;
+    color: #415674;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.profile_tabs .nav-tabs {
+    margin-bottom: 40px;
+}
+
+.profile_tabs .nav-tabs li.nav-item {
+    margin: 0 10px 0 0;
+}
+
+.profile_tabs .nav-tabs li.nav-item a.nav-link {
+    border: none;
+    margin: 0;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 22px;
+    font-weight: 500;
+    color: #949494;
+    position: relative;
+    padding: 15px 20px;
+}
+
+.profile_tabs .nav-tabs li.nav-item a.nav-link.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    right: 0;
+    margin: auto;
+    background-color: #4285f4;
+    height: 3px;
+}
+
+.profile_tabs .nav-tabs li.nav-item a.nav-link.active {
+    color: #646464;
+}
+
+.profile_tabs .nav-tabs li.nav-item a.nav-link .fa {
+    margin-right: 5px;
+}
+
+.personal_details h4 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    color: #b8b8b8;
+    margin-bottom: 30px;
+}
+
+.personal_details ul li {
+    position: relative;
+    padding-left: 110px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.personal_details ul li span {
+    position: absolute;
+    left: 0;
+}
+
+.personal_details ul li a {
+    color: #4285f4;
+}
+
+.personal_details ul li a:hover {
+    color: #000;
+}
+
+.portfolio_sec ul {
+    margin: 0 1%;
+}
+
+.portfolio_sec ul li {
+    float: left;
+    width: 31.33%;
+    margin: 1%;
+    border: 1px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
 }
 
 
