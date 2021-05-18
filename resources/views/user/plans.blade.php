@@ -12,23 +12,27 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{$plan->name}}</h5>
                                 @foreach($plan->fetures as $feature)
-                                    <p class="card-text">{{$feature->name}}</p>
+                                <p class="card-text">{{$feature->name}}</p>
                                 @endforeach
                                 <h6 class="card-subtitle mb-2 text-muted">{{$plan->price}}</h6>
                                 {{ Form:: open(array('url' => "/user/select_plan",'method'=>'post', 'id' => 'plans')) }}
                                 <input type="hidden" name="id" value="{{$plan->id}}">
-                                    <div class="input-group date">
+                                <div class="form-group">
+                                    <div class="input-group date" id="datetimepicker1">
                                         <input type="text" class="form-control start_date" id="start_date" name="start_time" autocomplete="off">
-                                        <div class="input-group-addon">
-                                            <span class="glyphicon glyphicon-th"></span>
+                                        <div class="input-group-addon my_addon">
+                                            <i class="fa fa-calendar"></i>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="form-group">
                                     <div class="input-group date">
                                         <input type="text" class="form-control end_date" id="end_date" name="end_time" autocomplete="off">
-                                        <div class="input-group-addon">
-                                            <span class="glyphicon glyphicon-th"></span>
+                                        <div class="input-group-addon my_addon">
+                                            <i class="fa fa-calendar"></i>
                                         </div>
                                     </div>
+                                </div>
                                 {{ Form::submit('Active Plan', array('class' => 'btn btn-primary','id'=> 'send' )) }}
                                 {{ Form:: close() }}
                             </div>
@@ -41,9 +45,13 @@
     </div>
 </div>
 @include('frontend.layout.footer')
+<script>
+    $(document).ready(function() {
+        $("body").addClass('inner-page-section');
 
-<script >
- $(document).ready(function() {
-    $("body").addClass('inner-page-section');
-});
+
+        $('.datepicker').datepicker({
+            inline: true
+        });
+    });
 </script>
