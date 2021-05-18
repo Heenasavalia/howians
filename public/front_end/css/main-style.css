@@ -1733,6 +1733,46 @@ ul.commen_ul li {
     display: flex;
 }
 
+.plan_section .panel p.text-center {
+    max-width: 630px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+.main-card .card {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    padding: 35px 50px;
+    border: none;
+    border-radius: 10px;
+}
+
+.main-card .card:nth-child(2) {
+    margin: -20px 0;
+    background-color: #4285f4;
+    box-shadow: 0 0 40px rgb(66 133 244 / 50%);
+    position: relative;
+    z-index: 1;
+}
+
+.main-card .card .card-body {
+    padding: 0;
+}
+
+.main-card .card .card-title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+    font-size: 26px;
+}
+
+.main-card .card p.card-text {
+    text-align: center;
+}
+
 
 /* font-family: 'Roboto', sans-serif;
     #4285f4
