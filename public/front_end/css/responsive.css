@@ -333,8 +333,35 @@
         font-size: 24px;
     }
     .info-section ul li,
-    .info-section ul li a {
+    .info-section ul li a,
+    .profile_link li a,
+    .work_detail h3 {
         font-size: 18px;
+    }
+    .profile_data h2 {
+        font-size: 22px;
+    }
+    .profile_data h2 span,
+    .profile_data p,
+    .bookmart_link a {
+        font-size: 16px;
+    }
+    .profile_data p .fa,
+    .bookmart_link a .fa {
+        font-size: 20px;
+    }
+    .rank_div h3,
+    .skill_detail ul li,
+    .personal_details ul li {
+        font-size: 16px;
+    }
+    .rank_div p,
+    .rank_div .fa {
+        font-size: 26px;
+    }
+    .profile_tabs .nav-tabs li.nav-item a.nav-link {
+        font-size: 18px;
+        padding: 10px 15px;
     }
 }
 
@@ -610,6 +637,12 @@
     .commen-banner p {
         max-width: 210px;
         font-size: 13px;
+    }
+    .profile_img {
+        margin-bottom: 20px;
+    }
+    .profile_data {
+        display: block;
     }
 }
 

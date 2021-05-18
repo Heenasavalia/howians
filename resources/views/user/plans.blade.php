@@ -48,10 +48,5 @@
 <script>
     $(document).ready(function() {
         $("body").addClass('inner-page-section');
-
-
-        $('.datepicker').datepicker({
-            inline: true
-        });
     });
 </script>
