@@ -11,8 +11,8 @@ class CompanyDataController extends Controller
 {
 
     public function PhotoGallery(){
-        dd("yes");
-        return view('company.business.image_gallery', ['business_id' => $business_id]);
+        // dd("yes");
+        return view('company.image_gallery');
     }
 
 
