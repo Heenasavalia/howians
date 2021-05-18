@@ -587,8 +587,8 @@
                     },
                     email: {
                         required: true,
-                        email: true,
-                        checkEmail: true,
+                        // email: true,
+                        // checkEmail: true,
                     },
                     'require_skill[]': {
                         required: true,
