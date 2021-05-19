@@ -1985,6 +1985,28 @@ ul.commen_ul li {
     box-shadow: 0 0 10px rgb(0 0 0 / 20%);
 }
 
+.company_register h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.company_register a.company_login {
+    float: right;
+    height: 45px;
+    line-height: 41px;
+    padding: 0 25px;
+    border: 2px solid #157efb;
+    color: #157efb;
+    border-radius: 50px;
+    font-size: 20px;
+    margin-top: -5px;
+}
+
+.company_register a.company_login:hover {
+    background-color: #157efb;
+    color: #fff;
+}
+
 
 /* font-family: 'Roboto', sans-serif;
     #4285f4
