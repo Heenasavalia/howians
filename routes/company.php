@@ -51,3 +51,6 @@ Route::any('review_details/{id}','CompanyDataController@ReviewDetails');
 
 
 Route::any('photo_gallery','CompanyDataController@PhotoGallery');
+
+Route::any('image_cut','CompanyDataController@image_cut');
+Route::any('image_crop_gallary','CompanyDataController@image_crop_gallary');
