@@ -363,6 +363,30 @@
         font-size: 18px;
         padding: 10px 15px;
     }
+    .company_register h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .company_register a.company_login {
+        height: 35px;
+        line-height: 31px;
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .card.company_reg_right {
+        padding: 15px;
+    }
+    .company_reg_right h2 {
+        padding: 15px;
+        font-size: 20px;
+        margin: -15px -15px 20px;
+    }
+    .totla_price h3 {
+        font-size: 20px;
+    }
+    .register-section .card .card-body {
+        padding: 15px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -643,6 +667,9 @@
     }
     .profile_data {
         display: block;
+    }
+    .card.company_reg_right {
+        margin-top: 20px;
     }
 }
 
