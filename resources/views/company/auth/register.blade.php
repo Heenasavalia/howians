@@ -35,8 +35,9 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="gst_number" class="control-label">Do you have GST Number?</label>
-                                    <div class="form-check form-check-inline">
+                                    <label for="gst_number" class="control-label radio_label">Do you have GST Number?</label>
+                                    <br>
+                                    <div class="form-check form-check-inline mr-5">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
                                     </div>
@@ -46,11 +47,38 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select class="mdb-select">
+                                        <option value="" disabled selected>Country</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select class="mdb-select">
+                                        <option value="" disabled selected>State</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select class="mdb-select">
+                                        <option value="" disabled selected>City</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                    <label for="password" class="control-label">Password</label>
                                     <input id="password" type="password" class="form-control" name="password" placeholder="Password*">
                                     @if ($errors->has('password'))
                                     <span class="help-block">{{ $errors->first('password') }}</span>
@@ -59,11 +87,22 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                    <label for="password-confirm" class="control-label">Confirm Password</label>
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm password*">
                                     @if ($errors->has('password_confirmation'))
                                     <span class="help-block">{{ $errors->first('password_confirmation') }}</span>
                                     @endif
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="form-check checkbox-input mb-3">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">I agree to the <a href="{{url('/terms')}}">Terms & Conditions</a></label>
+                                    </div>
+                                    <div class="form-check checkbox-input">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                        <label class="form-check-label" for="inlineCheckbox2">I agree to share my KYC documents with Shine</label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -76,7 +115,28 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="card company_reg_right">
+                    <h2>Howians Starter Plan</h2>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="" class="control-label">Job Packges</label>
+                                <select class="mdb-select">
+                                    <option value="" disabled selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="totla_price">
+                        <h3>You pay: <span>Rs.50</span></h3>
+                        <h4>You save:Rs.100</h4>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

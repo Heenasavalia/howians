@@ -2007,6 +2007,109 @@ ul.commen_ul li {
     color: #fff;
 }
 
+.register-section .card {
+    border: none;
+    box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+}
+
+.register-section .form-group {
+    margin-bottom: 25px;
+}
+
+.register-section input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type="file"]),
+.register-section select {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    height: 50px;
+    width: 100%;
+    color: #71777d;
+}
+
+.register-section select {
+    padding-right: 20px;
+    background-image: url(../images/sprite.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.radio_label {
+    color: #71777d;
+    margin-bottom: 15px;
+}
+
+.form-check-label a {
+    color: #4285f4;
+}
+
+.form-check-label a:hover {
+    color: #000;
+}
+
+.form-check.checkbox-input input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    z-index: 1;
+    opacity: 0;
+}
+
+.form-check.checkbox-input {
+    padding-left: 30px;
+}
+
+.form-check.checkbox-input label.form-check-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    border: 1px solid #ddd;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 18px;
+    font-size: 14px;
+    font-family: 'FontAwesome';
+    top: 2px;
+    color: #4285f4;
+}
+
+.form-check.checkbox-input input[type="checkbox"]:checked+label.form-check-label::before {
+    content: "\f00c";
+}
+
+.card.company_reg_right {
+    padding: 20px;
+}
+
+.company_reg_right h2 {
+    background-color: #4285f4;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    padding: 20px;
+    font-size: 25px;
+    margin: -20px -20px 20px;
+}
+
+.totla_price h3 {
+    font-size: 24px;
+    color: #3e3e3e;
+}
+
+.totla_price h3 span {
+    color: #4285f4;
+}
+
+.totla_price h4 {
+    font-size: 16px;
+    color: #3e3e3e;
+}
+
 
 /* font-family: 'Roboto', sans-serif;
     #4285f4
