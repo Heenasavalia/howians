@@ -67,7 +67,7 @@
                         <div class="col-sm-12">
                             <div class="auth-body">
                                 <h1>Oops</h1>
-                                <h2>No candidate apply for this job</h2>
+                                <h2>No candidate yet applied for this job</h2>
                                 <p>
                                     <a href="{{ url('company/my-post-job-list') }}" style="color:#FF0000;" class="m-t-30">
                                         Back to Job list page
