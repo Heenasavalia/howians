@@ -19,12 +19,8 @@
                 </a>
             </li>
 
-            <?php
-                $current_time = \Carbon\Carbon::now();
-                //print $current_time;
-            ?>
 
-            @if(Auth::user()->status == 'Active')
+
                 <div class="pcoded-navigatio-lavel">Menus</div>
                 <li class="active">
                     <a href="{{ url('company/home') }}">
@@ -93,7 +89,7 @@
                         </a>
                     </li>
                 @endif
-            @endif
+           
 
 
 
