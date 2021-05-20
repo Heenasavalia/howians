@@ -3,7 +3,9 @@
 <link rel="stylesheet" type="text/css" href="{{asset('company/bower_components/cropper/css/cropper.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('company/bower_components/lightbox2/css/lightbox.min.css')}}">
 <link href="{{ asset('css/jquery.magnify.css') }}" rel="stylesheet">
+
 <meta name="csrf-token" content="{{ csrf_token() }}">
+
 <div class="pcoded-content">
     <div class="pcoded-inner-content">
         <div class="main-body">
@@ -171,6 +173,7 @@
                                 </div>
                                 <div class="card-block">
                                     <div class="row gallary_content">
+
                                     </div>
                                 </div>
 
