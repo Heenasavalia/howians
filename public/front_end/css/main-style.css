@@ -2013,30 +2013,41 @@ ul.commen_ul li {
     border-radius: 10px;
 }
 
-.register-section .form-group {
+.register-section .form-group,
+.profile_edit_section .form-group {
     margin-bottom: 25px;
 }
 
 .register-section input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type="file"]),
-.register-section select {
+.profile_edit_section input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type="file"]),
+.register-section select,
+.profile_edit_section select {
     border-radius: 0;
     border: none;
     border-bottom: 1px solid #ddd;
     padding: 0;
-    height: 50px;
+    height: 40px;
     width: 100%;
     color: #71777d;
 }
 
-.register-section select {
+.register-section select,
+.profile_edit_section select {
     padding-right: 20px;
     background-image: url(../images/sprite.png);
     background-position: right center;
     background-repeat: no-repeat;
+    margin-top: 20px;
 }
 
-.radio_label {
-    color: #71777d;
+#company_reg label.control-label,
+.profile_edit_section label.control-label {
+    margin: 0;
+    color: #4285f4;
+    line-height: normal;
+}
+
+#company_reg label.control-label.radio_label {
     margin-bottom: 15px;
 }
 
@@ -2125,6 +2136,46 @@ ul.commen_ul li {
 .bookmart_link a.edit_btn:hover {
     color: #fff;
     background-color: #4285f4;
+}
+
+.profile_edit_sec .card-body {
+    box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+    border: none !important;
+}
+
+.pro_edit_title h2 {
+    padding-bottom: 15px;
+    font-size: 35px;
+    position: relative;
+}
+
+.pro_edit_title h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 50px;
+    background-color: #4285f4;
+}
+
+.profile_img a {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #ffffff;
+    color: #4285f4;
+    font-size: 20px;
+}
+
+.profile_img a:hover {
+    background-color: #4285f4;
+    color: #fff;
 }
 
 
