@@ -218,6 +218,11 @@ class UserController extends Controller
         return view('user.profile',['user'=>$user,'education' => $education, 'country' => $country]);
     }
 
+    public function profileEdit()
+    {
+        return view('user.profile_edit');
+    }
+
     public function UpdatePassword(Request $request) {
         return view('user.auth.passwords.change');
     }

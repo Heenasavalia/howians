@@ -11,7 +11,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('company_name') ? ' has-error' : '' }}">
-                                    <input id="company_name" type="text" class="form-control" name="company_name" autofocus placeholder="Company name*">
+                                    <label for="" class="control-label">Company name</label>
+                                    <input id="company_name" type="text" class="form-control" name="company_name">
                                     @if ($errors->has('company_name'))
                                     <span class="help-block">{{ $errors->first('company_name') }}</span>
                                     @endif
@@ -19,7 +20,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
-                                    <input id="mobile" type="number" class="form-control" name="mobile" value="{{ old('mobile') }}" placeholder="Mobile No *">
+                                    <label for="" class="control-label">Mobile No</label>
+                                    <input id="mobile" type="number" class="form-control" name="mobile" value="{{ old('mobile') }}">
                                     @if ($errors->has('mobile'))
                                     <span class="help-block">{{ $errors->first('mobile') }}</span>
                                     @endif
@@ -27,7 +29,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email *">
+                                    <label for="" class="control-label">Email</label>
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
                                     @if ($errors->has('email'))
                                     <span class="help-block">{{ $errors->first('email') }}</span>
                                     @endif
@@ -79,7 +82,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                    <input id="password" type="password" class="form-control" name="password" placeholder="Password*">
+                                    <label for="" class="control-label">Password</label>
+                                    <input id="password" type="password" class="form-control" name="password">
                                     @if ($errors->has('password'))
                                     <span class="help-block">{{ $errors->first('password') }}</span>
                                     @endif
@@ -87,7 +91,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm password*">
+                                    <label for="" class="control-label">Confirm password</label>
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
                                     @if ($errors->has('password_confirmation'))
                                     <span class="help-block">{{ $errors->first('password_confirmation') }}</span>
                                     @endif

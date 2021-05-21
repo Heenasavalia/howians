@@ -671,6 +671,9 @@
     .card.company_reg_right {
         margin-top: 20px;
     }
+    .register-section select {
+        margin-top: 0px;
+    }
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
