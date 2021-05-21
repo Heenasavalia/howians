@@ -247,7 +247,7 @@
                     $(".gallary_content").append("<div style='margin:2% auto;'><img src='" + url + "/images/not-found.png'/></div>");
                 } else {
                     $.each(data, function (index, value) {
-                        $(".gallary_content").append('<div class="gallery_view">\n' +
+                        $(".gallary_content").append('<div class="gallery_view col-md-3">\n' +
                             '   <div class="btn btn-danger actionGallery" onclick="delete_row(' + value.id + ')"><i class="icofont icofont-ui-delete"></i></div>\n' +
                             '              <a data-magnify="gallery" href="{{config('constants.company_gallery')}}' + value.image + '" data-lightbox="1" data-title="Company Image">\n' +
                             '                  <img src="{{config('constants.company_gallery')}}' + value.image + '" alt="" class="img-fluid img-thumbnail">\n' +

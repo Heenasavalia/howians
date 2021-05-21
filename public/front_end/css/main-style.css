@@ -2110,6 +2110,26 @@ ul.commen_ul li {
     color: #3e3e3e;
 }
 
+<<<<<<< HEAD
+=======
+.bookmart_link a.edit_btn {
+    border: 2px solid #4285f4;
+    padding: 7px 15px;
+    border-radius: 10px;
+    margin-left: 15px;
+    color: #4285f4;
+}
+
+.bookmart_link a.edit_btn .fa {
+    font-size: inherit;
+}
+
+.bookmart_link a.edit_btn:hover {
+    color: #fff;
+    background-color: #4285f4;
+}
+
+>>>>>>> 344f99b66a49b808df8eb9c49e744d78d7d9b004
 
 /* font-family: 'Roboto', sans-serif;
     #4285f4
