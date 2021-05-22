@@ -159,7 +159,7 @@ img {
 .jp_regis_center_tag_wrapper {
     width: 70px;
     height: 70px;
-    background: #4285f4;
+    background: #fff;
     position: absolute;
     left: -34px;
     top: 50%;
@@ -168,12 +168,11 @@ img {
     -moz-border-radius: 50%;
     border-radius: 50%;
     box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+    border: 3px solid #4285f4;
 }
 
 .jp_regis_center_tag_wrapper p {
-    color: #ffffff;
-    font-weight: bold;
-    margin-top: 23px;
+    margin-top: 16px;
 }
 
 .jp_regis_left_side_box ul li {
@@ -210,7 +209,10 @@ img {
         transform: translateX(-50%);
     }
     .jp_regis_center_tag_wrapper p {
-        margin-top: 13px;
+        margin-top: 9px;
+    }
+    .jp_regis_center_tag_wrapper p img {
+        max-width: 24px;
     }
     .jp_regis_left_side_box p,
     .jp_regis_right_side_box p {
