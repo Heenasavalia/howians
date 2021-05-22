@@ -102,6 +102,5 @@
 <script>
     $(document).ready(function() {
         $("body").addClass('inner-page-section');
-        $(".page_loader").hide();
     });
 </script>
