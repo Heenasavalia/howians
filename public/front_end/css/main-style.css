@@ -798,8 +798,8 @@ section.how_works {
 }
 
 .reviews_inner .content-box p {
-    font-size: 13px;
-    line-height: 150%;
+    font-size: 14px;
+    line-height: 160%;
     color: #969696;
     -webkit-transition: all 0.5s ease 0s;
     -moz-transition: all 0.5s ease 0s;
@@ -1979,10 +1979,11 @@ ul.commen_ul li {
     float: left;
     width: 31.33%;
     margin: 1%;
-    border: 1px solid #000;
+    border: 1px solid #bfbfbf;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+    position: relative;
 }
 
 .company_register h2 {
@@ -2037,7 +2038,6 @@ ul.commen_ul li {
     background-image: url(../images/sprite.png);
     background-position: right center;
     background-repeat: no-repeat;
-    margin-top: 20px;
 }
 
 #company_reg label.control-label,
@@ -2121,7 +2121,6 @@ ul.commen_ul li {
     color: #3e3e3e;
 }
 
-
 .bookmart_link a.edit_btn {
     border: 2px solid #4285f4;
     padding: 7px 15px;
@@ -2138,7 +2137,6 @@ ul.commen_ul li {
     color: #fff;
     background-color: #4285f4;
 }
-
 
 .profile_edit_sec .card-body {
     box-shadow: 0 0 15px rgb(0 0 0 / 10%);
@@ -2180,6 +2178,93 @@ ul.commen_ul li {
     color: #fff;
 }
 
+.pro_edit_title a.plus_edit {
+    width: 40px;
+    height: 40px;
+    float: right;
+    text-align: center;
+    border: 2px solid #4285f4;
+    border-radius: 50%;
+    line-height: 39px;
+    font-size: 26px;
+    color: #4285f4;
+}
+
+.pro_edit_title a.plus_edit:hover {
+    background-color: #4285f4;
+    color: #fff;
+}
+
+.profile_edit_sec .form_padding_right {
+    padding-right: 60px;
+    position: relative;
+}
+
+.profile_edit_sec .form_padding_right .deleted_icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+}
+
+.deleted_icon a {
+    color: #4285f4;
+    font-size: 28px;
+}
+
+.deleted_icon a:hover {
+    color: #000;
+}
+
+.profile_edit_sec .form-group.icon-input {
+    position: relative;
+}
+
+.form-group.icon-input input.form-control {
+    padding-right: 25px !important;
+}
+
+.form-group.icon-input .fa {
+    position: absolute;
+    right: 0;
+    top: 12px;
+    color: #7f7f7f;
+    font-size: 20px;
+}
+
+.profile_edit_sec .portfolio_sec {
+    margin: 0 -20px;
+}
+
+.profile_edit_sec .portfolio_sec li {
+    width: 18%;
+}
+
+.profile_edit_sec .portfolio_sec li .gallery_icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.profile_edit_sec .portfolio_sec li .gallery_icon a {
+    color: #fff;
+    background-color: #4285f4;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    display: block;
+    margin-top: 5px;
+}
+
+.profile_edit_sec .portfolio_sec li .gallery_icon a:hover {
+    background-color: #000;
+}
+
+.pro_edit_title a.btn.button-theme {
+    float: right;
+}
 
 
 /* font-family: 'Roboto', sans-serif;

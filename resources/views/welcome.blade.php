@@ -40,7 +40,7 @@
                                 </ul>
                             </div>
                             <div class="jp_regis_center_tag_wrapper">
-                                    <p>OR</p>
+                                    <p><img src="{{asset('landing_page/img/favicon.png')}}" alt="icon"></p>
                                 </div>
                         </div>
                         
