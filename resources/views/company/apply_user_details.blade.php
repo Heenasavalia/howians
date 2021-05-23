@@ -33,7 +33,7 @@
 {{--                @if($get_users)--}}
                     <div class="row simple-cards users-card">
                         @foreach($get_users as $user)
-                            <div class="col-md-12 col-xl-3">
+                            <div class="col-xl-3 col-md-6">
                                 <div class="card user-card">
                                     <div class="card-header-img">
                                         @if($user->user->profile_image !== null)
@@ -51,7 +51,7 @@
                                         <h3><a href="mailto:{{$user->user->email}}">{{ $user->user->email }}</a></h3>
 
                                     </div>
-                                    <p>{{ str_limit(strip_tags($user->description), $limit = 135, $end = '...') }}</p>
+                                    <p class="simple_contant">{{ str_limit(strip_tags($user->description), $limit = 135, $end = '...') }}</p>
                                     <div>
                                         <a href="{{ url('company/user-profile/'. $user->user->id) }}" class="btn btn-success waves-effect waves-light" style="color:#FFFFFF;">
                                             <i class="icofont icofont-user m-r-5"></i>
