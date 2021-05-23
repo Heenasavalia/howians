@@ -54,3 +54,11 @@ Route::any('photo_gallery','CompanyDataController@PhotoGallery');
 
 Route::any('image_cut','CompanyDataController@image_cut');
 Route::any('image_crop_gallary','CompanyDataController@image_crop_gallary');
+Route::any('image_delete/{id}','CompanyDataController@image_delete');
+
+
+
+Route::resource('messages','MessageController');
+Route::any('all-messages','MessageController@AllMessage');
+Route::get('read-message/{id}','MessageController@read_messages');
+

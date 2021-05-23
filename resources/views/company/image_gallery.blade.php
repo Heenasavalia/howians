@@ -203,7 +203,7 @@
     function delete_row(id) {
 
     swal({
-            title: "Are you sure!",
+            title: "Are you sure to delete this image!",
             type: "error",
             confirmButtonClass: "btn-danger",
             confirmButtonText: "Yes!",
@@ -211,7 +211,7 @@
         },
         function() {
             $.ajax({
-                url: url +'/company/gallery/'+id,
+                url: url +'/company/image_delete/'+ id,
                 type : "post",
                 data: {_method: 'delete', _token: "{{ csrf_token() }}"},
                 success: function (data) {
