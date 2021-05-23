@@ -150,4 +150,12 @@ class CompanyDataController extends Controller
     {
         //
     }
+
+    public function image_delete($id){
+        $company_image=CompanyGallery::find($id);
+        // dd($company_image);
+        $company_image->delete();
+        return response()->json(true);
+    }
+    
 }
