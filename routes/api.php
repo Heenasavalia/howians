@@ -19,6 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/countries','ApiController@countries');
 Route::post('/states','ApiController@states');
 Route::post('/cities','ApiController@cities');
+Route::post('/education','ApiController@education');
+Route::post('/categories','ApiController@categories');
 Route::post('checkemail','ApiController@checkemail');
 Route::post('checkmobile','ApiController@checkmobile');
 

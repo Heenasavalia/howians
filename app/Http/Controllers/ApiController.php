@@ -6,9 +6,30 @@ use DB;
 use Illuminate\Http\Request;
 use App\User;
 use App\Category;
+use App\Education;
 
 class ApiController extends Controller
 {
+    public function education(Request $request){
+        $data = $request->all();
+        $education = Education::limit(10);
+        if(isset($data['query']) && $data['query'] != null){
+            $education = $education->where('field','LIKE','%'. $data['query'] .'%');
+        }
+        $education = $education->orderBy('field','ASC')->get();
+        return response()->json($education);
+    }
+
+    public function categories(Request $request){
+        $data = $request->all();
+        $categories = Category::limit(10);
+        if(isset($data['query']) && $data['query'] != null){
+            $categories = $categories->where('name','LIKE','%'. $data['query'] .'%');
+        }
+        $categories = $categories->orderBy('name','ASC')->get();
+        return response()->json($categories);
+    }
+
     public function countries() {
         $countries = DB::table("countries")->pluck("name", "id")->all();
         return response()->json($countries);
@@ -59,13 +80,13 @@ class ApiController extends Controller
         }
     }
 
-    public function categories(Request $request)
-    {
-        // dd($request->all());
-        $cat = $request['query'];
-        $get = Category::where('name','LIKE',$cat.'%')->get();
-        return response()->json($get);
-    }
+    // public function categories(Request $request)
+    // {
+    //     // dd($request->all());
+    //     $cat = $request['query'];
+    //     $get = Category::where('name','LIKE',$cat.'%')->get();
+    //     return response()->json($get);
+    // }
 
     public function LocationFind(Request $request)
     {
