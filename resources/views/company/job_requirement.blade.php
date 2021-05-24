@@ -5,15 +5,19 @@
             top: 50%;
             position: relative;
         }
-        
+
         .btn_css{
             padding: 4px 12px;
             height: 35px;
         }
-    
+
+        .need_experiance{
+            display: none;
+        }
+
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
-    
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
     <div class="pcoded-content client_business_add">
@@ -42,12 +46,12 @@
                             <meta id="token" name="token" content="{{ csrf_token() }}">
 
 
-                            <hr/>
+                            <!-- <hr/> -->
                             <h5 class="cls_heading_business"><i class="icofont icofont-user"></i> Job Info</h5>
                             <hr/>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                                    <div class="form-group{{ $errors->has('title') ?  ' has-error' : '' }}">
                                         <label class="business_label" for="name">Job Title <span class="text-danger">*</span></label>
                                         {{ Form:: text('title', '', array("class" => "form-control", 'placeholder' => 'Enter title', 'id' => 'title')) }}
                                         <small class="text-danger">{{ $errors->first('title') }}</small>
@@ -66,13 +70,19 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <label class="business_name" for="job_category">Job category <span class="text-danger">*</span></label>
-                                    <div class="form-group{{ $errors->has('job_category') ? ' has-error' : '' }}">
-                                        {{ Form:: text('job_category', '', array("class" => "form-control", 'placeholder' => 'Enter job category', 'id' => 'job_category')) }}
+                                    <div class="form-group{{ $errors->has('job_category') ? ' has-error' : '' }} job_category">
+                                    <select class="js-example-placeholder-multiple col-sm-12" multiple="multiple" name="job_category" id="job_category">
+                                        
+                                    </select>
+                                   
                                         <small class="text-danger">{{ $errors->first('job_category') }}</small>
                                     </div>
                                     <div class="form-group{{ $errors->has('education') ? ' has-error' : '' }}">
                                         <label for="education" class="block">Education <span class="text-danger">*</span></label>
-                                        {{ Form:: text('education', '', array("class" => "form-control", 'placeholder' => 'Enter education', 'id' => 'education')) }}
+                                        <select class="js-example-placeholder-multiple col-sm-12" multiple="multiple" name="education" id="education">
+                                        
+                                        </select>
+                                      
                                         <small class="text-danger">{{ $errors->first('education') }}</small>
                                     </div>
                                     <div class="form-group{{ $errors->has('designation') ? ' has-error' : '' }}">
@@ -82,11 +92,11 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group{{ $errors->has('discription') ? ' has-error' : '' }}">
-                                        <label for="discription" class="block">Job Discription <span
+                                    <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+                                        <label for="description" class="block">Job Description <span
                                                 class="text-danger">*</span></label>
-                                        {{ Form::textarea('discription', '', array("class" => "form-control", 'rows'=> '11', 'placeholder' => 'Enter job discription', 'id' => 'discription')) }}
-                                        <small class="text-danger">{{ $errors->first('discription') }}</small>
+                                        {{ Form::textarea('description', '', array("class" => "form-control", 'rows'=> '11', 'placeholder' => 'Enter job discription', 'id' => 'discription')) }}
+                                        <small class="text-danger">{{ $errors->first('description') }}</small>
                                     </div>
                                 </div>
                             </div>
@@ -109,11 +119,11 @@
                             </div>
                             <br>
 
-                          
+
 
                             <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 clone-rightside-btn-1 cloneya-wrap">
-                                    
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 clone-rightside-btn-1 cloneya-wrap job_require_skill">
+
                                     <label class="require_skill" for="require_skill">Require Skills  <b>[ Note:- Enter eight(8) skill for job ]</b>
                                         <span class="text-danger">*</span>
                                     </label>
@@ -153,7 +163,7 @@
                                 <div class="row">
                                     <div class="col-lg-2 col-md-2 col-sm-2">
                                         <label class="geneder">
-                                            <input name="gender[]" type="checkbox" class="minimal" checked value="Male">
+                                            <input name="gender[]" type="checkbox"  class="minimal " checked value="Male">
                                             Male
                                         </label>
                                     </div>
@@ -180,10 +190,11 @@
                             </div>
 
 
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group{{ $errors->has('start_time') ? ' has-error' : '' }}">
-                                        <label class="start_time">Post validity <span class="text-danger">*</span></label>
+                                        <label class="start_time">Post validity
+                                        </label>
                                         {{--                                        <div class="col-sm-10 col-xl-10">--}}
                                         <div class="input-daterange input-group" id="datepicker">
                                             <input type="datetime-local" class="input-sm form-control" name="start_time" placeholder="start date"/>
@@ -194,7 +205,7 @@
                                         <small class="text-danger">{{ $errors->first('start_time') }}</small>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <br>
 
                             <br>
@@ -233,17 +244,17 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group{{ $errors->has('work_experiance_type[]') ? ' has-error' : '' }}">
-                                        <label class="col-form-label" for="work_experiance_type">work_experiance_type <span class="text-danger">*</span></label>
+                                        <label class="col-form-label" for="work_experiance_type">Work Experiance Type <span class="text-danger">*</span></label>
                                         <div class="row">
                                             <div class="col-lg-3 col-md-3 col-sm-3">
                                                 <label class="work_experiance_type">
-                                                    <input name="work_experiance_type[]" type="radio" class="minimal" checked value="fresher">
+                                                    <input name="work_experiance_type" type="radio" class="minimal" checked value="fresher">
                                                     Fresher
                                                 </label>
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-3">
                                                 <label class="work_experiance_type">
-                                                    <input name="work_experiance_type[]" type="radio" class="minimal" value="experience">
+                                                    <input name="work_experiance_type" type="radio" class="minimal" value="experience">
                                                     Experience
                                                 </label>
                                             </div>
@@ -252,7 +263,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group sell_price {{ $errors->has('work_experience') ? ' has-error' : '' }}">
+                                    <div class="form-group need_experiance  {{ $errors->has('work_experience') ? ' has-error' : '' }}">
                                         <label class="col-form-label " for="work_experience">Work experience <span class="text-danger">*</span></label>
                                         {{ Form:: text('work_experience', '', array("class" => "form-control", 'placeholder' => 'Work experience', 'id' => 'work_experience')) }}
                                         <small class="text-danger">{{ $errors->first('work_experience') }}</small>
@@ -275,6 +286,37 @@
                                         @endif
                                     </div>
                                 </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h5 class="cls_heading_business"><i class="fa fa-calendar-check-o"></i> Interview Detail</h5>
+                                    <hr>
+                                    <!-- <h4 class="sub-title">Interview Detail</h4> -->
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 clone-rightside-btn-1 cloneya-wrap interview_time">
+
+                                    <label class="time_schedule" for="time_schedule">Require Time  <b>[ Note:- Enter eight(1) time for job ]</b>
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="toclone-widget-right toclone cloneya row time_zone">
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-8 unit">
+                                            <div class="form-group {{ $errors->has('time_schedule') ? ' has-error' : '' }}">
+                                            <input class="form-control" name="time_schedule[]" id="time_schedule" type="datetime-local">
+                                                <small class="text-danger">{{ $errors->first('time_schedule') }}</small>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-primary clone-btn-right clone btn_css">
+                                            <i class="icofont icofont-plus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-default clone-btn-right delete m-l-5 btn_css">
+                                            <i class="icofont icofont-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
                                 <div class="col-md-6">
                                     <div class="form-group sell_price {{ $errors->has('address') ? ' has-error' : '' }}">
                                         <label class="col-form-label " for="address">Address <span class="text-danger">*</span></label>
@@ -297,7 +339,7 @@
                                 </div>
 
 
-                        
+
                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                     <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
                                         <label class="business_label">Country</label>
@@ -427,6 +469,11 @@
 @endsection
 
 @push('scripts')
+<script type="text/javascript" src="{{ asset('company/bower_components/bootstrap-multiselect/js/bootstrap-multiselect.js')}}"></script>
+<script type="text/javascript" src="{{ asset('company/bower_components/select2/js/select2.full.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('company/bower_components/multiselect/js/jquery.multi-select.js')}}"></script>
+<script type="text/javascript" src="{{ asset('company/assets/js/jquery.quicksearch.js')}}"></script>
+<script type="text/javascript" src="{{ asset('company/assets/pages/advance-elements/select2-custom.js')}}"></script>
 
 <script type="text/javascript" src="{{ asset('company/assets/pages/j-pro/js/jquery.maskedinput.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('company/assets/pages/j-pro/js/jquery-cloneya.min.js')}}"></script>
@@ -443,6 +490,60 @@
 
         var url = '{{ url("/") }}';
 
+        $(document).ready(function(){
+            categories_search();
+            education_search();
+            // var categories = $("li.select2-search.select2-search--inline input.select2-search__field").val();
+            $(document).on("keypress",".job_category li.select2-search.select2-search--inline input.select2-search__field",function () {
+                var categories = $(this).val();
+                // console.log(categories);
+                categories_search(categories);
+            });
+
+
+        function categories_search(categories = null){
+            console.log(categories);
+            $.ajax({
+                type: "post",
+                url: url + "/api/categories",
+                data:{query:categories},
+                success: function(res) {
+                    if (res) {
+                        $("#job_category").empty();
+                        $.each(res, function(key, value) {
+                            // console.log(value);
+                            $("#job_category").append('<option value="' + value.name + '">' + value.name + '</option>');
+                        });
+
+                    } else {
+                        $("#job_category").empty();
+                    }
+                }
+            });
+        }
+        function education_search(education = null){
+            // console.log(categories);
+            $.ajax({
+                type: "post",
+                url: url + "/api/education",
+                data:{query:education},
+                success: function(res) {
+                    if (res) {
+                        $("#education").empty();
+                        $.each(res, function(key, value) {
+                            // console.log(value);
+                            $("#education").append('<option value="' + value.field + '">' + value.field + '</option>');
+                        });
+
+                    } else {
+                        $("#education").empty();
+                    }
+                }
+            });
+        }
+    })
+
+
 
         $(document).ready(function () {
 
@@ -457,6 +558,9 @@
             });
 
             var url = "{{ url('/') }}";
+            var default_country = 'India';
+            // var default_state = '';
+            // var default_city = '';
             $.ajax({
                 type: "GET",
                 url: url + "/api/countries",
@@ -464,11 +568,11 @@
                     if (res) {
                         $("#country").empty();
                         $.each(res, function(key, value) {
-                            // if (value == cntry) {
-                            //     $("#country").append('<option selected value="' + value + '">' + value + '</option>');
-                            // } else {
+                            if (value == default_country) {
+                                $("#country").append('<option selected value="' + value + '">' + value + '</option>');
+                            } else {
                             $("#country").append('<option value="' + value + '">' + value + '</option>');
-                            // }
+                            }
                         });
 
                     } else {
@@ -476,32 +580,47 @@
                     }
                 }
             });
+
+            get_state(default_country);
+
             $("select#country").change(function() {
-            var country = $("#country option:selected").text();
-            $.ajax({
-                type: "POST",
-                url: url + "/api/states",
-                data: {
-                    "country": country
-                },
-                success: function(res) {
-                    if (res) {
-                        $("#state").empty();
-                        $.each(res, function(key1, value1) {
-                            // if (value1 == st) {
-                            //     $("#state").append('<option selected value="' + value1 + '">' + value1 + '</option>');
-                            // } else {
-                            $("#state").append('<option value="' + value1 + '">' + value1 + '</option>');
-                            // }
-                        });
-                    } else {
-                        $("#state").empty();
-                    }
-                    }
-                });
+                var country = $("#country option:selected").text();
+                get_state(country);
             });
+
             $("select#state").change(function() {
                 var state = $("#state option:selected").text();
+                get_city
+
+
+                (state);
+            });
+
+            function get_state(country){
+                $.ajax({
+                    type: "POST",
+                    url: url + "/api/states",
+                    data: {
+                        "country": country
+                    },
+                    success: function(res) {
+                        if (res) {
+                            $("#state").empty();
+                            $.each(res, function(key1, value1) {
+                                // if (value1 == st) {
+                                //     $("#state").append('<option selected value="' + value1 + '">' + value1 + '</option>');
+                                // } else {
+                                $("#state").append('<option value="' + value1 + '">' + value1 + '</option>');
+                                // }
+                            });
+                        } else {
+                            $("#state").empty();
+                        }
+                    }
+                });
+            }
+
+            function get_city(state){
                 $.ajax({
                     type: "POST",
                     data: {
@@ -524,13 +643,7 @@
                         }
                     }
                 });
-            });
-
-
-
-
-
-
+            }
 
             $("#job_add_frm").validate({
                 errorElement: 'div',
@@ -552,17 +665,17 @@
                     },
                     job_category: {
                         required: true,
-                        alphabates: true,
+                        // alphabates: true,
                     },
                     education: {
                         required: true,
-                        alphabates: true,
+                        // alphabates: true,
                     },
                     designation: {
                         required: true,
                         alphabates: true,
                     },
-                    discription : {
+                    description : {
                         required: true,
                         maxLenght:true,
                     },
@@ -585,6 +698,18 @@
                     pincode :{
                         required: true
                     },
+                    minimum_salary :{
+                        required: true
+                    },
+                    maximum_salary :{
+                        required: true
+                    },
+                    number_of_vacancy :{
+                        required: true
+                    },
+                    work_experience :{
+                        required: true
+                    },
                     email: {
                         required: true,
                         // email: true,
@@ -593,37 +718,55 @@
                     'require_skill[]': {
                         required: true,
                         alphabates: true,
+                    },
+                    'time_schedule[]': {
+                        required: true,
                     }
 
                 },
                 messages: {
                     title: {
-                        required: "Please enter job title",
+                        required: "Please Enter Job Title",
                     },
                     job_category: {
-                        required: "Please enter job category",
+                        required: "Please Enter Job Category",
                     },
                     education: {
-                        required: "Please enter education",
+                        required: "Please Enter Education",
                     },
                     designation: {
-                        required: "Please enter designation",
+                        required: "Please Enter Designation",
                     },
-                    discription : {
-                        required: "Please Enter discription",
+                    description : {
+                        required: "Please Enter Discription",
                     },
                     gender : {
                         required: true,
                     },
                     website_url: "Sorry, please Enter URL in Proper Formate",
                     email: {
-                        required: "Please enter Email",
+                        required: "Please Enter Email",
                     },
                     pincode:{
-                        required: "Please enter pincode"
+                        required: "Please Enter Pincode"
+                    },
+                    minimum_salary :{
+                        required: "Please Enter Minimum Salary"
+                    },
+                    maximum_salary :{
+                        required: "Please Enter Maximum Salary"
+                    },
+                    number_of_vacancy :{
+                        required: "Please Enter Number Of Vacany"
+                    },
+                    work_experience :{
+                        required: "Please Enter Need Experiance For This Job"
                     },
                     'require_skill[]':{
-                        required: "Please enter require skill"
+                        required: "Please Enter Require Skill"
+                    },
+                    'time_schedule[]':{
+                        required: "Please Enter Interview Time"
                     }
                 },
                 submitHandler: function (form) {
@@ -714,13 +857,61 @@
 
         });
 
+        $("[name=work_experiance_type]").change(function(){
+            // console.log(this.val());
+            var experiance = $(this).val();
+            if(experiance == "experience"){
+                $(".need_experiance").show();
+            }else{
+                $(".need_experiance").hide();
+
+            }
+        });
+
+        var interview_time = 0;
+        $(".interview_time .clone").click(function(){
+
+            interview_time = interview_time + 1 ;
+            if(interview_time >= 2){
+                $(".interview_time .clone").attr("disabled","disabled");
+            }else{
+                $(".interview_time .clone").removeAttr("disabled");
+            }
+        });
+        $(".interview_time .delete").click(function(){
+            if(interview_time > 0){
+                interview_time = interview_time - 1 ;
+                $(".interview_time .clone").removeAttr("disabled");
+            }
+
+        });
+
+        var job_require_skill = 0;
+        $(".job_require_skill .clone").click(function(){
+
+            if(job_require_skill == 7){
+                $(".job_require_skill .clone").attr("disabled","disabled");
+            }else{
+                $(".job_require_skill .clone").removeAttr("disabled");
+            }
+            job_require_skill = job_require_skill + 1 ;
+            console.log(job_require_skill);
+        });
+        $(".job_require_skill .delete").click(function(){
+            if(job_require_skill > 0){
+                job_require_skill = job_require_skill - 1 ;
+                $(".job_require_skill .clone").removeAttr("disabled");
+            }
+            console.log(job_require_skill);
+
+        });
+
     </script>
 
 
-    
-    
-    
+
+
+
 
 
 @endpush('scripts')
-
