@@ -117,7 +117,7 @@
                     <div class="candidate-item media">
                         <div class="candidate-listing d-flex flex-wrap">
                             <div class="user-logo">
-                                <div class="wishlist-icon"><i class="fa fa-heart-o"></i></div>
+                                <!-- <div class="wishlist-icon"><i class="fa fa-heart-o"></i></div> -->
                                 <a class="icon" href="#"><img src="{{asset('front_end/images/job-logo1.png')}}" alt="avatar"></a>
                             </div>
                             <div class="candidate_right">

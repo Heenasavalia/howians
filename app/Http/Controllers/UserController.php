@@ -18,6 +18,7 @@ use App\Company;
 use App\CandidateReview;
 use File;
 use App\ApplyCandidate;
+use App\WorkExperience;
 
 
 class UserController extends Controller
@@ -211,11 +212,21 @@ class UserController extends Controller
     public function profile($id)
     {
         $user = User::find($id);
+        // dump($user);
         $education = Education::all();
         $country = DB::table('countries')->get();
         $user_setting = UserSettings::where('user_id',$user->id)->first();
-        // dd($user_setting);
-        return view('user.profile',['user'=>$user,'education' => $education, 'country' => $country]);
+        $work_experience = WorkExperience::where('user_id',$user->id)->get();
+        // dd($work_experience);
+        foreach($work_experience as $work){
+            $datetime1 = $work->start_time;
+            $datetime2 = $work->end_time;
+            // dump($datetime1);
+            $interval = $datetime1->diff($datetime2);
+            dump($interval);
+        }
+        dd();
+        return view('user.profile',['user'=>$user,'education' => $education, 'country' => $country,'work_ex' => $work_experience]);
     }
 
     public function profileEdit()
@@ -250,26 +261,63 @@ class UserController extends Controller
     {
         $data = $request->all();
         // dd($data);
-        $keywords = $data['keyword'];
-        $category = $data['category'];
-        $location = $data['location'];
+        $keywords = (isset($data['keyword']) && $data['keyword'] != null) ? $data['keyword'] : null; //$data['keyword'];
+        $category = (isset($data['category']) && $data['category'] != null) ? $data['category'] : null; //$data['category'];
+        $location = (isset($data['location']) && $data['location'] != null) ? $data['location'] : null; //$data['location'];
        
+        // dd($keywords);
         $currentDate = date('Y-m-d');
 
-        $get_data = JobRequirement::with('company')
-                    ->where('title','LIKE', $keywords .'%')
-                    ->where( function($query) use ($location){
-                        $query->where('location','LIKE', '%' . $location .'%')
-                        ->orWhere('address','LIKE', '%' . $location .'%');
-                    })
-                    ->where('job_category','LIKE','%'. $category .'%')
-                    ->where('end_time', '>=', $currentDate)
-                    ->paginate(10);
+        // $get_data = JobRequirement::with('company')
+        //             ->where('title','LIKE', $keywords .'%')
+        //             ->where( function($query) use ($location){
+        //                 $query->where('location','LIKE', '%' . $location .'%')
+        //                 ->orWhere('address','LIKE', '%' . $location .'%');
+        //             })
+        //             ->where('job_category','LIKE','%'. $category .'%')
+        //             ->where('end_time', '>=', $currentDate)
+        //             ->paginate(10);
                     // ->get();
+
+        $job_requirment = JobRequirement::where('title','LIKE', $keywords .'%')->pluck('id')->toArray();
+        if($job_requirment != null){
+            $job_requirment_data = JobRequirement::where('end_time', '>=', $currentDate)->whereIn('id',$job_requirment);
+            if($category != null){
+                $job_requirment_data = $job_requirment_data->where('job_category','LIKE','%'. $category .'%');
+            }
+            if($location != null){
+                $job_requirment_data = $job_requirment_data->where( function($query) use ($location){
+                                    $query->where('location','LIKE', '%' . $location .'%')
+                                    ->orWhere('address','LIKE', '%' . $location .'%');
+                                });
+            }
+            if($keywords != null){
+                $job_requirment_data = $job_requirment_data->where('title','LIKE', $keywords .'%');
+            }
+            $job_requirment_data = $job_requirment_data->pluck('id')->toArray();
+            // dump($job_requirment_data);
+        }else{
+            // $job_requirment_data = JobRequirement::where('end_time', '>=', $currentDate)->whereIn('id',$job_requirment);
+            if($keywords != null){
+                $company_data = Company::where('company_name','LIKE', $keywords .'%')->where('status','Active')->where('is_deleted',0)->pluck('id')->toArray();
+            }
+            $job_requirment_data = JobRequirement::where('end_time', '>=', $currentDate)->whereIn('company_id',$company_data);
+            if($category != null){
+                $job_requirment_data = $job_requirment_data->where('job_category','LIKE','%'. $category .'%');
+            }
+            if($location != null){
+                $job_requirment_data = $job_requirment_data->where( function($query) use ($location){
+                                    $query->where('location','LIKE', '%' . $location .'%')
+                                    ->orWhere('address','LIKE', '%' . $location .'%');
+                                });
+            }
+            $job_requirment_data = $job_requirment_data->pluck('id')->toArray();
+            
+        }
+        
+        $get_data = JobRequirement::with('company')->whereIn('id', $job_requirment_data)->paginate(10);
         // dd($get_data);
         return view('user.job', ['data' => $get_data]);
-        // return view('user.job_list', ['data' => $get_data]);
-        // dd($get_data);
     }
 
     public function MailSendMessage($id)
