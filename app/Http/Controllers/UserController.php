@@ -19,6 +19,7 @@ use App\CandidateReview;
 use File;
 use App\ApplyCandidate;
 use App\WorkExperience;
+use App\Http\Helpers;
 
 
 class UserController extends Controller
@@ -212,20 +213,18 @@ class UserController extends Controller
     public function profile($id)
     {
         $user = User::find($id);
-        // dump($user);
         $education = Education::all();
         $country = DB::table('countries')->get();
         $user_setting = UserSettings::where('user_id',$user->id)->first();
         $work_experience = WorkExperience::where('user_id',$user->id)->get();
-        // dd($work_experience);
         foreach($work_experience as $work){
-            $datetime1 = $work->start_time;
-            $datetime2 = $work->end_time;
-            // dump($datetime1);
-            $interval = $datetime1->diff($datetime2);
-            dump($interval);
+            $to = \Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $work->start_time);
+            $from = \Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $work->end_time);
+            $get_diff = Helpers::getDifferntDay($to,$from);
+            $work->years = (isset($get_diff['years']) && $get_diff['years'] != 0) ? round($get_diff['years']) : 0;
+            $work->month = (isset($get_diff['month']) && $get_diff['month'] != 0) ? round($get_diff['month']) : 0;
+            $work->days = (isset($get_diff['days']) && $get_diff['days'] != 0) ? round($get_diff['days']) : 0;
         }
-        dd();
         return view('user.profile',['user'=>$user,'education' => $education, 'country' => $country,'work_ex' => $work_experience]);
     }
 
