@@ -1,5 +1,9 @@
-@extends('frontend.layout.front_layout')
+
+@extends('user.layout.user_layout')
+
 @section('content')
+<!-- Banner start -->
+
 <section class="banner" id="banner">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -46,6 +50,9 @@
         </div>
     </div>
 </section>
+<!-- banner end -->
+
+<!-- Popular categories strat -->
 <section class="popular-categories content-area-box">
     <div class="container">
         <!-- Main title -->
@@ -158,6 +165,9 @@
         </div>
     </div>
 </section>
+<!-- Popular categories end -->
+
+<!-- About US strat -->
 <div class="about_section content-area-box">
     <div class="container">
         <div class="row">
@@ -169,6 +179,9 @@
         </div>
     </div>
 </div>
+<!-- About US end -->
+
+<!-- Job section strat -->
 <section class="job-section content-area-box">
     <div class="container">
         <div class="main-title-2">
@@ -189,6 +202,10 @@
                                 @else
                                     <img src="{{asset('front_end/images/recent_logo2.png')}}" alt="logo">
                                 @endif
+
+
+
+                                
                             </div>
                         </a>
                         <div class="media-box align-self-center">
@@ -214,10 +231,18 @@
 
                 @endforeach
 
+
+                
+
+               
+
             </div>
         </div>
     </div>
 </section>
+<!-- Job section end -->
+
+<!-- How Work start -->
 <section class="how_works content-area-box">
     <div class="container">
         <div class="main-title">
@@ -262,6 +287,9 @@
         </div>
     </div>
 </section>
+<!-- How Work end -->
+
+<!-- Reviews start -->
 <section class="reviews_ratings content-area-box">
     <div class="container">
         <div class="main-title">
@@ -312,6 +340,7 @@
         </div>
     </div>
 </section>
+<!-- Reviews end -->
 @endsection
 @push('scripts')
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>

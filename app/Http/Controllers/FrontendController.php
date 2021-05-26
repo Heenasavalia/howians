@@ -1,12 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\JobRequirement;
 
 class FrontendController extends Controller
 {
     public function home()
     {
-        return view('frontend.home');
+        $recent_posted_job = JobRequirement::with('company')->orderBy('id','DESC')->limit(6)->get();
+        return view('welcome',['recent_posted_job'=>$recent_posted_job]);
+    }
+
+    public function landing()
+    {
+        return view('landing');
     }
     public function about()
     {
