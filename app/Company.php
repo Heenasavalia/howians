@@ -23,7 +23,7 @@ class Company extends Authenticatable
          'total_experience', 'years_of_establishment', 'status', 'created_at',
          'is_online', 'is_branch_available', 'branch_name', 'branch_place','user_target', 'no_of_employees',
          'nearby_famous_landmark', 'targeted_age_group','pricing_plan_id' , 'is_select_plan' ,'start_time','end_time',
-        'website_url','twitter_url','facebook_url','instagram_url',
+        'website_url','twitter_url','facebook_url','instagram_url','linkedin_url'
     ];
 
     /**
