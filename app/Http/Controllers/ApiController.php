@@ -12,21 +12,21 @@ class ApiController extends Controller
 {
     public function education(Request $request){
         $data = $request->all();
-        $education = Education::limit(10);
-        if(isset($data['query']) && $data['query'] != null){
-            $education = $education->where('field','LIKE','%'. $data['query'] .'%');
-        }
-        $education = $education->orderBy('field','ASC')->get();
+        $education = Education::orderBy('field','ASC')->get();
+        // if(isset($data['query']) && $data['query'] != null){
+        //     $education = $education->where('field','LIKE','%'. $data['query'] .'%');
+        // }
+        // $education = $education;
         return response()->json($education);
     }
 
     public function categories(Request $request){
         $data = $request->all();
-        $categories = Category::limit(10);
-        if(isset($data['query']) && $data['query'] != null){
-            $categories = $categories->where('name','LIKE','%'. $data['query'] .'%');
-        }
-        $categories = $categories->orderBy('name','ASC')->get();
+        $categories = Category::orderBy('name','ASC')->get();
+        // if(isset($data['query']) && $data['query'] != null){
+        //     $categories = $categories->where('name','LIKE','%'. $data['query'] .'%');
+        // }
+        // $categories = $categories->orderBy('name','ASC')->get();
         return response()->json($categories);
     }
 

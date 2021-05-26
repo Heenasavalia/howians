@@ -51,6 +51,7 @@
     {{--date: 06-7-2019--}}
     <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/jquery.steps/css/jquery.steps.css')}}">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/jquery.mCustomScrollbar.css')}}">
