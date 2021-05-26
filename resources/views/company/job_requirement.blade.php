@@ -16,7 +16,6 @@
         }
 
     </style>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
@@ -491,22 +490,21 @@
         var url = '{{ url("/") }}';
 
         $(document).ready(function(){
-            categories_search();
-            education_search();
+            // categories_search();
+            // education_search();
             // var categories = $("li.select2-search.select2-search--inline input.select2-search__field").val();
-            $(document).on("keypress",".job_category li.select2-search.select2-search--inline input.select2-search__field",function () {
-                var categories = $(this).val();
-                // console.log(categories);
-                categories_search(categories);
-            });
+            // $(document).on("keypress",".job_category li.select2-search.select2-search--inline input.select2-search__field",function () {
+            //     var categories = $(this).val();
+            //     categories_search(categories);
+            // });
 
 
-        function categories_search(categories = null){
-            console.log(categories);
+        // function categories_search(categories = null){
+        //     console.log(categories);
             $.ajax({
                 type: "post",
                 url: url + "/api/categories",
-                data:{query:categories},
+                // data:{query:categories},
                 success: function(res) {
                     if (res) {
                         $("#job_category").empty();
@@ -520,13 +518,13 @@
                     }
                 }
             });
-        }
-        function education_search(education = null){
+        // }
+        // function education_search(education = null){
             // console.log(categories);
             $.ajax({
                 type: "post",
                 url: url + "/api/education",
-                data:{query:education},
+                // data:{query:education},
                 success: function(res) {
                     if (res) {
                         $("#education").empty();
@@ -540,7 +538,7 @@
                     }
                 }
             });
-        }
+        // }
     })
 
 
