@@ -1,6 +1,13 @@
-@include('frontend.layout.header')
+@extends('user.layout.user_layout')
+@section('content')
+<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 <div class="profile_edit_section content-area-box">
     <div class="container">
+    {{ Form:: open(array('url'=>['user/profile/'.Auth::user()->id ],'method'=>'PUT', 'id' => 'profile_update_frm','files' => true, 'class' => 'profile_update_frm')) }}
+    {{ csrf_field() }}
         <div class="profile_edit_sec mb-4">
             <div class="card-body">
                 <div class="row">
@@ -12,71 +19,103 @@
                     </div>
                     <div class="col-md-9">
                         <div class="pro_edit_title mb-5">
-                            <h2>Personal Information <a class="btn button-theme" href="#">Save</a></h2>
+                            <h2>Personal Information {{ Form::submit('Save', array('class' => 'btn button-theme','id'=> 'send' )) }}</h2>
                         </div>
-                        <form>
+                        <!-- <form> -->
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="" class="control-label">First Name</label>
-                                        <input type="text" class="form-control" id="" placeholder="Helen">
+                                        <input id="first_name" type="text" class="form-control" name="first_name" value="{{ $user->first_name}}" autofocus>
+                                        @if ($errors->has('first_name'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('first_name') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="" class="control-label">Last Name</label>
-                                        <input type="text" class="form-control" id="" placeholder="Gamez">
+                                        <input id="last_name" type="text" class="form-control" name="last_name" value="{{ $user->last_name}}" autofocus>
+                                        @if ($errors->has('last_name'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('last_name') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="" class="control-label">Headline</label>
+                                        <input id="headline" type="text" class="form-control" name="headline" value="{{ $user->headline}}" autofocus>
+                                        @if ($errors->has('headline'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('headline') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="" class="control-label">Designation</label>
-                                        <input type="text" class="form-control" id="" placeholder="Graphic Designer">
+                                        <input id="designation" type="text" class="form-control" name="designation" value="{{ $user->designation}}" autofocus>
+                                        @if ($errors->has('designation'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('designation') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="" class="control-label">Phone No</label>
-                                        <input type="text" class="form-control" id="" placeholder="+91 84012 25682">
+                                        <input id="mobile" type="text" class="form-control" name="mobile" value="{{ $user->mobile}}">
+                                        @if ($errors->has('mobile'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('mobile') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        <!-- </form> -->
                     </div>
                     <div class="col-md-12 mt-5">
-                        <form>
+                        <!-- <form> -->
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label for="" class="control-label">Address</label>
-                                        <input type="text" class="form-control" id="" placeholder="2205 Hill Croft Farm Road Sacramento, CA 95814 ">
+                                        <textarea id="address" type="text" class="form-control" name="address" value="{{ $user->address}}"></textarea>
+                                        @if ($errors->has('address'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('address') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="" class="control-label">Email</label>
-                                        <input type="text" class="form-control" id="" placeholder="ktadbizthakkar@gmail.com">
+                                        <input id="email" type="text" class="form-control" name="email" value="{{ $user->email}}">
+                                        @if ($errors->has('email'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="" class="control-label">Language</label>
-                                        <select class="mdb-select">
-                                            <option value="" disabled selected>English</option>
-                                            <option value="1">Hindi</option>
-                                            <option value="2">Gujarati</option>
-                                        </select>
+                                        <input type="text" name="language_know" placeholder="Lnguage Know" class="language-input form-control tm-input-info"/>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="" class="control-label">Birthday</label>
-                                        <select class="mdb-select">
-                                            <option value="" disabled selected>Birthday</option>
-                                            <option value="1">Option 1</option>
-                                            <option value="2">Option 2</option>
-                                            <option value="3">Option 3</option>
-                                        </select>
+                                        <input id="datepicker" width="276" />
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -89,7 +128,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        <!-- </form> -->
                     </div>
                 </div>
             </div>
@@ -252,11 +291,22 @@
                 </div>
             </div>
         </div>
+    {{ Form:: close() }}
     </div>
 </div>
-@include('frontend.layout.footer')
+@endsection
+@push('scripts')
+<!-- @include('frontend.layout.footer') -->
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 <script>
     $(document).ready(function() {
         $("body").addClass('inner-page-section');
     });
+    $(".language-input").tagsManager();
+    $('.datepicker').datepicker();
 </script>
+@endpush('scripts')

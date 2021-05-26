@@ -57,7 +57,7 @@
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item ni-2">
-                            <a class="nav-link btn btn-md button-theme" href="{{url('user/login')}}">
+                            <a class="nav-link btn btn-md button-theme" href="{{url('landing')}}">
                                 Login
                             </a>
                         </li>

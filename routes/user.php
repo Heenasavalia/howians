@@ -12,6 +12,7 @@
 // })->name('home');
 
 Route::get('/home', 'UserController@index');
+// Route::get('/home', 'UserController@welcome');
 
 Route::get('/planselect', 'UserController@PlanSelection');
 Route::get('/displayallplan', 'UserController@DiaplayPlans');

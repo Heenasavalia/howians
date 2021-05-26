@@ -25,6 +25,10 @@ use App\Http\Helpers;
 class UserController extends Controller
 {
 
+    public function welcome()
+    {
+        return view('user.home');
+    }
 
     public function jobDetails(Request $request , $job_id){
         // dump('job here',$job_id);
@@ -230,7 +234,10 @@ class UserController extends Controller
 
     public function profileEdit()
     {
-        return view('user.profile_edit');
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        dd($user);
+        return view('user.profile_edit',['user'=>$user]);
     }
 
     public function UpdatePassword(Request $request) {

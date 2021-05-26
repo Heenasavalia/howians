@@ -11,11 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-    // return view('landing');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+//     // return view('landing');
+// });
 
+
+  Route::any('/', 'FrontendController@home');
+
+  Route::any('landing', 'FrontendController@landing');
 
   Route::any('home', 'FrontendController@home');
   Route::any('about', 'FrontendController@about');
