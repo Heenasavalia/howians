@@ -31,7 +31,16 @@
                         @foreach($work_ex as $ex)
                         <div class="work_detail">
                             <h3>{{$ex->company_name}}</h3>
-                            <p class="blue_color">{{$ex->user_experience}} Years Experience | {{ date('d M Y', strtotime($ex->start_time)) }} - {{ date('d M Y', strtotime($ex->end_time)) }}</p>
+                            <p class="blue_color">
+                            @if($ex->years != 0)
+                            {{$ex->years}} years
+                            @endif
+                            @if($ex->month != 0)
+                            {{$ex->month}} month
+                            @endif
+                            @if($ex->days != 0)
+                            {{$ex->days}} days
+                            @endif Experience | {{ date('Y', strtotime($ex->start_time)) }} - {{ date('Y', strtotime($ex->end_time)) }}</p>
                             <p>{{$ex->company_add}}</p>
                         </div>
                         @endforeach
@@ -40,11 +49,10 @@
                         <h2 class="info_title">Skill</h2>
                         <div class="skill_detail">
                             <ul>
-                                <li>Adobe Photoshop</li>
-                                <li>Adobe Illustrator</li>
-                                <li>Adobe XD</li>
-                                <li>Adobe After Effect</li>
-                                <li>Corel Draw</li>
+                            <?php $explode_id = explode(',', $user->skilles) ; ?>
+                            @foreach($explode_id as $data)
+                            <li>{{$data}}</li>
+                            @endforeach
                             </ul>
                         </div>
                     </div>
@@ -64,15 +72,15 @@
                                 <div class="personal_details">
                                     <h4>Contact Information</h4>
                                     <ul class="mb-5">
-                                        <li><span>Phone : </span><a href="#">+91 12345 67890</a></li>
-                                        <li><span>Address : </span>2205 Hill Croft Farm Road Sacramento, CA 95814</li>
-                                        <li><span>Email : </span><a href="#">ktadbizthakkar@gmail.com</a></li>
-                                        <li><span>Language : </span>English, Hindi, Gujarati</li>
+                                        <li><span>Phone : </span><a href="tel:+{{$user->mobile}}">{{$user->mobile}}</a></li>
+                                        <li><span>Address : </span>{{$user->address}}</li>
+                                        <li><span>Email : </span><a href="mailto: {{$user->email}}">{{$user->email}}</a></li>
+                                        <li><span>Language : </span>{{$user->language_know}}</li>
                                     </ul>
                                     <h4>Basic Information</h4>
                                     <ul>
-                                        <li><span>Birthday : </span>23 July, 1998</li>
-                                        <li><span>Gender : </span>Male</li>
+                                        <li><span>Birthday : </span>{{ date('d M Y', strtotime($user->birth_date)) }}</li>
+                                        <li><span>Gender : </span>{{$user->gender}}</li>
                                     </ul>
                                 </div>
                             </div>
