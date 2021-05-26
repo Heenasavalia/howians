@@ -199,7 +199,7 @@
                             <hr/>
 
                             <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="form-group{{ $errors->has('website_url') ? ' has-error' : '' }}">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
@@ -212,6 +212,19 @@
 
                                         </div>
                                         <small class="text-danger">{{ $errors->first('website_url') }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group{{ $errors->has('linkedin_url') ? ' has-error' : '' }}">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    <i class="icofont icofont-brand-linkedin"></i>
+                                                </span>
+                                            </div>
+                                            {{ Form:: text('linkedin_url', Auth::user()->linkedin_url , array("class" => "form-control", 'placeholder' => 'Linkedin Url', 'id' => 'linkedin_url')) }}
+                                        </div>
+                                        <small class="text-danger">{{ $errors->first('linkedin_url') }}</small>
                                     </div>
                                 </div>
                             </div>
@@ -349,6 +362,9 @@
                     facebook_url: {
                         checkFacebook: true
                     },
+                    linkedin_url: {
+                        checkLinkedin: true
+                    },
 
                 },
                 messages: {
@@ -444,6 +460,21 @@
                 return resulat;
             }, 'Sorry, please Enter Facebook URL in Proper Formate');
 
+            $.validator.addMethod('checkLinkedin', function (linkedin_url) {
+                var resulat = true;
+                //console.log(facebook_url);
+                if (linkedin_url != "") {
+                    var str = linkedin_url;
+                    var patt = new RegExp("^https?://((www|\w\w)\.)?linkedin.com/((in/[^/]+/?)|(pub/[^/]+/((\w|\d)+/?){3}))$");
+                    var res = patt.test(str);
+                    if (patt.test(str)) {
+                        resulat = true;
+                    } else {
+                        resulat = false;
+                    }
+                }
+                return resulat;
+            }, 'Sorry, please Enter Linkedin URL in Proper Formate');
 
 
         });
