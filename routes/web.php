@@ -75,3 +75,4 @@ Route::group(['prefix' => 'company'], function () {
 });
 Route::any('education','EducationController@addeducations');
 Route::get('/get_all_educations','EducationController@getEducations');
+Route::post('/user-search','UserController@userSearch');

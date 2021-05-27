@@ -12,7 +12,7 @@
                                 <h3 class="b-text">Find The Career You Deserve</h3>
                                 <p class="p-text">We Help You Get: New Job</p>
                                 <div class="inline-search-area ml-auto mr-auto isa-3">
-                                {{ Form:: open(array('url' => ['user/user-search'],'method'=>'post', 'id' => 'user-search-form', 'class' => 'user-search-form')) }}
+                                {{ Form:: open(array('url' => ['user-search'],'method'=>'post', 'id' => 'user-search-form', 'class' => 'user-search-form')) }}
                                 {{ csrf_field() }}
                                     <div class="search-boxs">
                                         <div class="search-col">
