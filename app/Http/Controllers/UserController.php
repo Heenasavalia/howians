@@ -104,7 +104,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dump($request->all());
+        // dd($id);
         // $this->validate($request, [
         //     'first_name' => 'required|string',
         //     'last_name' => 'required|string',
@@ -116,19 +116,51 @@ class UserController extends Controller
         // dd($this->validate()); 
         $user = User::find($id);
         $data = $request->all();
-        $user_date = [
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
-            'email' => $data['email'],
-            'mobile' => $data['mobile'],
-            'gender' => $data['gender'],
-            'education_id' => $data['education_id'],
-            'designation' => $data['designation'],
-            'years' => $data['years'],
-            'country' => $data['country'],
-            'state' => $data['state'],
-            'city' => $data['city'],
-        ];
+        $com_daata = array();
+        $com_daata['company_name'][] = '';
+        $com_daata['start_time'] = '';
+        $com_daata['end_time'] = '';
+        $com_daata['company_add'] = '';
+        // dd($com_daata);
+        // $user_date = [
+        //     'first_name' => $data['first_name'],
+        //     'last_name' => $data['last_name'],
+        //     'email' => $data['email'],
+        //     'mobile' => $data['mobile'],
+        //     'gender' => $data['gender'],
+        //     'education_id' => $data['education_id'],
+        //     'designation' => $data['designation'],
+        //     'years' => $data['years'],
+        //     'country' => $data['country'],
+        //     'state' => $data['state'],
+        //     'city' => $data['city'],
+        //     'headline' => $data['headline'],
+        //     'address' => $data['address'],
+        //     'language_know' => $data['hidden-language_know'],
+        //     'birth_date' => $data['birth_date'],
+        // ];
+
+        foreach($data['company_name'] as $com){
+            // $com_daata['company_name'] = $com;
+            array_push($com_daata['company_name'], $com);
+        }
+        dd($com_daata);
+        foreach($data['start_time'] as $time){
+            $com_daata = [
+                'start_time' => $time
+            ];
+        }
+        foreach($data['end_time'] as $time){
+            $com_daata = [
+                'end_time' => $time
+            ];
+        }
+        foreach($data['company_add'] as $add){
+            $com_daata = [
+                'company_add' => $add
+            ];
+        }
+        dd($com_daata);
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -236,7 +268,7 @@ class UserController extends Controller
     {
         $id = Auth::user()->id;
         $user = User::find($id);
-        dd($user);
+        // dd($user);
         return view('user.profile_edit',['user'=>$user]);
     }
 

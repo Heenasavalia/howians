@@ -1,11 +1,10 @@
 @extends('user.layout.user_layout')
 @section('content')
-<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
 <div class="profile_edit_section content-area-box">
     <div class="container">
+
     {{ Form:: open(array('url'=>['user/profile/'.Auth::user()->id ],'method'=>'PUT', 'id' => 'profile_update_frm','files' => true, 'class' => 'profile_update_frm')) }}
     {{ csrf_field() }}
         <div class="profile_edit_sec mb-4">
@@ -115,12 +114,12 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="" class="control-label">Birthday</label>
-                                        <input id="datepicker" width="276" />
+                                        <input type="date" name="birth_date" id="datepicker" width="276" />
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="" class="control-label">Gender</label>
+                                        <label for="" name="gender" class="control-label">Gender</label>
                                         <select class="mdb-select">
                                             <option value="" disabled selected>Male</option>
                                             <option value="1">Female</option>
@@ -133,87 +132,38 @@
                 </div>
             </div>
         </div>
-        <div class="profile_edit_sec mb-4">
-            <div class="card-body">
+        <div class="profile_edit_sec mb-4 work_div">
+            <div class="card-body append_work_ex">
                 <div class="pro_edit_title mb-5">
-                    <h2>Professional Information <a class="plus_edit" href="#"><i class="fa fa-plus"></i></a></h2>
+                    <h2>Professional Information <a class="plus_edit" href="javascript:void(0);"><i class="fa fa-plus"></i></a></h2>
                 </div>
-                <div class="row mb-4 form_padding_right">
+                <div class="row mb-4 form_padding_right work_expericne">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="control-label">Company Name</label>
-                            <input type="text" class="form-control" id="" placeholder="ANP Infotech">
+                            <input type="text" name="company_name[]" class="form-control" id="" placeholder="ANP Infotech">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="" class="control-label">Start</label>
-                            <select class="mdb-select">
-                                <option value="" disabled selected>2021</option>
-                                <option value="1">2020</option>
-                                <option value="2">2019</option>
-                                <option value="3">2018</option>
-                            </select>
+                            <label for="" class="control-label">Start Date</label>
+                            <input type="date" name="start_time[]" id="datepicker1" width="276" />
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="" class="control-label">End</label>
-                            <select class="mdb-select">
-                                <option value="" disabled selected>2021</option>
-                                <option value="1">2020</option>
-                                <option value="2">2019</option>
-                                <option value="3">2018</option>
-                            </select>
+                            <input type="date" name="end_time[]" id="datepicker2" width="276" />                            
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="" class="control-label">Address</label>
-                            <input type="text" class="form-control" id="" placeholder="2205 Hill Croft Farm Road Sacramento, CA 95814 ">
+                            <input type="text" name="company_add[]" class="form-control" id="" placeholder="Company Address Here">
                         </div>
                     </div>
                     <div class="deleted_icon">
-                        <a href="#"><i class="fa fa-trash"></i></a>
-                    </div>
-                </div>
-                <div class="row form_padding_right">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="" class="control-label">Company Name</label>
-                            <input type="text" class="form-control" id="" placeholder="Adbiz directory services pvt. ltd.">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="" class="control-label">Start</label>
-                            <select class="mdb-select">
-                                <option value="" disabled selected>2021</option>
-                                <option value="1">2020</option>
-                                <option value="2">2019</option>
-                                <option value="3">2018</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="" class="control-label">End</label>
-                            <select class="mdb-select">
-                                <option value="" disabled selected>2021</option>
-                                <option value="1">2020</option>
-                                <option value="2">2019</option>
-                                <option value="3">2018</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="" class="control-label">Address</label>
-                            <input type="text" class="form-control" id="" placeholder="2205 Hill Croft Farm Road Sacramento, CA 95814">
-                        </div>
-                    </div>
-                    <div class="deleted_icon">
-                        <a href="#"><i class="fa fa-trash"></i></a>
+                        <a class="minus_trash" href="javascript:void(0);"><i class="fa fa-trash"></i></a>
                     </div>
                 </div>
             </div>
@@ -221,7 +171,14 @@
         <div class="profile_edit_sec mb-4">
             <div class="card-body">
                 <div class="pro_edit_title mb-5">
-                    <h2>Skill <a class="plus_edit" href="#"><i class="fa fa-plus"></i></a></h2>
+                    <h2>Skill</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group icon-input">
+                            <input type="text" name="skilles" class="skill-input form-control tm-input-info" id="" placeholder="type here your skills">
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
@@ -297,16 +254,70 @@
 @endsection
 @push('scripts')
 <!-- @include('frontend.layout.footer') -->
-<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.js"></script> -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.js"></script>
+
 <script>
     $(document).ready(function() {
         $("body").addClass('inner-page-section');
+        $(".work_expericne").each(function(){
+            console.log($(this));
+        });
     });
-    $(".language-input").tagsManager();
-    $('.datepicker').datepicker();
+    $(".language-input").tagsManager(); //skill-input
+    $(".skill-input").tagsManager();
+    $( ".plus_edit" ).on( "click", function() {
+        var html = "";
+        html = '<div class="row mb-4 form_padding_right work_expericne">\n'+
+                    '<div class="col-md-6">\n'+
+                        '<div class="form-group">\n'+
+                            '<label for="" class="control-label">Company Name</label>\n'+
+                            '<input type="text" class="form-control" id="" placeholder="ANP Infotech">\n'+
+                        '</div>\n'+
+                    '</div>\n'+
+                    '<div class="col-md-3">\n'+
+                        '<div class="form-group">\n'+
+                            '<label for="" class="control-label">Start</label>\n'+
+                            '<select class="mdb-select">\n'+
+                                '<option value="" disabled selected>2021</option>\n'+
+                                '<option value="1">2020</option>\n'+
+                                '<option value="2">2019</option>\n'+
+                                '<option value="3">2018</option>\n'+
+                            '</select>\n'+
+                        '</div>\n'+
+                    '</div>\n'+
+                    '<div class="col-md-3">\n'+
+                        '<div class="form-group">\n'+
+                            '<label for="" class="control-label">End</label>\n'+
+                            '<select class="mdb-select">\n'+
+                                '<option value="" disabled selected>2021</option>\n'+
+                                '<option value="1">2020</option>\n'+
+                                '<option value="2">2019</option>\n'+
+                                '<option value="3">2018</option>\n'+
+                            '</select>\n'+
+                        '</div>\n'+
+                    '</div>\n'+
+                    '<div class="col-md-12">\n'+
+                        '<div class="form-group">\n'+
+                            '<label for="" class="control-label">Address</label>\n'+
+                            '<input type="text" class="form-control" id="" placeholder="2205 Hill Croft Farm Road Sacramento, CA 95814 ">\n'+
+                        '</div>\n'+
+                    '</div>\n'+
+                    '<div class="deleted_icon">\n'+
+                        '<a class="minus_trash" href="javascript:void(0);"><i class="fa fa-trash"></i></a>\n'+
+                    '</div>\n'+
+                '</div>';
+        $('.work_div .append_work_ex').append(html);
+        
+        $( "div.work_expericne div.deleted_icon" ).on( "click",function() {
+            var del_div = $(this).parent();
+            $(del_div).remove();
+        });
+
+    });
+
+   
+    
 </script>
 @endpush('scripts')
