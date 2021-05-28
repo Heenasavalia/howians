@@ -119,10 +119,11 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="" name="gender" class="control-label">Gender</label>
-                                        <select class="mdb-select">
-                                            <option value="" disabled selected>Male</option>
-                                            <option value="1">Female</option>
+                                        <label for="" class="control-label">Gender</label>
+                                        <select class="mdb-select" name="gender" >
+                                            <option value="male" selected>Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="ohter">Other</option>
                                         </select>
                                     </div>
                                 </div>
@@ -141,7 +142,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="control-label">Company Name</label>
-                            <input type="text" name="company_name[]" class="form-control" id="" placeholder="ANP Infotech">
+                            <input type="text" name="company_name[]" class="form-control" id="" placeholder="Company Name">
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -273,35 +274,25 @@
                     '<div class="col-md-6">\n'+
                         '<div class="form-group">\n'+
                             '<label for="" class="control-label">Company Name</label>\n'+
-                            '<input type="text" class="form-control" id="" placeholder="ANP Infotech">\n'+
+                            '<input type="text" name="company_name[]" class="form-control" id="" placeholder="Company Name">\n'+
                         '</div>\n'+
                     '</div>\n'+
                     '<div class="col-md-3">\n'+
                         '<div class="form-group">\n'+
                             '<label for="" class="control-label">Start</label>\n'+
-                            '<select class="mdb-select">\n'+
-                                '<option value="" disabled selected>2021</option>\n'+
-                                '<option value="1">2020</option>\n'+
-                                '<option value="2">2019</option>\n'+
-                                '<option value="3">2018</option>\n'+
-                            '</select>\n'+
+                            '<input type="date" name="start_time[]" id="datepicker1" width="276" />\n'+
                         '</div>\n'+
                     '</div>\n'+
                     '<div class="col-md-3">\n'+
                         '<div class="form-group">\n'+
                             '<label for="" class="control-label">End</label>\n'+
-                            '<select class="mdb-select">\n'+
-                                '<option value="" disabled selected>2021</option>\n'+
-                                '<option value="1">2020</option>\n'+
-                                '<option value="2">2019</option>\n'+
-                                '<option value="3">2018</option>\n'+
-                            '</select>\n'+
+                            '<input type="date" name="end_time[]" id="datepicker2" width="276" />\n'+
                         '</div>\n'+
                     '</div>\n'+
                     '<div class="col-md-12">\n'+
                         '<div class="form-group">\n'+
                             '<label for="" class="control-label">Address</label>\n'+
-                            '<input type="text" class="form-control" id="" placeholder="2205 Hill Croft Farm Road Sacramento, CA 95814 ">\n'+
+                            '<input type="text" name="company_add[]" class="form-control" id="" placeholder="Company Address Here">\n'+
                         '</div>\n'+
                     '</div>\n'+
                     '<div class="deleted_icon">\n'+
