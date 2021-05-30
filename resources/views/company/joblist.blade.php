@@ -31,6 +31,11 @@
                     <div class="page-body">
                         <div class="card">
                             <div class="card-block">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @include('company.layout.flash')
+                                    </div>
+                                </div>
                                 <div class="table-responsive dt-responsive">
                                     <table id="job_post_list" class="table table-striped table-bordered nowrap">
                                         <thead>
@@ -98,7 +103,6 @@
                     { data: 'job_category', name: 'job_category' },
                     { data: 'number_of_vacancy', name: 'number_of_vacancy' },
                     { data: 'work_experiance_type', name: 'work_experiance_type' },
-                    // { data: 'created_at', name: 'created_at' },
                     {
                         "mData": "created_at",
                         "mRender": function (data, type, row) {
@@ -124,7 +128,6 @@
                             return today;
                         }
                     },
-                    // { data: 'id', name: 'id' },
                     {
                         "mData": "Name",
                         "mRender": function (data, type, row) {
@@ -146,8 +149,6 @@
                     },
                 ],
             });
-
-
             $('#job_post_list tbody').on('click', 'a.btndel', function () {
                 var id = $(this).attr("rel");
                 swal({

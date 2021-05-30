@@ -1,5 +1,6 @@
 <?php
 use App\Http\Middleware\CheckCompanyPlan;
+use App\Http\Middleware\SelectedPlan;
 
 //Route::get('/home', function () {
 //    $users[] = Auth::user();
@@ -27,7 +28,7 @@ Route::get('/plan-update/{plan_id}', 'CompanyDashboardController@PlanUpdate');
 
 Route::get('change_password','CompanyDashboardController@update_password');
 Route::post('change-password','CompanyDashboardController@changePassword');
-Route::resource('job-requirement','CompanyJobRequirmentController');
+Route::resource('job-requirement','CompanyJobRequirmentController')->middleware(SelectedPlan::class);
 
 //Route::get('job-list','CompanyJobRequirmentController@JobList');
 //Route::any('getjoblist','CompanyJobRequirmentController@getjoblist');

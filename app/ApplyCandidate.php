@@ -15,6 +15,10 @@ class ApplyCandidate extends Model
     {
         return $this->belongsTo('App\User');
     }
+    public function company()
+    {
+        return $this->belongsTo('App\Company');
+    }
     public function job()
     {
         return $this->belongsTo('App\JobRequirement');

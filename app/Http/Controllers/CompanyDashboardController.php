@@ -27,8 +27,10 @@ class CompanyDashboardController extends Controller
         $company = Auth::user();
         // dd($company);
         $total_add_job = JobRequirement::where('company_id', $company->id)->count();
-        $all_candidate = ApplyCandidate::where('company_id', $company->id)->count();
-        return view('company.home',['total_add_job'=>$total_add_job, 'all_candidate'=>$all_candidate]);
+        $all_candidate = ApplyCandidate::with(['company','job'])->where('company_id', $company->id)->get();
+        $total_candidate = count($all_candidate);
+        // dd($all_candidate);
+        return view('company.home',['total_add_job'=>$total_add_job, 'total_candidate'=>$total_candidate,'all_candidate'=>$all_candidate]);
     }
 
     public function PlanSelection()
@@ -37,7 +39,6 @@ class CompanyDashboardController extends Controller
 
         // dd($today_date);
         $auth_company = Auth::user();
-        // $setting_plan = CompanySetting::select('company_id','is_select_plan','pricing_plan_id','start_time','end_time')->where('company_id',$auth_company->id)->first();
         $Company_plans = PricingPlans::with('fetures')->where('type', 'company')->where('status', 'Active')->get();
 
         if (Carbon::parse($auth_company->end_time)->gt(Carbon::now())) {
@@ -61,7 +62,7 @@ class CompanyDashboardController extends Controller
             'end_time' => $tomorrow
         ]);
 
-        return Redirect()->back()->with(['message' => 'The Message']);
+        return Redirect()->back()->with('success', 'Now You Can Post A <a href="'. url('/company/job-requirement/create') .'"> Job Requirement</a>');
     }
 
     /**

@@ -19,7 +19,7 @@ class CreateInterviewSchedulingsTable extends Migration
             $table->foreign('company_id')->references('id')->on('companies');
             $table->integer('job_requirement_id');
             $table->foreign('job_requirement_id')->references('id')->on('job_requirements');
-            $table->dateTime('interview_time');
+            $table->time('interview_time');
             $table->timestamps();
         });
     }

@@ -26,6 +26,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                        <div class="col-md-12">
+                            @include('company.layout.flash')
+                        </div>
+                    </div>  
 				<div class="row">
                     @foreach($company_plans as $plans)
 					<div class="col-xl-4 col-xxl-4 col-lg-12">

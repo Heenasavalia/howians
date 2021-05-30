@@ -8,7 +8,7 @@ class PricingPlans extends Model
 {
 	protected $table = 'pricing_plans';
     protected $fillable = [
-         'name','price' ,'type','status',
+         'name','price' ,'type','status','post_limit'
     ];
 
     public function fetures()
