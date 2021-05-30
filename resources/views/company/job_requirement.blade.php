@@ -187,8 +187,6 @@
                                     <small class="text-danger">{{ $errors->first('gender[]') }}</small>
                                 </div>
                             </div>
-
-
                             <!-- <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group{{ $errors->has('start_time') ? ' has-error' : '' }}">
@@ -301,7 +299,7 @@
                                     <div class="toclone-widget-right toclone cloneya row time_zone">
                                         <div class="col-lg-10 col-md-10 col-sm-10 col-8 unit">
                                             <div class="form-group {{ $errors->has('time_schedule') ? ' has-error' : '' }}">
-                                            <input class="form-control" name="time_schedule[]" id="time_schedule" type="datetime-local">
+                                            <input class="form-control" name="time_schedule[]" id="time_schedule" type="time">
                                                 <small class="text-danger">{{ $errors->first('time_schedule') }}</small>
                                             </div>
                                         </div>
@@ -672,7 +670,7 @@
                 rules: {
                     title: {
                         required: true,
-                        alphabates: true,
+                        // alphabates: true,
                     },
                     job_category: {
                         required: true,

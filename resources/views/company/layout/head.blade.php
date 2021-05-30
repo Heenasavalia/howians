@@ -52,6 +52,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('company/bower_components/jquery.steps/css/jquery.steps.css')}}">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+    <link href="{{ asset('plugins/fullcalendar/css/fullcalendar.min.css') }}" rel='stylesheet' />
+    <link href="{{ asset('plugins/fullcalendar/css/fullcalendar.print.min.css') }}" rel='stylesheet' media='print' />
 
     <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('company/assets/css/jquery.mCustomScrollbar.css')}}">

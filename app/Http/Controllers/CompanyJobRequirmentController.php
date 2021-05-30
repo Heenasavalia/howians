@@ -88,7 +88,7 @@ class CompanyJobRequirmentController extends Controller
         }
 
         if ($job_create) {
-            return redirect('company/home')->with('success', 'Job require created successfully');
+            return redirect('company/my-post-job-list')->with('success', 'Job require created successfully');
         } else {
             return redirect()->back()->with('error', 'Something went wrong');
         }

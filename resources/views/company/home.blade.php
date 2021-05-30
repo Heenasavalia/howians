@@ -1,7 +1,6 @@
 @extends('company.layout.company_layout')
 @section('content')
-    <link href="{{ asset('plugins/fullcalendar/css/fullcalendar.min.css') }}" rel='stylesheet' />
-    <link href="{{ asset('plugins/fullcalendar/css/fullcalendar.print.min.css') }}" rel='stylesheet' media='print' />
+
 
     <div class="pcoded-content">
         <div class="pcoded-inner-content">
@@ -61,13 +60,11 @@
                                 <div class="card-block-small">
                                     <i class="fa fa-tags bg-c-pink card1-icon"></i>
                                     <span class="text-c-pink f-w-600">Applied Candidate</span>
-                                    <h4>{{ $all_candidate}}</h4>
+                                    <h4>{{ $total_candidate}}</h4>
                                     <div>
                                     <span class="f-left m-t-10 text-muted">
                                         <i class="text-c-pink f-16 fa fa-tags m-r-10"></i>
-                                        <!-- <a href="{{ url('company/offer') }}"> -->
                                             View Candidate
-                                        <!-- </a> -->
                                     </span>
                                     </div>
                                 </div>
@@ -109,9 +106,32 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div id='calendar'></div>
+                    <div class="page-body">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Interview Scheduling</h5>
+                                <div class="card-header-right">
+                                    <ul class="list-unstyled card-option">
+                                        <li>
+                                            <i class="feather icon-maximize full-card"></i>
+                                        </li>
+                                        <li>
+                                            <i class="feather icon-minus minimize-card"></i>
+                                        </li>
+                                        <li>
+                                            <i class="feather icon-trash-2 close-card"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-block">
+                                <div class="row">
+                                    
+                                    <div class="col-xl-12 col-md-12">
+                                        <div id="calendar"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -120,28 +140,59 @@
     </div>
 @endsection
 @push('scripts')
-    <script src='http://fullcalendar.io/js/fullcalendar-2.1.1/fullcalendar.min.js'></script>
+<script type="text/javascript" src="{{ asset('company/bower_components/fullcalendar/js/fullcalendar.min.js')}}"></script>
+
+
     <script type="text/javascript">
+
         var url = "{{ url('/') }}";
         $(document).ready(function() {
-
-            var d = new Date();
-            var month = d.getMonth() + 1;
-            var day = d.getDate();
-            var output = d.getFullYear() + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
-
+           
             $('#calendar').fullCalendar({
-                defaultDate: output,
-                // defaultView: 'agendaWeek',
-                events : [{
-                    title: "aaaaa",
-                    start: "2021-04-29",
-                    end: "2021-04-29",
-                }],
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    // center: 'month'
+                },
+                defaultDate: moment(),
+                navLinks: true,
+                businessHours: true,
+                editable: true,
+                droppable: false,
+                drop: function() {
+                    if ($('#checkbox2').is(':checked')) {
+                        $(this).remove();
+                    }
+                },
+                events: [
+                    @foreach($all_candidate as $candidate)
+                        {
+                            id: '{{$candidate->user_id}}',
+                            title : '{{ $candidate->job->title }}',
+                            start : '{{$candidate->date . "T" . $candidate->time}}',
+                            constraint: 'businessHours',
+                            borderColor: '#404e67',
+                            backgroundColor: '#404e67',
+                            textColor: '#fff',
+                            // rendering: 'background'
+                        },
+                    @endforeach
+                ],
+                eventClick: function(data, event, view) {
+                    console.log(data, event, view);
+                    eventDetails(data.id);
+                },
+                eventRender: function(event, element, view) {
+                    console.log(event, element, view);
+                    element.attr('title', event.tip);
+                },
             });
+
         });
 
-
+        function eventDetails(id){
+            window.location.href = "{{url('company/user-profile')}}/" + id;
+        }
     </script>
 
 
