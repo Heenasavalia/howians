@@ -152,7 +152,7 @@
                 header: {
                     left: 'prev,next today',
                     center: 'title',
-                    // center: 'month'
+                    right: ''
                 },
                 defaultDate: moment(),
                 navLinks: true,

@@ -30,7 +30,7 @@ class CompanyJobRequirmentController extends Controller
      */
     public function create()
     {
-        return view('company.job_requirement');
+        return view('company.job.job_requirement');
     }
 
     /**
@@ -103,7 +103,9 @@ class CompanyJobRequirmentController extends Controller
      */
     public function show($id)
     {
-        //
+        $get_job = JobRequirement::find($id);
+        // dd($get_job);
+        return view('company.job.job_detail',['job'=>$get_job]);
     }
 
     /**
@@ -157,9 +159,10 @@ class CompanyJobRequirmentController extends Controller
     //        return view('company.joblist');
     //    }
 
+    
     public function JobUser()
     {
-        return view('company.joblist');
+        return view('company.job.joblist');
     }
 
     public function getjobuserlist(Request $request)
