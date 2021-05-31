@@ -29,6 +29,7 @@ Route::get('/plan-update/{plan_id}', 'CompanyDashboardController@PlanUpdate');
 Route::get('change_password','CompanyDashboardController@update_password');
 Route::post('change-password','CompanyDashboardController@changePassword');
 Route::resource('job-requirement','CompanyJobRequirmentController')->middleware(SelectedPlan::class);
+// Route::get('view-job','CompanyJobRequirmentController@viewJob');
 
 //Route::get('job-list','CompanyJobRequirmentController@JobList');
 //Route::any('getjoblist','CompanyJobRequirmentController@getjoblist');

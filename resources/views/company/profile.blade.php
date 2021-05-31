@@ -22,7 +22,6 @@
                             <h5>Company Profile</h5>
                         </div>
                         <div class="card-block">
-                            {{--                            {{ Form:: open(array('url'=>'client/update_profile/','id' => 'change_profile','files' => true,'enctype' => 'multipart/form-data')) }}--}}
                             {{ Form:: open(array('url' => ['company/update_profile'],'method'=>'post', 'id' => 'change_profile','files' => true,'enctype' => 'multipart/form-data')) }}
                             <meta id="token" name="token" content="{{ csrf_token() }}">
                             <hr/>

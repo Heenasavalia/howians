@@ -49,7 +49,7 @@
                                             <th>Created date</th>
 {{--                                            <th>Total Candidate</th>--}}
                                             <th>View Candidate</th>
-                                            <th>Delete</th>
+                                            <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -142,9 +142,17 @@
                     {
                         "mData": "Name",
                         "mRender": function (data, type, row) {
+                           
+                            var view_url = '{{ Route("company.job-requirement.show", "id") }}';
+                            view_url = view_url.replace('id', row.id);
+
+                            var edit_url = '{{ Route("company.job-requirement.edit", "id") }}';
+                            edit_url = edit_url.replace('id', row.id);
 
                             return "<a  title=\"Delete\" rel='" + row.id + "' href='javascript:void(0)' class='btndel btn-delete'>" +
-                            "<i class=\"icofont icofont-ui-delete\"></i></a>";
+                            "<i class=\"icofont icofont-ui-delete\"></i></a><a  title='View' rel='" + row.id + "' href='"+view_url+"' class='btnview btn-delete'>" +
+                            "<i class='icofont icofont-eye'></i></a><a  title='Edit' rel='" + row.id + "' href='"+view_url+"' class='btnview btn-delete'>" +
+                            "<i class='icofont icofont-pencil-alt-5'></i></a>";
                         }
                     },
                 ],

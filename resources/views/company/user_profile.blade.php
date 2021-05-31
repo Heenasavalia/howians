@@ -30,6 +30,11 @@
                                             <div class="col-md-12">
 
                                                 <div class="social-wallpaper">
+                                                <div class="job_detail">
+                                                    <p class="job_name">Laravel Developer</p>
+                                                    <p class="job_categories">Laravel,it,designer</p>
+                                                    <p><a href="#">view More <i class="fa fa-arrow-right" aria-hidden="true"></i></a></p>
+                                                </div>
                                                     <img src="{{asset('company/assets/images/social/cover.jpg')}}" class="img-fluid width-100" alt="">
                                                 </div>
 
