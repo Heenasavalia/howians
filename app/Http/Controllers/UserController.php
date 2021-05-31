@@ -117,13 +117,7 @@ class UserController extends Controller
         $user = User::find($id);
         $data = $request->all();
         // dump($data);
-        $com_daata = array();
         $user_date = [];
-        $blank = [];
-        $com_daata['company_name'][] = '';
-        $com_daata['start_time'][] = '';
-        $com_daata['end_time'][] = '';
-        $com_daata['company_add'][] = '';
         // dump($data);
         $user_date = [
             'first_name' => $data['first_name'],
@@ -142,28 +136,24 @@ class UserController extends Controller
             'language_know' => $data['hidden-language_know'],
             'birth_date' => $data['birth_date'],
         ];
+        $company_name = $data['company_name'];
+        $start_time = $data['start_time'];
+        $end_time = $data['end_time'];
+        $company_add = $data['company_add'];
 
-        // dd($user_date);
-        foreach($data['company_name'] as $com){
-            // $com_daata['company_name'][] = $com;
-            $data = [
-                'user_id' => $user->id,
-                'company_name' => $com
-            ];
-            $work = WorkExperience::create($data);
-            dump($work);
+        foreach($company_name as $key => $no)
+        {
+            $data1['company_name'] = $no;
+            $data1['start_time'] = $start_time[$key];
+            $data1['end_time'] = $end_time[$key];
+            $data1['company_add'] = $company_add[$key];
+            $data1['user_id'] = $user->id;
+            $data1['user_experience'] = Helpers::getDifferntDay($start_time[$key], $end_time[$key]);
+            dump($data1);
+            // $work = WorkExperience::create($data1);
         }
-        dd();
-        foreach($data['start_time'] as $time){
-            $com_daata['start_time'][] = $time;
-        }
-        foreach($data['end_time'] as $time){
-            $com_daata['end_time'][] = $time;
-        }
-        foreach($data['company_add'] as $add){
-            $com_daata['company_add'][] = $add;
-        }
-
+        dd($data1);
+       
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $fileName = time() . rand(11111, 99999) . '.' . $image->getClientOriginalExtension();
