@@ -37,11 +37,11 @@ class Helpers
         if($years){
             $total = " years =".$years;
         }
-        if($months || $years){
+        if($months && $years){
             $total = " years =".$years." month = ".$months;
         }
-        if($months || $years || $days ){
-            $total = " years =".$years." month = ".$months. " days = ".$days;
+        if($months){
+            $total = " month = ".$months;
         }
         // dump($total);
         return $total;
