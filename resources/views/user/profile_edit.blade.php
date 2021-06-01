@@ -157,10 +157,16 @@
                             <input type="date" name="end_time[]" id="datepicker2" width="276" />                            
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="control-label">Address</label>
                             <input type="text" name="company_add[]" class="form-control" id="" placeholder="Company Address Here">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="control-label">Designation</label>
+                            <input type="text" name="work_designation[]" class="work_designation-input form-control tm-input-info" id="" placeholder="Company Work Designation">
                         </div>
                     </div>
                     <div class="deleted_icon">
@@ -267,7 +273,8 @@
         });
     });
     $(".language-input").tagsManager(); //skill-input
-    $(".skill-input").tagsManager();
+    $(".skill-input").tagsManager(); //work_designation-input
+    $(".work_designation-input").tagsManager();
     $( ".plus_edit" ).on( "click", function() {
         var html = "";
         html = '<div class="row mb-4 form_padding_right work_expericne">\n'+
@@ -289,10 +296,16 @@
                             '<input type="date" name="end_time[]" id="datepicker2" width="276" />\n'+
                         '</div>\n'+
                     '</div>\n'+
-                    '<div class="col-md-12">\n'+
+                    '<div class="col-md-6">\n'+
                         '<div class="form-group">\n'+
                             '<label for="" class="control-label">Address</label>\n'+
                             '<input type="text" name="company_add[]" class="form-control" id="" placeholder="Company Address Here">\n'+
+                        '</div>\n'+
+                    '</div>\n'+
+                    '<div class="col-md-6">\n'+
+                        '<div class="form-group">\n'+
+                            '<label for="" class="control-label">Designation</label>\n'+
+                            '<input type="text" name="work_designation[]" class="work_designation-input form-control tm-input-info" id="" placeholder="Company Work Designation">\n'+
                         '</div>\n'+
                     '</div>\n'+
                     '<div class="deleted_icon">\n'+
@@ -305,6 +318,8 @@
             var del_div = $(this).parent();
             $(del_div).remove();
         });
+
+        $(".work_designation-input").tagsManager();
 
     });
 
