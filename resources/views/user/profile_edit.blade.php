@@ -268,13 +268,11 @@
 <script>
     $(document).ready(function() {
         $("body").addClass('inner-page-section');
-        $(".work_expericne").each(function(){
-            console.log($(this));
-        });
+        
     });
     $(".language-input").tagsManager(); //skill-input
     $(".skill-input").tagsManager(); //work_designation-input
-    $(".work_designation-input").tagsManager();
+    $(".work_designation-input").tagsManager(); //work_experience
     $( ".plus_edit" ).on( "click", function() {
         var html = "";
         html = '<div class="row mb-4 form_padding_right work_expericne">\n'+
@@ -319,7 +317,11 @@
             $(del_div).remove();
         });
 
-        $(".work_designation-input").tagsManager();
+        $(".work_expericne").each(function(){
+            var manager = $(this).children('div:nth-child(5)');
+            manager.find(".work_designation-input").tagsManager(); //work_experience
+        });
+        // $(".work_designation-input").tagsManager();
 
     });
 

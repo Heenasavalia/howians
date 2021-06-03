@@ -27,23 +27,13 @@ class Helpers
         $months = round(floor(($diff - $years * 365*60*60*24) / (30*60*60*24)),0);
         $days = round(floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24)),0);
 
-        // dump(round($years,0), $months, $days);
-        // $total = "";
-        $total = [
-            'years' => $years,
-            'month' => $months,
-            'days' => $days
-        ];
         if($years){
             $total = " years =".$years;
-        }
-        if($months && $years){
+        }elseif($months && $years){
             $total = " years =".$years." month = ".$months;
-        }
-        if($months){
+        }else{
             $total = " month = ".$months;
         }
-        // dump($total);
         return $total;
     }
 }
