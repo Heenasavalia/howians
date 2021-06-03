@@ -140,7 +140,7 @@ class UserController extends Controller
         $start_time = $data['start_time'];
         $end_time = $data['end_time'];
         $company_add = $data['company_add'];
-        $work_designation = $data['work_designation'];
+        $work_designation = $data['hidden-work_designation'];
 
         foreach($company_name as $key => $no)
         {
@@ -150,11 +150,11 @@ class UserController extends Controller
             $data1['company_add'] = $company_add[$key];
             $data1['user_id'] = $user->id;
             $data1['work_designation'] = $work_designation[$key];
-            // $data1['user_experience'] = Helpers::getDifferntDay($start_time[$key], $end_time[$key]);
-            dump($data1);
-            // $work = WorkExperience::create($data1);
+            $data1['user_experience'] = Helpers::getDifferntDay($start_time[$key], $end_time[$key]);
+            // dump($data1);
+            $work = WorkExperience::create($data1);
         }
-        dd($data1);
+        // dd($work);
        
         if ($request->hasFile('image')) {
             $image = $request->file('image');
