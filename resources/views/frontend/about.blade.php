@@ -1,4 +1,5 @@
-@include('frontend.layout.header')
+@extends('frontend.layout.front_layout')
+@section('content')
 <!-- Banner start -->
 <section class="breadcrumb">
     <div class="banner-img"><img class="d-block w-100 h-100" src="{{asset('front_end/images/home_about_img.jpg')}}" alt="banner"></div>
@@ -15,7 +16,7 @@
 <!-- About content start -->
 <section class="about_content content-area-box">
     <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-md-6">
                 <h2>About Us</h2>
                 <h5>It is a long established fact that a reade.</h5>
@@ -144,4 +145,4 @@
     </div>
 </section>
 <!-- Our Recent News end -->
-@include('frontend.layout.footer')
+@endsection
