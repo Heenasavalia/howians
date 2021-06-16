@@ -41,7 +41,7 @@
         font-size: 18px;
     }
     body.inner-page-section {
-        padding-top: 82px;
+        padding-top: 77px;
     }
     .pro_edit_title h2 {
         font-size: 26px;
@@ -55,6 +55,28 @@
 }
 
 @media screen and (max-width: 991px) {
+    body h1 {
+        font-size: 22px;
+    }
+    body h2 {
+        font-size: 20px;
+    }
+    body h3 {
+        font-size: 18px;
+    }
+    body h4 {
+        font-size: 16px;
+    }
+    body h5 {
+        font-size: 15px;
+    }
+    body h6 {
+        font-size: 14px;
+    }
+    .commen-banner p {
+        font-size: 14px;
+        max-width: 390px;
+    }
     .main-header .logo {
         padding: 10px 0;
     }
@@ -287,19 +309,11 @@
     .sidebar-right-2 h3.sidebar-title {
         font-size: 20px;
     }
-    .information_sec ul li,
-    .form-sec .form-control {
+    .information_sec ul li {
         font-size: 16px;
     }
     body.inner-page-section {
-        padding-top: 55px;
-    }
-    .contact-title h2 {
-        font-size: 30px;
-    }
-    .contact-title p {
-        font-size: 16px;
-        margin-bottom: 20px !important;
+        padding-top: 52px;
     }
     .contact-sec .col-md-7 {
         padding-right: 15px;
@@ -312,15 +326,6 @@
         top: -15px;
         width: 30px;
         height: 30px;
-    }
-    .info-main h3 {
-        font-size: 24px;
-    }
-    .info-section ul li,
-    .info-section ul li a,
-    .profile_link li a,
-    .work_detail h3 {
-        font-size: 18px;
     }
     .profile_data h2 {
         font-size: 22px;
@@ -402,14 +407,6 @@
 }
 
 @media screen and (max-width: 767px) {
-    body h1,
-    body h2,
-    body h3,
-    body h4,
-    body h5,
-    body h6 {
-        font-size: 22px;
-    }
     .sticky-header.header-shrink {
         padding: 0;
     }
@@ -667,13 +664,6 @@
     }
     .contact-title {
         text-align: center;
-    }
-    .contact-title h2 {
-        font-size: 26px;
-    }
-    .contact-title p {
-        font-size: 14px;
-        margin-bottom: 10px !important;
     }
     .form-sec {
         margin-bottom: 25px;

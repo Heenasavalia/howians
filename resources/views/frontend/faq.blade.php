@@ -1,4 +1,5 @@
-@include('frontend.layout.header')
+@extends('frontend.layout.front_layout')
+@section('content')
 <!-- Banner start -->
 <section class="breadcrumb">
     <div class="banner-img"><img class="d-block w-100 h-100" src="{{asset('front_end/images/faq_banner.jpg')}}" alt="banner"></div>
@@ -39,10 +40,12 @@
 </section>
 <!-- Faq section end -->
 
-@include('frontend.layout.footer')
+@endsection
+@push('scripts')
 
 <script>
     $(document).ready(function() {
         $("body").addClass('inner-page-section');
     });
 </script>
+@endpush('scripts')
