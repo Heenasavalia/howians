@@ -142,9 +142,8 @@ li {
 body p {
     color: #464646;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 180%;
+    font-size: 15px;
+    line-height: 160%;
     margin: 0 0 15px;
     padding: 0;
 }
@@ -322,17 +321,7 @@ body .form-control {
 }
 
 .main-header .logo img {
-    -webkit-transition: all 0.5s ease 0s;
-    -moz-transition: all 0.5s ease 0s;
-    -ms-transition: all 0.5s ease 0s;
-    -o-transition: all 0.5s ease 0s;
-    transition: all 0.5s ease 0s;
-    max-width: 100%;
     margin: 0;
-}
-
-.header-shrink.main-header .logo img {
-    max-width: 150px;
 }
 
 .header-ml {
@@ -793,7 +782,7 @@ section.breadcrumb {
 }
 
 section.breadcrumb .banner-img {
-    height: 615px;
+    height: 560px;
 }
 
 section.breadcrumb .banner-img img,
@@ -852,15 +841,13 @@ section.breadcrumb .banner-img img,
 }
 
 .about_content h2 {
-    font-size: 40px;
-    font-weight: 400;
-    margin-bottom: 5px;
+    font-size: 30px;
+    margin-bottom: 10px;
     line-height: normal;
 }
 
 .about_content h5 {
-    color: #464646;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .job_vacancies_sec {
@@ -873,6 +860,7 @@ section.breadcrumb .banner-img img,
     color: #fff;
     padding-bottom: 45px;
     font-weight: 600;
+    font-size: 25px;
 }
 
 .job_vacancies_sec h2::before {
@@ -882,7 +870,7 @@ section.breadcrumb .banner-img img,
     right: 0;
     bottom: 0;
     background-color: #fff;
-    width: 4px;
+    width: 3px;
     height: 30px;
     margin: auto;
 }
@@ -890,7 +878,7 @@ section.breadcrumb .banner-img img,
 .job_vacancies_sec p {
     text-align: center;
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 1px;
 }
@@ -918,35 +906,36 @@ section.breadcrumb .banner-img img,
     bottom: 0;
     left: 0;
     background-color: #4285f4;
-    padding: 15px 25px;
+    padding: 10px 15px;
     color: #fff;
-    font-size: 35px;
+    font-size: 20px;
     text-align: center;
     line-height: 100%;
 }
 
 .news_date span {
     display: block;
-    font-size: 22px;
+    font-size: 14px;
 }
 
 .about_news_box .news_details {
-    padding: 25px;
+    padding: 15px;
 }
 
 .news_details .our_recent_title {
     display: block;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .news_details .news_title {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .news_details a {
     color: #4285f4;
     vertical-align: middle;
+    font-size: 14px;
 }
 
 .news_details a:hover {
@@ -2104,6 +2093,34 @@ ul.commen_ul li {
 
 .pro_edit_title a.btn.button-theme {
     float: right;
+}
+
+.main-title h2 {
+    text-align: center;
+    padding-bottom: 15px;
+    position: relative;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.main-title h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    height: 3px;
+    width: 50px;
+    background-color: #4285f4;
+}
+
+.how_inner h3 {
+    font-size: 20px;
+}
+
+.how_inner h3 a:hover {
+    color: #4285f4;
 }
 
 

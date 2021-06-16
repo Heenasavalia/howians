@@ -206,33 +206,14 @@
         letter-spacing: 0;
         margin-bottom: 5px;
     }
-    .inner-banner ul li,
-    .about_content h5,
-    .news_date span,
-    .news_details .our_recent_title {
-        font-size: 18px;
-    }
-    .inner-banner ul li a,
-    .inner-banner ul li:not(:last-child)::after,
-    .news_details .news_title {
-        font-size: 22px;
-    }
-    .about_content h2 {
-        font-size: 30px;
-    }
     .about_news_box .news_img {
         height: 230px;
-    }
-    .news_date {
-        padding: 10px 15px;
-        font-size: 25px;
-        line-height: 100%;
     }
     .about_news_box .news_details {
         padding: 15px;
     }
     .job_vacancies_sec p {
-        font-size: 16px;
+        font-size: 14px;
     }
     .candidate-listing-section .left-listing {
         flex: 0 0 35%;
@@ -533,7 +514,7 @@
         font-size: 18px;
     }
     .about_content h2 {
-        font-size: 30px;
+        font-size: 24px;
         text-align: center;
         margin-bottom: 10px;
     }
@@ -552,7 +533,7 @@
     }
     .job_vacancies_sec h2 {
         padding-bottom: 40px;
-        font-size: 24px;
+        font-size: 20px;
     }
     .job_vacancies_sec p {
         letter-spacing: 0;
@@ -564,7 +545,7 @@
     .inner-banner ul li a,
     .inner-banner ul li:not(:last-child)::after,
     .news_details .news_title {
-        font-size: 20px;
+        font-size: 18px;
     }
     section.breadcrumb .banner-img {
         height: 180px;
