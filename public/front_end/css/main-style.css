@@ -1434,7 +1434,7 @@ ul.pagination li a.page-link:hover {
 }
 
 body.inner-page-section {
-    padding-top: 102px;
+    padding-top: 97px;
 }
 
 .inner-page-section header.main-header {
@@ -1442,16 +1442,7 @@ body.inner-page-section {
     top: 0;
 }
 
-.contact-title h2 {
-    font-size: 50px;
-    font-weight: 600;
-    line-height: normal;
-    margin-bottom: 5px;
-}
-
 .contact-title p {
-    font-size: 20px;
-    line-height: 150%;
     margin-bottom: 30px !important;
     color: #8e8e8e;
 }
@@ -1462,8 +1453,8 @@ body.inner-page-section {
     border-bottom: 1px solid #ddd;
     border-radius: 0;
     padding: 0;
-    height: 50px;
-    font-size: 18px;
+    height: 45px;
+    font-size: 16px;
 }
 
 .form-sec textarea.form-control {
@@ -1513,11 +1504,12 @@ body.inner-page-section {
     flex: 0 0 100%;
     max-width: 100%;
     color: #fff;
+    font-size: 24px;
 }
 
 .info-section ul li {
     margin-bottom: 25px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .info-section ul li:last-child {
@@ -1529,7 +1521,7 @@ body.inner-page-section {
 }
 
 .info-section ul li a {
-    font-size: 20px;
+    font-size: 16px;
     color: #b5b5b5;
 }
 
@@ -1548,12 +1540,10 @@ body.inner-page-section {
 .commen-banner h2 {
     color: #000;
     font-weight: bold;
-    font-size: 50px;
 }
 
 .commen-banner p {
-    max-width: 400px;
-    font-size: 18px;
+    font-size: 16px;
     color: #919191;
 }
 

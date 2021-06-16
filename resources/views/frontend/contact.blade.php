@@ -1,4 +1,5 @@
-@include('frontend.layout.header')
+@extends('frontend.layout.front_layout')
+@section('content')
 
 <!-- Contact 1 start -->
 <div class="contact-sec content-area-box">
@@ -50,10 +51,12 @@
 </div>
 <!-- Contact 1 end -->
 
-@include('frontend.layout.footer')
+@endsection
+@push('scripts')
 
 <script>
     $(document).ready(function() {
         $("body").addClass('inner-page-section');
     });
 </script>
+@endpush('scripts')
