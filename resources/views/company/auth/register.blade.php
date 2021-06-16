@@ -1,4 +1,4 @@
-@include('frontend.layout.header')
+@extends('frontend.layout.front_layout')
 <section class="register-section content-area-box">
     <div class="container">
         <div class="row">
@@ -146,12 +146,7 @@
     </div>
 </section>
 
-@include('frontend.layout.footer')
-<script>
-    $(document).ready(function() {
-        $("body").addClass('inner-page-section');
-    });
-</script>
+
 
 @push('scripts')
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
@@ -210,6 +205,11 @@
         }, 'please Enter Only Alphabates');
 
 
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $("body").addClass('inner-page-section');
     });
 </script>
 @endpush

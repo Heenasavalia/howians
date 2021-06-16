@@ -48,4 +48,4 @@
         $("body").addClass('inner-page-section');
     });
 </script>
-@endpush('scripts')
+@endpush('scripts') 
