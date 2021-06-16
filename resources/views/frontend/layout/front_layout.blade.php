@@ -28,7 +28,6 @@
 </head>
 
 <body>
-    <div class="page_loader"></div>
 
 @include('frontend.layout.header')
 

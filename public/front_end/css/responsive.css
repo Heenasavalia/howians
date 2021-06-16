@@ -11,6 +11,9 @@
     .banner h3 {
         font-size: 35px;
     }
+    section#banner {
+        height: 370px;
+    }
     .content-area-box,
     footer.footer {
         padding: 60px 0;
@@ -68,12 +71,14 @@
         border-radius: 0;
         color: #fff;
     }
+    .inline-search-area {
+        max-width: 90%;
+    }
     .banner h3 {
         font-size: 25px;
     }
     .inline-search-area .search-col .form-control,
     .inline-search-area button.btn-search {
-        height: 45px;
         font-size: 14px;
     }
     .search-col .search-fields {
@@ -152,9 +157,6 @@
     .footer-menu .links li:not(:last-child) {
         margin-bottom: 15px;
     }
-    .footer-menu .links li a {
-        font-size: 16px;
-    }
     .main-header .navbar .navbar-collapse {
         background-color: #fff;
     }
@@ -179,7 +181,7 @@
     }
     .main-header .navbar-expand-lg .navbar-nav.header-ml .nav-link:hover,
     .main-header .navbar-expand-lg .navbar-nav.header-ml .active>.nav-link {
-        background-color: #4285f4;
+        background-color: #000;
         color: #fff;
     }
     .navbar-expand-lg .navbar-nav.ml-auto {
@@ -188,14 +190,6 @@
     .navbar-expand-lg .navbar-nav.ml-auto li {
         width: 100%;
         margin: 0 !important;
-    }
-    .inline-search-area .search-col i {
-        top: 15px;
-        font-size: 16px;
-    }
-    .inline-search-area .search-col i.fa-map-marker {
-        font-size: 20px;
-        top: 12px;
     }
     .main-header .navbar-expand-lg .navbar-nav.ml-auto .nav-link {
         color: #fff;
@@ -417,6 +411,13 @@
     .deleted_icon a {
         font-size: 22px;
     }
+    .job-section .col-md-2 {
+        display: none;
+    }
+    .job-section .col-md-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -428,17 +429,21 @@
     body h6 {
         font-size: 22px;
     }
+    .sticky-header.header-shrink {
+        padding: 0;
+    }
     .banner h3 {
         font-size: 18px;
         margin-bottom: 3px;
     }
     .banner p {
         margin: 0 0 10px;
-        font-size: 14px;
-        letter-spacing: 0;
     }
     #banner .banner-img {
         height: 350px;
+    }
+    #banner .text-center {
+        top: 60%;
     }
     .isa-3 {
         background: transparent;
@@ -454,6 +459,12 @@
         width: 100%;
         float: left;
     }
+    .find button.btn.btn-search {
+        background-color: #000;
+    }
+    section#banner {
+        height: 370px;
+    }
     .content-area-box,
     footer.footer {
         padding: 30px 0;
@@ -466,12 +477,10 @@
     .main-title {
         margin-bottom: 25px;
     }
-    .main-title-2 {
-        margin-bottom: 10px;
-    }
     .job-item {
-        margin-bottom: 15px;
+        margin-bottom: 0;
         flex-wrap: wrap;
+        padding: 15px 0;
     }
     .job-item:hover::before {
         opacity: 0;
@@ -503,9 +512,13 @@
     }
     .job-item ul li {
         float: none;
-        margin-right: 10px;
+        margin-right: 5px;
         display: inline-block;
         margin-bottom: 15px;
+    }
+    .job-item .media-box .div-left {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
     .div-center {
         margin-bottom: 10px;
@@ -720,6 +733,13 @@
     }
     .profile_edit_sec .portfolio_sec li {
         width: 48%;
+    }
+    .main-title-2 a {
+        font-size: 14px;
+    }
+    .job-item h4 {
+        margin: 0 0 15px;
+        font-size: 18px;
     }
 }
 
