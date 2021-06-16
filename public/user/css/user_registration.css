@@ -1,8 +1,7 @@
 #heading {
-    text-transform: uppercase;
-    color: #4285f4;
+    color: #000;
+    font-size: 24px;
     font-weight: bold;
-    font-size: 22px;
 }
 
 .commen-form {
@@ -31,17 +30,18 @@
 
 .commen-form input,
 .commen-form textarea {
-    padding: 0 15px;
-    border: 1px solid #ccc;
+    padding: 0;
+    border: none !important;
+    border-bottom: 1px solid #ddd !important;
     border-radius: 0px;
     margin-bottom: 0;
     width: 100%;
     box-sizing: border-box;
-    font-family: montserrat;
     color: #000;
-    background-color: #ECEFF1;
+    background-color: #fff;
     font-size: 14px;
     letter-spacing: 0;
+    outline: none;
 }
 
 .commen-form input[type="file"] {
@@ -75,8 +75,9 @@ select.form-control {
     border-radius: 0px;
     cursor: pointer;
     padding: 10px 20px;
-    margin: 10px 0px 10px 5px;
+    margin: 0;
     width: auto;
+    display: inline-block;
 }
 
 .commen-form .action-button:hover,
@@ -245,6 +246,7 @@ body .form-box {
 
 .checkbox label {
     position: relative;
+    margin: 0;
 }
 
 .checkbox label input[type="checkbox"] {
@@ -286,13 +288,11 @@ body .form-box {
 }
 
 .form-group a.btn.btn-link {
-    display: table;
-    margin: 0 auto;
-    padding: 0;
     text-decoration: underline;
     color: #4285f4;
     font-weight: 600;
     font-size: 14px;
+    padding: 0;
 }
 
 .form-group a.btn.btn-link:hover {
@@ -311,5 +311,10 @@ body .form-box {
     }
     .steps {
         font-size: 15px;
+    }
+    .commen-form .col-md-6.text-left,
+    .commen-form .col-md-6.text-right {
+        text-align: center !important;
+        margin-top: 10px;
     }
 }
