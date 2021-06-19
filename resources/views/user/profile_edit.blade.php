@@ -1,4 +1,4 @@
-@extends('user.layout.user_layout')
+@extends('frontend.layout.front_layout')
 @section('content')
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.css">
 
@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <div class="col-md-9">
-                        <div class="pro_edit_title mb-5">
+                        <div class="pro_edit_title mb-3">
                             <h2>Personal Information {{ Form::submit('Save', array('class' => 'btn button-theme','id'=> 'send' )) }}</h2>
                         </div>
                         <!-- <form> -->
@@ -80,7 +80,7 @@
                             </div>
                         <!-- </form> -->
                     </div>
-                    <div class="col-md-12 mt-5">
+                    <div class="col-md-12 mt-3">
                         <!-- <form> -->
                             <div class="row">
                                 <div class="col-md-8">
@@ -114,7 +114,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="" class="control-label">Birthday</label>
-                                        <input type="date" name="birth_date" id="datepicker" width="276" />
+                                        <input class="form-control" type="date" name="birth_date" id="datepicker" width="276" />
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -135,7 +135,7 @@
         </div>
         <div class="profile_edit_sec mb-4 work_div">
             <div class="card-body append_work_ex">
-                <div class="pro_edit_title mb-5">
+                <div class="pro_edit_title mb-4">
                     <h2>Professional Information <a class="plus_edit" href="javascript:void(0);"><i class="fa fa-plus"></i></a></h2>
                 </div>
                 <div class="row mb-4 form_padding_right work_expericne">
@@ -148,13 +148,13 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="" class="control-label">Start Date</label>
-                            <input type="date" name="start_time[]" id="datepicker1" width="276" />
+                            <input class="form-control" type="date" name="start_time[]" id="datepicker1" width="276" />
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="" class="control-label">End</label>
-                            <input type="date" name="end_time[]" id="datepicker2" width="276" />                            
+                            <input class="form-control" type="date" name="end_time[]" id="datepicker2" width="276" />                            
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -177,7 +177,7 @@
         </div>
         <div class="profile_edit_sec mb-4">
             <div class="card-body">
-                <div class="pro_edit_title mb-5">
+                <div class="pro_edit_title mb-4">
                     <h2>Skill</h2>
                 </div>
                 <div class="row">
@@ -211,7 +211,7 @@
         </div>
         <div class="profile_edit_sec">
             <div class="card-body">
-                <div class="pro_edit_title mb-5">
+                <div class="pro_edit_title mb-4">
                     <h2>Portfolio <a class="plus_edit" href="#"><i class="fa fa-plus"></i></a></h2>
                 </div>
                 <div class="portfolio_sec">

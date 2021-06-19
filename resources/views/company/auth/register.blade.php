@@ -1,4 +1,4 @@
-@extends('frontend.layout.front_layout')
+@extends('company.layout.auth')
 <section class="register-section content-area-box">
     <div class="container">
         <div class="row">
@@ -6,13 +6,13 @@
                 <div class="card company_register">
                     <div class="card-body">
                         <h2 id="heading">Complete Your details <a class="company_login" href="{{ url('/company/login') }}">Sign in</a></h2>
-                        {{ Form:: open(array('url' => "/company/register", 'name'=>"com_registration",'method'=>'post', 'id' => 'company_reg','class'=>"form-horizontal commen-form")) }}
+                        {{ Form:: open(array('url' => "/company/register", 'name'=>"com_registration",'method'=>'post', 'id' => 'company_reg','class'=>"form-horizontal commen-form px-0")) }}
                         <meta id="token" name="token" content="{{ csrf_token() }}">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('company_name') ? ' has-error' : '' }}">
                                     <label for="" class="control-label">Company name</label>
-                                    <input id="company_name" type="text" class="form-control" name="company_name">
+                                    <input id="company_name" type="text" class="form-control" name="company_name" placeholder="Company name">
                                     @if ($errors->has('company_name'))
                                     <span class="help-block">{{ $errors->first('company_name') }}</span>
                                     @endif
@@ -21,7 +21,7 @@
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
                                     <label for="" class="control-label">Mobile No</label>
-                                    <input id="mobile" type="number" class="form-control" name="mobile" value="{{ old('mobile') }}">
+                                    <input id="mobile" type="number" class="form-control" name="mobile" value="{{ old('mobile') }}" placeholder="Mobile No">
                                     @if ($errors->has('mobile'))
                                     <span class="help-block">{{ $errors->first('mobile') }}</span>
                                     @endif
@@ -30,7 +30,7 @@
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                     <label for="" class="control-label">Email</label>
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
                                     @if ($errors->has('email'))
                                     <span class="help-block">{{ $errors->first('email') }}</span>
                                     @endif
@@ -39,7 +39,6 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="gst_number" class="control-label radio_label">Do you have GST Number?</label>
-                                    <br>
                                     <div class="form-check form-check-inline mr-5">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
                                         <label class="form-check-label" for="inlineRadio1">Yes</label>
@@ -83,7 +82,7 @@
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                     <label for="" class="control-label">Password</label>
-                                    <input id="password" type="password" class="form-control" name="password">
+                                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
                                     @if ($errors->has('password'))
                                     <span class="help-block">{{ $errors->first('password') }}</span>
                                     @endif
@@ -92,7 +91,7 @@
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                                     <label for="" class="control-label">Confirm password</label>
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm password">
                                     @if ($errors->has('password_confirmation'))
                                     <span class="help-block">{{ $errors->first('password_confirmation') }}</span>
                                     @endif
@@ -111,7 +110,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="form-group">
+                                <div class="form-group text-center">
                                     {{ Form::submit('Create Account',array("class" => "action-button btn btn-primary btn-lg", 'id' => 'send')) }}
                                 </div>
                             </div>
@@ -145,8 +144,6 @@
         </div>
     </div>
 </section>
-
-
 
 @push('scripts')
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
@@ -205,11 +202,6 @@
         }, 'please Enter Only Alphabates');
 
 
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        $("body").addClass('inner-page-section');
     });
 </script>
 @endpush
