@@ -9,6 +9,7 @@
 html {
     -webkit-text-size-adjust: 100%;
     margin: 0 !important;
+    overflow-x: hidden;
 }
 
 html body {
@@ -17,6 +18,7 @@ html body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding-top: 0px;
+    overflow-x: hidden;
 }
 
 a:active {
@@ -324,10 +326,6 @@ body .form-control {
     margin: 0;
 }
 
-.header-ml {
-    margin-left: 13%;
-}
-
 .main-header .navbar-expand-lg .navbar-nav.header-ml li {
     margin: 0 20px;
 }
@@ -369,6 +367,7 @@ body .form-control {
 
 .main-header .navbar-expand-lg .navbar-nav.ml-auto .nav-link {
     padding: 0;
+    font-size: 14px;
 }
 
 #banner .banner-img {
@@ -1833,25 +1832,6 @@ ul.commen_ul li {
     border-radius: 10px;
 }
 
-.register-section .form-group,
-.profile_edit_section .form-group {
-    margin-bottom: 25px;
-}
-
-.register-section input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type="file"]),
-.profile_edit_section input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type="file"]),
-.register-section select,
-.profile_edit_section select {
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    padding: 0;
-    height: 40px;
-    width: 100%;
-    color: #71777d;
-    font-size: 14px;
-}
-
 .register-section select,
 .profile_edit_section select {
     padding-right: 20px;
@@ -1860,11 +1840,11 @@ ul.commen_ul li {
     background-repeat: no-repeat;
 }
 
-#company_reg label.control-label,
-.profile_edit_section label.control-label {
+label.control-label {
+    font-weight: bold;
     margin: 0;
-    color: #4285f4;
-    line-height: normal;
+    text-align: left;
+    display: block;
     font-size: 14px;
 }
 
@@ -1970,8 +1950,8 @@ ul.commen_ul li {
 }
 
 .pro_edit_title h2 {
-    padding-bottom: 15px;
-    font-size: 35px;
+    padding-bottom: 10px;
+    font-size: 24px;
     position: relative;
 }
 
@@ -1980,9 +1960,13 @@ ul.commen_ul li {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 4px;
+    height: 3px;
     width: 50px;
     background-color: #4285f4;
+}
+
+.pro_edit_title h2 input[type="submit"] {
+    float: right;
 }
 
 .profile_img a {
@@ -2005,14 +1989,14 @@ ul.commen_ul li {
 }
 
 .pro_edit_title a.plus_edit {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     float: right;
     text-align: center;
-    border: 2px solid #4285f4;
+    border: 1px solid #4285f4;
     border-radius: 50%;
-    line-height: 39px;
-    font-size: 26px;
+    line-height: 29px;
+    font-size: 16px;
     color: #4285f4;
 }
 
@@ -2022,7 +2006,7 @@ ul.commen_ul li {
 }
 
 .profile_edit_sec .form_padding_right {
-    padding-right: 60px;
+    padding-right: 40px;
     position: relative;
 }
 
@@ -2035,7 +2019,7 @@ ul.commen_ul li {
 
 .deleted_icon a {
     color: #4285f4;
-    font-size: 28px;
+    font-size: 18px;
 }
 
 .deleted_icon a:hover {
@@ -2076,10 +2060,10 @@ ul.commen_ul li {
     color: #fff;
     background-color: #4285f4;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     text-align: center;
-    line-height: 40px;
+    line-height: 30px;
     display: block;
     margin-top: 5px;
 }
@@ -2100,7 +2084,8 @@ ul.commen_ul li {
     margin-bottom: 25px;
 }
 
-.main-title h2::before {
+.main-title h2::before,
+#heading::before {
     content: "";
     position: absolute;
     left: 0;
@@ -2118,6 +2103,58 @@ ul.commen_ul li {
 
 .how_inner h3 a:hover {
     color: #4285f4;
+}
+
+html body input.form-control:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
+html body textarea.form-control,
+html body select {
+    padding: 0;
+    border: none !important;
+    border-bottom: 1px solid #ddd !important;
+    border-radius: 0px;
+    margin-bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    color: #000;
+    background-color: #fff;
+    font-size: 14px;
+    letter-spacing: 0;
+    outline: none;
+    height: 45px;
+    resize: none;
+}
+
+html body input[type="file"] {
+    padding: 3px;
+}
+
+html body .has-error input.form-control:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
+html body .has-error textarea.form-control,
+html body .has-error select {
+    border-color: #ff0000 !important;
+}
+
+html body select.form-control {
+    border-radius: 0;
+    box-shadow: none !important;
+}
+
+html body input:focus,
+html body textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #4285f4;
+    outline-width: 0;
+}
+
+.alert.alert-danger {
+    border: 1px solid #ff0000;
+    background-color: #fff;
+    border-radius: 0;
+    color: #ff0000;
+    font-size: 14px;
+    padding: 10px;
 }
 
 

@@ -2,10 +2,12 @@
     color: #000;
     font-size: 24px;
     font-weight: bold;
+    position: relative;
+    text-align: center;
+    padding-bottom: 15px;
 }
 
 .commen-form {
-    text-align: center;
     position: relative;
     padding: 20px;
 }
@@ -26,45 +28,6 @@
 
 .commen-form fieldset:not(:first-of-type) {
     display: none;
-}
-
-.commen-form input,
-.commen-form textarea {
-    padding: 0;
-    border: none !important;
-    border-bottom: 1px solid #ddd !important;
-    border-radius: 0px;
-    margin-bottom: 0;
-    width: 100%;
-    box-sizing: border-box;
-    color: #000;
-    background-color: #fff;
-    font-size: 14px;
-    letter-spacing: 0;
-    outline: none;
-}
-
-.commen-form input[type="file"] {
-    padding: 3px;
-}
-
-.commen-form .has-error input,
-.commen-form .has-error textarea {
-    border-color: #ff0000;
-}
-
-select.form-control {
-    border-radius: 0;
-    box-shadow: none !important;
-}
-
-.commen-form input:focus,
-.commen-form textarea:focus {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    border: 1px solid #4285f4;
-    outline-width: 0;
 }
 
 .commen-form .action-button {
@@ -225,13 +188,6 @@ select.form-control {
     display: none;
 }
 
-label.control-label {
-    font-weight: bold;
-    margin: 0;
-    text-align: left;
-    display: block;
-}
-
 body .form-box {
     box-shadow: 0 0 10px rgb(0 0 0 / 10%);
 }
@@ -240,8 +196,8 @@ body .form-box {
     display: block;
     text-align: left;
     color: #ff0000;
-    font-weight: 500;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 13px;
 }
 
 .checkbox label {

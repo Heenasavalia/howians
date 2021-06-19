@@ -1,10 +1,10 @@
 @extends('user.layout.auth')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid content-area-box">
     <div class="row justify-content-center">
-        <div class="col-11 col-md-6 col-xl-4 text-center p-0 mt-3 mb-2">
-            <div class="card px-0 pt-4 pb-0 mt-3 mb-3 form-box">
+        <div class="col-11 col-md-6 col-xl-4 text-center">
+            <div class="card px-0 pt-4 form-box">
                 <h2 id="heading">Reset Password</h2>
                 <form class="form-horizontal commen-form" role="form" method="POST" action="{{ url('/user/password/reset') }}">
                     {{ csrf_field() }}
@@ -12,7 +12,7 @@
 
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                         <label for="email" class="control-label">E-Mail Address</label>
-                        <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" autofocus>
+                        <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" placeholder="E-Mail Address" autofocus>
                         @if ($errors->has('email'))
                             <span class="help-block">{{ $errors->first('email') }}</span>
                         @endif
@@ -20,7 +20,7 @@
 
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                         <label for="password" class="control-label">Password</label>
-                        <input id="password" type="password" class="form-control" name="password">
+                        <input id="password" type="password" class="form-control" name="password" placeholder="Password">
                         @if ($errors->has('password'))
                             <span class="help-block">{{ $errors->first('password') }}</span>
                         @endif
@@ -28,7 +28,7 @@
 
                     <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                         <label for="password-confirm" class="control-label">Confirm Password</label>
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
                         @if ($errors->has('password_confirmation'))
                             <span class="help-block">{{ $errors->first('password_confirmation') }}</span>
                         @endif

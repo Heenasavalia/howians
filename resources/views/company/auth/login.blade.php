@@ -1,22 +1,22 @@
 @extends('company.layout.auth')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid content-area-box">
     <div class="row justify-content-center">
-        <div class="col-11 col-md-6 col-xl-3 text-center p-0 mt-3 mb-2">
-            <div class="card px-0 pt-4 pb-0 mt-3 mb-3 form-box">
-                <h2 id="heading">Login</h2>
+        <div class="col-11 col-md-6 col-xl-3 text-center">
+            <div class="card px-0 pt-4 form-box">
+                <h2 id="heading">Company Login</h2>
                 <form class="form-horizontal commen-form" role="form" method="POST" action="{{ url('/company/login') }}">
                     {{ csrf_field() }}
                     <div class="form-group">
-                    <label for="password" class="control-label">Email</label>
+                        <label for="password" class="control-label">Email</label>
                         <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" autofocus placeholder="Enter your email">
                         @if ($errors->has('email'))
                         <span class="help-block">{{ $errors->first('email') }}</span>
                         @endif
                     </div>
                     <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
-                    <label for="password" class="control-label">Password</label>
+                        <label for="password" class="control-label">Password</label>
                         <input id="password" type="password" class="form-control" name="password" placeholder="Password">
                         @if ($errors->has('password'))
                         <span class="help-block">{{ $errors->first('password') }}</span>

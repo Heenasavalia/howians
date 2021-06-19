@@ -1,4 +1,5 @@
-@include('frontend.layout.header')
+@extends('frontend.layout.front_layout')
+@section('content')
 <div class="plan_section content-area-box">
     <div class="container">
         <div class="row">
@@ -44,9 +45,12 @@
         </div>
     </div>
 </div>
-@include('frontend.layout.footer')
+@endsection
+@push('scripts')
+
 <script>
     $(document).ready(function() {
         $("body").addClass('inner-page-section');
     });
 </script>
+@endpush('scripts')

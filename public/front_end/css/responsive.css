@@ -5,9 +5,6 @@
     .main-header .logo img {
         max-width: 150px;
     }
-    .header-ml {
-        margin-left: 10%;
-    }
     .banner h3 {
         font-size: 35px;
     }
@@ -42,12 +39,6 @@
     }
     body.inner-page-section {
         padding-top: 77px;
-    }
-    .pro_edit_title h2 {
-        font-size: 26px;
-    }
-    .pro_edit_title.mb-5 {
-        margin-bottom: 25px !important;
     }
     .profile_edit_sec .col-md-12.mt-5 {
         margin-top: 15px !important;
@@ -181,8 +172,11 @@
     }
     .main-header .navbar .navbar-collapse {
         background-color: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
     }
-    .header-ml,
     .main-header .navbar-expand-lg .navbar-nav.header-ml li {
         margin: 0;
     }
@@ -382,23 +376,11 @@
     .register-section .card .card-body {
         padding: 15px;
     }
-    .pro_edit_title h2 {
-        font-size: 22px;
-    }
-    .pro_edit_title.mb-5 {
-        margin-bottom: 25px !important;
-    }
     .profile_edit_sec .col-md-12.mt-5 {
         margin-top: 15px !important;
     }
     .profile_edit_sec .portfolio_sec li {
         width: 31.33%;
-    }
-    .pro_edit_title a.plus_edit {
-        width: 30px;
-        height: 30px;
-        line-height: 29px;
-        font-size: 18px;
     }
     .deleted_icon a {
         font-size: 22px;
@@ -409,6 +391,9 @@
     .job-section .col-md-8 {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+    .pro_edit_title h2 {
+        font-size: 20px;
     }
 }
 
