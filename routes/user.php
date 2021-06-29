@@ -39,5 +39,5 @@ Route::post('submit-rating','UserController@AddReview');
 Route::get('apply-job/{company}/{job}','UserController@applyJob');
 Route::post('submit-job-apply','UserController@applyJobForm');
 
-//heena
+//comment by heena 29-06-2021
 Route::get('apply/{job_id}','UserController@jobDetails');
