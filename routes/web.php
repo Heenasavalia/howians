@@ -23,8 +23,8 @@
 
   Route::any('home', 'FrontendController@home');
   Route::any('about', 'FrontendController@about');
-  Route::any('job', 'FrontendController@job');
-  Route::any('job-detail', 'FrontendController@job_detail');
+  // Route::any('job', 'FrontendController@job');
+  // Route::any('job-detail', 'FrontendController@job_detail');
   Route::any('contact', 'FrontendController@contact');
   Route::any('faq', 'FrontendController@faq');
   Route::any('help', 'FrontendController@help');

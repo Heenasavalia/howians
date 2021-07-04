@@ -395,6 +395,9 @@
     .pro_edit_title h2 {
         font-size: 20px;
     }
+    .ui-autocomplete {
+        max-width: 190px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -703,6 +706,9 @@
         margin: 0 0 15px;
         font-size: 18px;
     }
+    .ui-autocomplete {
+        max-width: calc(100% - 40px);
+    }
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
@@ -730,5 +736,8 @@
     }
     .profile_edit_sec .portfolio_sec li {
         width: 31.33%;
+    }
+    .ui-autocomplete {
+        max-width: calc(100% - 70px);
     }
 }
