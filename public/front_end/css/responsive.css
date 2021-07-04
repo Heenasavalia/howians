@@ -469,9 +469,11 @@
         display: table;
         margin: 0 auto;
     }
-    .job-item a.icon {
+    .job-section .job-item .icon {
         margin: 0 0 15px;
         width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
     }
     .job-item .media-box {
         display: block;
