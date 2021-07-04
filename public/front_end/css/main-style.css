@@ -468,21 +468,21 @@ section#banner {
     float: left;
 }
 
-.inline-search-area.isa-3 .search-col .form-control,
+.inline-search-area.isa-3 .search-col .form-control:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 .find button.btn.btn-search {
     border-radius: 5px;
 }
 
-.inline-search-area .search-col .form-control,
-.inline-search-area button.btn-search {
-    border-radius: 0;
-    border: 0;
-    height: 45px;
-    margin-bottom: 0;
-    font-size: 15px;
+.inline-search-area .search-col .form-control:not([type="radio"]):not([type="checkbox"]):not([type="submit"]) {
+    padding: 0 15px !important;
+    border: none !important;
 }
 
-.inline-search-area .search-col .form-control {
+.inline-search-area button.btn-search {
+    height: 45px;
+}
+
+.inline-search-area .search-col .form-control:not([type="radio"]):not([type="checkbox"]):not([type="submit"]) {
     padding-right: 50px;
 }
 
@@ -739,10 +739,10 @@ ul.social-list li a:hover,
     flex: 0 0 40px;
 }
 
-.Subscribe-box form.form-inline input[type="text"] {
+.Subscribe-box form.form-inline input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]) {
     border-radius: 0;
     padding: 0 15px;
-    border: none;
+    border: none !important;
     font-size: 14px;
     height: 40px;
     width: 100%;
@@ -1807,6 +1807,11 @@ ul.commen_ul li {
 .company_register h2 {
     font-size: 24px;
     margin-bottom: 30px;
+    text-align: left !important;
+}
+
+.company_register h2::before {
+    right: auto !important;
 }
 
 .company_register a.company_login {
@@ -1869,8 +1874,8 @@ label.control-label {
     position: absolute;
     left: 0;
     margin: 0;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     top: 2px;
     z-index: 1;
     opacity: 0;
@@ -1885,11 +1890,11 @@ label.control-label {
     position: absolute;
     left: 0;
     border: 1px solid #ddd;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border-radius: 5px;
     text-align: center;
-    line-height: 18px;
+    line-height: 16px;
     font-size: 14px;
     font-family: 'FontAwesome';
     top: 2px;
@@ -1914,7 +1919,7 @@ label.control-label {
 }
 
 .totla_price h3 {
-    font-size: 24px;
+    font-size: 20px;
     color: #3e3e3e;
 }
 
@@ -2155,6 +2160,26 @@ html body textarea:focus {
     color: #ff0000;
     font-size: 14px;
     padding: 10px;
+}
+
+.ui-autocomplete {
+    width: 100% !important;
+    max-width: 270px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+    overflow: hidden;
+    height: 170px;
+    overflow-y: auto;
+}
+
+.ui-autocomplete li {
+    font-size: 14px;
+    padding: 10px 15px;
+}
+
+.ui-autocomplete li:hover {
+    background-color: #ddd;
 }
 
 
