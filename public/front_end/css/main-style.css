@@ -1336,7 +1336,6 @@ ul.pagination li a.page-link:hover {
 }
 
 .candidate-listing-footer ul li {
-    font-size: 18px;
     color: #808080;
 }
 
@@ -1346,23 +1345,16 @@ ul.pagination li a.page-link:hover {
 }
 
 .white_box h3 {
-    color: #1c1c1c;
-    font-weight: 400;
-    font-size: 26px;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .white_box h3 .fa {
     color: #4285f4;
 }
 
-.about-me p {
-    color: #506172;
-    line-height: 150%;
-}
-
 .about-me ul {
     margin-bottom: 20px;
-    padding-left: 15px;
 }
 
 .about-me ul li {
@@ -1394,6 +1386,7 @@ ul.pagination li a.page-link:hover {
 
 .job-overview ul li {
     margin-bottom: 15px;
+    font-size: 14px;
 }
 
 .job-overview ul li span {
@@ -1414,18 +1407,17 @@ ul.pagination li a.page-link:hover {
     padding: 10px;
     text-align: center;
     margin-bottom: 5px;
-    font-size: 18px;
+    font-size: 14px;
     color: #4284f3;
 }
 
-.sidebar-right-2 h3.sidebar-title {
-    font-size: 22px;
-    font-weight: 400;
+.information_sec .sidebar-title {
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .information_sec ul li {
     margin-bottom: 15px;
-    font-size: 18px;
 }
 
 .information_sec ul li a:hover {
