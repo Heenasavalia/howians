@@ -658,15 +658,15 @@ section#banner {
     width: 100%;
 }
 
-.div-right a.apply-button {
+.div-right .apply-button {
     border: 1px solid #ddd !important;
     border-radius: 5px;
     background-color: #fff;
-    font-size: 15px;
+    font-size: 14px;
     color: #333333;
 }
 
-.div-right a.apply-button:hover {
+.div-right .apply-button:hover {
     border-color: #4285f4 !important;
     background-color: #4285f4;
     color: #fff;
@@ -1129,7 +1129,7 @@ h4.title .label {
 
 .candidate_right li {
     color: #8b8b8b;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .candidate_right li strong {
@@ -1157,7 +1157,7 @@ h4.title .label {
     border-radius: 5px;
     padding: 7px 10px;
     color: #6c6c6c;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .candidate_label ul li:not(:last-child) {
@@ -1253,7 +1253,7 @@ ul.pagination li a.page-link:hover {
 }
 
 .grid_view .candidate-listing .candidate_right h4 a {
-    font-size: 17px;
+    font-size: 14px;
     color: rgba(0, 0, 0, 0.5);
     font-weight: 400;
 }
@@ -1265,7 +1265,7 @@ ul.pagination li a.page-link:hover {
 .grid_view .candidate_right h4 .sub_title {
     margin-top: 5px;
     margin-bottom: 5px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .grid_view .candidate-listing .candidate_right h4 {
@@ -1285,7 +1285,7 @@ ul.pagination li a.page-link:hover {
 }
 
 .grid_view .candidate_label ul li {
-    padding: 0 10px;
+    padding: 0 5px;
     background-color: transparent;
     margin: 0 0 5px;
 }
