@@ -56,7 +56,7 @@
         font-size: 18px;
     }
     body h4 {
-        font-size: 16px;
+        font-size: 18px;
     }
     body h5 {
         font-size: 15px;
@@ -291,20 +291,11 @@
         max-width: 19%;
         margin-right: 5px;
     }
-    .white_box h3 {
-        font-size: 22px;
-    }
     .about-me ul li {
         font-size: 14px;
     }
     .about-me ul li::before {
         top: 2px;
-    }
-    .sidebar-right-2 h3.sidebar-title {
-        font-size: 20px;
-    }
-    .information_sec ul li {
-        font-size: 16px;
     }
     body.inner-page-section {
         padding-top: 52px;
@@ -631,10 +622,6 @@
     .main-item .description {
         text-align: center;
     }
-    .description h4.title,
-    .white_box h3 {
-        font-size: 20px;
-    }
     .candidate-listing-footer ul li:not(:last-child) {
         margin-right: 10px;
     }
@@ -710,6 +697,22 @@
     }
     .ui-autocomplete {
         max-width: calc(100% - 40px);
+    }
+    .white_box h3 {
+        font-size: 16px;
+    }
+    .about-me ul li {
+        padding-left: 15px;
+        line-height: 140%;
+    }
+    .about-me ul li::before {
+        top: 5px;
+    }
+    .information_sec .sidebar-title {
+        font-size: 16px;
+    }
+    .information_sec ul li {
+        font-size: 14px;
     }
 }
 
