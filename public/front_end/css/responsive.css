@@ -389,6 +389,21 @@
     .ui-autocomplete {
         max-width: 190px;
     }
+    .upload_box {
+        padding: 40px;
+    }
+    .main-corrper .icon-box {
+        padding: 20px 10px;
+    }
+    .icon-box ul li {
+        margin-bottom: 25px;
+    }
+    .icon-box ul li a {
+        font-size: 14px;
+    }
+    .corrper_box {
+        padding: 20px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -713,6 +728,50 @@
     }
     .information_sec ul li {
         font-size: 14px;
+    }
+    .upload_box {
+        padding: 30px;
+    }
+    .upload_box .gallery_apply {
+        padding: 40px 20px;
+    }
+    .icon-box ul li {
+        margin-bottom: 20px;
+    }
+    .icon-box ul li a {
+        padding-top: 30px;
+    }
+    .icon-box ul li a::before {
+        background-size: 20px;
+        width: 25px;
+        height: 25px;
+    }
+    .icon-box ul li a:hover::before {
+        background-position: center -28px;
+    }
+    .icon-box ul li:nth-child(2) a::before {
+        background-position: center -65px;
+    }
+    .icon-box ul li:nth-child(2) a:hover::before {
+        background-position: center -97px;
+    }
+    .icon-box ul li:nth-child(3) a::before {
+        background-position: center -133px;
+    }
+    .icon-box ul li:nth-child(3) a:hover::before {
+        background-position: center -165px;
+    }
+    .icon-box ul li:nth-child(4) a::before {
+        background-position: center -199px;
+    }
+    .icon-box ul li:nth-child(4) a:hover::before {
+        background-position: center -231px;
+    }
+    .icon-box ul li:nth-child(5) a::before {
+        background-position: center -267px;
+    }
+    .icon-box ul li:nth-child(5) a:hover::before {
+        background-position: center -299px;
     }
 }
 

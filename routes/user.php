@@ -21,6 +21,8 @@ Route::any('/display-profile/{id}', 'UserController@profile');
 Route::any('/profile-edit', 'UserController@profileEdit');
 Route::resource('/profile', 'UserController');
 Route::get('/company-profile/{id}', 'UserController@companyProfile');
+Route::any('/gallery_update', 'UserController@GalleryUpdate');
+
 
 Route::post('/user-search','UserController@userSearch');
 Route::get('change-password','UserController@UpdatePassword');
