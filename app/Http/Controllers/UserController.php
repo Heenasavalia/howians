@@ -267,6 +267,11 @@ class UserController extends Controller
         return view('user.profile_edit',['user'=>$user]);
     }
 
+    public function GalleryUpdate()
+    {
+        return view('user.gallery_update');
+    }
+
     public function UpdatePassword(Request $request) {
         return view('user.auth.passwords.change');
     }

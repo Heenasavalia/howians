@@ -786,7 +786,8 @@ section.breadcrumb .banner-img {
 
 section.breadcrumb .banner-img img,
 .profile_img img,
-.portfolio_sec ul li img {
+.portfolio_sec ul li img,
+.big_gallery .small_img img {
     -webkit-object-fit: cover;
     -moz-object-fit: cover;
     -ms-object-fit: cover;
@@ -2260,7 +2261,7 @@ span.ui-helper-hidden-accessible {
 .reviews_inner .content-box p {
     font-size: 14px;
     line-height: 160%;
-    color: rgb(150, 150, 150);
+    color: #969696;
     transition: all 0.5s ease 0s;
 }
 
@@ -2282,13 +2283,165 @@ span.ui-helper-hidden-accessible {
 
 .reviews_content h2 {
     font-size: 14px;
-    color: rgb(79, 79, 79);
+    color: #4f4f4f;
     margin-bottom: 0px;
 }
 
 .reviews_content p {
     font-size: 12px;
-    color: rgb(174, 174, 174);
+    color: #aeaeae;
+}
+
+.upload_box,
+.main-corrper {
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+    padding: 90px 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.upload_box .gallery_apply {
+    width: 100%;
+    background-color: #f6faff;
+    border: 2px dashed rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 60px 40px;
+}
+
+.gallery_apply p {
+    text-align: center;
+    margin-top: 20px !important;
+    display: block;
+}
+
+.gallery_apply p a {
+    color: #4285f4;
+    font-weight: 600;
+}
+
+.gallery_apply p a:hover {
+    color: #000;
+}
+
+.gallery_apply p span {
+    color: #999;
+    display: block;
+}
+
+.main-corrper {
+    justify-content: space-between;
+    padding: 0;
+    align-items: unset;
+}
+
+.main-corrper .icon-box {
+    flex: 20%;
+    max-width: 20%;
+    padding: 40px 20px;
+}
+
+.corrper_box {
+    flex: 0 0 80%;
+    max-width: 80%;
+    padding: 40px;
+    border-left: 1px solid #e7e7e7;
+}
+
+.icon-box ul li {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.icon-box ul li:last-child {
+    margin-bottom: 0;
+}
+
+.icon-box ul li a {
+    padding-top: 40px;
+    position: relative;
+    display: block;
+}
+
+.icon-box ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-image: url(../../images/sprite_img.png);
+    background-position: center 4px;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    margin: auto;
+}
+
+.icon-box ul li:nth-child(2) a::before {
+    background-position: center -102px;
+}
+
+.icon-box ul li:nth-child(3) a::before {
+    background-position: center -207px;
+}
+
+.icon-box ul li:nth-child(4) a::before {
+    background-position: center -309px;
+}
+
+.icon-box ul li:nth-child(5) a::before {
+    background-position: center -415px;
+}
+
+.icon-box ul li a:hover {
+    color: #4285f4;
+}
+
+.icon-box ul li a:hover::before {
+    background-position: center -46px;
+}
+
+.icon-box ul li:nth-child(2) a:hover::before {
+    background-position: center -152px;
+}
+
+.icon-box ul li:nth-child(3) a:hover::before {
+    background-position: center -257px;
+}
+
+.icon-box ul li:nth-child(4) a:hover::before {
+    background-position: center -359px;
+}
+
+.icon-box ul li:nth-child(5) a:hover::before {
+    background-position: center -465px;
+}
+
+.small_img img {
+    width: 70px;
+    height: 70px;
+}
+
+.big_gallery .small_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.both_btn .btn {
+    border-radius: 5px;
+}
+
+.both_btn .btn.btn-cancel {
+    background-color: #d2dfef;
+    border-color: #d2dfef;
+    color: #000;
+}
+
+.both_btn .btn.btn-cancel:hover {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
 }
 
 
